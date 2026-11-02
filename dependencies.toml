@@ -1,0 +1,51 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+[[dependency]]
+name = "MFEM"
+version = "4.8"
+license = "BSD-3-Clause"
+source = "https://github.com/mfem/mfem/blob/v4.8/LICENSE"
+scope = "research-only serial numerical spike"
+review = "ADR-002; optional MPI/third-party features disabled; LAPACK provided by host for local tests"
+[[dependency]]
+name = "CMake"
+version = "3.25+"
+license = "BSD-3-Clause"
+source = "https://gitlab.kitware.com/cmake/cmake/-/blob/master/Copyright.txt"
+scope = "build tool"
+review = "ADR-002; not linked"
+[[dependency]]
+name = "REUSE"
+version = "5.0.2"
+license = "Apache-2.0"
+source = "https://github.com/fsfe/reuse-tool/blob/main/LICENSES/Apache-2.0.txt"
+scope = "development lint tool"
+review = "ADR-002; transitive environment must be locked before distribution"
+[[dependency]]
+name = "MkDocs"
+version = "1.6.1"
+license = "BSD-2-Clause"
+source = "https://github.com/mkdocs/mkdocs/blob/1.6.1/LICENSE"
+scope = "documentation build tool"
+review = "ADR-002; no production linkage"
+[[dependency]]
+name = "Gmsh"
+version = "4.15.2"
+license = "GPL-2.0-or-later"
+source = "https://gmsh.info/LICENSE.txt"
+scope = "optional local mesh spike; host binary not redistributed"
+review = "ADR-002/004; select GPLv3 compatibility; named-library exception noted; transitive binary audit pending before distribution"
+[[dependency]]
+name = "gdstk"
+version = "1.0.0"
+license = "BSL-1.0"
+source = "https://github.com/heitzmann/gdstk/blob/main/LICENSE"
+scope = "optional local layout harness via existing Python binding"
+review = "ADR-002; no vendored binary; bundled dependencies require release audit"
+[[dependency]]
+name = "KLayout"
+version = "0.30.9"
+license = "GPL-3.0-only"
+source = "https://github.com/KLayout/klayout/blob/master/LICENSE"
+scope = "optional local layout harness; conservative GPLv3 grant"
+review = "ADR-002; family-compatible; exact later grant and bundled components pending before integration"

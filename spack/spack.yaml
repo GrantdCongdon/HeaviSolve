@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+spack:
+  specs:
+    - mfem@4.8 +mpi +hypre +lapack
+    - slepc
+    - superlu-dist
+  concretizer:
+    unify: true
+# Candidate recipe; not concretized or certified. Validate variants on the pinned Spack release.

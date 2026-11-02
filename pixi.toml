@@ -1,0 +1,24 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+[workspace]
+name = "heavisolve"
+version = "0.0.1"
+channels = ["conda-forge"]
+platforms = ["linux-64", "osx-arm64", "osx-64"]
+
+# Candidate development manifest, not a resolved lock or certified release environment.
+[dependencies]
+cmake = ">=3.25,<5"
+python = "3.12.*"
+pip = "*"
+
+[pypi-dependencies]
+reuse = "==5.0.2"
+mkdocs = "==1.6.1"
+
+[tasks]
+configure = "cmake -S . -B build"
+build = { cmd = "cmake --build build", depends-on = ["configure"] }
+test = { cmd = "ctest --test-dir build -L foundation --output-on-failure", depends-on = ["build"] }
+license = "reuse lint"
+docs = "python tools/build_docs.py"

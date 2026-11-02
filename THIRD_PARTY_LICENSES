@@ -1,0 +1,12 @@
+SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+SPDX-License-Identifier: AGPL-3.0-or-later
+
+Direct dependency inventory: dependencies.toml (versions, primary license sources and scopes).
+MFEM 4.8: BSD-3-Clause; source retained in .work for local research only.
+No vendor source or PDK model data is redistributed in this repository.
+CMake BSD-3-Clause, REUSE Apache-2.0, MkDocs BSD-2-Clause are build tools.
+Host compiler, OS framework and numerical library versions are local provenance, not a release SBOM.
+Release is blocked until the complete resolved transitive graph is audited and its notices/source packaged.
+Optional local-only geometry experiments: Gmsh 4.15.2 GPL-2.0-or-later with named-library exception; gdstk 1.0.0 BSL-1.0; KLayout 0.30.9 GPLv3 family. No binaries bundled.
+ngspice 47 research build has mixed licenses (see docs/research/spice-engine-comparison.md and upstream COPYING). It is not admitted as a distributable dependency; no binary or model data is included.
+IHP HBT model/corner/stat files inspected locally carry Apache-2.0; other IHP files include ECL-2.0 and are not approved by association.

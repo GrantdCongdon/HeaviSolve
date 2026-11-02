@@ -1,0 +1,9 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+site_name: HeaviSolve
+docs_dir: docs
+site_dir: build/docs
+nav:
+  - Home: index.md
+  - Standards: developer/coding-standards.md
+  - Milestone: milestones/M0-report.md

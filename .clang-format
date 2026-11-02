@@ -1,0 +1,5 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+BasedOnStyle: LLVM
+IndentWidth: 2
+ColumnLimit: 100

@@ -1,0 +1,13 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+name: heavisolve-m0
+channels: [conda-forge]
+dependencies:
+  - cmake=4.0
+  - ninja=1.12
+  - python=3.12
+  - compilers
+  - pip
+  - pip:
+      - reuse==5.0.2
+      - mkdocs==1.6.1

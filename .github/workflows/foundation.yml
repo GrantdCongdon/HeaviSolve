@@ -1,0 +1,80 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+name: Foundations (not M0 certification)
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  foundation:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-14]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install reuse==5.0.2 mkdocs==1.6.1
+      - name: License scan
+        run: |
+          reuse lint
+          python tools/license_scan.py
+      - name: DCO check
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: python tools/check_dco.py "$BASE_SHA" "$HEAD_SHA"
+      - run: cmake -S . -B build && cmake --build build && ctest --test-dir build -L foundation --output-on-failure
+      - run: python tools/build_docs.py
+      - name: Export source SPDX inventory
+        run: reuse spdx -o build/source.spdx
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: foundation-${{ matrix.os }}
+          path: |
+            build/Testing/
+            build/source.spdx
+            build/docs/
+  numerical-diagnostics:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-14]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Linux LAPACK
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y liblapack-dev
+      - name: Download and verify MFEM
+        shell: bash
+        run: |
+          mkdir -p .work
+          curl -fL https://github.com/mfem/mfem/archive/refs/tags/v4.8.tar.gz -o .work/mfem.tar.gz
+          python3 -c 'import hashlib; assert hashlib.sha256(open(".work/mfem.tar.gz","rb").read()).hexdigest()=="65472f732d273832c64b2c39460649dd862df674222c71bfa82cf2da76705052"'
+          tar -xzf .work/mfem.tar.gz -C .work
+      - name: Build numerical diagnostic dependency
+        run: |
+          cmake -S .work/mfem-4.8 -B .work/mfem-build -DCMAKE_BUILD_TYPE=Release -DMFEM_USE_MPI=OFF -DMFEM_USE_METIS=OFF -DMFEM_USE_LAPACK=ON -DMFEM_ENABLE_EXAMPLES=OFF -DMFEM_ENABLE_MINIAPPS=OFF
+          cmake --build .work/mfem-build -j 3
+      - name: Run and store diagnostics
+        shell: bash
+        run: |
+          cmake -S . -B build-numerical -DHS_ENABLE_MFEM_SPIKES=ON -DMFEM_DIR="$PWD/.work/mfem-build"
+          cmake --build build-numerical -j 3
+          set -o pipefail
+          ctest --test-dir build-numerical -L numerical -V | tee numerical-results.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: numerical-${{ matrix.os }}
+          path: |
+            numerical-results.log
+            build-numerical/Testing/
+            .work/mfem-build/CMakeCache.txt

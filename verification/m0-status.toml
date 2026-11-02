@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+[gate]
+phase_r_sources_complete = false
+language_slab_comparison = false
+spice_measured_scoring = false
+full_fem_stack_linux_macos = false
+all_feasibility_spikes = false
+ci_stored_numerical_outputs = false
+ci_license_scan_green = false
+adrs_accepted_and_merged = false
+walking_skeleton_self_review = false
