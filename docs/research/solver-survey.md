@@ -1,0 +1,116 @@
+<!-- SPDX-FileCopyrightText: 2026 HeaviSolve contributors -->
+<!-- SPDX-License-Identifier: CC-BY-SA-4.0 -->
+
+# R1 — Solver landscape and integration gate
+
+Research date: 2026-11-02. **Provisional survey, not an integration approval or verification report.** All Appendix A names are covered below. Links point to primary repositories, manuals, papers or vendor product pages inspected during this research. `U` means latest release/commit date was not exposed or independently established; it is not evidence of abandonment. Web crawl dates and copyright years are not maintenance dates. Exact revision pins and transitive license audits remain required before adopting a dependency. Where only GitHub's license classification was available, this is explicitly a license-family observation, not proof of an `-only`/`-or-later` grant.
+
+Decision codes: **I?** integration candidate, gated by the five §0.2 conditions; **R** optional external test reference; **S** algorithm/UX study only; **X** no runtime dependency. No candidate has passed all five gates in this survey. “Accuracy evidence” identifies upstream evidence or the benchmark we must run, never a claim that HeaviSolve passed it. No comparative speed measurements were collected.
+
+## Efficiency/accuracy recommendations
+
+| Problem class | Recommendation and reason | Required check |
+|---|---|---|
+| Straight cross sections, ports, couplers | Mixed edge/nodal FEM at L1; use mode overlap/CMT or EME for long propagation | VER-WG-01/02/04, convergence, spurious-mode rejection |
+| Thin metal gaps, curved 3D structures, BEOL | Custom high-order FEM on candidate MFEM infrastructure; conformal geometry avoids uniform-grid feature-resolution cost | Cavity, Mie, SPP, energy balance; no blanket claim FEM always wins |
+| Broadband radiation/transients | Meep/openEMS external FDTD references; useful independent discretization | Mesh/time convergence and identical source/boundary conventions |
+| Periodic planar layers | RCWA/S4 external reference, analytic transfer matrices first | Diffraction-order convergence and VER-EM-04 |
+| Homogeneous-domain nanoparticles | Analytic Mie first; BEM study/reference for surfaces | Material conventions and discretization convergence |
+| Large optical networks | Native C++ compact/S-matrix network layer; SAX/Simphony reference conventions | VER-PIC-01…05, passivity and reciprocity |
+| Electrical circuits and RF | Existing ngspice and Xyce candidates; no custom SPICE | R6/S3 measurements determine engine status |
+| Small open quantum systems | C++ Lindblad/trajectory implementation with QuTiP reference | VER-QO-01/02/06; positivity and trace |
+| Linear quantum optics | Separate Fock and Gaussian representations; Perceval and Strawberry Fields/Walrus references | HOM, loss and covariance invariants |
+| Circuit quantization | FEM EPR with Palace/scqubits reference | VER-QO-07 |
+
+These are method-selection hypotheses based on scope and dimensionality, not measured rankings. L0 oracles remain independent of production solvers.
+
+## Electromagnetics, geometry and photonics
+
+| Tool / primary source | Domain; numerical method | Language; license evidence | API / embeddability | Maintenance evidence | Accuracy evidence / next test | Strengths; limitations | Decision and reason |
+|---|---|---|---|---|---|---|---|
+| [MFEM](https://github.com/mfem/mfem) | General PDE/EM; high-order FEM | C++; BSD-3-Clause explicitly in README | Native library; mesh/space/operator abstractions | [v4.10 release](https://github.com/mfem/mfem/releases/tag/v4.10), Sep 1 release listing; exact commit pin needed | Upstream examples/tests; S1 Poisson and PEC cavity required | H(curl), MPI/GPU; not turnkey photonics physics | I? infrastructure; benchmark/build gate remains |
+| [Palace](https://github.com/awslabs/palace) | EM; MFEM FEM, driven/eigen/statics/transient/EPR | C++; Apache-2.0 | Internal `libpalace` target exists; public stable SDK not established | [0.18.1, 2026-09-21](https://github.com/awslabs/palace/blob/main/CHANGELOG.md) | Upstream example/regression suite; VER-EM-01/RF/QO cross-checks pending | Rich EM stack; internal API/build coupling | R,S; see S2 |
+| [NGSolve](https://github.com/NGSolve/ngsolve) | Multiphysics/EM; high-order FEM | C++/Python; LGPL-2.1 family shown | Native library, Python forms | U | Upstream tests/tutorials; independent cavity/modes reference pending | Flexible mixed spaces; separate large stack | R,S; avoid duplicate core |
+| [Netgen](https://github.com/NGSolve/netgen) | Mesh; automatic tetrahedral generation | C++/Python; LGPL-2.1 family shown | C++ mesher and Python scripting | U | Mesh quality S4 pending | CAD/CSG and optimization; conversion must preserve regions | I? mesher alternative |
+| [DOLFINx/FEniCSx](https://github.com/FEniCS/dolfinx) | PDE; variational FEM | C++/Python; LGPL-3.0-or-later explicit README | C++ core and Python/UFL workflow | U | Upstream demos/tests; cavity/slab cross-check pending | Flexible formulations; code generation/dependency weight | R,S |
+| [Firedrake](https://github.com/firedrakeproject/firedrake) | PDE; automated FEM | Python/generated native kernels; [LGPL-3.0-or-later, PyOP2 BSD](https://raw.githubusercontent.com/firedrakeproject/firedrake/main/LICENSE) | Python-centered system | U | Upstream demos/tests, no local runs | Broad variational methods; Python solver orchestration architecture | R,S; not production backend |
+| [deal.II](https://github.com/dealii/dealii) | PDE/EM; adaptive FEM | C++; [LGPL-2.1-or-later OR Apache-2.0 WITH LLVM-exception](https://raw.githubusercontent.com/dealii/dealii/master/LICENSE.md), per-file exceptions | Native library | U | Tutorial/test corpus; no local comparison | Mature adaptivity; alternative infrastructure doubles maintenance | S |
+| [Femwell](https://github.com/HelgeGehring/femwell) | Photonic modes; FEM | Python; [GPLv3 text](https://raw.githubusercontent.com/HelgeGehring/femwell/main/LICENSE), **not MIT** | Python mode solver | U | Waveguide examples; VER-WG-03 pending | Direct mode reference; no production Python solvers | R |
+| [Elmer](https://github.com/ElmerCSC/elmerfem) | Multiphysics; FEM | Fortran/C/C++; component license audit pending, do not assume one blanket GPL | Application/native modules | U | Upstream manuals/tests; no local run | Broad coupling; component-specific data/interface work | S |
+| [GetDP](https://getdp.info/) | EM/multiphysics; de Rham FEM | Native implementation; GPL version grant pending | Problem-language application | 3.5.0, 2022-05-13 on official page; recent commit U | Formulation examples; no local run | Explicit weak forms; older stable release | S |
+| [Gmsh](https://gmsh.info/) | CAD/meshing; tetra/high-order | C++; GPL, exact grant/exception audit required | C/C++/Python/Julia/Fortran API | 4.15.2, 2026-03-24 | Tutorial corpus; ring quality S4 pending | Broad native API; meshing success not guaranteed by license | I? |
+| [JCMsuite](https://jcmwave.com/jcmsuite/) | Nano-optics; FEM | Implementation not publicly established; commercial | Vendor interfaces, no redistribution permission established | Release date U | Vendor examples only, not independently reproduced | Nano-optics specialization; closed dependency prohibited | S,X |
+| [COMSOL](https://www.comsol.com/wave-optics-module) | Wave optics/multiphysics; FEM | Closed; implementation language not established | Vendor scripting/app APIs | U | Vendor model examples only | Coupled physics; not redistributable | S; published comparisons only |
+| [Ansys HFSS](https://www.ansys.com/products/electronics/ansys-hfss) | RF/EM; FEM | Closed; language U | Vendor automation, not embedded dependency | U | Published/vendor benchmarks only | RF ports/extraction; closed | R/S published results only |
+| [Lumerical FDTD/MODE](https://www.ansys.com/products/optics) | Photonics; FDTD/mode methods | Closed backend; language U | Vendor scripting | U | Published results only | Independent commercial reference; no required license | R/S only |
+| [CST](https://www.3ds.com/products/simulia/cst-studio-suite) | EM; multiple frequency/time solvers | Closed; language U | Vendor environment | U | Vendor examples only | Hybrid analyses; inaccessible open dependency | R/S published results only |
+| [RSoft](https://www.synopsys.com/photonic-solutions/rsoft-photonic-device-tools.html) | Photonics; device methods (exact current inventory pending) | Closed; language U | Vendor interface | U; redirected product page retrieval failed | No benchmark inspected | Known scope from plan remains unconfirmed | X pending source access |
+| [Tidy3D](https://www.flexcompute.com/tidy3d/) | Photonics; FDTD | Solver commercial; Python client distinct from solver license | Service/client, not open backend | U | Vendor examples, not independently reproduced | Broadband/cloud execution; closed engine excluded | R published results only |
+| [Meep](https://github.com/NanoComp/meep) | EM; FDTD | C++/Python/Scheme; [GPL-2.0-or-later](https://raw.githubusercontent.com/NanoComp/meep/master/COPYRIGHT) | Native core, Python/Scheme frontends | [1.35.0, 2026-10-09](https://github.com/NanoComp/meep/releases) | Upstream tests; VER-EM-06/08 pending | Independent grid/time method, dispersion/PML; fine metal grids expensive | R, optional subprocess |
+| [openEMS](https://github.com/thliebig/openEMS) | RF/EM; EC-FDTD | C++; GPLv3 family README | Native core, MATLAB/Python frontends | U | Upstream tutorials; VER-RF-02 pending | IHP workflow fit; CSXCAD and material mapping need audit | R, I? optional adapter |
+| [MPB](https://github.com/NanoComp/mpb) | Photonic bands/modes; plane-wave eigensolve | C; [GPL-2.0-or-later source grant](https://raw.githubusercontent.com/NanoComp/mpb/master/src/maxwell/maxwell.c) | Scheme/Python/native code | U | Band/mode examples; VER-WG-03 pending | Periodic dielectric modes; not general lossy plasmonics | R |
+| [S4](https://github.com/victorliu/S4) | Layered periodic EM; RCWA | C/C++; [GPL-2.0-or-later source grant](https://raw.githubusercontent.com/victorliu/S4/master/S4/S4.cpp) | Native/Lua/Python interfaces | U | Layered structure examples; order convergence pending | Efficient periodic layers; Fourier truncation interfaces | R |
+| Other RCWA tools | No specific package selected | U; never inherit S4 license | U | U | None | Scope open | X until named/audited |
+| [scuff-em](https://github.com/HomerReid/scuff-em) | Scattering/statics; BEM | C++; [GPL-2.0-or-later](https://raw.githubusercontent.com/HomerReid/scuff-em/master/COPYRIGHT), bundled audit pending | C++/Python library plus CLI | U | Upstream examples; Mie check pending | Surface-only homogeneous-region problems; dense operators | R,S, future |
+| [MNPBEM](https://data.mendeley.com/datasets/gbyj97hfnc/1) | Plasmonic particles; BEM/hierarchical matrices | MATLAB; archive lists GPLv2, exact later grant unconfirmed | MATLAB classes | Dataset 2017-11-27; recent maintenance U | [Author paper](https://arxiv.org/abs/1109.5783), no local reproduction | Particle focus; proprietary MATLAB runtime and license ambiguity | S; no bundling |
+| [EMopt](https://github.com/anstmichaels/emopt) | Inverse EM; FDFD/adjoints | Python/C++; BSD-3-Clause README | Python-driven interface | U | Upstream examples/preprint; no local run | Shape/topology methods; outside initial solver scope | S |
+| [ceviche](https://github.com/fancompute/ceviche) | Inverse EM; FDFD/FDTD differentiation | Python; MIT | Python package | U | Linked author paper/test directory | Differentiation conventions; Python solver prohibited | S |
+| [Simphony](https://github.com/BYUCamachoLab/simphony) | PIC; S-parameter network | Python; MIT explicitly stated | Python package | U | Upstream examples; ring/MZI comparisons pending | Compact models; backend language mismatch | R, conventions |
+| [SAX](https://github.com/gdsfactory/sax) | PIC; S-matrix network/JAX | Python; Apache-2.0 | Python/JAX package | README 0.18.2; date U | VER-PIC invariants/comparison pending | Autodiff network conventions; Python backend mismatch | R |
+| [gdsfactory](https://github.com/gdsfactory/gdsfactory) | Layout/process automation | Python; MIT family | Python component/process API | README 10.0.0rc1; date U | Layout fixtures, not solver accuracy | PCells/cross sections; PDK licenses separate | R/S conventions, importer candidate |
+| Lumerical INTERCONNECT ([vendor](https://www.ansys.com/products/optics)) | PIC; compact/circuit | Closed; language U | Vendor automation | U | Vendor examples only | Workflow study; unavailable open dependency | S |
+| [Luceda IPKISS/Caphe](https://www.lucedaphotonics.com/) | PIC; layout/circuit | Commercial; Python-facing, backend U | Vendor framework | U | Public product evidence, no run | Unified design flows; closed | S |
+| [VPIphotonics](https://www.vpiphotonics.com/) | Optical systems/circuits | Commercial per plan; source verification incomplete | U | U; page fetch timed out | None inspected | No dependence without evidence | X/S pending access |
+| [KLayout](https://github.com/KLayout/klayout) | Layout/PCells; geometric operations | C++/Python/Ruby; GPLv3 family | Native libraries and scripting | U | S6 round-trip pending | Established layout/PCell environment; native embedding burden | I? bridge, S6 decides |
+| [Qiskit Metal / Quantum Metal](https://github.com/qiskit-community/qiskit-metal) | Superconducting layout/EM workflow | Python; Apache-2.0 | Python adapters, vendor/open solvers | README 0.8.1; date U | Workflow examples, no solver evidence | EPR workflow study; not backend solver | S |
+| [KQCircuits](https://github.com/iqm-finland/KQCircuits) | Superconducting layout | Python; GPL-3.0-or-later explicit grant | KLayout Python library | U | Layout/simulation examples; no local run | Layout automation; bridge required | S |
+
+## SPICE and RF
+
+| Tool / source | Domain; method | Language; license evidence | API / embeddability | Maintenance | Accuracy evidence / required test | Strengths; limitations | Decision |
+|---|---|---|---|---|---|---|---|
+| [ngspice](https://ngspice.sourceforge.io/) | Circuits; SPICE | C; exact multi-file license review in R4/R6 | libngspice candidate | See R6 | S3a/VER-SP pending | External-source route; global state/process isolation | I? R6 |
+| [Xyce](https://github.com/Xyce/Xyce) | Circuits/RF; parallel SPICE/HB | C++; GPL-3.0-or-later explicit README | Library/CLI candidates | U; see R6 | S3b/c and VER-SP pending | HB/MPI; build/model dialect weight | I? R6 |
+| [Qucs-S](https://github.com/ra3xdh/qucs_s) | Circuit GUI, external engine orchestration | C++/Qt; GPLv2 family, exact grant pending | Application | U | Schematic/engine workflows only | Relevant UX; not an independent numeric oracle when using same engine | S |
+| [Qucsator-RF](https://github.com/ra3xdh/qucsator_rf) | RF circuit kernel | C++; GPLv2 family, exact grant pending | CLI netlist → Qucs XML | U | RF examples; no run | Native RF reference; dialect translation | R/S; no linking approval |
+| [OpenVAF](https://github.com/pascalkuthe/OpenVAF) | Verilog-A compiler → OSDI | Rust/native toolchain; GPLv3 README | Build tool / generated model ABI | U | S3 model compilation pending | Compact-model path; **upstream integration test models include incompatible licenses** | I? tool only after audit |
+| [LTspice](https://www.analog.com/en/resources/design-tools-and-calculators/ltspice-simulator.html) | SPICE | Closed (free of charge is not open-source); language U | Application | U | Public examples only | Usable UX study; not bundled | S |
+| HSPICE | SPICE | Closed per handoff; primary source not retrieved | Vendor interface unconfirmed | U | None inspected | No dependence | X/S pending source |
+| [Spectre](https://www.cadence.com/en_US/home/tools/custom-ic-analog-rf-design/circuit-simulation.html) | Analog/RF circuits | Commercial; implementation U | Vendor platform | U | Vendor descriptions only | Coverage study; not redistributable | S |
+| [scikit-rf](https://github.com/scikit-rf/scikit-rf) | RF networks/vector fitting | Python; BSD-3-Clause explicit README | Python package | U | VER-SP-03/RF comparisons pending | Touchstone/network conventions; no backend solver code | R |
+
+## Quantum optics and circuit quantization
+
+| Tool / source | Domain; method | Language; license evidence | API / embeddability | Maintenance | Accuracy evidence / required test | Strengths; limitations | Decision |
+|---|---|---|---|---|---|---|---|
+| [QuTiP](https://github.com/qutip/qutip) | Open quantum systems; master equation/trajectories | Python/native kernels; BSD-3-Clause | Python package | [5.3.1 release listing, Aug 4](https://github.com/qutip/qutip/releases); year needs exact timestamp | Upstream test corpus; VER-QO-01/02/06 pending | Broad independent reference; Python backend prohibited | R |
+| [QuantumOptics.jl](https://github.com/qojulia/QuantumOptics.jl) | Open/closed quantum dynamics | Julia; [MIT](https://raw.githubusercontent.com/qojulia/QuantumOptics.jl/master/LICENSE.md) | Julia library | U | Upstream tests; no local run | Independent language reference; extra runtime | R |
+| [QuantumToolbox.jl](https://github.com/qutip/QuantumToolbox.jl) | Quantum dynamics | Julia; BSD-3-Clause family | Julia library | U | Upstream runtests; no local run | QuTiP-like workflow; extra runtime | R |
+| [dynamiqs](https://github.com/dynamiqs/dynamiqs) | Open quantum dynamics; differentiable ODE | Python/JAX; Apache-2.0 | Python/JAX package | U | Upstream examples; no local run | GPU/differentiation; Python backend mismatch | R |
+| [Strawberry Fields](https://github.com/XanaduAI/strawberryfields) | CV/Fock/Gaussian photonics | Python; Apache-2.0 explicit README | Python library | U | VER-QO-04/05 pending | Multiple quantum representations; dependency maintenance check needed | R,S |
+| [The Walrus](https://github.com/XanaduAI/thewalrus) | Hafnians/Gaussian sampling | Python/native kernels; Apache-2.0 | Python library | U | Hafnian/Gaussian test corpus; local pending | Specialized reference algorithms; not full EM workflow | R,S |
+| [Piquasso](https://github.com/Budapest-Quantum-Computing-Group/piquasso) | Photonic quantum simulation | Python/C++; Apache-2.0 | Python interface/native kernels | U | Upstream tests; no local run | Alternative Fock/Gaussian reference; README research-status caveat | R,S |
+| [Perceval](https://github.com/Quandela/Perceval) | Linear optical quantum circuits | Python/native; [MIT with limited exqalibur exception](https://raw.githubusercontent.com/Quandela/Perceval/main/LICENSE) | Python library | U | HOM/Fock comparison pending | Photonic circuit focus; **do not generalize exception to direct native embedding** | R,S |
+| [scqubits](https://github.com/scqubits/scqubits) | Superconducting circuit eigenspectra | Python; BSD-3-Clause | Python library | U | VER-QO-07 pending | Transmon/circuit reference; truncation convergence necessary | R,S |
+| [SQcircuit](https://github.com/stanfordLINQS/SQcircuit) | Circuit quantization | Python; BSD-3-Clause | Python library | U | VER-QO-07 pending | Independent circuit formulation; QuTiP dependency | R,S |
+| [pyEPR](https://github.com/zlatko-minev/pyEPR) | Energy-participation quantization | Python; exact license grant not retrieved | Python/HFSS workflow | U | Author EPR framework, no local reproduction | Relevant derivation/workflow; vendor execution path | R/S published outputs only pending license |
+| [Quantum++](https://github.com/softwareQinc/qpp) | Finite-dimensional quantum computing | C++; MIT explicitly README | Native header/library API | U | Upstream tests; optical/open-system suitability unmeasured | Native helper candidate; not turnkey Lindblad/Fock suite | S, possible future I? |
+| [ITensor](https://github.com/ITensor/ITensor) | Tensor networks | C++; Apache-2.0 family | Native tensor library | U | Upstream examples; no local runs | Entanglement-limited scale; stretch scope | S |
+| [TeNPy](https://github.com/tenpy/tenpy) | Tensor networks | Python; Apache-2.0 since 1.0.4, explicit README | Python library | U | Upstream tests; no local run | Tensor-network reference; outside initial scope | S |
+
+## Additional candidate and audit observations
+
+[Author-maintained nanobem dataset](https://data.mendeley.com/datasets/f59yhhbjwx/1) supplies BEM resonance/stratified-media work (MATLAB, GPLv3 dataset, 2023-10-24 original publication; later-version listing needs independent pin). Study only, not a runtime dependency. It is a useful missing BEM/QNM reference, subject to exact archive audit.
+
+Meep, MPB and S4 source grants establish “or later,” resolving Appendix A's GPLv2 ambiguity for the inspected code. This does not audit every bundled component. OpenVAF explicitly warns that some test-model files are incompatibly licensed: do not vendor its whole test corpus. Perceval's native-helper exception is restricted in scope. Current deal.II is dual-licensed, and Femwell's GPLv3 classification contradicts the handoff's MIT label. Palace has both a library target and implemented Floquet boundaries; see S2 and the deviation ADR.
+
+## Reference execution policy
+
+References are optional subprocesses, version-pinned when exercised. Missing executable/module yields a stored SKIP record and a warning, never PASS. Record input hashes, solver version, tolerances, normalization, field time convention, boundary setup and raw output. No precomputed reference dataset was collected by this survey, so no stored numeric fallback may be claimed. Prefer independent closed forms for M0/M2 and use external comparisons as additional evidence.
+
+## Remaining R1 gate work
+
+- Resolve every `U` needed for an integration candidate using exact commit/release metadata and pin inspected sources. Re-fetch licenses at those pins, including transitive dependencies.
+- Inspect the unresolved proprietary product/source entries only to the extent needed for docs/reference use; they are not candidates for incorporation.
+- Run the proposed benchmark set; document data mapping losses and API stability for each candidate. No solver has been verified by this survey.
+- Record each actual integrate-vs-build choice in its component ADR. Until then this document permits research and disposable spikes only, not architecture lock.
