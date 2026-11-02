@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+stdout ******
+stdout ** ngspice-47 shared library
+stdout ******
+stdout Note: No compatibility mode selected!
+stdout Circuit: heavisolve ihp npn13g2 dc smoke test
+stdout Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+stdout No. of Data Rows : 1
+device=npn13G2 vce_v=1 vbe_v=0.8 collector_current_a=0.00013991752401704821 status=PASS_SMOKE_ONLY

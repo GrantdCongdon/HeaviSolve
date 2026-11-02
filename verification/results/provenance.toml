@@ -1,0 +1,46 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+schema_version = "1"
+scope = "local research diagnostics; not CI verification"
+platform = "macOS-26.6.2-arm64-arm-64bit-Mach-O"
+machine = "arm64"
+project_revision_at_execution = "uncommitted initial M0 work; source hashes below identify input"
+
+[[source]]
+path = "verification/ipc/shared_array.cpp"
+sha256 = "d78f17ffd1c4f70e6a432b5017b3614fae712db35f007b9a3a9ca874e1dcb97c"
+
+[[source]]
+path = "verification/meshing/ring.cpp"
+sha256 = "0c1a739835d18b879a83a733311640a047b4ee77ed636d4250eaeaa7fe40bae3"
+
+[[source]]
+path = "verification/mfem_cavity.cpp"
+sha256 = "02b3243678f65e9d82560a0598f5b25fe78ec53340e602f7d483cd9fbf0bcaec"
+
+[[source]]
+path = "verification/mfem_poisson.cpp"
+sha256 = "b950b0dbdd6d2cde5a05d3316a3c838f539ef150409cbeed6b8f77c7d8af4ecb"
+
+[[source]]
+path = "verification/spice/ngspice_ihp.cpp"
+sha256 = "9f1429e1bc7235c1354ff8e64191e1c77abdee1e1392df37b67cea26f72a151e"
+
+[[source]]
+path = "verification/spice/ngspice_rc.cpp"
+sha256 = "71191a829301cf4eb6de016af710802a7c27c8f3b73c0c4cae9625b5d259c4ea"
+
+[[external_input]]
+filename = "ihp-hbt.lib"
+sha256 = "32d0f298cd094ffd93a32871567faec4a875d9efa3c08b9e259540362efd468c"
+redistributed = false
+
+[[external_input]]
+filename = "cornerHBT.lib"
+sha256 = "a9bf47c0700774c8efc280bc67851af8f000390f2224e619ed6150767d63e9c2"
+redistributed = false
+
+[[external_input]]
+filename = "sg13g2_hbt_stat.lib"
+sha256 = "80d1893eb06a3417d05400335d8e58c8309b9c80061ca96ceff8f8fd68c9a7db"
+redistributed = false

@@ -1,0 +1,61 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+UpdateCTestConfiguration  from :/Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/build-numerical/DartConfiguration.tcl
+Parse Config file:/Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/build-numerical/DartConfiguration.tcl
+Test project /Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/build-numerical
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 2
+    Start 2: mfem_poisson
+
+2: Test command: /Users/grantdcongdon/Documents-local/Projects/Quantum\ Optics\ Statistical\ Solver/heavisolve/build-numerical/mfem_poisson
+2: Working Directory: /Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/build-numerical
+2: Test timeout computed to be: 300
+2: n,dofs,l2_error,observed_order
+2: 8,81,0.021106986529987552,0
+2: 16,289,0.0053757660445034093,1.973178360142166
+2: 32,1089,0.0013503310807543231,1.9931571751678783
+2: 64,4225,0.00033798575806785768,1.9982788165534278
+1/3 Test #2: mfem_poisson .....................   Passed    0.06 sec
+test 3
+    Start 3: mfem_cavity
+
+3: Test command: /Users/grantdcongdon/Documents-local/Projects/Quantum\ Optics\ Statistical\ Solver/heavisolve/build-numerical/mfem_cavity
+3: Working Directory: /Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/build-numerical
+3: Test timeout computed to be: 300
+3: free_dofs=4356 null_modes=1331 expected_gradient_nullity=1331
+3: mode,lambda,analytic_lambda,frequency_relative_error
+3: 0,25.29091890896941,25.290861277791478,1.1393669923087657e-06
+3: 1,37.285257144965406,37.285172181893131,1.1393674603787929e-06
+3: 2,42.836922271324461,42.836824657505893,1.1393673986503927e-06
+3: 3,52.706549162612589,52.706429058595248,1.1393671612847101e-06
+3: 4,52.706549162634488,52.706429058595248,1.1393673691184603e-06
+3: 5,54.905102618095498,54.899674481059556,4.9435656211072043e-05
+2/3 Test #3: mfem_cavity ......................   Passed   15.24 sec
+test 4
+    Start 4: m0_acceptance_gate
+
+4: Test command: /opt/homebrew/Frameworks/Python.framework/Versions/3.14/bin/python3.14 "/Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/tools/m0_gate.py"
+4: Working Directory: /Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/build-numerical
+4: Test timeout computed to be: 1500
+4: M0 NOT COMPLETE: phase_r_sources_complete, language_slab_comparison, spice_measured_scoring, full_fem_stack_linux_macos, all_feasibility_spikes, ci_stored_numerical_outputs, ci_license_scan_green, adrs_accepted_and_merged, walking_skeleton_self_review
+3/3 Test #4: m0_acceptance_gate ...............***Failed    0.03 sec
+
+67% tests passed, 1 tests failed out of 3
+
+Label Time Summary:
+acceptance    =   0.03 sec*proc (1 test)
+m0            =  15.32 sec*proc (3 tests)
+numerical     =  15.29 sec*proc (2 tests)
+
+Total Test time (real) =  15.33 sec
+
+The following tests FAILED:
+	  4 - m0_acceptance_gate (Failed)                       acceptance m0
+Errors while running CTest
+Output from these tests are in: /Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/build-numerical/Testing/Temporary/LastTest.log
+Use "--rerun-failed --output-on-failure" to re-run the failed cases verbosely.

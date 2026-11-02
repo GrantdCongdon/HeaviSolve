@@ -1,0 +1,4 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Preserve raw tool output; do not rewrite measurements to satisfy whitespace lint.
+verification/results/** -whitespace

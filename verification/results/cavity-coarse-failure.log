@@ -1,0 +1,28 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+Test project /Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/build-numerical
+    Start 2: mfem_poisson
+1/2 Test #2: mfem_poisson .....................   Passed    0.32 sec
+    Start 3: mfem_cavity
+2/2 Test #3: mfem_cavity ......................***Failed    0.57 sec
+free_dofs=1176 null_modes=343 expected_gradient_nullity=343
+mode,lambda,analytic_lambda,frequency_relative_error
+0,25.303813753199552,25.290861277791478,0.00025603749351210681
+1,37.304267430195189,37.285172181893131,0.00025603749356539751
+2,42.858763132126391,42.836824657505893,0.00025603749366753803
+3,52.733422157763258,52.706429058595248,0.00025603749361979844
+4,52.733422157766093,52.706429058595248,0.00025603749364666584
+5,55.20454191348351,54.899674481059556,0.0027727428346264738
+
+
+50% tests passed, 1 tests failed out of 2
+
+Label Time Summary:
+m0           =   0.89 sec*proc (2 tests)
+numerical    =   0.89 sec*proc (2 tests)
+
+Total Test time (real) =   0.90 sec
+
+The following tests FAILED:
+	  3 - mfem_cavity (Failed)                              m0 numerical
+Errors while running CTest

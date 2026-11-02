@@ -1,0 +1,6 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+gdstk_version=1.0.0 klayout_version=0.30.9
+format=gds area_before_um2=5968.7645999999904 area_gdstk_um2=5968.7709999999925 area_klayout_um2=5968.7709999999897 status=PASS_SYNTHETIC
+format=oas area_before_um2=5968.7645999999904 area_gdstk_um2=5968.7646000000032 area_klayout_um2=5968.7646000000068 status=PASS_SYNTHETIC
+hierarchical_instances=1000000 creation_seconds=2.66701682e-06 viewport_fps=NOT_MEASURED

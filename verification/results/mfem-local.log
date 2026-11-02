@@ -1,0 +1,46 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+UpdateCTestConfiguration  from :/Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/build-numerical/DartConfiguration.tcl
+Parse Config file:/Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/build-numerical/DartConfiguration.tcl
+Test project /Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/build-numerical
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 2
+    Start 2: mfem_poisson
+
+2: Test command: /Users/grantdcongdon/Documents-local/Projects/Quantum\ Optics\ Statistical\ Solver/heavisolve/build-numerical/mfem_poisson
+2: Working Directory: /Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/build-numerical
+2: Test timeout computed to be: 300
+2: n,dofs,l2_error,observed_order
+2: 8,81,0.021106986529987552,0
+2: 16,289,0.0053757660445034093,1.973178360142166
+2: 32,1089,0.0013503310807543231,1.9931571751678783
+2: 64,4225,0.00033798575806785768,1.9982788165534278
+1/2 Test #2: mfem_poisson .....................   Passed    0.07 sec
+test 3
+    Start 3: mfem_cavity
+
+3: Test command: /Users/grantdcongdon/Documents-local/Projects/Quantum\ Optics\ Statistical\ Solver/heavisolve/build-numerical/mfem_cavity
+3: Working Directory: /Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/build-numerical
+3: Test timeout computed to be: 300
+3: free_dofs=4356 null_modes=1331 expected_gradient_nullity=1331
+3: mode,lambda,analytic_lambda,frequency_relative_error
+3: 0,25.29091890896941,25.290861277791478,1.1393669923087657e-06
+3: 1,37.285257144965406,37.285172181893131,1.1393674603787929e-06
+3: 2,42.836922271324461,42.836824657505893,1.1393673986503927e-06
+3: 3,52.706549162612589,52.706429058595248,1.1393671612847101e-06
+3: 4,52.706549162634488,52.706429058595248,1.1393673691184603e-06
+3: 5,54.905102618095498,54.899674481059556,4.9435656211072043e-05
+2/2 Test #3: mfem_cavity ......................   Passed   22.09 sec
+
+100% tests passed out of 2
+
+Label Time Summary:
+m0           =  22.16 sec*proc (2 tests)
+numerical    =  22.16 sec*proc (2 tests)
+
+Total Test time (real) =  22.17 sec

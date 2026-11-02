@@ -1,0 +1,181 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+Retrieving notices: ...working... done
+WARNING conda.core.prefix_data:validate_path(345): Environment paths should not contain spaces. Prefix: '/Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/.work/full-stack'
+Channels:
+ - conda-forge
+Platform: osx-arm64
+Collecting package metadata (repodata.json): ...working... done
+Solving environment: ...working... done
+
+## Package Plan ##
+
+  environment location: /Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/.work/full-stack
+
+  added / updated specs:
+    - hypre
+    - mfem
+    - slepc
+    - superlu_dist
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    _openmp_mutex-4.5          |       8_kmp_llvm           8 KB  conda-forge
+    aws-c-auth-1.0.0           |       h7ad4001_2         114 KB  conda-forge
+    aws-c-cal-1.0.0            |       h50d513f_1          47 KB  conda-forge
+    aws-c-common-1.0.5         |       h602ebc4_0         252 KB  conda-forge
+    aws-c-compression-1.0.0    |       h50d513f_1          21 KB  conda-forge
+    aws-c-http-1.0.0           |       h7b2e6b5_1         186 KB  conda-forge
+    aws-c-io-1.0.0             |       h49e100f_0         186 KB  conda-forge
+    aws-c-s3-1.0.0             |       hffd187b_1         135 KB  conda-forge
+    aws-c-sdkutils-1.0.1       |       h8339b81_0          62 KB  conda-forge
+    aws-checksums-1.0.0        |       h50d513f_0          90 KB  conda-forge
+    bzip2-1.0.8                |      h4e30115_10         122 KB  conda-forge
+    c-ares-1.34.9              |       h74c22ad_0         197 KB  conda-forge
+    ca-certificates-2026.10.23 |       hbd8a1cb_0         127 KB  conda-forge
+    fftw-3.3.11                |mpi_openmpi_h83537c7_0         765 KB  conda-forge
+    hdf5-2.2.0                 |mpi_openmpi_h979ca4a_1         3.8 MB  conda-forge
+    hypre-3.2.0                |       h2855872_0         2.2 MB  conda-forge
+    icu-78.3                   |  py310h579977c_2        13.4 MB  conda-forge
+    krb5-1.22.2                |       h34f8a20_2         1.1 MB  conda-forge
+    libaec-1.1.7               |       he95cea4_0          30 KB  conda-forge
+    libamd-3.3.3               | h5087772_7100102          46 KB  conda-forge
+    libblas-3.11.0             |11_h51639a9_openblas          18 KB  conda-forge
+    libbtf-2.3.2               | h99b4a89_7100102          25 KB  conda-forge
+    libcamd-3.3.3              | h99b4a89_7100102          38 KB  conda-forge
+    libcblas-3.11.0            |11_hb0561ab_openblas          18 KB  conda-forge
+    libccolamd-3.3.4           | h99b4a89_7100102          38 KB  conda-forge
+    libcholmod-5.3.1           | hbba04d7_7100102         757 KB  conda-forge
+    libcolamd-3.3.4            | h99b4a89_7100102          31 KB  conda-forge
+    libcurl-8.23.0             |       h6651222_0         416 KB  conda-forge
+    libcxx-23.1.4              |       h55c6f16_2         564 KB  conda-forge
+    libedit-3.1.20260512       | pl5321h26f1114_0         106 KB  conda-forge
+    libev-4.33                 |       h1a92334_3          39 KB  conda-forge
+    libevent-2.1.12            |       h4b5715a_2         360 KB  conda-forge
+    libfabric-2.7.0            |       hce30654_0          14 KB  conda-forge
+    libfabric1-2.7.0           |       hb001647_0         334 KB  conda-forge
+    libgcc-16.2.0              |       h3cf6597_7         357 KB  conda-forge
+    libgfortran-16.2.0         |       h07b0088_7          97 KB  conda-forge
+    libgfortran5-16.2.0        |       hdb7a957_7         542 KB  conda-forge
+    libhwloc-2.13.0            |default_ha97f43a_1000         2.2 MB  conda-forge
+    libiconv-1.18              |       he4c29f2_3         733 KB  conda-forge
+    libklu-2.3.5               | h4370aa4_7100102          91 KB  conda-forge
+    liblapack-3.11.0           |11_hd9741b5_openblas          18 KB  conda-forge
+    liblzma-5.8.3              |       h8088a28_1          90 KB  conda-forge
+    libnghttp2-1.70.0          |       h344cdd5_0         665 KB  conda-forge
+    libopenblas-0.3.34         |openmp_h5e6e99c_1         4.1 MB  conda-forge
+    libpmix-5.0.8              |       hddb0edd_4         518 KB  conda-forge
+    libpsl-0.23.1              |       hdb0c161_1          71 KB  conda-forge
+    libptscotch-7.0.11         | int32_h31d9c22_3         155 KB  conda-forge
+    libscotch-7.0.11           | int32_h20a7331_3         282 KB  conda-forge
+    libspqr-4.3.4              | h775d698_7100102         160 KB  conda-forge
+    libssh2-1.11.1             |       hbf2880b_1         274 KB  conda-forge
+    libsuitesparseconfig-7.10.1| h4a8fc20_7100102          41 KB  conda-forge
+    libumfpack-6.3.5           | h7c2c975_7100102         289 KB  conda-forge
+    libxml2-2.15.4             |       h550178d_1          40 KB  conda-forge
+    libxml2-16-2.15.4          |       heb56d2d_1         458 KB  conda-forge
+    libzlib-1.3.2              |       h8088a28_3          47 KB  conda-forge
+    llvm-openmp-23.1.4         |       hdb3d66b_0         281 KB  conda-forge
+    metis-5.1.0                |    h4fd61ea_1008         3.6 MB  conda-forge
+    mfem-4.7                   |mpi_openmpi_h2d1e0d0_0         3.9 MB  conda-forge
+    mpi-1.0.1                  |          openmpi           6 KB  conda-forge
+    mumps-include-5.8.2        |       h9aa2737_3          26 KB  conda-forge
+    mumps-mpi-5.8.2            |gfortran_h9ea742b_3         2.4 MB  conda-forge
+    ncurses-6.6                |       he64c551_1         785 KB  conda-forge
+    openmpi-5.0.11             |       hf0fab5e_0         2.5 MB  conda-forge
+    openssl-3.6.5              |       h55eecbc_0         3.0 MB  conda-forge
+    parmetis-4.0.3             |    h95da22c_1009         250 KB  conda-forge
+    petsc-3.26.1               |  real_haa9d696_0        20.3 MB  conda-forge
+    s2n-1.7.7                  |       h430f396_0         272 KB  conda-forge
+    scalapack-2.2.0            |       ha4fe3f2_6         1.6 MB  conda-forge
+    slepc-3.26.0               |  real_hedb72ff_0         9.5 MB  conda-forge
+    superlu-7.0.0              |       h742a510_1         178 KB  conda-forge
+    superlu_dist-9.2.1         |       h4130448_2         980 KB  conda-forge
+    yaml-0.2.5                 |       h74c22ad_3          76 KB  conda-forge
+    zstd-1.5.7                 |       hf451053_7         424 KB  conda-forge
+    ------------------------------------------------------------
+                                           Total:        86.6 MB
+
+The following NEW packages will be INSTALLED:
+
+  _openmp_mutex      conda-forge/osx-arm64::_openmp_mutex-4.5-8_kmp_llvm 
+  aws-c-auth         conda-forge/osx-arm64::aws-c-auth-1.0.0-h7ad4001_2 
+  aws-c-cal          conda-forge/osx-arm64::aws-c-cal-1.0.0-h50d513f_1 
+  aws-c-common       conda-forge/osx-arm64::aws-c-common-1.0.5-h602ebc4_0 
+  aws-c-compression  conda-forge/osx-arm64::aws-c-compression-1.0.0-h50d513f_1 
+  aws-c-http         conda-forge/osx-arm64::aws-c-http-1.0.0-h7b2e6b5_1 
+  aws-c-io           conda-forge/osx-arm64::aws-c-io-1.0.0-h49e100f_0 
+  aws-c-s3           conda-forge/osx-arm64::aws-c-s3-1.0.0-hffd187b_1 
+  aws-c-sdkutils     conda-forge/osx-arm64::aws-c-sdkutils-1.0.1-h8339b81_0 
+  aws-checksums      conda-forge/osx-arm64::aws-checksums-1.0.0-h50d513f_0 
+  bzip2              conda-forge/osx-arm64::bzip2-1.0.8-h4e30115_10 
+  c-ares             conda-forge/osx-arm64::c-ares-1.34.9-h74c22ad_0 
+  ca-certificates    conda-forge/noarch::ca-certificates-2026.10.23-hbd8a1cb_0 
+  fftw               conda-forge/osx-arm64::fftw-3.3.11-mpi_openmpi_h83537c7_0 
+  hdf5               conda-forge/osx-arm64::hdf5-2.2.0-mpi_openmpi_h979ca4a_1 
+  hypre              conda-forge/osx-arm64::hypre-3.2.0-h2855872_0 
+  icu                conda-forge/osx-arm64::icu-78.3-py310h579977c_2 
+  krb5               conda-forge/osx-arm64::krb5-1.22.2-h34f8a20_2 
+  libaec             conda-forge/osx-arm64::libaec-1.1.7-he95cea4_0 
+  libamd             conda-forge/osx-arm64::libamd-3.3.3-h5087772_7100102 
+  libblas            conda-forge/osx-arm64::libblas-3.11.0-11_h51639a9_openblas 
+  libbtf             conda-forge/osx-arm64::libbtf-2.3.2-h99b4a89_7100102 
+  libcamd            conda-forge/osx-arm64::libcamd-3.3.3-h99b4a89_7100102 
+  libcblas           conda-forge/osx-arm64::libcblas-3.11.0-11_hb0561ab_openblas 
+  libccolamd         conda-forge/osx-arm64::libccolamd-3.3.4-h99b4a89_7100102 
+  libcholmod         conda-forge/osx-arm64::libcholmod-5.3.1-hbba04d7_7100102 
+  libcolamd          conda-forge/osx-arm64::libcolamd-3.3.4-h99b4a89_7100102 
+  libcurl            conda-forge/osx-arm64::libcurl-8.23.0-h6651222_0 
+  libcxx             conda-forge/osx-arm64::libcxx-23.1.4-h55c6f16_2 
+  libedit            conda-forge/osx-arm64::libedit-3.1.20260512-pl5321h26f1114_0 
+  libev              conda-forge/osx-arm64::libev-4.33-h1a92334_3 
+  libevent           conda-forge/osx-arm64::libevent-2.1.12-h4b5715a_2 
+  libfabric          conda-forge/osx-arm64::libfabric-2.7.0-hce30654_0 
+  libfabric1         conda-forge/osx-arm64::libfabric1-2.7.0-hb001647_0 
+  libgcc             conda-forge/osx-arm64::libgcc-16.2.0-h3cf6597_7 
+  libgfortran        conda-forge/osx-arm64::libgfortran-16.2.0-h07b0088_7 
+  libgfortran5       conda-forge/osx-arm64::libgfortran5-16.2.0-hdb7a957_7 
+  libhwloc           conda-forge/osx-arm64::libhwloc-2.13.0-default_ha97f43a_1000 
+  libiconv           conda-forge/osx-arm64::libiconv-1.18-he4c29f2_3 
+  libklu             conda-forge/osx-arm64::libklu-2.3.5-h4370aa4_7100102 
+  liblapack          conda-forge/osx-arm64::liblapack-3.11.0-11_hd9741b5_openblas 
+  liblzma            conda-forge/osx-arm64::liblzma-5.8.3-h8088a28_1 
+  libnghttp2         conda-forge/osx-arm64::libnghttp2-1.70.0-h344cdd5_0 
+  libopenblas        conda-forge/osx-arm64::libopenblas-0.3.34-openmp_h5e6e99c_1 
+  libpmix            conda-forge/osx-arm64::libpmix-5.0.8-hddb0edd_4 
+  libpsl             conda-forge/osx-arm64::libpsl-0.23.1-hdb0c161_1 
+  libptscotch        conda-forge/osx-arm64::libptscotch-7.0.11-int32_h31d9c22_3 
+  libscotch          conda-forge/osx-arm64::libscotch-7.0.11-int32_h20a7331_3 
+  libspqr            conda-forge/osx-arm64::libspqr-4.3.4-h775d698_7100102 
+  libssh2            conda-forge/osx-arm64::libssh2-1.11.1-hbf2880b_1 
+  libsuitesparsecon~ conda-forge/osx-arm64::libsuitesparseconfig-7.10.1-h4a8fc20_7100102 
+  libumfpack         conda-forge/osx-arm64::libumfpack-6.3.5-h7c2c975_7100102 
+  libxml2            conda-forge/osx-arm64::libxml2-2.15.4-h550178d_1 
+  libxml2-16         conda-forge/osx-arm64::libxml2-16-2.15.4-heb56d2d_1 
+  libzlib            conda-forge/osx-arm64::libzlib-1.3.2-h8088a28_3 
+  llvm-openmp        conda-forge/osx-arm64::llvm-openmp-23.1.4-hdb3d66b_0 
+  metis              conda-forge/osx-arm64::metis-5.1.0-h4fd61ea_1008 
+  mfem               conda-forge/osx-arm64::mfem-4.7-mpi_openmpi_h2d1e0d0_0 
+  mpi                conda-forge/noarch::mpi-1.0.1-openmpi 
+  mumps-include      conda-forge/osx-arm64::mumps-include-5.8.2-h9aa2737_3 
+  mumps-mpi          conda-forge/osx-arm64::mumps-mpi-5.8.2-gfortran_h9ea742b_3 
+  ncurses            conda-forge/osx-arm64::ncurses-6.6-he64c551_1 
+  openmpi            conda-forge/osx-arm64::openmpi-5.0.11-hf0fab5e_0 
+  openssl            conda-forge/osx-arm64::openssl-3.6.5-h55eecbc_0 
+  parmetis           conda-forge/osx-arm64::parmetis-4.0.3-h95da22c_1009 
+  petsc              conda-forge/osx-arm64::petsc-3.26.1-real_haa9d696_0 
+  s2n                conda-forge/osx-arm64::s2n-1.7.7-h430f396_0 
+  scalapack          conda-forge/osx-arm64::scalapack-2.2.0-ha4fe3f2_6 
+  slepc              conda-forge/osx-arm64::slepc-3.26.0-real_hedb72ff_0 
+  superlu            conda-forge/osx-arm64::superlu-7.0.0-h742a510_1 
+  superlu_dist       conda-forge/osx-arm64::superlu_dist-9.2.1-h4130448_2 
+  yaml               conda-forge/osx-arm64::yaml-0.2.5-h74c22ad_3 
+  zstd               conda-forge/osx-arm64::zstd-1.5.7-hf451053_7 
+
+
+DryRunExit: Dry run. Exiting.
+
+

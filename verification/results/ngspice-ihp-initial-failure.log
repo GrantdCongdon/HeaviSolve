@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+stdout ******
+stdout ** ngspice-47 shared library
+stdout ******
+stdout Note: No compatibility mode selected!
+stdout Circuit: heavisolve ihp npn13g2 dc smoke test
+stderr Error in netlist line no. 99, new internal line no. 73:
+stderr Undefined parameter [vbic_cje]
+stderr Error in netlist line no. 99, new internal line no. 73:
+stderr Expression err: 8.418e-15*(nx*0.25)**0.975*vbic_cje*cje_fac_mm} pe=0.92 me=0.12 aje=-0.50 wbe=1.00 cbco={2.36e-15*(nx*0.25)} cjc={1.53e-15*(nx*0.25)*vbic_cjc*cjc_fac_mm} pc=0.558 mc=0.12 ajc=-0.50 cjep={3.56e-15*(nx*0.25)*vbic_cjc*cjc_fac_mm} cjcp={4.56e-15*(nx*0.25)**0.8*vbic_cjcp*cjcp_fac_mm} ps=0.46 ms=0.23 ajs=-0.50 fc=0.80 vef=189 ver=5.3 is={4.81e-17*(nx*0.25)*vbic_is*is_fac_mm} nf=1.018 ibei={1.9e-19*(nx*0.25)*vbic_ibei*ibei_fac_mm} nei=1.066 iben={4.00e-16*(nx*0.25)} nen=2.00 ikf={0.009*(nx*0.25)} nr=1.01 ibci={1.50e-20*(nx*0.25)} nci=1.103 ibcn={1.00e-15*(nx*0.25)} ncn=1.96 ikr={0.01*(nx*0.25)} wsp=1 isp={4.00e-20*(nx*0.25)} nfp=1.04 ibcip={2.00e-15*(nx*0.25)**0.7} ncip=1.00 ibcnp={5.00e-15*(nx*0.25)} ncnp=1.50 ikp={1.00e-04*(nx*0.25)} ibeip={4.00e-19*(nx*0.25)} ibenp={2.00e-14*(nx*0.25)} re={7.13e+00*(4.0/nx)**1*vbic_re*re_fac_mm} rcx={1.3e+01*(4.0/nx)**1*vbic_rcx*rcx_fac_mm} rci={1.29e+01*(4.0/nx)**1} qco=1.00e-18 vo=0.80 gamm=2.25e-14 hrcf=1000 rbx={6.93e+00*(4.0/nx)**0.95*vbic_rbx*rbx_fac_mm} rbi={2.20e+01*(4.0/nx)**0.95*vbic_rbx*rbx_fac_mm} rbp={5.5*(4.0/nx)} rs=1 avc1=2.40 avc2=10.81 tf=2.0800000000e-13 * ({vbic_tf}) * ( ( temper + 2.7300000000e+02 ) / 3.0000000000e+02 ) ** 7.0000000000e-01 * ({tf_fac_mm}) qtf=1.00e-18 xtf=10.0 vtf=20.0 itf={0.585*(nx*0.25)} tr=3.50e-13 td={sw_nqs*2.80e-13*(nx*0.25)**0} cth={1.60e-12*(nx*0.25)**0.95} rth={1*selft*3.26e+03*(4.0/nx)**0.9} ea=1.056 eaie=1.056 eaic=1.12 eais=1.12 eane=1.12 eanc=1.12 eans=1.12 xre=-0.42 xrb=0.90 xrc=0.245 xrs=1.50 xvo=1.50 xis=2.30 xii=3.30 xin=3.30 tnf=0.00015 tavc=-0.00188 kfn={6.00e-9*(4.0/nx)} afn=1.80 bfn=1.00
+stderr Error in netlist line no. 99, new internal line no. 73:
+stderr Cannot compute substitute
+stderr Please check your input netlist.
+stderr Error: ngspice.dll cannot recover and awaits to be reset or detached

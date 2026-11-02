@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+stdout ******
+stdout ** ngspice-47 shared library
+stdout ******
+stdout Note: No compatibility mode selected!
+stdout Circuit: heavisolve rc external-source spike
+stdout Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+stdout Operating point simulation skipped by 'uic',
+stdout now using transient initial conditions.
+stdout No. of Data Rows : 5018
+samples=5018 external_source_callbacks=10041 max_absolute_error_v=0.99998517922832886 tolerance_v=0.0001 status=FAIL

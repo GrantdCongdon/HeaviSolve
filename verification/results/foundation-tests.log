@@ -1,0 +1,12 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+Test project /Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/build
+    Start 1: license_inventory
+1/1 Test #1: license_inventory ................   Passed    0.03 sec
+
+100% tests passed out of 1
+
+Label Time Summary:
+foundation    =   0.03 sec*proc (1 test)
+
+Total Test time (real) =   0.03 sec

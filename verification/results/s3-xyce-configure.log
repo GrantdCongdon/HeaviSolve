@@ -1,0 +1,58 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+Setting the build type to "Release", since it was not explicitly set.
+-- The CXX compiler identification is AppleClang 21.0.0.21000101
+-- The C compiler identification is AppleClang 21.0.0.21000101
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Including the /Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/.local/src/Xyce-master/src/DeviceModelPKG/ADMS model directory
+-- Including the /Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/.local/src/Xyce-master/src/DeviceModelPKG/NeuronModels model directory
+CMake Warning (author) at cmake/feature_modes.cmake:208 (file):
+  Given path:
+
+    /Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/.local/src/Xyce-master/Xyce_Regression
+
+  does not refer to an existing path on disk.
+Call Stack (most recent call first):
+  cmake/config.cmake:6 (include)
+  CMakeLists.txt:58 (include)
+This warning is for project developers.  Use -Wno-author to suppress it.
+
+-- NOT including the /Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/.local/src/Xyce-master/src/DeviceModelPKG/SandiaModels/ATHENA model directory
+        (Xyce_RAD_MODELS must be enabled to include ATHENA)
+-- Could NOT find Xyce_Dependencies (missing: Xyce_Dependencies_DIR)
+-- Looking for Trilinos
+   Required packages:
+        Amesos Epetra EpetraExt Ifpack NOX Teuchos Sacado
+        Triutils AztecOO Belos TrilinosCouplings
+   Optional packages:
+        Isorropia Zoltan ShyLU ShyLU_DDCore Amesos2 Stokhos ROL MKL
+-- Value of Trilinos_DIR: 
+-- Value of ENV{Trilinos_DIR}: 
+CMake Error at cmake/tps.cmake:79 (find_package):
+  Could not find a package configuration file provided by "Trilinos" with any
+  of the following names:
+
+    Trilinos.cps
+    trilinos.cps
+    TrilinosConfig.cmake
+    trilinos-config.cmake
+
+  Add the installation prefix of "Trilinos" to CMAKE_PREFIX_PATH or set
+  "Trilinos_DIR" to a directory containing one of the above files.  If
+  "Trilinos" provides a separate development package or SDK, be sure it has
+  been installed.
+Call Stack (most recent call first):
+  cmake/config.cmake:7 (include)
+  CMakeLists.txt:58 (include)
+
+
+-- Configuring incomplete, errors occurred!
