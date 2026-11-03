@@ -3,7 +3,7 @@
 
 # ADR-001: Recommend C++20 after paired native slab experiments
 
-Status: proposed for M0 integration; local numerical and C ABI binding comparisons passed; hosted CI and production binding-framework comparison remain open. Updated: 2026-11-03.
+Status: proposed for M0 integration; numerical and C ABI binding comparisons passed locally and on Linux/macOS CI; production binding-framework comparison remains open. Updated: 2026-11-03.
 
 ## Decision
 
@@ -70,9 +70,9 @@ For the isolated toolchain used here, set `RUSTUP_HOME` to `.work/language/rustu
 
 Primary sources underlying the ecosystem assessment: [MFEM examples](https://mfem.org/examples/), [Fenris README](https://github.com/InteractiveComputerGraphics/fenris/blob/master/README.md), [Fenris element definitions](https://github.com/InteractiveComputerGraphics/fenris/blob/master/src/element.rs), [nanobind](https://nanobind.readthedocs.io/en/latest/), [PyO3](https://pyo3.rs/), [Qt](https://doc.qt.io/qt-6/), [Gmsh API](https://gmsh.info/doc/texinfo/). Fenris' dated status paragraph is not a current maintenance timestamp. This update records local experiment evidence; it does not claim a new upstream maintenance audit.
 
-Portability follow-up: the Rust LAPACK declaration now selects Accelerate only on macOS and `lapack` elsewhere using conditional link attributes. The stored audit hash describes the original macOS-only source used for the recorded numerical run. Linux execution remains pending; this source change does not establish a Linux pass.
+Portability follow-up: the Rust LAPACK declaration now selects Accelerate only on macOS and `lapack` elsewhere using conditional link attributes. The stored audit hash describes the original macOS-only source used for the recorded numerical run. The subsequent Linux CI run cited below exercises this path; the source change alone was not evidence of a pass.
 
-The portable CMake project was subsequently built and the full comparison repeated locally on macOS: [repeat output](../../verification/results/language-portable-comparison.csv). Numerical tolerances pass again. A Linux/macOS workflow now stores the comparison output; it has not yet run remotely. Different timings across these runs reinforce that no controlled language-speed comparison is claimed.
+The portable CMake project was subsequently built and the full comparison repeated locally on macOS: [repeat output](../../verification/results/language-portable-comparison.csv). Numerical tolerances pass again. Linux/macOS workflow run41668976621 now passes and stores the comparison output. Different timings across these runs reinforce that no controlled language-speed comparison is claimed.
 
 
 ## Equivalent Python-callable C ABI binding experiment — 2026-11-03
@@ -97,4 +97,6 @@ Reproduce on the measured host with the isolated Rust environment described abov
 python3 verification/language/check_bindings.py --build .work/language-bindings --rustc "$CARGO_HOME/bin/rustc"
 ```
 
-The harness has a Linux `-shared`/LAPACK path, but that path has not been executed here. C ABI feasibility supplies evidence of callable native solvers and explicit buffer ownership; it is a documented narrow substitute for a full nanobind-versus-PyO3 framework comparison, not completion of that comparison. Weighted scores remain unchanged and M0/CI gates remain open.
+The Linux `-shared`/LAPACK path now passes in hosted CI, alongside the macOS path. C ABI feasibility supplies evidence of callable native solvers and explicit buffer ownership; it is a documented narrow substitute for a full nanobind-versus-PyO3 framework comparison, not completion of that comparison. Weighted scores remain unchanged; full M0 and production framework gates remain open.
+
+Hosted evidence: [run41668976621](https://github.com/GrantdCongdon/HeaviSolve/actions/runs/41668976621), commit47b8352; [artifact hashes and retained outputs](../../verification/results/ci-41668976621/provenance.json). Both paired-language jobs passed the slab and binding checks.

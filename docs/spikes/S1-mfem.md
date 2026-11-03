@@ -3,7 +3,7 @@
 
 # S1: FEM stack
 
-Overall: **NOT PASS**. Serial local numerical subset passes; full-stack Linux/macOS CI is missing.
+Overall: **NOT PASS**. Serial numerical subset passes on Linux/macOS CI; complex-stack macOS CI passes, with corrected Linux execution pending.
 
 Built MFEM 4.8 from source with MPI/METIS disabled and LAPACK enabled. Archive SHA256: `65472f732d273832c64b2c39460649dd862df674222c71bfa82cf2da76705052`. Compile/configure recipe is in the workflow. Local AppleClang21 arm64 uses Accelerate LAPACK. This is a diagnostic implementation, not a production backend selection.
 
@@ -11,7 +11,7 @@ Built MFEM 4.8 from source with MPI/METIS disabled and LAPACK enabled. Archive S
 
 The order2 trial failed on mode6 at0.0027727428346264738. [Failure retained](../../verification/results/cavity-coarse-failure.log); increasing order, without changing tolerance, passed. Dense eigen runtime22.09s in this recorded run; not a scalability benchmark.
 
-Conda dry resolution of MFEM+hypre+SuperLU_DIST+SLEPc succeeded on osx-arm64, but selected real PETSc/SLEPc. [Resolver output](../../verification/results/s1-conda-resolve.log) is not installation/build evidence and does not satisfy complex arithmetic. Next: explicitly resolve complex variants, lock, test complex linear solve and SLEPc cavity on both CI platforms; separately concretize Spack. No CI run exists yet.
+Conda dry resolution of MFEM+hypre+SuperLU_DIST+SLEPc succeeded on osx-arm64, but selected real PETSc/SLEPc. [Resolver output](../../verification/results/s1-conda-resolve.log) is not installation/build evidence and does not satisfy complex arithmetic. Next: explicitly resolve complex variants, lock, test complex linear solve and SLEPc cavity on both CI platforms; separately concretize Spack. This earlier resolver result is superseded by the hosted follow-up below.
 
 ## Complex source-stack follow-up (2026-11-03)
 
@@ -21,4 +21,8 @@ A replacement stack now builds locally: MFEM4.10, hypre3.2, complex PETSc3.26.1,
 
 The same4356-free-DOF cavity now passes with complex PETSc matrices and SuperLU_DIST shift-invert SLEPc: maximum first-six frequency relative error **4.9435655966822978e-5**, tolerance1e-3. [Raw output](../../verification/results/fem-clean-cavity.log). It ran one MPI rank;12 eigenpairs converged, and the first six physical modes were compared. A local TCP-bind warning is retained; the single-rank calculation completed. This is neither multi-rank scaling nor a complex-material benchmark.
 
-The replacement still has unreviewed runtime-license expressions in its conda support environment. Therefore the local numerical subtest passes, but S1's complete license-approved, reproducible Linux/macOS CI gate remains **NOT PASS**. The checked-in CMake project requires pkg-config; this host lacked it, so the final local executable was compiled with explicit include/library paths. Exact resumption paths and build flags are recorded in the [running handoff](../milestones/M0-handoff.md).
+ADR006 now reviews13 exact macOS and14 exact Linux mixed-expression package identities. The audit remains fail-closed for all other unreviewed identities. CMake now accepts explicit PETSc/SLEPc prefixes without pkg-config; that path passes locally and on macOS CI. The complete Linux/macOS gate remains **NOT PASS** until the corrected Linux run succeeds. Exact resumption paths and build flags are recorded in the [running handoff](../milestones/M0-handoff.md).
+
+## Hosted evidence
+
+[Baseline run41668976621](https://github.com/GrantdCongdon/HeaviSolve/actions/runs/41668976621) passes Poisson and serial cavity on both platforms; [artifact provenance](../../verification/results/ci-41668976621/provenance.json). The source-built complex cavity passes on macOS in run41670183802, with maximum first-six frequency error4.9435655969265468e-5 and4356 DOFs: [numerical log](../../verification/results/ci-41670183802/macos-14/cavity-test.log), [provenance](../../verification/results/ci-41670183802/provenance.json). Its runtime-license metadata audit passes. The Linux job failed at SLEPc make because SLEPC_DIR was missing; cb9d540 adds it and run41715967429 tests the fix. Configuration logs and resolved package identities are retained. This is still a one-rank cavity benchmark, not a general photonics solver validation.

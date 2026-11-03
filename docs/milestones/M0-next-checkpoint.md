@@ -3,7 +3,7 @@
 
 # Next checkpoint: M0 closure, before M1
 
-1. Resolve IHP cross-engine DC/AC differences from the pinned engine-specific compact models. Keep original data intact; identify parameter/default/model-form differences and validate any normalization separately. Do not loosen tolerances simply to pass. Retain dual-engine support and capability diagnostics.
+1. Resolve IHP cross-engine DC/AC differences from the pinned engine-specific compact models. Keep original data intact; The residual DC mismatch is now localized to avalanche, with distinct implementation formulas; self-heated AC has a separate linearization inconsistency. Evaluate an identically versioned compact-model source through OSDI/ADMS after grant/compiler review, and validate any mapping separately. Do not loosen tolerances simply to pass. Retain dual-engine support and capability diagnostics.
 2. Finish source-built complex FEM evidence without ParMETIS. Review every remaining transitive license expression and linked library, then lock the approved Linux/macOS environments. Test the HPC/container recipes rather than treating templates as proven builds.
 3. Run the configured hosted Linux/macOS jobs and retain numerical/license artifacts against the exact reviewed commit. The user-approved m0-evidence branch now has passing baseline Linux/macOS CI (run41668976621). Finish the separate complex-stack recipe and retain its numerical outputs/license decisions; remote main remains unchanged.
 4. Close the language spike's missing binding-effort measurements and outstanding survey evidence. Recorded engineering hours cannot be reconstructed honestly; retain that limitation in ADR-001.

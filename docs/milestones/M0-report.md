@@ -24,11 +24,11 @@ Updated 2026-11-03. **M0 remains incomplete; M1 has not started. No solver is cl
 | S7 IPC | Both native protocols PASS100MB shared mapping/checksum/progress in independent processes; no remote-copy or profiler claim | [S7](../spikes/S7-ipc.md) |
 | Foundation | LOCAL PASS2/2: direct inventory and fail-closed transitive-policy checks | [Output](../../verification/results/foundation-final.log) |
 | REUSE/docs | Local lint and strict docs build pass; not a full distribution audit | [REUSE output](../../verification/results/reuse-final.log) |
-| M0 acceptance | FAIL: numerical tests pass, explicit evidence gate remains false | [CTest output](../../verification/results/m0-final.log) |
+| M0 acceptance | FAIL: numerical tests pass, explicit evidence gate remains false | [Current numerical-build CTest output](../../verification/results/m0-current.log) |
 
 ## Decisions, deviations and risks
 
-C++20 is the recommended direction after measured slab comparison and weighted134/86 suitability scores. R6 records98/160 ngspice versus94/160 Xyce, insufficient to select a sole winner; both remain co-primary targets. Their IHP model differences are potential explanations, not yet proven causes. Tolerances and foundry data were not changed to manufacture agreement.
+C++20 is the recommended direction after measured slab comparison and weighted134/86 suitability scores. R6 records98/160 ngspice versus94/160 Xyce, insufficient to select a sole winner; both remain co-primary targets. The residual IHP DC disagreement is now localized to avalanche behavior; the full source-level cause remains unproven. Tolerances and foundry data were not changed to manufacture agreement.
 
 ADR-004 records corrected Palace capabilities, Femwell licensing, public CORNERSTONE cspdk, engine-specific Verilog-A routes and passive-permittivity sign. ADR-005 rejects the ParMETIS-bearing binary environment. The manual slab assembly and missing binding/effort measurements are explicit ADR-001 deviations. GUI throughput is scoped to repaints. Archived Clipper2 and Strawberry Fields are flagged in the refreshed survey. No candidate bypasses the component admission rubric.
 
@@ -49,3 +49,5 @@ The quick name check found no conflict; HeaviSolve is unchanged. [Availability e
 Equivalent C++/Rust C ABI wrappers called through Python pass argument, capacity, oracle and lifetime checks on Linux/macOS CI. This is a narrow binding comparison, not nanobind/PyO3 validation. ADR006 admits13 exact macOS and14 exact Linux runtime-package identities after reviewing shipped grants; metadata admission does not certify redistribution compliance. The IHP AC discrepancy was localized with independent DC slopes to the tested self-heated ngspice path; explicit isothermal AC/transient pass, while strict DC base-current relative RMS remains1.0304146e-4 against1e-4. Original models and tolerances remain intact.
 
 Native Xyce C-interface forward stepping now passes locally:50 stops, maximum RC voltage error7.1045086396173684e-7V against1e-4V. The separate xycecinterface build target is required. Rollback, external-device exchange and Linux remain untested.
+
+The strict original-model DC failure was reproduced. Disabling avalanche only in marked diagnostic copies reduces base-current disagreement to4.317717800750406e-9, localizing the residual to model implementation differences. The original test still fails; an identically versioned OSDI/ADMS compact-model route is an untested next experiment, not an approved replacement.
