@@ -1,0 +1,52 @@
+{
+  "scope": "Diagnostic localization only; original models and conformance thresholds unchanged.",
+  "command": "python3 verification/spice/diagnose_ihp_avalanche.py > verification/results/s3-ihp-avalanche.json",
+  "script_sha256": "e61593ec2828dd3f4cee183790e93f7f378cf28356b9478cbf5a9530d98752f3",
+  "observation": "Setting avc1=0 in both copied model sets suppresses the DC discrepancy. The engines use distinct avalanche smoothing expressions: ngspice vl=0.5*(sqrt((PC-Vbc)^2+0.01)+(PC-Vbc)); Xyce adds a nonzero vminm before/after the smoothing. This supports avalanche-term implementation differences as the cause category, but no source patch experiment has proven the smoothing formula alone accounts for the entire residual.",
+  "source_evidence": [
+    {
+      "file": "ngspice-47/src/spicelib/devices/vbic/vbicload.c",
+      "sha256": "ae2fca22ca7178bce26f31b4e433307945cafa9d8661d55007eed8fc096ff866",
+      "lines": [
+        3599,
+        3600,
+        3619,
+        3626
+      ],
+      "version": "ngspice47 native VBIC"
+    },
+    {
+      "file": "Xyce-Release-7.10.0/src/DeviceModelPKG/ADMS/N_DEV_ADMSvbic13_4t.C",
+      "sha256": "106a4d3ad4340a16456df5b66bcc59d6a3d93815dc7f967ccb1b676392402492",
+      "lines": [
+        5959,
+        5982,
+        5990,
+        6027,
+        6040
+      ],
+      "version": "Xyce7.10.0 generated VBIC1.3 level12"
+    },
+    {
+      "file": "Xyce-Release-7.10.0/utils/ADMS/examples/vbic_r1.3_prerelease/vbic_1p3.va",
+      "sha256": "6518164ad96de6c61cf32daa7c19dfdd86accfea4aa7ce15d287d9bbf344f2a7",
+      "lines": [
+        150,
+        159,
+        160,
+        1007,
+        1008
+      ],
+      "version": "Xyce7.10.0 upstream VBIC1.3 Verilog-A source"
+    }
+  ],
+  "restrictions": "No model files copied into repository; original baseline remains FAIL. No source patch, threshold change, production model replacement or upstream bug claim.",
+  "formula_comparison": {
+    "symbols": "p=temperature-adjusted BC junction potential; v=internal BC voltage; m=BC grading coefficient; a=temperature-adjusted avc2",
+    "ngspice47": "vl=(sqrt((p-v)^2+0.01)+(p-v))/2",
+    "xyce_vbic13": "u=(0.02*(a+1))^(1/(1.01-m)); vl=(sqrt((p-v-u)^2+0.01)+(p-v-u))/2+u",
+    "shared_multiplier": "avc1*vl*exp(-a*vl^(m-1)) in the ordinary exponential branch",
+    "source_locations": "ngspice vbicload.c:3600; Xyce vbic_1p3.va:159-168; generated N_DEV_ADMSvbic13_4t.C:5978-5990"
+  },
+  "untested_alternative": "Evaluate an identically versioned compact-model implementation in both engines, potentially VBIC1.3 Verilog-A through ngspice OSDI and Xyce ADMS. Compiler compatibility, grant review, thermal behavior and foundry parameter mapping are untested; no common model route is admitted by this experiment."
+}

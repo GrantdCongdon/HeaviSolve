@@ -1,0 +1,58 @@
+{
+  "experiments": [
+    {
+      "variant": "original",
+      "selft": 0,
+      "gmin": 1e-16,
+      "reltol": 1e-11,
+      "abstol": 1e-18,
+      "base_current_relative_rms": 0.00010304146187721579,
+      "maximum_absolute_difference_a": 1.0837545900853101e-11,
+      "acceptance_tolerance": 0.0001,
+      "within_tolerance": false,
+      "model_sha256": {
+        "ngspice": {
+          "original_sha256": "32d0f298cd094ffd93a32871567faec4a875d9efa3c08b9e259540362efd468c",
+          "diagnostic_sha256": "32d0f298cd094ffd93a32871567faec4a875d9efa3c08b9e259540362efd468c"
+        },
+        "xyce": {
+          "original_sha256": "f3b0574c0825309ce290b236540174a645c8d4e6fe70660f4b9ff47dca26018a",
+          "diagnostic_sha256": "f3b0574c0825309ce290b236540174a645c8d4e6fe70660f4b9ff47dca26018a"
+        }
+      },
+      "scope": "diagnostic only; original-model acceptance unchanged"
+    },
+    {
+      "variant": "avalanche_off",
+      "selft": 0,
+      "gmin": 1e-16,
+      "reltol": 1e-11,
+      "abstol": 1e-18,
+      "base_current_relative_rms": 4.317717800750406e-09,
+      "maximum_absolute_difference_a": 8.623976484614605e-16,
+      "acceptance_tolerance": 0.0001,
+      "within_tolerance": true,
+      "model_sha256": {
+        "ngspice": {
+          "original_sha256": "32d0f298cd094ffd93a32871567faec4a875d9efa3c08b9e259540362efd468c",
+          "diagnostic_sha256": "d8f67abb32cf9b2d64d7b06edbf74ebdf6979d393079bb7e4fd1f3ecda41a777"
+        },
+        "xyce": {
+          "original_sha256": "f3b0574c0825309ce290b236540174a645c8d4e6fe70660f4b9ff47dca26018a",
+          "diagnostic_sha256": "34e3aa299801c74a41537f148d1e0e5189040c938ec12a77441f9c8260ed49bd"
+        }
+      },
+      "scope": "diagnostic only; original-model acceptance unchanged"
+    }
+  ],
+  "raw_sha256": {
+    "verification/results/s3-ihp-avalanche-original-ngspice.csv": "174e18852cf47e76acc2f0562d10b086347b508e4b9a618d94afd64a543f63cb",
+    "verification/results/s3-ihp-avalanche-original-ngspice.log": "5abf0acece176e119c87aec94ca9af65441313d0ed131367ee7604c0d452b4ba",
+    "verification/results/s3-ihp-avalanche-original-xyce.csv": "40304d1a3affbd4d30d9f8236e11f4800572e99d3f81368ba5ded16e136b6b6c",
+    "verification/results/s3-ihp-avalanche-original-xyce.log": "c7e8e0f3babdbf66e2b58abfff5175577376a1dbdc509c7ae4e34648031404e3",
+    "verification/results/s3-ihp-avalanche-avalanche_off-ngspice.csv": "1d3d51a5125c86f3d92401a03c52d5dae67d3a0c4c1ef5c463d40be6db3c8cc4",
+    "verification/results/s3-ihp-avalanche-avalanche_off-ngspice.log": "5abf0acece176e119c87aec94ca9af65441313d0ed131367ee7604c0d452b4ba",
+    "verification/results/s3-ihp-avalanche-avalanche_off-xyce.csv": "2b53f3fe53e1c27fd9d297f406f5ccc98a70bcf571286127f42cc186c7713ad5",
+    "verification/results/s3-ihp-avalanche-avalanche_off-xyce.log": "646d8acfde53dcce4f7dfb68502149eb9282a3d97552ed5307dce448993a93d6"
+  }
+}

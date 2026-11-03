@@ -68,3 +68,11 @@ cp verification/spice/xyce_step.cir /tmp/heavisolve-spice/xyce-step.cir
 ```
 
 This narrows the API uncertainty to unsupported experiments: rollback, exchanged external-device values, and Linux execution. It does not establish full co-simulation conformance or change ADR003 scores without a comparable re-evaluation.
+
+## Follow-up: residual DC localized to avalanche (2026-11-03)
+
+The [bounded copied-model diagnostic](../../verification/spice/diagnose_ihp_avalanche.py) first reproduces the original strict isothermal DC base-current error1.0304146187721579e-4. Setting `avc1=0` in both diagnostic copies reduces it to4.317717800750406e-9, with maximum absolute difference8.623976484614605e-16A. [Results and output hashes](../../verification/results/s3-ihp-avalanche.json), [source/formula provenance](../../verification/results/s3-ihp-avalanche-provenance.json). Original foundry models remain unchanged and their baseline remains FAIL.
+
+The native ngspice and Xyce VBIC1.3 implementations use different avalanche smoothing expressions. The upstream VBIC1.3 source explicitly describes an avalanche-function modification for forward/low reverse bias; generated Xyce code includes the additional smoothing shift. Disabling the contribution localizes the discrepancy to avalanche behavior; no source-patch experiment has proven the smoothing shift alone explains every residual. This is evidence of model-implementation differences, not a generic engine accuracy ranking or a reason to remove avalanche from production models.
+
+A possible next experiment is an identically versioned compact-model source through ngspice OSDI and Xyce ADMS. Its source grant, compiler compatibility, thermal behavior and parameter mapping must be checked first. That route remains untested and is not an accepted replacement. Full original-model conformance and the M0 gate remain open.

@@ -38,3 +38,9 @@ Integration is therefore **not approved as complete**. The explicit requirement 
 ## Consequences and closure
 
 Complete Linux/macOS CI and resolve the measured IHP conformance failures. Both adapters, diagnostics, conformance suite and capability matrix remain equal requirements. M0 acceptance remains unmet. The selected engine direction is recorded; release-ready integration approval is withheld.
+
+## Diagnostic refinement — 2026-11-03
+
+[S3 follow-up](../spikes/S3-spice.md) now demonstrates Xyce forward stepping through its separate C-interface library. Default self-heated ngspice AC still disagrees with independent DC slopes. The residual isothermal DC failure is localized to the avalanche contribution: disabling it in both marked diagnostic copies reduces relative base-current disagreement from1.0304e-4 to4.3177e-9. The engines implement different avalanche smoothing formulas. No threshold or original model changed.
+
+Consequently, a shared dialect alone is insufficient to promise cross-engine model equivalence. Any eventual `SpiceEngine` model binding must record the compact-model implementation/version and tested capabilities. The next candidate experiment uses an identically versioned model through the separate supported compiler routes, subject to source-grant review and thermal tests. This is an investigation direction, not approval of a replacement or a passed conformance gate. The co-primary decision and M0 hold remain unchanged.
