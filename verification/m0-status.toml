@@ -2,8 +2,8 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 [gate]
 phase_r_sources_complete = false
-language_slab_comparison = false
-spice_measured_scoring = false
+language_slab_comparison = true
+spice_measured_scoring = true
 full_fem_stack_linux_macos = false
 all_feasibility_spikes = false
 ci_stored_numerical_outputs = false

@@ -1,44 +1,41 @@
 <!-- SPDX-FileCopyrightText: 2026 HeaviSolve contributors -->
 <!-- SPDX-License-Identifier: CC-BY-SA-4.0 -->
 
-# M0 progress and acceptance report
+# M0 implementation and acceptance report
 
-Date:2026-11-02. **M0 NOT COMPLETE. Do not start M1. No solver is claimed verified.**
+Updated 2026-11-03. **M0 remains incomplete; M1 has not started. No solver is claimed verified.** Substantial local feasibility work is complete, but IHP conformance, dependency admission and hosted CI block the exit. Future sessions should start with the [running handoff](M0-handoff.md), then [tasks](M0-tasks.md), [decisions](M0-decisions.md) and [next checkpoint](M0-next-checkpoint.md).
 
-Repository foundations and several real local experiments are delivered. Missing paired-language, full-stack, Xyce, GUI and hosted-CI evidence prevent the requested exit criteria. See [tasks](M0-tasks.md), [one-page decisions](M0-decisions.md), and [next checkpoint](M0-next-checkpoint.md).
+## Measured results
 
-## Results
-
-| Check | Result | Evidence |
+| Check | Result and limits | Evidence |
 |---|---|---|
-| MFEM P1 Poisson | LOCAL PASS; orders1.97318,1.99316,1.99828 vs2±0.15 | [S1](../spikes/S1-mfem.md) |
-| PEC cavity, first six positive modes | LOCAL PASS; maximum frequency relative error4.9435656211072043e-5 after order3 refinement;1331 expected gradient zeros | [Raw output](../../verification/results/mfem-local.log) |
-| Coarse cavity | FAIL retained; sixth-mode error0.0027727428346264738 | [Raw failure](../../verification/results/cavity-coarse-failure.log) |
-| Full S1 parallel complex stack | NOT PASS; conda dry resolve only, selected real variants | [S1](../spikes/S1-mfem.md) |
-| S2 Palace reuse | Documentary PASS; reference/study decision, no link benchmark | [S2](../spikes/S2-palace.md) |
-| S3a callback RC | LOCAL PASS;5018 samples,10041 callbacks,max error3.0577875786974573e-8V | [S3](../spikes/S3-spice.md) |
-| IHP VBIC device | SMOKE PASS; collector current0.00013991752401704821A at VCE1V,VBE0.8V; no measured-data validation | [S3](../spikes/S3-spice.md) |
-| S3a OSDI / S3b Xyce / S3c conformance | NOT PASS; OSDI not run, Xyce missing Trilinos, comparison unavailable | [ADR-003](../adr/ADR-003-spice-engine.md) |
-| S4 ring quality | Optimized subtest PASS:4324 tets,minSICN0.42782904872064897; initial mesh FAIL | [S4](../spikes/S4-meshing.md) |
-| S5 Qt6/VTK GUI | BLOCKED at Qt6 configuration; no fps | [S5](../spikes/S5-gui.md) |
-| S6 GDS/OASIS | Synthetic roundtrip PASS; real-PDK and1M viewport not run | [S6](../spikes/S6-layout.md) |
-| S7 IPC |100MB inherited shared mapping checksum PASS; protocol comparison not run | [S7](../spikes/S7-ipc.md) |
-| R2 language | NOT COMPLETE; subjective research table only, no paired slab solver | [ADR-001](../adr/ADR-001-language.md) |
-| Local foundation/license/docs checks | LOCAL PASS: foundation 1/1, REUSE no missing licenses/copyrights, strict docs build; hosted green status not claimed | CI workflow is configured, not executed remotely |
-| `ctest -L m0` | FAIL: 2/3 tests pass; explicit acceptance gate fails on missing evidence | Machine-readable m0-status.toml fails closed |
+| MFEM Poisson | LOCAL PASS; observed orders1.97318,1.99316,1.99828 vs2±0.15 | [S1](../spikes/S1-mfem.md) |
+| Serial cavity | LOCAL PASS; first-six maximum frequency relative error4.9435656e-5 vs1e-3; coarse failure retained | [S1](../spikes/S1-mfem.md) |
+| Complex source-built cavity | LOCAL PASS; MFEM4.10/PETSc/SLEPc/SuperLU_DIST,4356 DOFs, one rank, maximum error4.9435655966822978e-5 | [Output](../../verification/results/fem-clean-cavity.log) |
+| Full S1 admission/platform gate | NOT PASS; restricted original environment rejected, smaller environment review and Linux/macOS CI incomplete | [ADR-005](../adr/ADR-005-transitive-fem-dependencies.md) |
+| C++/Rust slab | LOCAL PASS; four refinements, near-second-order convergence, maximum language difference9.37e-14; bindings/time-accounting incomplete | [ADR-001](../adr/ADR-001-language.md) |
+| S2 Palace | Documentary PASS; reference/study, no stable-link integration claim | [S2](../spikes/S2-palace.md) |
+| S3a ngspice | LOCAL PASS; callback RC max error3.0578e-8V; IHP HBT smoke; compiled OSDI current agrees within1e-12A | [S3](../spikes/S3-spice.md) |
+| S3b Xyce | macOS build and HB subtests PASS; RLC relative error3.7609e-16, cubic3.5237e-15; Linux/coupling gate pending | [S3](../spikes/S3-spice.md) |
+| S3c conformance | FAIL; IHP AC voltage/current disagreement8.35%/9.81%, tighter DC current1.0326e-4 exceeds1e-4; linear cases pass | [S3](../spikes/S3-spice.md) |
+| S4 mesh | LOCAL PASS; optimized4324 tets; custom256 prisms, positive Jacobians, volume and MFEM import checks | [S4](../spikes/S4-meshing.md) |
+| S5 GUI | Visible VTK cut plane;10k-item75.7988 repaint/s, earlier56.1598 failure retained; compositor fps unmeasured | [S5](../spikes/S5-gui.md) |
+| S6 layout | KLayout IHP/SiEPIC GDS/OAS PASS; gdstk SiEPIC OAS FAIL; revised1M viewport68.2641 repaint/s | [S6](../spikes/S6-layout.md) |
+| S7 IPC | Both native protocols PASS100MB shared mapping/checksum/progress in independent processes; no remote-copy or profiler claim | [S7](../spikes/S7-ipc.md) |
+| Foundation | LOCAL PASS2/2: direct inventory and fail-closed transitive-policy checks | [Output](../../verification/results/foundation-final.log) |
+| REUSE/docs | Local lint and strict docs build pass; not a full distribution audit | [REUSE output](../../verification/results/reuse-final.log) |
+| M0 acceptance | FAIL: numerical tests pass, explicit evidence gate remains false | [CTest output](../../verification/results/m0-final.log) |
 
-## Deliverables and limitations
+## Decisions, deviations and risks
 
-The section3.2 module layout exists with reserved directories. Added CMake research checks, Linux/macOS GitHub Actions jobs with output uploads, direct-license inventory enforcement, REUSE/DCO, original license texts, documentation site, coding standards and dependency strategy. Source SPDX inventory is not a full release binary SBOM. Conda/Spack/Docker are starter recipes, not fully locked tested environments. No remote repository is configured; no hosted CI runs or merge evidence exist. Research docs cover the requested landscape but explicitly retain unknown maintenance dates/exact grants. No restricted PDK data is committed.
+C++20 is the recommended direction after measured slab comparison and weighted134/86 suitability scores. R6 records98/160 ngspice versus94/160 Xyce, insufficient to select a sole winner; both remain co-primary targets. Their IHP model differences are potential explanations, not yet proven causes. Tolerances and foundry data were not changed to manufacture agreement.
 
-## Deviations and failures
+ADR-004 records corrected Palace capabilities, Femwell licensing, public CORNERSTONE cspdk, engine-specific Verilog-A routes and passive-permittivity sign. ADR-005 rejects the ParMETIS-bearing binary environment. The manual slab assembly and missing binding/effort measurements are explicit ADR-001 deviations. GUI throughput is scoped to repaints. Archived Clipper2 and Strawberry Fields are flagged in the refreshed survey. No candidate bypasses the component admission rubric.
 
-[ADR-004](../adr/ADR-004-plan-corrections.md) records Palace library/Floquet updates, Femwell license, public cspdk, engine-specific Verilog-A routes and the passive-permittivity sign correction. ngspice required a space-free build path and a local stdlib header patch. The RC test initially mishandled reusable vector metadata; the IHP test initially lacked corner/includes. These harness failures were fixed and retained. No benchmark number was manually adjusted.
+Repository foundations include the requested layout, license/DCO/REUSE, CI definitions for Linux/macOS, stored-output uploads, docs site, coding standards and dependency strategy. Direct primary-source licenses are inventoried; ngspice mixed-license and transitive runtime reviews remain open. Docker/Spack recipes are unproven starters, not tested release environments. No restricted PDK data is bundled.
 
-## Name check
+## External gate and next checkpoint
 
-No conflict found in the quick GitHub search and exact package/domain queries; no name change or reservation. See [availability evidence](../research/name-availability.md). Absence of a current registry record is not trademark clearance or a guarantee that registration will succeed.
+No remote repository is configured and no hosted CI artifacts exist. The available connector cannot create the repository; the browser creation page requires sign-in. Local outputs cannot satisfy the explicit CI requirement. Complete remaining M0 checks, resolve model/license issues and obtain actual CI evidence before accepting final ADRs or starting M1.
 
-## Exit assessment
-
-ADRs001/003 remain proposed. The final Phase R gate and walking-skeleton approval are open. Deliver this as an honest progress report, not a completed-M0 report. Next checkpoint is M0 closure, not M1.
+The quick name check found no conflict; HeaviSolve is unchanged. [Availability evidence](../research/name-availability.md) is a limited registry/search check, not trademark clearance or a reservation.

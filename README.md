@@ -24,3 +24,5 @@ ctest --test-dir build -L m0 --output-on-failure
 ```
 
 See [task list](docs/milestones/M0-tasks.md), [report](docs/milestones/M0-report.md), and [contribution rules](CONTRIBUTING.md).
+
+For implementation continuity after an interruption, start with the [running M0 handoff](docs/milestones/M0-handoff.md). It records the current checkpoint, outstanding failures and exact resumption steps; M1 remains gated.

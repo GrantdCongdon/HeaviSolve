@@ -3,20 +3,24 @@
 
 # M0 task list
 
-- [x] Read the director plan completely; create isolated `heavisolve` repository.
-- [x] Draft R1 all-tools survey, R3 PDK survey and R6 SPICE comparison from primary sources.
-- [ ] Close all research unknowns (maintenance timestamps, exact grants, pinned revisions).
-- [x] ADR-002 policy, original license texts, REUSE metadata, DCO and inventory scanner.
-- [x] Record plan contradictions in ADR-004.
-- [ ] Complete ADR-001 paired mixed-element slab spike; scores remain preliminary.
-- [x] Run serial C++ MFEM Poisson and cavity diagnostics and preserve failures/results.
-- [ ] Complete S1 complex parallel stack on Linux/macOS.
-- [x] S2 documentary Palace reuse decision.
-- [x] Run ngspice callback RC and IHP VBIC smoke tests.
-- [ ] Complete S3a OSDI, S3b Xyce/HB and S3c conformance; close measured ADR-003 scores.
-- [x] Run Gmsh/Netgen ring quality, synthetic layout roundtrip and shared-memory subtests.
-- [ ] Complete S4 extrusion/import, S5 GUI performance, S6 real fixtures/viewport, S7 transport comparison.
-- [x] Repository layout, coding standards, dependency strategy and CI/docs skeleton.
-- [ ] Hosted CI green with stored output; lock full dependency graph and test Docker/Spack.
-- [x] Quick name check; keep HeaviSolve.
-- [ ] M0 acceptance and exit; M1 must not start.
+- [x] Read director plan; isolated `heavisolve` repository and section 3.2 skeleton.
+- [x] R1/R3/R6 surveys with primary-source links and explicit unknowns.
+- [ ] Close remaining source/license/maintenance unknowns before integration admission.
+- [x] ADR-002, AGPL license, REUSE, DCO, direct inventory scan and fail-closed conda audit.
+- [x] ADR-004 plan corrections and ADR-005 rejection of restricted transitive FEM dependency.
+- [x] Paired C++/Rust mixed-element slab experiment, independent TE/TM oracle, convergence and weighted ADR-001 scores.
+- [ ] Complete binding-effort experiment and missing language investigation measurements.
+- [x] Serial MFEM Poisson/cavity measurements; failures retained.
+- [ ] S1 complete license-reviewed complex stack and Linux/macOS hosted results.
+- [x] S2 Palace documentary reuse decision.
+- [x] S3a native ngspice callbacks, IHP device and OpenVAF-compiled OSDI model.
+- [x] Xyce macOS build and native harmonic-balance experiments.
+- [ ] S3c IHP cross-engine conformance within required tolerances; retain measured failures.
+- [x] S4 Gmsh/Netgen ring and custom prism extrusion/MFEM import experiments.
+- [x] S5 visible Qt/VTK cut plane and 10k-item repaint-throughput experiment.
+- [x] S6 pinned real PDK round trips, Clipper booleans, million-polygon viewport experiment; gdstk OAS failure retained.
+- [x] S7 independent-process gRPC/protobuf and ZeroMQ/FlatBuffers 100 MB mapping checks.
+- [x] Linux/macOS workflow definitions, docs site, coding standards and dependency strategy.
+- [ ] Hosted CI stored artifacts, fully reviewed dependency locks, tested Docker/Spack recipes.
+- [x] Name-availability check; retain HeaviSolve.
+- [ ] All M0 acceptance/exit gates. **M1 must not start.**
