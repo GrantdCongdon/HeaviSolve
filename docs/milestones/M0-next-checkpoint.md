@@ -5,7 +5,7 @@
 
 1. Resolve IHP cross-engine DC/AC differences from the pinned engine-specific compact models. Keep original data intact; identify parameter/default/model-form differences and validate any normalization separately. Do not loosen tolerances simply to pass. Retain dual-engine support and capability diagnostics.
 2. Finish source-built complex FEM evidence without ParMETIS. Review every remaining transitive license expression and linked library, then lock the approved Linux/macOS environments. Test the HPC/container recipes rather than treating templates as proven builds.
-3. Run the configured hosted Linux/macOS jobs and retain numerical/license artifacts against the exact reviewed commit. No remote repository is currently configured; the available GitHub connector cannot create one and the browser session is not signed in. No CI status is inferred from local tests.
+3. Run the configured hosted Linux/macOS jobs and retain numerical/license artifacts against the exact reviewed commit. The user-approved m0-evidence branch now has passing baseline Linux/macOS CI (run41668976621). Finish the separate complex-stack recipe and retain its numerical outputs/license decisions; remote main remains unchanged.
 4. Close the language spike's missing binding-effort measurements and outstanding survey evidence. Recorded engineering hours cannot be reconstructed honestly; retain that limitation in ADR-001.
 5. Run the complete M0 acceptance label, review the dependency/component gates, accept final ADRs and complete the self-review below. Report that checkpoint to the director before any M1 implementation.
 

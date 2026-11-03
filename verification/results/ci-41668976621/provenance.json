@@ -1,0 +1,47 @@
+{
+  "repository": "GrantdCongdon/HeaviSolve",
+  "branch": "m0-evidence",
+  "commit": "47b8352adb281c248c38fa6c7324e3de86d306d4",
+  "run_id": 41668976621,
+  "url": "https://github.com/GrantdCongdon/HeaviSolve/actions/runs/41668976621",
+  "conclusion": "success",
+  "scope": "foundation, serial Poisson/cavity, paired slab, ctypes bindings; not complex stack or full M0",
+  "artifacts": [
+    {
+      "id": 13248925118,
+      "name": "numerical-ubuntu-24.04",
+      "digest": "sha256:e6c3ae87d5bb45dd760c8a5a9f87090cf597e2005c708c5310dbdbdb29e8ef91",
+      "size_in_bytes": 8667
+    },
+    {
+      "id": 13247551411,
+      "name": "language-ubuntu-24.04",
+      "digest": "sha256:57756140ce2a8218fd7eb27b872b2ab98e3f427cc4d599da8446f3797ed0c49a",
+      "size_in_bytes": 5341
+    },
+    {
+      "id": 13247196562,
+      "name": "foundation-macos-14",
+      "digest": "sha256:a58c97962a4af4eda2e90dd5f3e587b8e5c041fbf3cf8800523fab0238dce485",
+      "size_in_bytes": 19385953
+    },
+    {
+      "id": 13246644684,
+      "name": "numerical-macos-14",
+      "digest": "sha256:6051d41291a7603c789965905f5dddc7672d6f95a0d84fea04cd9e780775af3c",
+      "size_in_bytes": 8713
+    },
+    {
+      "id": 13246189183,
+      "name": "foundation-ubuntu-24.04",
+      "digest": "sha256:da63cd702c8704cb9faa93c6fc70c2c9e8985842a649bcee2ce1b6c7c9022d39",
+      "size_in_bytes": 19385951
+    },
+    {
+      "id": 13245354648,
+      "name": "language-macos-14",
+      "digest": "sha256:34fc0bbceb024ed880b81cf0470c347ea0c78e16f405b428d552821a9a245b4d",
+      "size_in_bytes": 5605
+    }
+  ]
+}

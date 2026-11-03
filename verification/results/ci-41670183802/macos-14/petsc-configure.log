@@ -1,0 +1,81 @@
+=============================================================================================
+                         Configuring PETSc to compile on your system
+=============================================================================================
+=============================================================================================
+                                     ***** WARNING *****
+  Using default C optimization flags "-g -O3". You might consider manually setting optimal
+  optimization flags for your system with COPTFLAGS="optimization flags" see
+  config/examples/arch-*-opt.py for examples
+=============================================================================================
+=============================================================================================
+                                     ***** WARNING *****
+  Using default Cxx optimization flags "-g -O3". You might consider manually setting
+  optimal optimization flags for your system with CXXOPTFLAGS="optimization flags" see
+  config/examples/arch-*-opt.py for examples
+=============================================================================================
+=============================================================================================
+                                     ***** WARNING *****
+  You have a version of GNU make older than 4.0. It will work, but may not support all the
+  parallel testing options. You can install the latest GNU make with your package manager,
+  such as Brew or MacPorts, or use the --download-make option to get the latest GNU make
+=============================================================================================
+=============================================================================================
+  Trying to download /Users/runner/work/_temp/hs-complex/superlu-dist921.tar.gz for
+  SUPERLU_DIST
+=============================================================================================
+=============================================================================================
+              Configuring SUPERLU_DIST with CMake; this may take several minutes
+=============================================================================================
+=============================================================================================
+             Compiling and installing SUPERLU_DIST; this may take several minutes
+=============================================================================================
+Compilers:
+  C Compiler:  /Users/runner/work/_temp/hs-fem-env/bin/mpicc  -fPIC -Wall -Wwrite-strings -Wno-unknown-pragmas -Wconversion -Wno-sign-conversion -Wno-float-conversion -Wno-implicit-float-conversion -Qunused-arguments -fno-stack-check -fstack-protector -fvisibility=hidden -g -O3 
+    Version: Apple clang version 15.0.0 (clang-1500.3.9.4)
+  C++ Compiler:  /Users/runner/work/_temp/hs-fem-env/bin/mpicxx  -Wall -Wwrite-strings -Wno-strict-aliasing -Wno-unknown-pragmas -fstack-protector -fno-stack-check -fvisibility=hidden -g -O3  -std=gnu++20 -fPIC 
+    Version: Apple clang version 15.0.0 (clang-1500.3.9.4)
+Linkers:
+  Shared linker:   /Users/runner/work/_temp/hs-fem-env/bin/mpicc  -dynamiclib -undefined dynamic_lookup  -fPIC -Wall -Wwrite-strings -Wno-unknown-pragmas -Wconversion -Wno-sign-conversion -Wno-float-conversion -Wno-implicit-float-conversion -Qunused-arguments -fno-stack-check -fstack-protector -fvisibility=hidden -g -O3
+  Dynamic linker:   /Users/runner/work/_temp/hs-fem-env/bin/mpicc  -dynamiclib -undefined dynamic_lookup  -fPIC -Wall -Wwrite-strings -Wno-unknown-pragmas -Wconversion -Wno-sign-conversion -Wno-float-conversion -Wno-implicit-float-conversion -Qunused-arguments -fno-stack-check -fstack-protector -fvisibility=hidden -g -O3
+  Libraries linked against:   
+Python:
+  Executable: /Library/Frameworks/Python.framework/Versions/3.12/bin/python
+BlasLapack:
+  Libraries:  -Wl,-rpath,/Users/runner/work/_temp/hs-fem-env/lib -L/Users/runner/work/_temp/hs-fem-env/lib -lopenblas.0
+  Unknown if this uses OpenMP (try export OMP_NUM_THREADS=<1-4> yourprogram -log_view) 
+  uses 4 byte integers
+MPI:
+  Version:    3
+  Includes:   -I/Users/runner/work/_temp/hs-fem-env/include
+  mpiexec: /Users/runner/work/_temp/hs-fem-env/bin/mpiexec
+  Implementation: openmpi
+  OMPI_VERSION: 5.0.11
+pthread:
+CMake:
+  Version:    4.4.5
+  Executable: /Users/runner/work/_temp/hs-fem-env/bin/cmake
+Bison:
+  Version:    2.3
+  Executable: /usr/bin/bison
+SuperLU_DIST:
+  Version:    9.2.1
+  Includes:   -I/Users/runner/work/_temp/hs-complex/petsc-install/include
+  Libraries:  -Wl,-rpath,/Users/runner/work/_temp/hs-complex/petsc-install/lib -L/Users/runner/work/_temp/hs-complex/petsc-install/lib -lsuperlu_dist
+PETSc:
+  Language used to compile PETSc: C
+  Language used to compile PetscDevice: C
+  PETSC_ARCH: arch-heavisolve-complex
+  PETSC_DIR: /Users/runner/work/_temp/hs-complex/petsc-3.26.1
+  Prefix: /Users/runner/work/_temp/hs-complex/petsc-install
+  Scalar type: complex
+  Precision: double
+  Support for __fp16
+  Integer size: 4 bytes
+  Single library: yes
+  Shared libraries: yes
+  Memory alignment from malloc(): 16 bytes
+  Using GNU make: /usr/bin/make
+xxx=======================================================================================xxx
+ Configure stage complete. Now build PETSc libraries with:
+   make PETSC_DIR=/Users/runner/work/_temp/hs-complex/petsc-3.26.1 PETSC_ARCH=arch-heavisolve-complex all
+xxx=======================================================================================xxx

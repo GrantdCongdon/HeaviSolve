@@ -1,0 +1,44 @@
+UpdateCTestConfiguration  from :/Users/runner/work/HeaviSolve/HeaviSolve/build-numerical/DartConfiguration.tcl
+Parse Config file:/Users/runner/work/HeaviSolve/HeaviSolve/build-numerical/DartConfiguration.tcl
+Test project /Users/runner/work/HeaviSolve/HeaviSolve/build-numerical
+Constructing a list of tests
+Done constructing a list of tests
+Updating test list for fixtures
+Added 0 tests to meet fixture requirements
+Checking test dependency graph...
+Checking test dependency graph end
+test 2
+    Start 2: mfem_poisson
+
+2: Test command: /Users/runner/work/HeaviSolve/HeaviSolve/build-numerical/mfem_poisson
+2: Working Directory: /Users/runner/work/HeaviSolve/HeaviSolve/build-numerical
+2: Test timeout computed to be: 300
+2: n,dofs,l2_error,observed_order
+2: 8,81,0.021106986529987552,0
+2: 16,289,0.0053757660445034093,1.973178360142166
+2: 32,1089,0.0013503310807543231,1.9931571751678783
+2: 64,4225,0.00033798575806785768,1.9982788165534278
+1/2 Test #2: mfem_poisson .....................   Passed    0.07 sec
+test 3
+    Start 3: mfem_cavity
+
+3: Test command: /Users/runner/work/HeaviSolve/HeaviSolve/build-numerical/mfem_cavity
+3: Working Directory: /Users/runner/work/HeaviSolve/HeaviSolve/build-numerical
+3: Test timeout computed to be: 300
+3: free_dofs=4356 null_modes=1331 expected_gradient_nullity=1331
+3: mode,lambda,analytic_lambda,frequency_relative_error
+3: 0,25.290918908992335,25.290861277791478,1.139367445723849e-06
+3: 1,37.285257144945405,37.285172181893131,1.1393671921489101e-06
+3: 2,42.83692227130652,42.836824657505893,1.1393671892623303e-06
+3: 3,52.706549162629372,52.706429058595248,1.1393673204906918e-06
+3: 4,52.706549162646944,52.706429058595248,1.1393674872461901e-06
+3: 5,54.905102618077102,54.899674481059556,4.9435656043650411e-05
+2/2 Test #3: mfem_cavity ......................   Passed   26.67 sec
+
+100% tests passed out of 2
+
+Label Time Summary:
+m0           =  26.74 sec*proc (2 tests)
+numerical    =  26.74 sec*proc (2 tests)
+
+Total Test time (real) =  26.74 sec

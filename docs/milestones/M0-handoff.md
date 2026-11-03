@@ -14,7 +14,7 @@ Repository: `/Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statis
 ## Current result summary
 
 - Serial MFEM4.8 Poisson convergence and cavity local PASS; stored old failures retained.
-- C++/Rust independent mixed-element slab, four refinements: local PASS, second-order convergence; portable CMake/macOS repeat PASS. ADR001 scores134/86. Missing actual binding-effort experiment and reliable historical engineering-time records.
+- C++/Rust independent mixed-element slab, four refinements: local PASS, second-order convergence; portable CMake/macOS repeat PASS. ADR001 scores134/86. Equivalent ctypes/C-ABI binding experiment now passes for both languages (commit fb2302f). Nanobind/PyO3 comparison and reliable historical engineering-time records remain unmeasured.
 - S3a ngspice47 native callback RC, IHP HBT and OpenVAF-compiled OSDI PASS locally.
 - Xyce7.10 now builds; native shared circuit IR and per-engine emitters run RC/RLC/diode/IHP DC/AC/transient. HB RLC/cubic local PASS. IHP AC differs8–10%; tighter DC settings still differ1.0325884e-4 against1e-4 tolerance. Do not change pinned models or relax tolerance to claim success. ADR003 co-primary targets,98/160 vs94/160; acceptance blocked.
 - S4 custom256-prism ring passes positive-Jacobian/volume/MFEM H(curl) import checks; Gmsh/Netgen quality pass after retained initial failure.
@@ -25,12 +25,11 @@ Repository: `/Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statis
 
 ## Immediate next work
 
-1. Clean complex FEM cavity is now LOCAL PASS; final source build and explicit-link command are below. Finish its remaining transitive-license review and portable build recipe/CI execution. `verification/fem-stack` CMake still needs a pkg-config executable on this host; the local direct compile bypassed that missing tool. Do not repeat the lengthy source build unless necessary.
-2. Resolve IHP conformance using scoped diagnostic experiments. Preserve original model files, results and tolerances. Distinguish engine equations, model parameters, temperature/self-heating and linearization; no model normalization has yet been validated. Consider a separate normalized diagnostic copy only with explicit provenance, never overwrite pinned originals.
-3. Review agent-produced S3 sources/results/docs; agent ended with usage limit. Raw conformance JSON, tight-DC JSON, output archive/provenance are in verification/results. Preserve conformance failures; primary source model differences need investigation.
-4. Reports/decisions/tasks are refreshed through the clean cavity result. Keep them current; add missing binding-effort evidence and reproducible source recipes.
-5. Run foundation, REUSE, strict docs, DCO and numerical tests; store outputs. `ctest -L m0` must still fail for missing evidence. Do not toggle boolean gates merely to satisfy the command.
-6. Continue small DCO-signed commits. No remote is configured. Report honestly before M1; do not label M0 complete while blockers remain.
+1. Check complex-stack run41715967429 (commit cb9d540) on Linux/macOS; both jobs were building on latest check. Prior macOS job126036155092 in run41670183802 passed, output retained in verification/results/ci-41670183802. Prior Linux failed because SLEPc make lacked SLEPC_DIR; cb9d540 fixes it. Exact14 Linux package reviews are now committed/pushed along with13 macOS reviews. Download and verify final artifact hashes before marking the full-stack gate.
+2. Resolve IHP conformance using scoped diagnostics. Isothermal AC/transient pass; original self-heated AC and strict DC base-current comparison fail. Preserve original models, outputs and thresholds. See S3 follow-up; matching copied ikp/delay did not fix failures.
+3. Finish Xyce native stepwise API experiment verification/spice/xyce_step.cpp. Build the upstream excluded target xycecinterface, then link libxycecinterface (libxyce alone lacks C interface symbols). Executable and circuit at /tmp/heavisolve-spice/xyce-step*. Results saved under verification/results/s3-xyce-step*. Runtime PASS is stored with50 samples and maximum error7.1045086396173684e-7V. Linux SPICE/source recipes and full integration license audits remain open.
+4. Keep reports, decisions and task list synchronized. Historical engineering hours cannot be reconstructed; do not invent them. The authoritative Downloads plan is currently missing; read it if restored before new architecture decisions.
+5. Run foundation, REUSE, strict docs, DCO and applicable tests; store results. The M0 gate must remain false for missing evidence. Commit small DCO-signed checkpoints and push only m0-evidence, authorized by user. Remote main must remain unchanged.
 
 ## Build locations and commands
 
@@ -43,7 +42,9 @@ Repository: `/Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statis
 
 ## External blockers and cautions
 
-Hosted Linux/macOS CI is not executed. GitHub connector is authenticated but lacks repository creation/workflow dispatch capabilities; no heavisolve remote exists. In-app browser github.com/new redirected to sign-in. Do not retrieve credentials or claim CI green. Native Firefox automation hung previously; avoid retrying it. No deployment/publication requested.
+Baseline Linux/macOS CI has passed all six jobs (run41668976621); outputs and SHA256-verified artifact provenance are in verification/results/ci-41668976621. Later baseline runs also passed; latest41715967441 was finishing its Linux numerical job. The public canonical remote is git@github.com:GrantdCongdon/HeaviSolve.git. The user explicitly approved publishing M0 source/reports/screenshots/test outputs to m0-evidence. Push authorization persists. Remote main remains at1c9b432e0de5e322dd2b66d684998b6c9c3537ee. Earlier automatic review rejections were resolved by user approval and an archive content audit; no unresolved upload-permission blocker remains.
+
+GitHub connector cannot create repositories/dispatch workflows, but supports reading repository Actions endpoints. Native Firefox automation hung previously; avoid it.
 
 Do not commit `.work`, `.local`, downloaded PDK fixtures, full hardware identity output or binary environments. REUSE aggregate covers original generated results; third-party content requires its own licensing. New source files need SPDX headers. Code-generated SPDX strings must split the literal marker to avoid REUSE parsing them as malformed source headers. Keep raw failed measurements, and identify changed source hashes separately rather than rewriting old output.
 
@@ -75,3 +76,13 @@ clang++ -std=c++20 -O2 -Wall -Wextra -Wpedantic -Werror \
 PETSc uses OpenBLAS; MFEM's auxiliary LAPACK symbols use host Accelerate in this local link. Direct binary linkage is recorded in `verification/results/fem-clean-direct-linkage.log`; this is not a recursive distribution audit.
 
 - 2026-11-03 checkpoint: implementation saved in three DCO-signed commits listed above. Foundation2/2, REUSE170/170 and strict docs pass locally; numerical M0 tests pass but acceptance gate fails. Only factual slab-comparison and measured-SPICE-scoring flags changed to true. Reports and handoff refreshed; M1 untouched. Final reporting checkpoint commits research maintenance evidence and continuity files.
+
+- Latest resumed work: binding experiment LOCAL PASS, explicit-prefix FEM CMake/CTest LOCAL PASS, exact clean-environment license metadata audit PASS. Agent IHP diagnostics localized dominant AC discrepancy to self-heating: both engines DC finite-difference slope~-4.5841, Xyce low-frequency AC~-4.58408, ngspice~-4.20135; isothermal AC/transient pass but base-current DC remains just above1e-4. New diagnose_ihp_dc.py explores copied model ikp/delay without changing originals or tolerances. Its output and repeated gmin sweep are in progress; review completed files before documenting. Both research agents hit usage limits; do not assume their docs were finalized. Current uncommitted diagnostic files must be preserved.
+
+- IHP follow-up completed: self-heated AC discrepancy localized with finite-difference DC slopes, isothermal AC/transient pass, strict DC remains1.0304146e-4 (FAIL). Matching copied-model ikp/delay does not fix DC. New raw diagnostic archive excludes model files; S3 report updated. Upload approval explicitly received in chat; review-branch push in progress.
+
+- Hosted CI checkpoint: user-approved push succeeded. Canonical repository GrantdCongdon/HeaviSolve, branch m0-evidence. Baseline run41668976621 on47b8352 passed all6 jobs; numerical/language artifact ZIP digests verified and outputs retained in verification/results/ci-41668976621. Two factual gate flags now true: ci_stored_numerical_outputs and ci_license_scan_green. Full M0 remains open.
+- Complex CI: first run41669787651 failed macOS missingCONDA and Linux libopenblas.so.0 lookup; failures retained. Commit3185ea9 fixes both. Run41670183802 is actively compiling on both platforms. tools/build_complex_stack.py builds pinned PETSc/SLEPc/SuperLU_DIST/MFEM and disables ParMETIS and X11; platform-support packages from conda. Exact Linux package reviews added to ADR006 and manifest after downloading14 archive identities and checkinglicense evidence. These new reviews are not pushed yet, so the currently running Linux audit may fail with the older policy even if numerics succeed. Need review latestmacOS metadata too, commit policy updates, and rerun as necessary.
+- Upload review initially rejected the11MB diagnostic archive as possibly containing PDK data; inspection proved all170 entries are own decks/numericCSV/logs/JSON, no model definitions/files. The audit is committed, and review-branch push then succeeded. Authorization persists; do not ask again absent a materially different payload.
+
+- Current continuation: baseline evidence retained; macOS complex CI artifact13249002660 SHA256 checked and selected logs saved. Latest cb9d540 fixes Linux SLEPC_DIR and adds14 exact Linux package reviews; current complex run41715967429 building. Xyce C API experiment added; initial libxyce-only link failed, upstream xycecinterface target builds successfully. Runtime LOCAL PASS:50 stops, maximum absolute error7.1045086396173684e-7V <1e-4V; source/deck/output hashes saved. M1 untouched.

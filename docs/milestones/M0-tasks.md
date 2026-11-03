@@ -9,7 +9,7 @@
 - [x] ADR-002, AGPL license, REUSE, DCO, direct inventory scan and fail-closed conda audit.
 - [x] ADR-004 plan corrections and ADR-005 rejection of restricted transitive FEM dependency.
 - [x] Paired C++/Rust mixed-element slab experiment, independent TE/TM oracle, convergence and weighted ADR-001 scores.
-- [ ] Complete binding-effort experiment and missing language investigation measurements.
+- [x] Equivalent native C ABI/Python binding experiment and Linux/macOS CI; full framework comparison and historical effort measurement remain explicitly limited.
 - [x] Serial MFEM Poisson/cavity measurements; failures retained.
 - [ ] S1 complete license-reviewed complex stack and Linux/macOS hosted results.
 - [x] S2 Palace documentary reuse decision.
@@ -21,6 +21,7 @@
 - [x] S6 pinned real PDK round trips, Clipper booleans, million-polygon viewport experiment; gdstk OAS failure retained.
 - [x] S7 independent-process gRPC/protobuf and ZeroMQ/FlatBuffers 100 MB mapping checks.
 - [x] Linux/macOS workflow definitions, docs site, coding standards and dependency strategy.
-- [ ] Hosted CI stored artifacts, fully reviewed dependency locks, tested Docker/Spack recipes.
+- [x] Baseline Linux/macOS hosted CI green with stored numerical/binding/license artifacts.
+- [ ] Complex-stack CI, fully reviewed dependency locks, tested Docker/Spack recipes.
 - [x] Name-availability check; retain HeaviSolve.
 - [ ] All M0 acceptance/exit gates. **M1 must not start.**
