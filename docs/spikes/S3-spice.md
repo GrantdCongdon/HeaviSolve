@@ -19,7 +19,7 @@ OpenVAF-Reloaded v24.0.2mob macOS arm64 compiled the project's cubic Verilog-A c
 
 Built release 7.10.0 on macOS arm64 with Trilinos16.1.0, FFTW, AMD and SuiteSparseConfig. Xyce archive SHA256 `b5a883196f0a2b3972fd13c541fecf04735bfabc7d124d7c7e17de707204f4e2`; Trilinos SHA256 `e9651c88f581049457036cfc01b527a9d3903c257338eeeab942befd7452f23a`. Failed exploratory master configure remains stored. This successful build required Fortran enabled in Trilinos, `-fsecond-underscore` to match AztecOO symbol declarations, explicit `M4` for bison, and replacing two `std::abs<double>(val)` calls with `std::abs(val)` in `N_LAS_BlockSystemHelpers.C`. These compatibility patches must be reproduced in CI; Linux has not run.
 
-The research runner launches Xyce as a subprocess. Its source `N_CIR_Xyce.h` exposes `simulateUntil`; step-wise library coupling is documented but not experimentally validated here. ADMS was unavailable; the pinned IHP Xyce HBT uses built-in VBIC level12 and runs without an ADMS plugin. ngspice uses its corresponding level9 file. Neither route establishes MOS coverage.
+The research runner launches Xyce as a subprocess. The native stepwise library experiment below now exercises `simulateUntil` and circuit-value reads on macOS; rollback and general external-device coupling remain untested. ADMS was unavailable; the pinned IHP Xyce HBT uses built-in VBIC level12 and runs without an ADMS plugin. ngspice uses its corresponding level9 file. Neither route establishes MOS coverage.
 
 Xyce HB series RLC: R=1000 ohm, L=1mH, C=1nF, 1MHz sinusoid. Fundamental current phasor relative error **3.760856706849292e-16** versus `1/(R+j(omega L-1/(omega C)))`. Cubic conductance g1=0.001 S, g3=0.0001 A/V³: fundamental/third-harmonic maximum relative error **3.5236570605778894e-15**. Xyce outputs complex Fourier coefficients: nonzero-frequency peak amplitude is twice their magnitude. ngspice transient followed by a 4096-point FFT on the final period gives fundamental **0.0010749964632357002 A**, third **2.4999259632067543e-5 A**, maximum relative error **2.9614717298327145e-5**. All pass the declared 1e-3 HB/FFT threshold. These are local tests, not CI verification.
 
@@ -53,3 +53,18 @@ With self-heating enabled, central-difference DC slopes at perturbations1e-5,1e-
 The full isothermal test has passing AC and transient comparisons, but still fails DC base-current agreement. Tight reltol/abstol, matched gmin down to1e-16, and voltage tolerance checks reduce but do not eliminate the residual. The stricter diagnostic original-model case measures1.0304146187721579e-4 relative RMS, just above1e-4, with maximum absolute difference1.0837545900853101e-11A. Matching `ikp` or delay on the diagnostic Xyce copy does not remove it. No acceptance bound was changed and no copied model is promoted as a validated replacement.
 
 Consequently, keep self-heated AC explicitly unsupported for cross-engine equivalence in this tested configuration. Isothermal AC/transient feasibility is now demonstrated locally; the full IHP conformance gate remains FAIL pending DC investigation and CI. Neither replacing the default case nor suppressing base-current comparisons is an acceptable way to declare a pass.
+
+## Follow-up: native Xyce stepwise API (2026-11-03)
+
+[Native harness](../../verification/spice/xyce_step.cpp) and [RC deck](../../verification/spice/xyce_step.cir) drive the C interface through50 successive100ns requests to5us. Every returned time matches the requested time within1ps and advances monotonically. At each stop the harness reads V(out) and compares it against the closed-form zero-initial-condition sine-driven RC response. Maximum absolute error7.1045086396173684e-7V is below1e-4V: **LOCAL PASS**. [Samples](../../verification/results/s3-xyce-step.csv), [runtime output](../../verification/results/s3-xyce-step.log), [provenance](../../verification/results/s3-xyce-step-provenance.json).
+
+The first link against libxyce alone failed: the exported C-interface functions reside in a separate upstream target excluded from the default build. Explicitly building `xycecinterface` succeeded. This is an upstream build option, not a source patch. Reproduce against the existing pinned Xyce build:
+
+```sh
+cmake --build /tmp/heavisolve-spice/xyce-build --target xycecinterface -j2
+clang++ -std=c++20 -O2 -Wall -Wextra -Wpedantic -Werror   -I/tmp/heavisolve-spice/xyce/include verification/spice/xyce_step.cpp   -L/tmp/heavisolve-spice/xyce-build/utils/XyceCInterface -lxycecinterface   -Wl,-rpath,/tmp/heavisolve-spice/xyce-build/utils/XyceCInterface   -o /tmp/heavisolve-spice/xyce-step
+cp verification/spice/xyce_step.cir /tmp/heavisolve-spice/xyce-step.cir
+/tmp/heavisolve-spice/xyce-step /tmp/heavisolve-spice/xyce-step.cir verification/results/s3-xyce-step.csv
+```
+
+This narrows the API uncertainty to unsupported experiments: rollback, exchanged external-device values, and Linux execution. It does not establish full co-simulation conformance or change ADR003 scores without a comparable re-evaluation.

@@ -1,0 +1,5 @@
+[1/5] Updating version string Git SHA and time stamp
+[2/5] Building CXX object src/CMakeFiles/XyceLib.dir/UtilityPKG/N_UTL_Version.C.o
+[3/5] Linking CXX shared library src/libxyce.dylib
+[4/5] Building CXX object utils/XyceCInterface/CMakeFiles/xycecinterface.dir/N_CIR_XyceCInterface.C.o
+[5/5] Linking CXX shared library utils/XyceCInterface/libxycecinterface.dylib
