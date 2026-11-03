@@ -99,10 +99,16 @@ jobs:
         run: |
           set -o pipefail
           python3 verification/language/compare.py build-language | tee language-results.csv
+      - name: Native Python-callable binding checks
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 verification/language/check_bindings.py --build build-bindings | tee binding-results.json
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: language-${{ matrix.os }}
           path: |
             language-results.csv
+            binding-results.json
             build-language/CMakeCache.txt

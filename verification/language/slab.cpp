@@ -8,6 +8,7 @@
 #include <iomanip>
 #include <iostream>
 #include <numbers>
+#include <stdexcept>
 #include <vector>
 extern "C" void dggev_(const char*,const char*,const int*,double*,const int*,double*,const int*,double*,double*,double*,double*,const int*,double*,const int*,double*,const int*,int*);
 struct Assembly { int n; std::vector<double> a,b; };
@@ -57,10 +58,10 @@ std::vector<double> solve(Assembly data){
  std::vector<double>ar(n),ai(n),beta(n);
  const char no='N';
  dggev_(&no,&no,&n,data.a.data(),&n,data.b.data(),&n,ar.data(),ai.data(),beta.data(),&dummy,&one,&dummy,&one,&query,&lwork,&info);
- if(info)std::exit(2);
+ if(info)throw std::runtime_error("LAPACK workspace query failed");
  lwork=int(query);std::vector<double>work(lwork);
  dggev_(&no,&no,&n,data.a.data(),&n,data.b.data(),&n,ar.data(),ai.data(),beta.data(),&dummy,&one,&dummy,&one,work.data(),&lwork,&info);
- if(info)std::exit(3);
+ if(info)throw std::runtime_error("LAPACK eigensolve failed");
  std::vector<double>neff;
  for(int i=0;i<n;++i)if(std::abs(ai[i])<1e-9&&std::abs(beta[i])>1e-14){
   const double q=ar[i]/beta[i]/(4*std::numbers::pi*std::numbers::pi);
@@ -68,6 +69,7 @@ std::vector<double> solve(Assembly data){
  }
  std::sort(neff.rbegin(),neff.rend());return neff;
 }
+#ifndef HS_SLAB_LIBRARY
 int main(int argc,char**argv){
  const int refinement=argc==2?std::atoi(argv[1]):1;
  if(refinement<1||refinement>8)return 2;
@@ -78,3 +80,5 @@ int main(int argc,char**argv){
  if(values.size()<2)return 4;
  std::cout<<"cpp,"<<refinement<<','<<n<<','<<std::chrono::duration<double>(assembled-start).count()<<','<<std::chrono::duration<double>(finished-assembled).count()<<','<<values[0]<<','<<values[1]<<','<<values.size()<<'\n';
 }
+
+#endif

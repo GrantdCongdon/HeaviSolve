@@ -3,7 +3,7 @@
 
 # ADR-001: Recommend C++20 after paired native slab experiments
 
-Status: proposed for M0 integration; local numerical comparison passed, hosted CI and binding comparison remain open. Date: 2026-11-02.
+Status: proposed for M0 integration; local numerical and C ABI binding comparisons passed; hosted CI and production binding-framework comparison remain open. Updated: 2026-11-03.
 
 ## Decision
 
@@ -35,7 +35,7 @@ The independent [closed-form oracle](../../verification/oracles/slab.py) bisects
 
 Every measured refinement transition has error order between 1.9859 and 1.9994, inside the harness's 1.8–2.2 interval. The maximum cross-language index difference is 9.370282327836321e-14, below 1e-10. Both final index errors are below the spike's 1e-4 threshold. **Local paired numerical check: PASS.** This threshold does not meet or replace M2's eventual 1e-6 acceptance target. No solver is claimed verified: hosted CI has not run these benchmarks with stored artifacts.
 
-Line counts are literal physical lines, not normalized complexity: both files use compressed formatting. Peak memory was not measured. A timestamp records the start of the language work, but interruptions and concurrent work prevent a reliable engineering-time comparison; development hours are **not measured**, and the 1–2 week budget is not an observed duration. Python bindings were not implemented, so binding effort and zero-copy NumPy behavior are **not measured**. Rust required an isolated toolchain installation and an explicit unsafe C ABI declaration; no external Rust FEM crate was used. The numerical comparison is complete locally, while those requested comparison dimensions remain limitations of R2.
+Line counts are literal physical lines, not normalized complexity: both files use compressed formatting. Peak memory was not measured. A timestamp records the start of the language work, but interruptions and concurrent work prevent a reliable engineering-time comparison; development hours are **not measured**, and the 1–2 week budget is not an observed duration. A later equivalent C ABI/ctypes binding experiment is recorded below; nanobind/PyO3 and zero-copy NumPy behavior remain **not measured**. Rust required an isolated toolchain installation and an explicit unsafe C ABI declaration; no external Rust FEM crate was used. The numerical comparison is complete locally, while those requested comparison dimensions remain limitations of R2.
 
 ## Weighted assessment
 
@@ -48,7 +48,7 @@ Scores are engineering judgments informed by the cited ecosystem and local exper
 | SPICE interop | 4 | 5 | 3 | libngspice callbacks and OSDI exercised from C++; Rust foreign calls possible but SPICE adapter untested |
 | GUI/3D | 4 | 5 | 3 | Qt/VTK C++ shell exercised in S5; no equivalent Rust GUI spike |
 | CAD/meshing | 3 | 5 | 3 | Gmsh C++ API and native extrusion exercised in S4; Rust wrappers untested |
-| Python bindings | 3 | 4 | 4 | nanobind/PyO3 documented options; equal provisional score because no binding experiment was run |
+| Python bindings | 3 | 4 | 4 | Equivalent C ABI/ctypes wrappers pass locally; nanobind/PyO3 ergonomics and zero-copy NumPy remain untested, so equal score retained |
 | Safety/tooling | 3 | 3 | 5 | Rust checked ownership and bounds in assembly; unsafe LAPACK ABI remains; C++ needs RAII, sanitizers and review |
 | Maintainability | 2 | 4 | 3 | C++ aligns with selected native dependencies; contributor recruitment and maintenance effort not measured |
 | **Weighted sum (maximum 145)** | **29** | **134** | **86** | **Subjective suitability, not a measured performance score** |
@@ -66,10 +66,35 @@ rustc --edition=2024 -C opt-level=2 -D warnings verification/language/slab.rs -o
 python3 verification/language/compare.py > .work/language/comparison.csv
 ```
 
-For the isolated toolchain used here, set `RUSTUP_HOME` to `.work/language/rustup` and `CARGO_HOME` to `.work/language/cargo` using absolute paths, then use that cargo directory's `bin/rustc`. Linux requires an appropriate LAPACK link configuration; the recorded source currently targets the Accelerate framework. Add the portable configuration and CI run before claiming cross-platform completion. A repeatable binding smoke test and explicit accounting of the missing effort measurements should precede final acceptance of the full R2 comparison.
+For the isolated toolchain used here, set `RUSTUP_HOME` to `.work/language/rustup` and `CARGO_HOME` to `.work/language/cargo` using absolute paths, then use that cargo directory's `bin/rustc`. Linux requires an appropriate LAPACK link configuration; the recorded source currently targets the Accelerate framework. Add the portable configuration and CI run before claiming cross-platform completion. The later repeatable C ABI binding smoke test supplies narrow binding evidence; full framework comparison and historical effort accounting remain limitations of the requested R2 comparison.
 
 Primary sources underlying the ecosystem assessment: [MFEM examples](https://mfem.org/examples/), [Fenris README](https://github.com/InteractiveComputerGraphics/fenris/blob/master/README.md), [Fenris element definitions](https://github.com/InteractiveComputerGraphics/fenris/blob/master/src/element.rs), [nanobind](https://nanobind.readthedocs.io/en/latest/), [PyO3](https://pyo3.rs/), [Qt](https://doc.qt.io/qt-6/), [Gmsh API](https://gmsh.info/doc/texinfo/). Fenris' dated status paragraph is not a current maintenance timestamp. This update records local experiment evidence; it does not claim a new upstream maintenance audit.
 
 Portability follow-up: the Rust LAPACK declaration now selects Accelerate only on macOS and `lapack` elsewhere using conditional link attributes. The stored audit hash describes the original macOS-only source used for the recorded numerical run. Linux execution remains pending; this source change does not establish a Linux pass.
 
 The portable CMake project was subsequently built and the full comparison repeated locally on macOS: [repeat output](../../verification/results/language-portable-comparison.csv). Numerical tolerances pass again. A Linux/macOS workflow now stores the comparison output; it has not yet run remotely. Different timings across these runs reinforce that no controlled language-speed comparison is claimed.
+
+
+## Equivalent Python-callable C ABI binding experiment — 2026-11-03
+
+[Native C++ wrapper](../../verification/language/binding.cpp), [native Rust wrapper](../../verification/language/binding.rs), [orchestration harness](../../verification/language/check_bindings.py), and [raw measured output](../../verification/results/language-bindings.json).
+
+Both shared libraries expose the same synchronous `hs_slab(refinement, output, capacity, count)` C ABI and reuse the existing native slab implementation. Python `ctypes` allocates output storage and calls native assembly/eigensolution. The wrappers return explicit invalid-argument, insufficient-capacity and numerical-failure statuses. C++ catches exceptions (LAPACK failures now throw instead of exiting the interpreter); Rust catches unwinding panics. Invalid non-null pointers are still a caller contract, and fatal signals/allocator aborts are not caught. Fault injection, thread safety and cancellation were not tested.
+
+Both bindings pass at refinement4 against the independent TE/TM roots: errors approximately2.62767e-5 and6.60865e-6, below1e-4. All six returned indices agree between languages within1e-10. Tests also pass for invalid refinement, null pointers, insufficient capacity with unchanged output, and persistence of one caller-owned result while a subsequent call fills a different buffer. An aliased ctypes host view has the same address as its backing buffer. **This is not end-to-end zero-copy:** native vectors are copied into caller-owned output; no NumPy zero-copy claim is made.
+
+| Measured quantity | C++ | Rust |
+|---|---:|---:|
+| Wrapper physical lines, including headers |22|30|
+| Shared-library compilation seconds |0.9333750419900753|1.208748333971016|
+| Refinement4 native call including ctypes dispatch, seconds |1.2708804590511136|1.2379625409957953|
+
+The shared Python build/test harness has82 physical lines. First timestamped inspection was2026-11-03T15:24:00Z; successful result capture was15:25:20.261941Z, an80.261941-second wall-clock interval for this joint agent-driven experiment. This is not human engineering time, not a per-language effort comparison, and does not reconstruct the earlier solver-development hours. Compile/call times are one sample each and do not isolate binding overhead or establish a speed winner. No dependency beyond the existing toolchains, LAPACK and Python standard library was added.
+
+Reproduce on the measured host with the isolated Rust environment described above:
+
+```sh
+python3 verification/language/check_bindings.py --build .work/language-bindings --rustc "$CARGO_HOME/bin/rustc"
+```
+
+The harness has a Linux `-shared`/LAPACK path, but that path has not been executed here. C ABI feasibility supplies evidence of callable native solvers and explicit buffer ownership; it is a documented narrow substitute for a full nanobind-versus-PyO3 framework comparison, not completion of that comparison. Weighted scores remain unchanged and M0/CI gates remain open.
