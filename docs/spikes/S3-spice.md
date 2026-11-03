@@ -3,7 +3,7 @@
 
 # S3a–c: SPICE feasibility
 
-## S3a ngspice — PARTIAL, overall NOT PASS
+## S3a ngspice — LOCAL PASS, hosted CI pending
 
 Built ngspice47 shared library on macOS arm64. Source archive SHA256 `894e649651f1838a14095e5a5439e7d3aa63e87ede14d283173fda4fcdef675f`. Configure: `--prefix=/tmp/heavisolve-spice/install --with-ngshared --without-x --disable-openmp --disable-klu --with-readline=no`, then `make -j6`, `make install`.
 
@@ -13,12 +13,31 @@ C++ harness linked libngspice with rpath to isolated prefix. RC external-source 
 
 IHP npn13G2 VBIC smoke test: VCE1V,VBE0.8V, collector current0.00013991752401704821A. This is a finite-positive-current smoke check, not validation against measurement. Uses Apache-2.0 headers in the public HBT model/corner/stat files, loaded from ignored `.local`; no model data bundled. Missing corner/model include failures were resolved without changing device parameters. [Output](../../verification/results/ngspice-ihp.log). R3 records upstream research pin; model file digests are in provenance.
 
-OpenVAF/OSDI loading, synchronization/rollback, Linux execution and standalone-netlist equivalence remain untested. Therefore the full S3a criterion is NOT PASS.
+OpenVAF-Reloaded v24.0.2mob macOS arm64 compiled the project's cubic Verilog-A conductance to OSDI. Archive SHA256 `022d5659257239af98f5e8ee59e2fe4403e1b2e694a06461152d5251c0ad0196`. Native `ngspice_osdi.cpp` loads it with the shared-library `osdi` command (not `pre_osdi`), then computes 0.0011000000000000001 A at 1 V, identical to the analytic result within 1e-12 A. [Output](../../verification/results/s3-osdi.log). A space-free temporary path avoids ngspice command quoting limitations. The compiler version string itself reports unknown; the release asset hash is the pin. Linux, rollback and hosted CI remain untested.
 
-## S3b Xyce — BLOCKED / NOT PASS
+## S3b Xyce — numerical subtests LOCAL PASS; platform gate NOT PASS
 
-Exploratory master archive SHA256 `5fc373fd2eec5c228352ec770f9276e0fa6e58b782b6254ad627c1a86052a969`; not a release pin. CMake configuration failed because TrilinosConfig.cmake was absent. [Log](../../verification/results/s3-xyce-configure.log). No Xyce executable, RC/IHP output or HB comparison was produced. Current source uses CMake/C++17; use version-matched instructions, not the older website recipe. Next alternative: a pinned Xyce release with its supported Trilinos configuration in a dedicated Linux build image, then macOS port. IHP uses ADMS-generated plugins, not assumed OSDI.
+Built release 7.10.0 on macOS arm64 with Trilinos16.1.0, FFTW, AMD and SuiteSparseConfig. Xyce archive SHA256 `b5a883196f0a2b3972fd13c541fecf04735bfabc7d124d7c7e17de707204f4e2`; Trilinos SHA256 `e9651c88f581049457036cfc01b527a9d3903c257338eeeab942befd7452f23a`. Failed exploratory master configure remains stored. This successful build required Fortran enabled in Trilinos, `-fsecond-underscore` to match AztecOO symbol declarations, explicit `M4` for bison, and replacing two `std::abs<double>(val)` calls with `std::abs(val)` in `N_LAS_BlockSystemHelpers.C`. These compatibility patches must be reproduced in CI; Linux has not run.
 
-## S3c dialect conformance — NOT RUN / NOT PASS
+The research runner launches Xyce as a subprocess. Its source `N_CIR_Xyce.h` exposes `simulateUntil`; step-wise library coupling is documented but not experimentally validated here. ADMS was unavailable; the pinned IHP Xyce HBT uses built-in VBIC level12 and runs without an ADMS plugin. ngspice uses its corresponding level9 file. Neither route establishes MOS coverage.
 
-Cannot compare engines without working Xyce. No common IR/dialect implementation or RC/RLC/diode/amplifier corpus was completed. Proposed initial thresholds remain DC1e-4 relative, AC1e-3, transient NRMSE1e-3 with absolute floors to define before execution. No score or agreement number is fabricated. ADR-003 remains proposed.
+Xyce HB series RLC: R=1000 ohm, L=1mH, C=1nF, 1MHz sinusoid. Fundamental current phasor relative error **3.760856706849292e-16** versus `1/(R+j(omega L-1/(omega C)))`. Cubic conductance g1=0.001 S, g3=0.0001 A/V³: fundamental/third-harmonic maximum relative error **3.5236570605778894e-15**. Xyce outputs complex Fourier coefficients: nonzero-frequency peak amplitude is twice their magnitude. ngspice transient followed by a 4096-point FFT on the final period gives fundamental **0.0010749964632357002 A**, third **2.4999259632067543e-5 A**, maximum relative error **2.9614717298327145e-5**. All pass the declared 1e-3 HB/FFT threshold. These are local tests, not CI verification.
+
+## S3c dialect conformance — FAIL, substantive model differences
+
+`verification/spice/conformance.cpp` is a small native engine-neutral circuit IR with per-engine output/options/model emitters. `ngspice_run.cpp` extracts native engine vectors; Python only launches engines, interpolates and compares results. The corpus contains RC, series RLC, diode and IHP npn13G2 common-emitter amplifier. Analyses are DC source sweep0.7–0.8V, AC1kHz–100MHz, and 10us transient. Compare output voltage and drive-source current. Linear interpolation uses ngspice sample times inside the Xyce time range; relative RMS normalization has a 1e-12 absolute denominator floor. DC bound1e-4, AC/transient1e-3; no tolerance was relaxed. These scoped checks do not establish arbitrary lossless netlist translation.
+
+[Full numerical summary](../../verification/results/s3-conformance.json), [raw emitted decks, engine logs and CSV outputs](../../verification/results/s3-conformance-output.tar.gz), [source/model hashes](../../verification/results/s3-conformance-provenance.json).
+
+| Case | DC | AC | Transient |
+|---|---|---|---|
+| RC | PASS | PASS | PASS; voltage NRMSE7.75509e-6 |
+| RLC | PASS | PASS | PASS; voltage NRMSE2.01837e-5 |
+| Diode | FAIL at original solver settings; current relative RMS1.004918e-4 | PASS | PASS |
+| IHP HBT amplifier | FAIL; base-current relative RMS1.359698e-4 | FAIL; voltage relative RMS0.0834799, current0.0980982 | PASS; voltage5.64525e-6/current7.69790e-5 |
+
+A separate [solver-tolerance sensitivity test](../../verification/results/s3-dc-tolerance-sensitivity.json) tightened numerical reltol1e-8→1e-10 and abstol1e-14→1e-16 without changing models or acceptance bounds. Diode DC then passes at9.7835463e-5; IHP DC remains above threshold at1.0325884e-4. The original failures remain recorded. No full-suite pass is claimed.
+
+The pinned foundry files differ beyond syntax: ngspice has `ikp=1.00E-04*(Nx*0.25)` while the Xyce counterpart has `.00E-04*(Nx*0.25)`; delay/NQS defaults differ, and the engines use different VBIC implementations. These differences are observed potential causes, not a proven attribution of the AC discrepancy. Model files were not edited. The 8–10% AC disagreement blocks equal-accuracy support and requires a focused model/linearization investigation before M0 closes. No restricted or public foundry model files are included in the stored result archive.
+
+Harness failures were also retained: initial Xyce DC column assumptions and ngspice complex-frequency metadata handling. The corrected runner copies ngspice vector metadata and reads complex frequency correctly. Stored output was not hand-edited.

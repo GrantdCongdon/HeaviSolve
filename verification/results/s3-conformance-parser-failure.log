@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/verification/spice/run_conformance.py", line 24, in <module>
+    if analysis=='dc': xs=xy[:,1]; xv=xy[:,2]; nv=ng[:,1]
+                                      ~~^^^^^
+IndexError: index 2 is out of bounds for axis 1 with size 2

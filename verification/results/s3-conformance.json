@@ -1,0 +1,145 @@
+[
+  {
+    "circuit": "rc",
+    "analysis": "dc",
+    "voltage_relative_rms": 4.709029648496474e-17,
+    "current_relative_rms": 3.654570400410549e-08,
+    "tolerance": 0.0001,
+    "status": "PASS",
+    "ng_samples": 11,
+    "xy_samples": 11
+  },
+  {
+    "circuit": "rc",
+    "analysis": "ac",
+    "voltage_relative_rms": 1.2188946994290093e-16,
+    "current_relative_rms": 1.3758019204309928e-16,
+    "tolerance": 0.001,
+    "status": "PASS",
+    "ng_samples": 51,
+    "xy_samples": 51
+  },
+  {
+    "circuit": "rc",
+    "analysis": "tran",
+    "voltage_relative_rms": 7.755090336335983e-06,
+    "current_relative_rms": 1.2830337467277356e-06,
+    "tolerance": 0.001,
+    "status": "PASS",
+    "ng_samples": 10164,
+    "xy_samples": 301813
+  },
+  {
+    "circuit": "rlc",
+    "analysis": "dc",
+    "voltage_relative_rms": 4.709029648496474e-17,
+    "current_relative_rms": 3.654570400410549e-08,
+    "tolerance": 0.0001,
+    "status": "PASS",
+    "ng_samples": 11,
+    "xy_samples": 11
+  },
+  {
+    "circuit": "rlc",
+    "analysis": "ac",
+    "voltage_relative_rms": 2.318670987381644e-16,
+    "current_relative_rms": 5.731906503773028e-16,
+    "tolerance": 0.001,
+    "status": "PASS",
+    "ng_samples": 51,
+    "xy_samples": 51
+  },
+  {
+    "circuit": "rlc",
+    "analysis": "tran",
+    "voltage_relative_rms": 2.0183660283823565e-05,
+    "current_relative_rms": 8.12250782959673e-06,
+    "tolerance": 0.001,
+    "status": "PASS",
+    "ng_samples": 10419,
+    "xy_samples": 276217
+  },
+  {
+    "circuit": "diode",
+    "analysis": "dc",
+    "voltage_relative_rms": 2.379182255859324e-05,
+    "current_relative_rms": 0.00010049180156829583,
+    "tolerance": 0.0001,
+    "status": "FAIL",
+    "ng_samples": 11,
+    "xy_samples": 11
+  },
+  {
+    "circuit": "diode",
+    "analysis": "ac",
+    "voltage_relative_rms": 9.58457883049555e-05,
+    "current_relative_rms": 1.3179591976529986e-05,
+    "tolerance": 0.001,
+    "status": "PASS",
+    "ng_samples": 51,
+    "xy_samples": 51
+  },
+  {
+    "circuit": "diode",
+    "analysis": "tran",
+    "voltage_relative_rms": 2.4833084290784687e-05,
+    "current_relative_rms": 8.078453288006884e-05,
+    "tolerance": 0.001,
+    "status": "PASS",
+    "ng_samples": 10008,
+    "xy_samples": 10001
+  },
+  {
+    "circuit": "ihp",
+    "analysis": "dc",
+    "voltage_relative_rms": 2.760654507864921e-08,
+    "current_relative_rms": 0.00013596984441776352,
+    "tolerance": 0.0001,
+    "status": "FAIL",
+    "ng_samples": 11,
+    "xy_samples": 11
+  },
+  {
+    "circuit": "ihp",
+    "analysis": "ac",
+    "voltage_relative_rms": 0.08347986795336101,
+    "current_relative_rms": 0.09809817449032454,
+    "tolerance": 0.001,
+    "status": "FAIL",
+    "ng_samples": 51,
+    "xy_samples": 51
+  },
+  {
+    "circuit": "ihp",
+    "analysis": "tran",
+    "voltage_relative_rms": 5.645253425224919e-06,
+    "current_relative_rms": 7.697897615984005e-05,
+    "tolerance": 0.001,
+    "status": "PASS",
+    "ng_samples": 10008,
+    "xy_samples": 20276
+  },
+  {
+    "circuit": "rlc",
+    "analysis": "hb",
+    "relative_error": 3.760856706849292e-16,
+    "tolerance": 0.001,
+    "status": "PASS"
+  },
+  {
+    "circuit": "cubic",
+    "analysis": "hb",
+    "relative_error": 3.5236570605778894e-15,
+    "tolerance": 0.001,
+    "status": "PASS"
+  },
+  {
+    "circuit": "cubic",
+    "analysis": "ngspice_transient_fft",
+    "fundamental_a": 0.0010749964632357002,
+    "third_harmonic_a": 2.4999259632067543e-05,
+    "relative_error": 2.9614717298327145e-05,
+    "tolerance": 0.001,
+    "status": "PASS"
+  }
+]
