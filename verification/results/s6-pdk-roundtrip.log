@@ -1,0 +1,27 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+[GDSTK] Properties with count larger than 128 bytes are not officially supported by the GDSII specification.  This file might not be compatible with all readers.
+[GDSTK] Properties with count larger than 128 bytes are not officially supported by the GDSII specification.  This file might not be compatible with all readers.
+[GDSTK] Properties with count larger than 128 bytes are not officially supported by the GDSII specification.  This file might not be compatible with all readers.
+[GDSTK] Properties with count larger than 128 bytes are not officially supported by the GDSII specification.  This file might not be compatible with all readers.
+[GDSTK] Properties with count larger than 128 bytes are not officially supported by the GDSII specification.  This file might not be compatible with all readers.
+[GDSTK] Properties with count larger than 128 bytes are not officially supported by the GDSII specification.  This file might not be compatible with all readers.
+[GDSTK] Properties with count larger than 128 bytes are not officially supported by the GDSII specification.  This file might not be compatible with all readers.
+[GDSTK] Properties with count larger than 128 bytes are not officially supported by the GDSII specification.  This file might not be compatible with all readers.
+[GDSTK] Properties with count larger than 128 bytes are not officially supported by the GDSII specification.  This file might not be compatible with all readers.
+[GDSTK] Properties with count larger than 128 bytes are not officially supported by the GDSII specification.  This file might not be compatible with all readers.
+[GDSTK] Properties with count larger than 128 bytes are not officially supported by the GDSII specification.  This file might not be compatible with all readers.
+/Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/verification/layout/pdk_roundtrip.py:29: RuntimeWarning: Saved file uses unofficially supported extensions.
+  if engine=='gdstk':getattr(library,'write_'+fmt)(str(output))
+fixture siepic-ring serialized_internal_cells ['$$$CONTEXT_INFO$$$']
+fixture=siepic-ring engine=gdstk format=gds cells=18 layers=6 filled_geometry_xor_area_dbu2=0 same_units=True same_cells=True status=PASS
+fixture=siepic-ring engine=gdstk format=oas cells=19 layers=6 filled_geometry_xor_area_dbu2=3184242529 same_units=True same_cells=False status=FAIL
+fixture=siepic-ring engine=klayout format=gds cells=18 layers=6 filled_geometry_xor_area_dbu2=0 same_units=True same_cells=True status=PASS
+fixture=siepic-ring engine=klayout format=oas cells=18 layers=6 filled_geometry_xor_area_dbu2=0 same_units=True same_cells=True status=PASS
+fixture ihp-stdcell serialized_internal_cells []
+fixture=ihp-stdcell engine=gdstk format=gds cells=84 layers=15 filled_geometry_xor_area_dbu2=0 same_units=True same_cells=True status=PASS
+fixture=ihp-stdcell engine=gdstk format=oas cells=84 layers=15 filled_geometry_xor_area_dbu2=0 same_units=True same_cells=True status=PASS
+fixture=ihp-stdcell engine=klayout format=gds cells=84 layers=15 filled_geometry_xor_area_dbu2=0 same_units=True same_cells=True status=PASS
+fixture=ihp-stdcell engine=klayout format=oas cells=84 layers=15 filled_geometry_xor_area_dbu2=0 same_units=True same_cells=True status=PASS
+selection=KLayout_for_PDK_roundtrip; gdstk_context_metadata_conversion_not_lossless
+not_tested=PCell_parameter_regeneration,all_properties,text_semantics

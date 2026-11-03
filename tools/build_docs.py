@@ -10,11 +10,11 @@ ROOT=pathlib.Path(__file__).resolve().parents[1]
 stage=ROOT/'.work/docs-source'
 shutil.rmtree(stage,ignore_errors=True)
 shutil.copytree(ROOT/'docs',stage)
-shutil.copytree(ROOT/'verification/results',stage/'results')
+shutil.copytree(ROOT/'verification',stage/'verification',ignore=shutil.ignore_patterns('__pycache__'))
 shutil.copy2(ROOT/'README.md',stage/'repository.md')
 for page in stage.rglob('*.md'):
     text=page.read_text()
-    text=text.replace('../../verification/results/','../results/')
+    text=text.replace('../../verification/','../verification/')
     if page.name=='index.md': text=text.replace('../README.md','repository.md')
     if page.name=='repository.md':
         text=text.replace('docs/milestones/','milestones/').replace('[contribution rules](CONTRIBUTING.md)','contribution rules in the repository')

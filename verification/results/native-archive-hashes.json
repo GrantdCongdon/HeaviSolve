@@ -1,0 +1,8 @@
+{
+  "mfem410.tar.gz": "d5aabe991b8b5569aa26e2b5d4b59ac617ee10ebac3d45fd6ff9c74b2c1a47dd",
+  "petsc326.tar.gz": "fed8568695f073c00110acb5e1a55fe8716072001483a6a6207dadf5992becc6",
+  "slepc326.tar.gz": "99900cb66452d87309d922585f57128d419369ccea34a08522e6a3dc80e4000e",
+  "superlu-dist921.tar.gz": "c80a1c2edaaa451ee9a54e005e5f3f56dc55cabe2b0a8d7acf5a1447a648157a",
+  "spice-xyce710.tar.gz": "b5a883196f0a2b3972fd13c541fecf04735bfabc7d124d7c7e17de707204f4e2",
+  "spice-trilinos.tar.gz": "e9651c88f581049457036cfc01b527a9d3903c257338eeeab942befd7452f23a"
+}

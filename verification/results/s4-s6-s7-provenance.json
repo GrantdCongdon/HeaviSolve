@@ -1,0 +1,24 @@
+{
+  "recorded_at_utc": "2026-11-03T02:52:37.041588+00:00",
+  "host": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "evidence_note": "Existing local run outputs copied without editing measurements. Source hashes describe capture-time working tree, not necessarily exact run-time source; GUI source was revised after the recorded million-polygon run. No hosted CI evidence.",
+  "source_sha256": {
+    "verification/meshing/extrusion.cpp": "01fb6473e9b130f1a1cd7241f75b36508f1c97fe38a0bc5baf5be457bc534f56",
+    "verification/layout/pdk_roundtrip.py": "3043c76aebaece0d36d22d1a41be4ef4293932225edeff39a27cd01a4099ba7e",
+    "verification/layout/clipper.cpp": "283ac6d88489021c4f56ad1b4707838df7b7ac71e8d1190da9352f2e52f649b5",
+    "verification/gui/shell.cpp": "0f5877d345381684cf766fd3ff5ada9a9de82fec9a09d039670629c8ab5fe71b",
+    "verification/ipc/compare.cpp": "517e15a1914a0c49a4fd52c791230b0e6610e7495af3c3aec609cee84f389240",
+    "verification/ipc/run_compare.py": "095338f3609690ca1bf4f2df2c933422f0ce40a99bfe9d12e71f7067f9c0f2eb",
+    "verification/ipc/spike.proto": "9cd0d96d520b5dd592af1cf4f2cef0f3e165c89d32fad9a5a58be96f637c11f6",
+    "verification/ipc/spike.fbs": "b04abb919d97c29b8c98541a8c0d814b81d459c6406251d4efa422a069586ca7"
+  },
+  "raw_log_sha256": {
+    ".work/s4-extrusion.log": "e35110bf5a4fa0b0f1dfa143b6619c32537a52f3968cb9e9f29dc5ba79404dfb",
+    ".work/s6-pdk-roundtrip.log": "d356e57116ff4e24c04847fd70ce4deb0728ea618b38abfa2bf978579369f598",
+    ".work/s6-pdk-roundtrip-diagnostic.log": "5aab9dc9f0133405141f7fef42a3d9b6e11aa6cb68b89eb7bfd4324546f6846a",
+    ".work/s6-clipper.log": "9758eabdc0a69ddb8b8f0bd514a85fb9814635e87011d1847217d2c2db43651b",
+    ".work/s6-million-run.log": "3c0ed4c22b41fd879a3e130072f1f2ae5bc49836b394ff6454a9d9f017fd2686",
+    ".work/ipc-run-visible.log": "2cd23a11a31000bc4e3b9130fc1b420cd947a60e9ccbbe8380544406fa0f31ae",
+    ".work/ipc-run.log": "571ba1d5c332fa1b9dc5e6b9847e7d23b252182cf1394e4715de02ab6a4a07ec"
+  }
+}

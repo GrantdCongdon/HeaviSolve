@@ -1,0 +1,6 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+Traceback (most recent call last):
+  File "/Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/verification/ipc/run_compare.py", line 17, in <module>
+    raise RuntimeError('Server failed to become ready')
+RuntimeError: Server failed to become ready

@@ -12,3 +12,13 @@ Built MFEM 4.8 from source with MPI/METIS disabled and LAPACK enabled. Archive S
 The order2 trial failed on mode6 at0.0027727428346264738. [Failure retained](../../verification/results/cavity-coarse-failure.log); increasing order, without changing tolerance, passed. Dense eigen runtime22.09s in this recorded run; not a scalability benchmark.
 
 Conda dry resolution of MFEM+hypre+SuperLU_DIST+SLEPc succeeded on osx-arm64, but selected real PETSc/SLEPc. [Resolver output](../../verification/results/s1-conda-resolve.log) is not installation/build evidence and does not satisfy complex arithmetic. Next: explicitly resolve complex variants, lock, test complex linear solve and SLEPc cavity on both CI platforms; separately concretize Spack. No CI run exists yet.
+
+## Complex source-stack follow-up (2026-11-03)
+
+The convenient complex conda environment was built and produced a cavity result, but is **rejected** because it includes restricted ParMETIS; see [ADR-005](../adr/ADR-005-transitive-fem-dependencies.md). Do not mistake numerical success for dependency admission.
+
+A replacement stack now builds locally: MFEM4.10, hypre3.2, complex PETSc3.26.1, SLEPc3.26.0 and SuperLU_DIST9.2.1 with ParMETIS disabled. [Archive hashes](../../verification/results/native-archive-hashes.json), [PETSc configure](../../verification/results/petsc-clean-configure.log), [SLEPc configure](../../verification/results/slepc-clean-configure.log). This moves MFEM to4.10 because the earlier4.7 binary package could not compile against hypre3.2 headers.
+
+The same4356-free-DOF cavity now passes with complex PETSc matrices and SuperLU_DIST shift-invert SLEPc: maximum first-six frequency relative error **4.9435655966822978e-5**, tolerance1e-3. [Raw output](../../verification/results/fem-clean-cavity.log). It ran one MPI rank;12 eigenpairs converged, and the first six physical modes were compared. A local TCP-bind warning is retained; the single-rank calculation completed. This is neither multi-rank scaling nor a complex-material benchmark.
+
+The replacement still has unreviewed runtime-license expressions in its conda support environment. Therefore the local numerical subtest passes, but S1's complete license-approved, reproducible Linux/macOS CI gate remains **NOT PASS**. The checked-in CMake project requires pkg-config; this host lacked it, so the final local executable was compiled with explicit include/library paths. Exact resumption paths and build flags are recorded in the [running handoff](../milestones/M0-handoff.md).

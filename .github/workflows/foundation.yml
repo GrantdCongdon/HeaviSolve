@@ -78,3 +78,31 @@ jobs:
             numerical-results.log
             build-numerical/Testing/
             .work/mfem-build/CMakeCache.txt
+  paired-language:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-14]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Linux LAPACK
+        if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y liblapack-dev
+      - name: Build native slab implementations
+        run: |
+          rustc --version
+          cmake -S verification/language -B build-language -DCMAKE_BUILD_TYPE=Release
+          cmake --build build-language -j 2
+      - name: Compare independent slab oracle
+        shell: bash
+        run: |
+          set -o pipefail
+          python3 verification/language/compare.py build-language | tee language-results.csv
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: language-${{ matrix.os }}
+          path: |
+            language-results.csv
+            build-language/CMakeCache.txt

@@ -1,0 +1,89 @@
+=============================================================================================
+                         Configuring PETSc to compile on your system
+=============================================================================================
+=============================================================================================
+                                     ***** WARNING *****
+  Using default C optimization flags "-g -O3". You might consider manually setting optimal
+  optimization flags for your system with COPTFLAGS="optimization flags" see
+  config/examples/arch-*-opt.py for examples
+=============================================================================================
+=============================================================================================
+                                     ***** WARNING *****
+  Using default Cxx optimization flags "-g -O3". You might consider manually setting
+  optimal optimization flags for your system with CXXOPTFLAGS="optimization flags" see
+  config/examples/arch-*-opt.py for examples
+=============================================================================================
+=============================================================================================
+                                     ***** WARNING *****
+  You have a version of GNU make older than 4.0. It will work, but may not support all the
+  parallel testing options. You can install the latest GNU make with your package manager,
+  such as Brew or MacPorts, or use the --download-make option to get the latest GNU make
+=============================================================================================
+=============================================================================================
+                                     ***** WARNING *****
+  mpiexec may not work on your system due to network issues. Perhaps you have VPN running
+  whose network settings may not work with mpiexec or your network is misconfigured
+=============================================================================================
+=============================================================================================
+  Trying to download /Users/grantdcongdon/Documents-local/Projects/Quantum Optics
+  Statistical Solver/heavisolve/.work/superlu-dist921.tar.gz for SUPERLU_DIST
+=============================================================================================
+=============================================================================================
+              Configuring SUPERLU_DIST with CMake; this may take several minutes
+=============================================================================================
+=============================================================================================
+             Compiling and installing SUPERLU_DIST; this may take several minutes
+=============================================================================================
+Compilers:
+  C Compiler:  /tmp/heavisolve-fem-clean/bin/mpicc  -fPIC -Wall -Wwrite-strings -Wno-unknown-pragmas -Wconversion -Wno-sign-conversion -Wno-float-conversion -Wno-implicit-float-conversion -Qunused-arguments -fno-stack-check -fstack-protector -fvisibility=hidden -g -O3 
+    Version: Apple clang version 21.0.0 (clang-2100.1.1.101)
+  C++ Compiler:  /tmp/heavisolve-fem-clean/bin/mpicxx  -Wall -Wwrite-strings -Wno-strict-aliasing -Wno-unknown-pragmas -fstack-protector -fno-stack-check -fvisibility=hidden -g -O3  -std=gnu++20 -fPIC 
+    Version: Apple clang version 21.0.0 (clang-2100.1.1.101)
+Linkers:
+  Shared linker:   /tmp/heavisolve-fem-clean/bin/mpicc  -dynamiclib -undefined dynamic_lookup  -fPIC -Wall -Wwrite-strings -Wno-unknown-pragmas -Wconversion -Wno-sign-conversion -Wno-float-conversion -Wno-implicit-float-conversion -Qunused-arguments -fno-stack-check -fstack-protector -fvisibility=hidden -g -O3
+  Dynamic linker:   /tmp/heavisolve-fem-clean/bin/mpicc  -dynamiclib -undefined dynamic_lookup  -fPIC -Wall -Wwrite-strings -Wno-unknown-pragmas -Wconversion -Wno-sign-conversion -Wno-float-conversion -Wno-implicit-float-conversion -Qunused-arguments -fno-stack-check -fstack-protector -fvisibility=hidden -g -O3
+  Libraries linked against:   
+Python:
+  Executable: /opt/homebrew/opt/python@3.14/bin/python3.14
+BlasLapack:
+  Libraries:  -Wl,-rpath,/tmp/heavisolve-fem-clean/lib -L/tmp/heavisolve-fem-clean/lib -lopenblas.0
+  Unknown if this uses OpenMP (try export OMP_NUM_THREADS=<1-4> yourprogram -log_view) 
+  uses 4 byte integers
+MPI:
+  Version:    3
+  Includes:   -I/tmp/heavisolve-fem-clean/include
+  mpiexec: /tmp/heavisolve-fem-clean/bin/mpiexec
+  Implementation: openmpi
+  OMPI_VERSION: 5.0.11
+X:
+  Includes:   -I/opt/X11/include
+  Libraries:  -Wl,-rpath,/opt/X11/lib -L/opt/X11/lib -lX11
+pthread:
+CMake:
+  Version:    4.4.2
+  Executable: /opt/homebrew/bin/cmake
+Bison:
+  Version:    2.3
+  Executable: /usr/bin/bison
+SuperLU_DIST:
+  Version:    9.2.1
+  Includes:   -I/tmp/heavisolve-fem-clean/petsc/include
+  Libraries:  -Wl,-rpath,/tmp/heavisolve-fem-clean/petsc/lib -L/tmp/heavisolve-fem-clean/petsc/lib -lsuperlu_dist
+PETSc:
+  Language used to compile PETSc: C
+  Language used to compile PetscDevice: C
+  PETSC_ARCH: arch-heavisolve-complex
+  PETSC_DIR: /private/tmp/heavisolve-fem-clean/petsc-3.26.1
+  Prefix: /tmp/heavisolve-fem-clean/petsc
+  Scalar type: complex
+  Precision: double
+  Support for __fp16
+  Integer size: 4 bytes
+  Single library: yes
+  Shared libraries: yes
+  Memory alignment from malloc(): 16 bytes
+  Using GNU make: /usr/bin/make
+xxx=======================================================================================xxx
+ Configure stage complete. Now build PETSc libraries with:
+   make PETSC_DIR=/private/tmp/heavisolve-fem-clean/petsc-3.26.1 PETSC_ARCH=arch-heavisolve-complex all
+xxx=======================================================================================xxx

@@ -1,0 +1,4 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+protocol=grpc progress_messages=3 payload_bytes=100000000 serialized_control_bytes=53 checksum=12499992621 receive_and_scan_seconds=0.0186305 array_userspace_copies=0 independently_launched_processes=true
+protocol=zmq progress_messages=3 payload_bytes=100000000 serialized_control_bytes=152 checksum=12499992621 receive_and_scan_seconds=0.0151352 array_userspace_copies=0 independently_launched_processes=true

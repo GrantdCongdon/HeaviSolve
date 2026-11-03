@@ -1,0 +1,5 @@
+// SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+// SPDX-License-Identifier: AGPL-3.0-or-later
+namespace hsp_flat;
+table Update { progress:uint; path:string; bytes:ulong; checksum:ulong; }
+root_type Update;

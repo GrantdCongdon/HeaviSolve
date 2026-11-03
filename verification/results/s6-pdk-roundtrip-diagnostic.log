@@ -1,0 +1,21 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+[GDSTK] Properties with count larger than 128 bytes are not officially supported by the GDSII specification.  This file might not be compatible with all readers.
+[GDSTK] Properties with count larger than 128 bytes are not officially supported by the GDSII specification.  This file might not be compatible with all readers.
+[GDSTK] Properties with count larger than 128 bytes are not officially supported by the GDSII specification.  This file might not be compatible with all readers.
+[GDSTK] Properties with count larger than 128 bytes are not officially supported by the GDSII specification.  This file might not be compatible with all readers.
+[GDSTK] Properties with count larger than 128 bytes are not officially supported by the GDSII specification.  This file might not be compatible with all readers.
+[GDSTK] Properties with count larger than 128 bytes are not officially supported by the GDSII specification.  This file might not be compatible with all readers.
+[GDSTK] Properties with count larger than 128 bytes are not officially supported by the GDSII specification.  This file might not be compatible with all readers.
+[GDSTK] Properties with count larger than 128 bytes are not officially supported by the GDSII specification.  This file might not be compatible with all readers.
+[GDSTK] Properties with count larger than 128 bytes are not officially supported by the GDSII specification.  This file might not be compatible with all readers.
+[GDSTK] Properties with count larger than 128 bytes are not officially supported by the GDSII specification.  This file might not be compatible with all readers.
+[GDSTK] Properties with count larger than 128 bytes are not officially supported by the GDSII specification.  This file might not be compatible with all readers.
+/Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/verification/layout/pdk_roundtrip.py:26: RuntimeWarning: Saved file uses unofficially supported extensions.
+  getattr(library,'write_'+fmt)(str(output))
+cell_name_differences siepic-ring gds missing= ['$$$CONTEXT_INFO$$$'] extra= []
+Traceback (most recent call last):
+  File "/Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/verification/layout/pdk_roundtrip.py", line 35, in <module>
+    assert actual_cells==original_cells
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

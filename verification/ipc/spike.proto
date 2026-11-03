@@ -1,0 +1,7 @@
+// SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+// SPDX-License-Identifier: AGPL-3.0-or-later
+syntax = "proto3";
+package hsp_spike;
+message Request {}
+message Update { uint32 progress = 1; string path = 2; uint64 bytes = 3; uint64 checksum = 4; }
+service Spike { rpc Watch(Request) returns (stream Update); }

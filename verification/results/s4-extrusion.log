@@ -1,0 +1,3 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+wedges=256 boundary_elements=768 hcurl_dofs=1280 volume=29.833145991069618 exact_polygon_volume=29.833145991070154 circular_relative_error=0.00040154685033877424 min_jacobian=0.22080453447337967 min_scaled_jacobian=0.44481833712857255 status=PASS
