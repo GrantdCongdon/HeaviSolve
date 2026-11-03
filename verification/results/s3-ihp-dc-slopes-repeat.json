@@ -1,0 +1,50 @@
+[
+  {
+    "variant": "baseline",
+    "step_v": 1e-05,
+    "ngspice_voltage_slope": -4.584103442427424,
+    "ngspice_current_slope": -5.901461622568306e-06,
+    "xyce_voltage_slope": -4.5840786833960205,
+    "xyce_current_slope": -5.901707698572945e-06
+  },
+  {
+    "variant": "baseline",
+    "step_v": 1e-06,
+    "ngspice_voltage_slope": -4.584103405293214,
+    "ngspice_current_slope": -5.901461215813139e-06,
+    "xyce_voltage_slope": -4.584078647352189,
+    "xyce_current_slope": -5.901707633562859e-06
+  },
+  {
+    "variant": "baseline",
+    "step_v": 1e-07,
+    "ngspice_voltage_slope": -4.584103410391416,
+    "ngspice_current_slope": -5.901429211421315e-06,
+    "xyce_voltage_slope": -4.584078648763056,
+    "xyce_current_slope": -5.90170763012505e-06
+  },
+  {
+    "variant": "selfheat_off",
+    "step_v": 1e-05,
+    "ngspice_voltage_slope": -4.22310446666886,
+    "ngspice_current_slope": -5.30081603084757e-06,
+    "xyce_voltage_slope": -4.223104253904482,
+    "xyce_current_slope": -5.301057455652046e-06
+  },
+  {
+    "variant": "selfheat_off",
+    "step_v": 1e-06,
+    "ngspice_voltage_slope": -4.223104438472867,
+    "ngspice_current_slope": -5.300815445634625e-06,
+    "xyce_voltage_slope": -4.223104223657097,
+    "xyce_current_slope": -5.301057405945997e-06
+  },
+  {
+    "variant": "selfheat_off",
+    "step_v": 1e-07,
+    "ngspice_voltage_slope": -4.2231044095088714,
+    "ngspice_current_slope": -5.30081691806022e-06,
+    "xyce_voltage_slope": -4.22310422064711,
+    "xyce_current_slope": -5.301057412785335e-06
+  }
+]

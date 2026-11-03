@@ -1,0 +1,856 @@
+{
+  "archive_sha256": "40993ca0207bf335a8346daf6194cc4396e3769072723c89fa92dc82081d3d20",
+  "entries": [
+    {
+      "path": "ihp-diagnostic/baseline/ngspice/diagnostic.cir",
+      "bytes": 383,
+      "sha256": "305b30feb51d23d97ccd81e5a85fc4c96d75fbcc3391bb001634585b55a41bf6"
+    },
+    {
+      "path": "ihp-diagnostic/baseline/ngspice/diagnostic.cir.csv",
+      "bytes": 5790,
+      "sha256": "caf194042ca1ce750fe5ed7781646d346cf649c6ebcb6c0dfeca68372ef864d8"
+    },
+    {
+      "path": "ihp-diagnostic/baseline/ngspice/difference-1e-05.cir",
+      "bytes": 425,
+      "sha256": "12f839cdcf9a7f55f8903a5f7b131cb2fbeae1add8ad6d07930d67fd897131bf"
+    },
+    {
+      "path": "ihp-diagnostic/baseline/ngspice/difference-1e-05.cir.csv",
+      "bytes": 217,
+      "sha256": "281aa467df28c72ca0d7d5f0a344f127a1bdb1e1aa9f16d5c77c6ce0a8cd3770"
+    },
+    {
+      "path": "ihp-diagnostic/baseline/ngspice/difference-1e-05.cir.log",
+      "bytes": 246,
+      "sha256": "5cc1474ccf9a1273c6ac45f9366c95a02d082a94c6b7fa2287c7557669ee4eb7"
+    },
+    {
+      "path": "ihp-diagnostic/baseline/ngspice/difference-1e-06.cir",
+      "bytes": 437,
+      "sha256": "060bf4e4fb50b78c348dc8f5818f84b58262ab84e518343b7171f5dd219d43f3"
+    },
+    {
+      "path": "ihp-diagnostic/baseline/ngspice/difference-1e-06.cir.csv",
+      "bytes": 219,
+      "sha256": "c415ade09f753b652eb481ec0504b2c5e95717cf87a2e7790fa6f8f35a1e3a8f"
+    },
+    {
+      "path": "ihp-diagnostic/baseline/ngspice/difference-1e-06.cir.log",
+      "bytes": 246,
+      "sha256": "5cc1474ccf9a1273c6ac45f9366c95a02d082a94c6b7fa2287c7557669ee4eb7"
+    },
+    {
+      "path": "ihp-diagnostic/baseline/ngspice/difference-1e-07.cir",
+      "bytes": 436,
+      "sha256": "c7af82d630ed0cb8898b1afe4a4ab1c1ed7f45d22fc2bfe774e90007cce862ef"
+    },
+    {
+      "path": "ihp-diagnostic/baseline/ngspice/difference-1e-07.cir.csv",
+      "bytes": 218,
+      "sha256": "c18dad7fe6133bbaed1ddb18d3845c2dce1e1536ae6fd4fb16b3f56256a38c6d"
+    },
+    {
+      "path": "ihp-diagnostic/baseline/ngspice/difference-1e-07.cir.log",
+      "bytes": 246,
+      "sha256": "5cc1474ccf9a1273c6ac45f9366c95a02d082a94c6b7fa2287c7557669ee4eb7"
+    },
+    {
+      "path": "ihp-diagnostic/baseline/ngspice/engine.log",
+      "bytes": 247,
+      "sha256": "6919463cbc673753f379dce5274103fee67918a616a06f18ea4ee62a698dc9b5"
+    },
+    {
+      "path": "ihp-diagnostic/baseline/xyce/diagnostic.cir",
+      "bytes": 517,
+      "sha256": "a972f60aaf2d4581c7b48bf7b32a6d43f807718fd8750b4b76866727054c5867"
+    },
+    {
+      "path": "ihp-diagnostic/baseline/xyce/diagnostic.cir.FD.csv",
+      "bytes": 6061,
+      "sha256": "3d1f47a63e4aa9df4b58cfa6178396d8dd59c5bc9ef316c7cf639e288b23d236"
+    },
+    {
+      "path": "ihp-diagnostic/baseline/xyce/difference-1e-05.cir",
+      "bytes": 544,
+      "sha256": "7968b7fbb54107c20998e1d40aa61bdb41cdc621b93bbb9895073f92fee367a4"
+    },
+    {
+      "path": "ihp-diagnostic/baseline/xyce/difference-1e-05.cir.csv",
+      "bytes": 232,
+      "sha256": "c3ab39d1ccbb462cd5a762ac3a903378540416d1f4879656053f6a7cd82450d5"
+    },
+    {
+      "path": "ihp-diagnostic/baseline/xyce/difference-1e-05.cir.log",
+      "bytes": 3613,
+      "sha256": "14d67fd2554b530606109033b1ee08cf4f975d196a63013807fe5e898102a539"
+    },
+    {
+      "path": "ihp-diagnostic/baseline/xyce/difference-1e-06.cir",
+      "bytes": 556,
+      "sha256": "c67c4250f771d165f70ba7d03e87ef18e62304f9b2b522a7bbf32a6503717434"
+    },
+    {
+      "path": "ihp-diagnostic/baseline/xyce/difference-1e-06.cir.csv",
+      "bytes": 232,
+      "sha256": "6bca4e88354b317bf59e679f17b6e618c99d2bfc93da7eea74e8972ea89e32b5"
+    },
+    {
+      "path": "ihp-diagnostic/baseline/xyce/difference-1e-06.cir.log",
+      "bytes": 3610,
+      "sha256": "bf6e3014bd3106d7547c918b21b19a32e0aaf596ea37db8894e005320217901c"
+    },
+    {
+      "path": "ihp-diagnostic/baseline/xyce/difference-1e-07.cir",
+      "bytes": 555,
+      "sha256": "999cfab0cb7e0f5fd944dfa2254ebc6832766aa3b22e568f80d71bb4f771ebd0"
+    },
+    {
+      "path": "ihp-diagnostic/baseline/xyce/difference-1e-07.cir.csv",
+      "bytes": 232,
+      "sha256": "700562a9fb874cfa8c28495cf2325184e852f307870ec16ae54e4f6c8d68c662"
+    },
+    {
+      "path": "ihp-diagnostic/baseline/xyce/difference-1e-07.cir.log",
+      "bytes": 3614,
+      "sha256": "74cda5157df7f9604543d68fa91d5da8c5b167e8f56cc28a04f434e999b543ff"
+    },
+    {
+      "path": "ihp-diagnostic/baseline/xyce/engine.log",
+      "bytes": 3695,
+      "sha256": "0928c35aec57a5a923b6e814c2b326a5edef2bbd5a1c3b89461d46f9636b2df7"
+    },
+    {
+      "path": "ihp-diagnostic/dc-slopes.json",
+      "bytes": 1536,
+      "sha256": "16bfd7c7f950f7a8d77d6e539be22a3966f4a56368f5e961bb545145030c2c56"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-12/ngspice/ac.cir",
+      "bytes": 456,
+      "sha256": "2db88bb9aa2b3a3c762abb1b6ccbf72ab12bccc91099033ebbad09f3ae690153"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-12/ngspice/ac.cir.csv",
+      "bytes": 5744,
+      "sha256": "86c610420eddeccc9608041f1b84c8fd793fd150fdf6a8156ad432a1814643f3"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-12/ngspice/ac.cir.log",
+      "bytes": 247,
+      "sha256": "6919463cbc673753f379dce5274103fee67918a616a06f18ea4ee62a698dc9b5"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-12/ngspice/dc.cir",
+      "bytes": 459,
+      "sha256": "6ff8a282e9a6354d6bb2622f71024345634809c75920746a2e88a4d52a657c6f"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-12/ngspice/dc.cir.csv",
+      "bytes": 752,
+      "sha256": "0155f7cbed570405e1acb8d54d12690bfb81e44b3741c6250702592015f4f108"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-12/ngspice/dc.cir.log",
+      "bytes": 247,
+      "sha256": "5abf0acece176e119c87aec94ca9af65441313d0ed131367ee7604c0d452b4ba"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-12/ngspice/tran.cir",
+      "bytes": 455,
+      "sha256": "6aa1a7946fce4f9e15b3433314b8d06f65f76413da5021fab2844ba28bac3ef5"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-12/ngspice/tran.cir.csv",
+      "bytes": 697438,
+      "sha256": "2609bdadb1d7b69f1e982c8636676ff7e4a6db02de1c43d850ad7989b3bd9ea6"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-12/ngspice/tran.cir.log",
+      "bytes": 806,
+      "sha256": "be01fcf24673d6594ae1add50048ff07fcab88f534fe356c25160a0b522eb75a"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-12/xyce/ac.cir",
+      "bytes": 546,
+      "sha256": "c040e00dbe28d26886987cf23aef083446c0e59738e77414626252a06d732343"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-12/xyce/ac.cir.FD.csv",
+      "bytes": 6061,
+      "sha256": "a54cdebf2c61c98cf3cc865dad5494cc3d816a2de682162248fae8ff765fb17e"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-12/xyce/ac.cir.log",
+      "bytes": 3668,
+      "sha256": "211da006cd01bc2829b87fdbc2e4ad9d896f991c346b9092eeeee57bafebc697"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-12/xyce/dc.cir",
+      "bytes": 533,
+      "sha256": "22c743a740e7e4d9524a3392bc021539b94b59730f94d373b58066cba7adc37f"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-12/xyce/dc.cir.csv",
+      "bytes": 792,
+      "sha256": "242c75a0661cc751de07a6963a06a16abe6712697daa74b9515c168262898475"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-12/xyce/dc.cir.log",
+      "bytes": 3581,
+      "sha256": "b7504ab39dee329073f59058443445b83faee4161a0fd5d6ad07149a2179bf64"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-12/xyce/tran.cir",
+      "bytes": 526,
+      "sha256": "4ae1a9873c6bf7d2e603e79dffc826e5762ef2dc642c3053c6a48f39484ab0d7"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-12/xyce/tran.cir.csv",
+      "bytes": 7090462,
+      "sha256": "b80dbbfed92afae01455fc70ade02caf579f857c934a0729a0135be72f806c71"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-12/xyce/tran.cir.log",
+      "bytes": 17799,
+      "sha256": "0d9893945d4c3a9c1a8aa227ebfebbf347ea005aa5f3f980db4647617bbf6352"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-14/ngspice/ac.cir",
+      "bytes": 456,
+      "sha256": "31570da29e59032aa0e93831791e83576f87b9242bd1963c6a4f62e2b59f541a"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-14/ngspice/ac.cir.csv",
+      "bytes": 5745,
+      "sha256": "9cdb7ccffbbc946ddb4d07451ebd572d0aedc9f3f9b71860fade8776014510bb"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-14/ngspice/ac.cir.log",
+      "bytes": 247,
+      "sha256": "6919463cbc673753f379dce5274103fee67918a616a06f18ea4ee62a698dc9b5"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-14/ngspice/dc.cir",
+      "bytes": 459,
+      "sha256": "c62bf6dba4aca2b22f92e252bdd58099cfb49a57fa065b9dd47614f072320a13"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-14/ngspice/dc.cir.csv",
+      "bytes": 750,
+      "sha256": "c801513fdd94e26b4aadfed1ac255891b6ff91e400edb11ea91adec8f0fc72e9"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-14/ngspice/dc.cir.log",
+      "bytes": 247,
+      "sha256": "5abf0acece176e119c87aec94ca9af65441313d0ed131367ee7604c0d452b4ba"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-14/ngspice/tran.cir",
+      "bytes": 455,
+      "sha256": "67f103d02a059a74f65aa77ba757d68f57b0929c23b615c98be0d67be6fa1854"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-14/ngspice/tran.cir.csv",
+      "bytes": 697427,
+      "sha256": "7b796f6605ad75969b72cc1c1d596f09647702ceac2092f43fcbf61ed8a00449"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-14/ngspice/tran.cir.log",
+      "bytes": 806,
+      "sha256": "543e2b1ff68513aa935e3c823c760818da8b416d7db9a2e63cd106f63e8792a9"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-14/xyce/ac.cir",
+      "bytes": 546,
+      "sha256": "8388801cb9b04b6b7efedb010153acc109b59bb9284159cbd2f0dec9027e5442"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-14/xyce/ac.cir.FD.csv",
+      "bytes": 6061,
+      "sha256": "92869b356d35339930dfbe306f063d2744da45f6be26e2bc5724a1004f7f21a2"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-14/xyce/ac.cir.log",
+      "bytes": 3667,
+      "sha256": "13791cfa0a3254385e328e31bbc11e8e73456a7d366cce8b8e25af18603fe16f"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-14/xyce/dc.cir",
+      "bytes": 533,
+      "sha256": "0a7bf915b7578ab7b5cc8c8d7480c9468d0978a90c892656c5d6c71f66258296"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-14/xyce/dc.cir.csv",
+      "bytes": 792,
+      "sha256": "a5d395b561110323a762211fe352cd5ba7aaa8c46293c29a9e3e9577b56a8ffa"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-14/xyce/dc.cir.log",
+      "bytes": 3581,
+      "sha256": "f4cca684d02eefa1cc7e2e9ba4a12f49ab9b156ed144668dd7695aa497f67816"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-14/xyce/tran.cir",
+      "bytes": 526,
+      "sha256": "ebc2927035c2f2be16c4b73ce81f81e558ef0bdd31be21ecd7a26a372c1febff"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-14/xyce/tran.cir.csv",
+      "bytes": 7090532,
+      "sha256": "a1021411df77dd2befdb0b54854dda09523f13b5698d3b668180e5770520b66a"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-14/xyce/tran.cir.log",
+      "bytes": 17804,
+      "sha256": "d26377f3335d0966ef4d6f05fe118ae640b0b6534f9b9bc9e898563b9f6b374a"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-16/ngspice/ac.cir",
+      "bytes": 456,
+      "sha256": "7d20eee4e7173a9261f59a98fc2a396b2dbc09609eebd9217495d8ca348f8422"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-16/ngspice/ac.cir.csv",
+      "bytes": 5741,
+      "sha256": "9581edc2d357b50490d7426883a6c119e5c2f6ba7670f8d69cf11c463e479f8b"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-16/ngspice/ac.cir.log",
+      "bytes": 247,
+      "sha256": "6919463cbc673753f379dce5274103fee67918a616a06f18ea4ee62a698dc9b5"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-16/ngspice/dc.cir",
+      "bytes": 459,
+      "sha256": "345a31fc53730a60cab35664c87b39bf6717c2709ddbb27d2771b84f1ad76c40"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-16/ngspice/dc.cir.csv",
+      "bytes": 752,
+      "sha256": "49e3af7b140c890a3b05e0004926f00f8eeb596f293b579a8184ca77d8f4052a"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-16/ngspice/dc.cir.log",
+      "bytes": 247,
+      "sha256": "5abf0acece176e119c87aec94ca9af65441313d0ed131367ee7604c0d452b4ba"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-16/ngspice/no_bypass.cir",
+      "bytes": 489,
+      "sha256": "c1ce8dbea3c9a79d92e5efc56212666ae8c8fca8b17d04157a02aca8cf8b3652"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-16/ngspice/no_bypass.cir.csv",
+      "bytes": 752,
+      "sha256": "49e3af7b140c890a3b05e0004926f00f8eeb596f293b579a8184ca77d8f4052a"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-16/ngspice/no_bypass.log",
+      "bytes": 247,
+      "sha256": "5abf0acece176e119c87aec94ca9af65441313d0ed131367ee7604c0d452b4ba"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-16/ngspice/tran.cir",
+      "bytes": 455,
+      "sha256": "e9b3d547bd0b46e617f29465fff3112e16d0dee7c3edcdac2bb92dccc9047940"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-16/ngspice/tran.cir.csv",
+      "bytes": 697505,
+      "sha256": "92c6b890f79e6b264ef710138177e6269ab076e16ff9bf1f92d19c8ea90dc893"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-16/ngspice/tran.cir.log",
+      "bytes": 806,
+      "sha256": "890ad57b7f785a9b54eaa99d8a7a15e62753604243574885f3e5545aaf1ab7c3"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-16/ngspice/vntol.cir",
+      "bytes": 480,
+      "sha256": "dfca634eafecc1eb503cea6689a5aaebc8a78658ed29adbb1bfacf6f0b5851a6"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-16/ngspice/vntol.cir.csv",
+      "bytes": 752,
+      "sha256": "49e3af7b140c890a3b05e0004926f00f8eeb596f293b579a8184ca77d8f4052a"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-16/ngspice/vntol.log",
+      "bytes": 247,
+      "sha256": "5abf0acece176e119c87aec94ca9af65441313d0ed131367ee7604c0d452b4ba"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-16/xyce/ac.cir",
+      "bytes": 546,
+      "sha256": "e674f9671e0e5f0889435cb88563268b8d899e88f85f101ae7853e9b33847804"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-16/xyce/ac.cir.FD.csv",
+      "bytes": 6061,
+      "sha256": "ff222df43bd775715c9bf6ac44e678e3ff37b697ee782770a3a416879f76a6a9"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-16/xyce/ac.cir.log",
+      "bytes": 3668,
+      "sha256": "5542e9d30a5cd54e8a445917d66fd4c86f5f14726bb2d2d9af379a36aac1acfc"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-16/xyce/dc.cir",
+      "bytes": 533,
+      "sha256": "1a11e8262c6b7d54b1982940c24bc85daf48ef36955580f6c40f225d6ea85a55"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-16/xyce/dc.cir.csv",
+      "bytes": 792,
+      "sha256": "3db11f3410f342a4896ba489b57f1f74a22ac3265da186f98681520e90c4bc99"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-16/xyce/dc.cir.log",
+      "bytes": 3581,
+      "sha256": "cc94a2774bd6beef1950ed24e0b20632e3d96af5cea7a9e0c60af530b91d657a"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-16/xyce/tran.cir",
+      "bytes": 526,
+      "sha256": "661fdb5fa3d80d7587617350f6c589e4d4837380d63d6792ee5918dd42c03844"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-16/xyce/tran.cir.csv",
+      "bytes": 7090462,
+      "sha256": "dfd2ad59800d49f6fe2a1d09216026b69462cbd70ef42e01173c75f81a0cc7fa"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/1e-16/xyce/tran.cir.log",
+      "bytes": 17800,
+      "sha256": "6fbd246012ceeabbff929c79d2b916003993d8296c7ead6053e28bdf7c96b3f2"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/ngspice/ac.cir",
+      "bytes": 436,
+      "sha256": "ed4e54591faa0a20f4d6169737e06197a7ffd495c1205244c460ba340ad2a30a"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/ngspice/ac.cir.csv",
+      "bytes": 5744,
+      "sha256": "86c610420eddeccc9608041f1b84c8fd793fd150fdf6a8156ad432a1814643f3"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/ngspice/ac.cir.log",
+      "bytes": 247,
+      "sha256": "6919463cbc673753f379dce5274103fee67918a616a06f18ea4ee62a698dc9b5"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/ngspice/dc.cir",
+      "bytes": 439,
+      "sha256": "0c69dab79b0b3bb555e217e73f7502f6fa7a5264a045653fe77e4fe9735357fd"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/ngspice/dc.cir.csv",
+      "bytes": 752,
+      "sha256": "0155f7cbed570405e1acb8d54d12690bfb81e44b3741c6250702592015f4f108"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/ngspice/dc.cir.log",
+      "bytes": 247,
+      "sha256": "5abf0acece176e119c87aec94ca9af65441313d0ed131367ee7604c0d452b4ba"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/ngspice/tran.cir",
+      "bytes": 435,
+      "sha256": "ea0ed14ce21ca3cb6f555b681f533945b7abd4dfe2cd73de7d2a706f5381f1e3"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/ngspice/tran.cir.csv",
+      "bytes": 697438,
+      "sha256": "2609bdadb1d7b69f1e982c8636676ff7e4a6db02de1c43d850ad7989b3bd9ea6"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/ngspice/tran.cir.log",
+      "bytes": 806,
+      "sha256": "be01fcf24673d6594ae1add50048ff07fcab88f534fe356c25160a0b522eb75a"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/xyce/ac.cir",
+      "bytes": 519,
+      "sha256": "9b180cb65ec869040c2373e526c1b0ce7f4b7d2498fcd4f333234daf9fe73c94"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/xyce/ac.cir.FD.csv",
+      "bytes": 6061,
+      "sha256": "a54cdebf2c61c98cf3cc865dad5494cc3d816a2de682162248fae8ff765fb17e"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/xyce/ac.cir.log",
+      "bytes": 3663,
+      "sha256": "5bc33aa0ffeb6ccdfeb7f5490c95261588ed16bace377a63c2d8899276cab5f3"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/xyce/dc.cir",
+      "bytes": 506,
+      "sha256": "2382d7e5262bc374c162f0735cc4a5c49f49e98b530adfaf0140d184e7432db1"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/xyce/dc.cir.csv",
+      "bytes": 792,
+      "sha256": "242c75a0661cc751de07a6963a06a16abe6712697daa74b9515c168262898475"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/xyce/dc.cir.log",
+      "bytes": 3576,
+      "sha256": "27959ff8bca644bdc83dff815f7cb5c0d9f303e44ce68a7c9f5bef81e01d6ce0"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/xyce/tran.cir",
+      "bytes": 499,
+      "sha256": "dea08996b642c231e777528efcfef18c98bf2a6e2cbf69ce1abf6a3dc9670264"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/xyce/tran.cir.csv",
+      "bytes": 7090462,
+      "sha256": "b80dbbfed92afae01455fc70ade02caf579f857c934a0729a0135be72f806c71"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal/xyce/tran.cir.log",
+      "bytes": 17798,
+      "sha256": "cac2ac7a3708e623db6af6a68aaf49891a7e7106487faa4ca52a700d064bcc10"
+    },
+    {
+      "path": "ihp-diagnostic/isothermal.json",
+      "bytes": 5629,
+      "sha256": "92be4b119a3bc96556cc3b93d337fbac2f7bb947a0c929e5c9f282cf9e744017"
+    },
+    {
+      "path": "ihp-diagnostic/ng_nqs_on/ngspice/diagnostic.cir",
+      "bytes": 393,
+      "sha256": "bd8b4e5933ec8a23d9a69dccb3b6d270f422e378f90e1a96c73c26dabbf79ddc"
+    },
+    {
+      "path": "ihp-diagnostic/ng_nqs_on/ngspice/diagnostic.cir.csv",
+      "bytes": 5795,
+      "sha256": "1b8e9e9c46bd72a3ffe9f5504c359d0a4e903cf63d21b2f25330c1e3b8029e7c"
+    },
+    {
+      "path": "ihp-diagnostic/ng_nqs_on/ngspice/engine.log",
+      "bytes": 247,
+      "sha256": "6919463cbc673753f379dce5274103fee67918a616a06f18ea4ee62a698dc9b5"
+    },
+    {
+      "path": "ihp-diagnostic/ng_nqs_on/xyce/diagnostic.cir",
+      "bytes": 518,
+      "sha256": "974cbc56e9e9c262208398814d74667ba726721aefc32d3f7d18a5ba20764ec3"
+    },
+    {
+      "path": "ihp-diagnostic/ng_nqs_on/xyce/diagnostic.cir.FD.csv",
+      "bytes": 6061,
+      "sha256": "3d1f47a63e4aa9df4b58cfa6178396d8dd59c5bc9ef316c7cf639e288b23d236"
+    },
+    {
+      "path": "ihp-diagnostic/ng_nqs_on/xyce/engine.log",
+      "bytes": 3700,
+      "sha256": "501845a1c83f1cfcf3f37ae55020901005bb56244e50cfed520b79dd838583be"
+    },
+    {
+      "path": "ihp-diagnostic/selfheat_off/ngspice/diagnostic.cir",
+      "bytes": 395,
+      "sha256": "0eafd09c0e29f5164cc936a8367fdfe5100552aa857ab9a3ef0bc3bbeee23e3d"
+    },
+    {
+      "path": "ihp-diagnostic/selfheat_off/ngspice/diagnostic.cir.csv",
+      "bytes": 5744,
+      "sha256": "86c610420eddeccc9608041f1b84c8fd793fd150fdf6a8156ad432a1814643f3"
+    },
+    {
+      "path": "ihp-diagnostic/selfheat_off/ngspice/difference-1e-05.cir",
+      "bytes": 437,
+      "sha256": "52c5fc2d33d65312db997f275378cb184dadfed0114c71b3f6fe8adca754ebd3"
+    },
+    {
+      "path": "ihp-diagnostic/selfheat_off/ngspice/difference-1e-05.cir.csv",
+      "bytes": 216,
+      "sha256": "2a16689deee04c2311fbdcef6e5cf1af44b31dc29cff4833c57e79b266679b7f"
+    },
+    {
+      "path": "ihp-diagnostic/selfheat_off/ngspice/difference-1e-05.cir.log",
+      "bytes": 584,
+      "sha256": "5985561bc600da38ee0397822ab18273b484a4df0faa3384ddc8419d2a299c44"
+    },
+    {
+      "path": "ihp-diagnostic/selfheat_off/ngspice/difference-1e-06.cir",
+      "bytes": 449,
+      "sha256": "33884b2e9a9458cb16a5b62bd5cf3d8b8cdc49631d4aa286afcb8a861ea65a87"
+    },
+    {
+      "path": "ihp-diagnostic/selfheat_off/ngspice/difference-1e-06.cir.csv",
+      "bytes": 219,
+      "sha256": "d561dea1f9461d6d4924131e18f3404668e7db2703bbe633e8968a01850fbffd"
+    },
+    {
+      "path": "ihp-diagnostic/selfheat_off/ngspice/difference-1e-06.cir.log",
+      "bytes": 246,
+      "sha256": "5cc1474ccf9a1273c6ac45f9366c95a02d082a94c6b7fa2287c7557669ee4eb7"
+    },
+    {
+      "path": "ihp-diagnostic/selfheat_off/ngspice/difference-1e-07.cir",
+      "bytes": 448,
+      "sha256": "ae005cd76a5e862d20c350945dfb2bebd33a2910374b450c18aa3bb5a5523849"
+    },
+    {
+      "path": "ihp-diagnostic/selfheat_off/ngspice/difference-1e-07.cir.csv",
+      "bytes": 218,
+      "sha256": "b5a519af649a432d0debe809eee413c05563de12ee14fe4cb018abda7608642c"
+    },
+    {
+      "path": "ihp-diagnostic/selfheat_off/ngspice/difference-1e-07.cir.log",
+      "bytes": 246,
+      "sha256": "5cc1474ccf9a1273c6ac45f9366c95a02d082a94c6b7fa2287c7557669ee4eb7"
+    },
+    {
+      "path": "ihp-diagnostic/selfheat_off/ngspice/engine.log",
+      "bytes": 247,
+      "sha256": "6919463cbc673753f379dce5274103fee67918a616a06f18ea4ee62a698dc9b5"
+    },
+    {
+      "path": "ihp-diagnostic/selfheat_off/xyce/diagnostic.cir",
+      "bytes": 529,
+      "sha256": "b4b52bcd44766690cf25316b783e3ea2afa311daa7039dfe3f81d25b375323d0"
+    },
+    {
+      "path": "ihp-diagnostic/selfheat_off/xyce/diagnostic.cir.FD.csv",
+      "bytes": 6061,
+      "sha256": "a54cdebf2c61c98cf3cc865dad5494cc3d816a2de682162248fae8ff765fb17e"
+    },
+    {
+      "path": "ihp-diagnostic/selfheat_off/xyce/difference-1e-05.cir",
+      "bytes": 556,
+      "sha256": "443d8a3fc55d978f8b7f289ccc357deabdda7d35423a8a409fc39de4873d2b7d"
+    },
+    {
+      "path": "ihp-diagnostic/selfheat_off/xyce/difference-1e-05.cir.csv",
+      "bytes": 232,
+      "sha256": "d2b00aee4c3592d9e58a84658e89a90343527d902e53f41af0ea7220184d4813"
+    },
+    {
+      "path": "ihp-diagnostic/selfheat_off/xyce/difference-1e-05.cir.log",
+      "bytes": 3629,
+      "sha256": "fb36f9fc519397e415d656c3416f26f157c0e1bc63165c5bdb59405082db6b80"
+    },
+    {
+      "path": "ihp-diagnostic/selfheat_off/xyce/difference-1e-06.cir",
+      "bytes": 568,
+      "sha256": "c21ec2499c62e4afcf5c88f70c182cb1c9be95d19cf81701c22cfb04150c718a"
+    },
+    {
+      "path": "ihp-diagnostic/selfheat_off/xyce/difference-1e-06.cir.csv",
+      "bytes": 232,
+      "sha256": "8c2a70a19800920e404717062505e4bac0cb28d715cef9bf1026ba3d2da2067d"
+    },
+    {
+      "path": "ihp-diagnostic/selfheat_off/xyce/difference-1e-06.cir.log",
+      "bytes": 3630,
+      "sha256": "1b92cb9c22f41c7da4d5988c7dac69d2349cf7643a861f8b397fce915acd6d91"
+    },
+    {
+      "path": "ihp-diagnostic/selfheat_off/xyce/difference-1e-07.cir",
+      "bytes": 567,
+      "sha256": "ab16c1ebdf386d7713cfaff09a1fe640036e5b26cf8a431ccfd2783438031d34"
+    },
+    {
+      "path": "ihp-diagnostic/selfheat_off/xyce/difference-1e-07.cir.csv",
+      "bytes": 232,
+      "sha256": "b9ea0b4f2f43fb3114041f104b3efe0dbf1483c5cdbe7e93d3fdc3d60c5a7bf3"
+    },
+    {
+      "path": "ihp-diagnostic/selfheat_off/xyce/difference-1e-07.cir.log",
+      "bytes": 3629,
+      "sha256": "cc03551fa26257aafb193a27ad9f329916852c052f169dda918efbb3d08a9fba"
+    },
+    {
+      "path": "ihp-diagnostic/selfheat_off/xyce/engine.log",
+      "bytes": 3712,
+      "sha256": "9251196a75895a4363fd95bc19fef37a3411a81ca9f4bbaa658f3b93a3f309ef"
+    },
+    {
+      "path": "ihp-diagnostic/xy_delay_off/ngspice/diagnostic.cir",
+      "bytes": 387,
+      "sha256": "8183f977e5306c1bbd39af1bbece9ee916cdab36275b97a5a02f9fff4820c3a0"
+    },
+    {
+      "path": "ihp-diagnostic/xy_delay_off/ngspice/diagnostic.cir.csv",
+      "bytes": 5790,
+      "sha256": "caf194042ca1ce750fe5ed7781646d346cf649c6ebcb6c0dfeca68372ef864d8"
+    },
+    {
+      "path": "ihp-diagnostic/xy_delay_off/ngspice/engine.log",
+      "bytes": 247,
+      "sha256": "6919463cbc673753f379dce5274103fee67918a616a06f18ea4ee62a698dc9b5"
+    },
+    {
+      "path": "ihp-diagnostic/xy_delay_off/xyce/diagnostic.cir",
+      "bytes": 521,
+      "sha256": "01d83cfad26de7df01f19284c90fa675eec9196c8961614862c687c9788bc47f"
+    },
+    {
+      "path": "ihp-diagnostic/xy_delay_off/xyce/diagnostic.cir.FD.csv",
+      "bytes": 6061,
+      "sha256": "3c7d5900d61a5bdf6b4842658f6e5312a99eac1a8852e59d15062a9a866d0630"
+    },
+    {
+      "path": "ihp-diagnostic/xy_delay_off/xyce/engine.log",
+      "bytes": 3712,
+      "sha256": "c767912e2dc6e959a30fca6647de21f3e2d02f3e8dfa7bb75e059dee703aad92"
+    },
+    {
+      "path": "ihp-diagnostic/xy_ikp_match/ngspice/diagnostic.cir",
+      "bytes": 387,
+      "sha256": "57ab6d169cf84ff8328ed4189a5b5f20bb5ee76b114d5fd41fb0c7b6e26b72e5"
+    },
+    {
+      "path": "ihp-diagnostic/xy_ikp_match/ngspice/diagnostic.cir.csv",
+      "bytes": 5790,
+      "sha256": "caf194042ca1ce750fe5ed7781646d346cf649c6ebcb6c0dfeca68372ef864d8"
+    },
+    {
+      "path": "ihp-diagnostic/xy_ikp_match/ngspice/engine.log",
+      "bytes": 247,
+      "sha256": "6919463cbc673753f379dce5274103fee67918a616a06f18ea4ee62a698dc9b5"
+    },
+    {
+      "path": "ihp-diagnostic/xy_ikp_match/xyce/diagnostic.cir",
+      "bytes": 521,
+      "sha256": "2f1b28b39db646c5547d291d1fcd8dc29a99afddf2de1eadc7bd01919285cd5d"
+    },
+    {
+      "path": "ihp-diagnostic/xy_ikp_match/xyce/diagnostic.cir.FD.csv",
+      "bytes": 6061,
+      "sha256": "d0bfaa206a5509b6b437b20138d930f37d3f55a659c19970f9f9e02053281285"
+    },
+    {
+      "path": "ihp-diagnostic/xy_ikp_match/xyce/engine.log",
+      "bytes": 3712,
+      "sha256": "9b7079515b16e1cfdbd80445a9d9cb4b9df4dca9eb56599c6d7df917411b8d46"
+    },
+    {
+      "path": "ihp-dc-diagnostic/both/ngspice/dc.cir",
+      "bytes": 426,
+      "sha256": "c4d4c434e2720140cc539c286286838acb2e46846c10ef3a96d74159a592efa9"
+    },
+    {
+      "path": "ihp-dc-diagnostic/both/ngspice/dc.cir.csv",
+      "bytes": 754,
+      "sha256": "174e18852cf47e76acc2f0562d10b086347b508e4b9a618d94afd64a543f63cb"
+    },
+    {
+      "path": "ihp-dc-diagnostic/both/ngspice/engine.log",
+      "bytes": 247,
+      "sha256": "5abf0acece176e119c87aec94ca9af65441313d0ed131367ee7604c0d452b4ba"
+    },
+    {
+      "path": "ihp-dc-diagnostic/both/xyce/dc.cir",
+      "bytes": 540,
+      "sha256": "2652d25b778c51be8e18f71d2d5d12f736b4a35a5e106db0dce97ff96d0461b6"
+    },
+    {
+      "path": "ihp-dc-diagnostic/both/xyce/dc.cir.csv",
+      "bytes": 792,
+      "sha256": "40304d1a3affbd4d30d9f8236e11f4800572e99d3f81368ba5ded16e136b6b6c"
+    },
+    {
+      "path": "ihp-dc-diagnostic/both/xyce/engine.log",
+      "bytes": 3596,
+      "sha256": "de717efed9466fa99a274e5b1d01ffdc9dfe2686d5e813b097ef2f97cabfc5d1"
+    },
+    {
+      "path": "ihp-dc-diagnostic/original/ngspice/dc.cir",
+      "bytes": 430,
+      "sha256": "ecb3e7278a321f728532cfb7f11f8c4336528a2d240bbf3648b8cb0db72a470f"
+    },
+    {
+      "path": "ihp-dc-diagnostic/original/ngspice/dc.cir.csv",
+      "bytes": 754,
+      "sha256": "174e18852cf47e76acc2f0562d10b086347b508e4b9a618d94afd64a543f63cb"
+    },
+    {
+      "path": "ihp-dc-diagnostic/original/ngspice/engine.log",
+      "bytes": 247,
+      "sha256": "5abf0acece176e119c87aec94ca9af65441313d0ed131367ee7604c0d452b4ba"
+    },
+    {
+      "path": "ihp-dc-diagnostic/original/xyce/dc.cir",
+      "bytes": 544,
+      "sha256": "3ab83bdbacbbdfeebc3bd0093098417cfa7be4a3ebf10d1d4ecfc13b700cc141"
+    },
+    {
+      "path": "ihp-dc-diagnostic/original/xyce/dc.cir.csv",
+      "bytes": 792,
+      "sha256": "40304d1a3affbd4d30d9f8236e11f4800572e99d3f81368ba5ded16e136b6b6c"
+    },
+    {
+      "path": "ihp-dc-diagnostic/original/xyce/engine.log",
+      "bytes": 3609,
+      "sha256": "7496b10a4d964fe261007e06951f1526178034a3c051f10069e98a7bc2e99358"
+    },
+    {
+      "path": "ihp-dc-diagnostic/xy_delay_off/ngspice/dc.cir",
+      "bytes": 434,
+      "sha256": "bef0f83ca02aac11d7514d1bdf84f699a77f99f33791edc46b783e953faba0f0"
+    },
+    {
+      "path": "ihp-dc-diagnostic/xy_delay_off/ngspice/dc.cir.csv",
+      "bytes": 754,
+      "sha256": "174e18852cf47e76acc2f0562d10b086347b508e4b9a618d94afd64a543f63cb"
+    },
+    {
+      "path": "ihp-dc-diagnostic/xy_delay_off/ngspice/engine.log",
+      "bytes": 247,
+      "sha256": "5abf0acece176e119c87aec94ca9af65441313d0ed131367ee7604c0d452b4ba"
+    },
+    {
+      "path": "ihp-dc-diagnostic/xy_delay_off/xyce/dc.cir",
+      "bytes": 548,
+      "sha256": "2330a508bbe8c5f070cb90f41309ea1c03a92ce62575f067e3db57de2f0d6071"
+    },
+    {
+      "path": "ihp-dc-diagnostic/xy_delay_off/xyce/dc.cir.csv",
+      "bytes": 792,
+      "sha256": "40304d1a3affbd4d30d9f8236e11f4800572e99d3f81368ba5ded16e136b6b6c"
+    },
+    {
+      "path": "ihp-dc-diagnostic/xy_delay_off/xyce/engine.log",
+      "bytes": 3626,
+      "sha256": "63df3ad156b11241291880967fd941608a55c5f512c2c7bca6ebae90bd759bf9"
+    },
+    {
+      "path": "ihp-dc-diagnostic/xy_ikp_match/ngspice/dc.cir",
+      "bytes": 434,
+      "sha256": "3c0afacf0562d5443abaa054036093cab81e3046b1d7f1cff8a73ac8acd1e0a7"
+    },
+    {
+      "path": "ihp-dc-diagnostic/xy_ikp_match/ngspice/dc.cir.csv",
+      "bytes": 754,
+      "sha256": "174e18852cf47e76acc2f0562d10b086347b508e4b9a618d94afd64a543f63cb"
+    },
+    {
+      "path": "ihp-dc-diagnostic/xy_ikp_match/ngspice/engine.log",
+      "bytes": 247,
+      "sha256": "5abf0acece176e119c87aec94ca9af65441313d0ed131367ee7604c0d452b4ba"
+    },
+    {
+      "path": "ihp-dc-diagnostic/xy_ikp_match/xyce/dc.cir",
+      "bytes": 548,
+      "sha256": "cac87fb8bb17e3e2fb53054b63ed76690fabf9772d8a57ec54f18703eae1d6c6"
+    },
+    {
+      "path": "ihp-dc-diagnostic/xy_ikp_match/xyce/dc.cir.csv",
+      "bytes": 792,
+      "sha256": "40304d1a3affbd4d30d9f8236e11f4800572e99d3f81368ba5ded16e136b6b6c"
+    },
+    {
+      "path": "ihp-dc-diagnostic/xy_ikp_match/xyce/engine.log",
+      "bytes": 3629,
+      "sha256": "2f9204bd4d686739e51ab18a10fa724e63d1f32e9a5867f3b271cef09bcb5f40"
+    }
+  ],
+  "model_definition_files": []
+}

@@ -1,0 +1,8 @@
+{
+  "scope": "Research-only diagnostics; model copies excluded from archive; originals unchanged",
+  "sha256": {
+    "verification/spice/diagnose_ihp.py": "3a449fa9508bb160f09065c84cf31344f39e8a9ad55b42b36d5c5afb5c1d9462",
+    "verification/spice/diagnose_ihp_dc.py": "c6883d52144292784cc98360a613eb4420189c88609c04c5eb7f8c633d5eec13",
+    "verification/results/s3-ihp-diagnostic-output.tar.gz": "40993ca0207bf335a8346daf6194cc4396e3769072723c89fa92dc82081d3d20"
+  }
+}

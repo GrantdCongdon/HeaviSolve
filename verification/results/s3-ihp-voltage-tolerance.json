@@ -1,0 +1,10 @@
+[
+  {
+    "case": "vntol",
+    "current_relative_rms": 0.0001030414337537072
+  },
+  {
+    "case": "no_bypass",
+    "current_relative_rms": 0.0001030414337537072
+  }
+]
