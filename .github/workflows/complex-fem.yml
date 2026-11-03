@@ -23,6 +23,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Bootstrap pinned Miniforge on macOS
+        if: runner.os == 'macOS'
+        shell: bash
+        run: |
+          curl -fL https://github.com/conda-forge/miniforge/releases/download/26.9.4-1/Miniforge3-26.9.4-1-MacOSX-arm64.sh -o "$RUNNER_TEMP/miniforge.sh"
+          python -c 'import hashlib,os,pathlib; p=pathlib.Path(os.environ["RUNNER_TEMP"])/"miniforge.sh"; assert hashlib.sha256(p.read_bytes()).hexdigest()=="63f8f5367cd3e52d1dba3e22d8ad91d10ea0e93675ba5b0822312a4342d962e0"'
+          bash "$RUNNER_TEMP/miniforge.sh" -b -p "$RUNNER_TEMP/hs-conda"
+          echo "CONDA=$RUNNER_TEMP/hs-conda" >> "$GITHUB_ENV"
       - name: Resolve isolated open numerical support packages
         shell: bash
         run: |

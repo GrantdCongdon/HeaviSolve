@@ -59,3 +59,7 @@ not been approved for redistribution. No upstream model tests are bundled.
 
 Unresolved common runtime and tool dependencies, including license exceptions,
 are not implicitly approved. The direct scanner is not a transitive SBOM audit.
+
+Miniforge installer26.9.4-1 (CI bootstrap only): BSD-3-Clause installer code;
+https://github.com/conda-forge/miniforge/blob/26.9.4-1/LICENSE.
+Bundled package licenses remain separate; no installer or binary environment is redistributed.

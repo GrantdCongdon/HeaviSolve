@@ -53,7 +53,7 @@ def run(label, command, cwd=ROOT, extra=None):
         sys.exit(completed.returncode)
 suffix = '.dylib' if sys.platform == 'darwin' else '.so'
 def library(name):
-    candidates = [prefix/'lib'/('lib'+name+suffix),prefix/'lib'/('lib'+name+'.0'+suffix)]
+    candidates = [prefix/'lib'/('lib'+name+suffix),prefix/'lib'/('lib'+name+'.0'+suffix),prefix/'lib'/('lib'+name+suffix+'.0')]
     for path in candidates:
         if path.exists(): return path
     sys.exit('Shared library missing: '+name)

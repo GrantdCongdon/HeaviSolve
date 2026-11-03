@@ -180,3 +180,11 @@ version = "47"
 source = "https://sourceforge.net/p/ngspice/ngspice/ci/ngspice-47/tree/COPYING"
 status = "NOT APPROVED for distribution or production integration"
 review = "Source COPYING inspected: BSD-3-Clause default plus MPL-2.0 OSDI, GPL-2.0-or-later table model, LGPL variants, public-domain and unnamed terms. Exact enabled-source license expression and transitive closure remain unresolved; never flatten this to BSD-3-Clause."
+
+[[dependency]]
+name = "Miniforge installer"
+version = "26.9.4-1"
+license = "BSD-3-Clause"
+source = "https://github.com/conda-forge/miniforge/blob/26.9.4-1/LICENSE"
+scope = "CI-only package-manager bootstrap on macOS; not a runtime dependency or redistributed artifact"
+review = "ADR-002 direct installer grant; bootstrap packages have separate OSI licenses per upstream notice; target numerical environment audited independently; asset SHA256 pinned in workflow"
