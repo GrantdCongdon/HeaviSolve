@@ -49,3 +49,134 @@ license = "GPL-3.0-only"
 source = "https://github.com/KLayout/klayout/blob/master/LICENSE"
 scope = "optional local layout harness; conservative GPLv3 grant"
 review = "ADR-002; family-compatible; exact later grant and bundled components pending before integration"
+
+# Direct grants below were reviewed on 2026-11-02. They are not approval of
+# the installed binary environments or their complete transitive closure.
+
+[[dependency]]
+name = "MFEM"
+version = "4.10"
+license = "BSD-3-Clause"
+source = "https://github.com/mfem/mfem/blob/v4.10/LICENSE"
+scope = "S1 native parallel FEM research"
+review = "ADR-002/ADR-005; Read source LICENSE; does not approve the rejected conda dependency graph"
+
+[[dependency]]
+name = "PETSc"
+version = "3.26.1"
+license = "BSD-2-Clause"
+source = "https://github.com/petsc/petsc/blob/v3.26.1/LICENSE"
+scope = "S1 complex algebra research"
+review = "ADR-002/ADR-005; Read source LICENSE; downloaded packages explicitly have separate licenses; no ParMETIS approval"
+
+[[dependency]]
+name = "SLEPc"
+version = "3.26.0"
+license = "BSD-2-Clause"
+source = "https://github.com/slepc/slepc/blob/v3.26.0/LICENSE.md"
+scope = "S1 complex eigensolver research"
+review = "ADR-002/ADR-005; Read source LICENSE.md; PETSc dependencies require separate audit"
+
+[[dependency]]
+name = "hypre"
+version = "3.2.0"
+license = "Apache-2.0"
+source = "https://github.com/hypre-space/hypre/blob/v3.2.0/COPYRIGHT"
+scope = "S1 native solver infrastructure research"
+review = "ADR-002/ADR-005; Read packaged upstream COPYRIGHT; select Apache-2.0 branch of Apache-2.0 OR MIT"
+
+[[dependency]]
+name = "SuperLU_DIST"
+version = "9.2.1"
+license = "BSD-3-Clause"
+source = "https://github.com/xiaoyeli/superlu_dist/blob/v9.2.1/License.txt"
+scope = "S1 complex direct solver research"
+review = "ADR-002/ADR-005; Read pinned upstream License.txt; optional ParMETIS must be disabled; binary closure not approved"
+
+[[dependency]]
+name = "Qt Base"
+version = "6.12.0"
+license = "LGPL-3.0-only"
+source = "https://github.com/qt/qtbase/blob/v6.12.0/src/widgets/kernel/qwidget.h"
+scope = "S5/S6 dynamically linked local GUI research"
+review = "ADR-002/ADR-005; Read QWidget SPDX grant and packaged LGPL text; select LGPL-3.0-only branch; this does not approve every module in qt6-main"
+
+[[dependency]]
+name = "VTK"
+version = "9.7.1"
+license = "BSD-3-Clause"
+source = "https://gitlab.kitware.com/vtk/vtk/-/blob/v9.7.1/Copyright.txt"
+scope = "S5 embedded field visualization research"
+review = "ADR-002/ADR-005; Read installed upstream Copyright.txt; bundled third-party modules have separate notices and remain subject to audit"
+
+[[dependency]]
+name = "Clipper2"
+version = "1.5.4"
+license = "BSL-1.0"
+source = "https://github.com/AngusJohnson/Clipper2/blob/Clipper2_1.5.4/LICENSE"
+scope = "S6 native polygon boolean research"
+review = "ADR-002/ADR-005; Read extracted source LICENSE; no binary bundled"
+
+[[dependency]]
+name = "gRPC C++"
+version = "1.51.1"
+license = "Apache-2.0"
+source = "https://github.com/grpc/grpc/blob/v1.51.1/LICENSE"
+scope = "S7 local RPC comparison"
+review = "ADR-002/ADR-005; Read packaged upstream LICENSE; TLS and other transitive components not approved by association"
+
+[[dependency]]
+name = "protobuf C++"
+version = "3.21.12"
+license = "BSD-3-Clause"
+source = "https://github.com/protocolbuffers/protobuf/blob/v21.12/LICENSE"
+scope = "S7 generated control messages"
+review = "ADR-002/ADR-005; Read pinned upstream LICENSE; C++ libprotobuf is 3.21.12, Python protobuf package is separately versioned 4.21.12"
+
+[[dependency]]
+name = "ZeroMQ"
+version = "4.3.5"
+license = "MPL-2.0"
+source = "https://github.com/zeromq/libzmq/blob/v4.3.5/LICENSE"
+scope = "S7 local transport comparison"
+review = "ADR-002/ADR-005; Read pinned upstream MPL text; no binary redistributed"
+
+[[dependency]]
+name = "cppzmq"
+version = "4.11.0"
+license = "MIT"
+source = "https://github.com/zeromq/cppzmq/blob/v4.11.0/LICENSE"
+scope = "S7 C++ ZeroMQ binding"
+review = "ADR-002/ADR-005; Read packaged upstream LICENSE; underlying ZeroMQ reviewed separately"
+
+[[dependency]]
+name = "FlatBuffers"
+version = "25.12.19"
+license = "Apache-2.0"
+source = "https://github.com/google/flatbuffers/blob/v25.12.19/LICENSE"
+scope = "S7 generated control messages"
+review = "ADR-002/ADR-005; Read pinned upstream LICENSE; generated support/runtime separately represented by this direct entry"
+
+[[dependency]]
+name = "Xyce"
+version = "7.10.0"
+license = "GPL-3.0-or-later"
+source = "https://github.com/Xyce/Xyce/blob/Release-7.10.0/src/CircuitPKG/N_CIR_Xyce.C"
+scope = "S3 native circuit research"
+review = "ADR-002/ADR-005; Read source grant explicitly allowing version 3 or later and COPYING; Trilinos, FFTW, SuiteSparse and device-source closure require separate review"
+
+[[dependency]]
+name = "OpenVAF-Reloaded"
+version = "24.0.2mob"
+license = "GPL-3.0-only"
+source = "https://github.com/OpenVAF/OpenVAF-Reloaded/blob/v24.0.2mob/openvaf/openvaf/Cargo.toml"
+scope = "S3 external OSDI compilation research tool"
+review = "ADR-002/ADR-005; Source Cargo manifest and README say GPL-3.0; conservatively select GPL-3.0-only, no later-version grant inferred; README identifies MIT-derived code and separately licensed excluded integration-test models; binary transitive audit pending"
+
+# Unresolved candidates are deliberately outside the approved direct-grant list.
+[[research_candidate]]
+name = "ngspice"
+version = "47"
+source = "https://sourceforge.net/p/ngspice/ngspice/ci/ngspice-47/tree/COPYING"
+status = "NOT APPROVED for distribution or production integration"
+review = "Source COPYING inspected: BSD-3-Clause default plus MPL-2.0 OSDI, GPL-2.0-or-later table model, LGPL variants, public-domain and unnamed terms. Exact enabled-source license expression and transitive closure remain unresolved; never flatten this to BSD-3-Clause."

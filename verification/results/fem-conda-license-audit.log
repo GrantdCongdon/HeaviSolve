@@ -1,0 +1,74 @@
+{"build": "8_kmp_llvm", "decision": "ALLOW_EXACT", "license": "BSD-3-Clause", "name": "_openmp_mutex", "sha256": "c7c98ce74f6a7ff25aaa4706d06fa41d63a333add4d697b73aa4d8d2d7ad7651", "version": "4.5"}
+{"build": "h7ad4001_2", "decision": "ALLOW_EXACT", "license": "Apache-2.0", "name": "aws-c-auth", "sha256": "af68a6e3d81adbb073239fab8167afde1cb9a5758e88bd922be17def25ffe526", "version": "1.0.0"}
+{"build": "h50d513f_1", "decision": "ALLOW_EXACT", "license": "Apache-2.0", "name": "aws-c-cal", "sha256": "0bffdce8b029bf5f0455783279a377f1c8c99c294b0e7f2b55ccf5a9ca24f62e", "version": "1.0.0"}
+{"build": "h602ebc4_0", "decision": "ALLOW_EXACT", "license": "Apache-2.0", "name": "aws-c-common", "sha256": "d163bb5a17ffb6b4c98887486da0ed5224a6b2c83b6704914389458c174abeb6", "version": "1.0.5"}
+{"build": "h50d513f_1", "decision": "ALLOW_EXACT", "license": "Apache-2.0", "name": "aws-c-compression", "sha256": "e37b6a98ee0b83eb294a8f5e334e6b30d6690a3e21b4e0a08f8fcf9eb9af5d21", "version": "1.0.0"}
+{"build": "h7b2e6b5_1", "decision": "ALLOW_EXACT", "license": "Apache-2.0", "name": "aws-c-http", "sha256": "53b3af80cb7dff673cca2c4c6faba8fccd9c092c12ebb59d5006fb103658e79c", "version": "1.0.0"}
+{"build": "h49e100f_0", "decision": "ALLOW_EXACT", "license": "Apache-2.0", "name": "aws-c-io", "sha256": "9bc9baa53892a70259bae5132deb032d4630dc13d27b6f56c524aa0efa100679", "version": "1.0.0"}
+{"build": "hffd187b_1", "decision": "ALLOW_EXACT", "license": "Apache-2.0", "name": "aws-c-s3", "sha256": "d020dae4eddce28fa56dee700fe5c2c12f3b3d470c8593f016fc27c53044ea90", "version": "1.0.0"}
+{"build": "h8339b81_0", "decision": "ALLOW_EXACT", "license": "Apache-2.0", "name": "aws-c-sdkutils", "sha256": "a95eb6475f88897b07b4bf92ee596c7757ab0e12f55480447ea14a5adb0a1337", "version": "1.0.1"}
+{"build": "h50d513f_0", "decision": "ALLOW_EXACT", "license": "Apache-2.0", "name": "aws-checksums", "sha256": "00b081ad4f26edae87c8b9fd884df9699787850c64419ba963c44f7f5bb1f10c", "version": "1.0.0"}
+{"build": "h4e30115_10", "decision": "REVIEW_OR_DENY", "license": "bzip2-1.0.6", "name": "bzip2", "sha256": "8ec22f0ba25cbfc2e64d70cf29459eccd7ffdf6436f6a6ff15bbfef799f7d4f6", "version": "1.0.8"}
+{"build": "h74c22ad_0", "decision": "ALLOW_EXACT", "license": "MIT", "name": "c-ares", "sha256": "74b52d784b3576643da3aea1240a4120c1f25ee057f14ae5a89e8a7b3fb2e69f", "version": "1.34.9"}
+{"build": "hbd8a1cb_0", "decision": "ALLOW_EXACT", "license": "ISC", "name": "ca-certificates", "sha256": "95619b9c1184be7175392eeb0ee7eeb5ccf25d280951f4225f2d62e725790be3", "version": "2026.10.23"}
+{"build": "mpi_openmpi_h83537c7_0", "decision": "ALLOW_EXACT", "license": "GPL-2.0-or-later", "name": "fftw", "sha256": "31353fa1ad22a539b788347687e9a93e40bb44c8653733edfe0de310d6fabced", "version": "3.3.11"}
+{"build": "mpi_openmpi_h979ca4a_1", "decision": "ALLOW_EXACT", "license": "BSD-3-Clause", "name": "hdf5", "sha256": "550412d905339aad20a1e59d20691dbe1dbb0ca93bac8132dd448e6d9fd93696", "version": "2.2.0"}
+{"build": "h2855872_0", "decision": "ALLOW_EXACT", "license": "Apache-2.0", "name": "hypre", "sha256": "8d9d8bc1327c5c29b80eb86c378ea497632488f2c1f863a28aa80a27857d420a", "version": "3.2.0"}
+{"build": "py310h579977c_2", "decision": "ALLOW_EXACT", "license": "MIT", "name": "icu", "sha256": "6cdb5dee54c72e56ab189fb3ad33cb28533553d42590e7e831160248f4416a43", "version": "78.3"}
+{"build": "h34f8a20_2", "decision": "ALLOW_EXACT", "license": "MIT", "name": "krb5", "sha256": "aaea1d42b07769920db2af7471ece9399d2613448863da64ad8272998db5db34", "version": "1.22.2"}
+{"build": "he95cea4_0", "decision": "ALLOW_EXACT", "license": "BSD-2-Clause", "name": "libaec", "sha256": "6dba6ecf50700ad745524ca61dd655f10c1f8f404881cec8fa4608becd1ed652", "version": "1.1.7"}
+{"build": "h5087772_7100102", "decision": "ALLOW_EXACT", "license": "BSD-3-Clause", "name": "libamd", "sha256": "69b5340e7abace13f31f3d9df024ed554d99a250a179d480976fc9682bf7d46e", "version": "3.3.3"}
+{"build": "11_h51639a9_openblas", "decision": "ALLOW_EXACT", "license": "BSD-3-Clause", "name": "libblas", "sha256": "718c3e1a16ad946caeeba041520dc18b7af461226bd8c28faef78b181920dbb4", "version": "3.11.0"}
+{"build": "h99b4a89_7100102", "decision": "ALLOW_EXACT", "license": "LGPL-2.1-or-later", "name": "libbtf", "sha256": "b05f0169f8723d4a3128ba0b77382385f01835f245079f14c3cb1406a9aff4a8", "version": "2.3.2"}
+{"build": "h99b4a89_7100102", "decision": "ALLOW_EXACT", "license": "BSD-3-Clause", "name": "libcamd", "sha256": "7ee0d0881bde6702b662fdaea2d7ca2dd455b37cc413ba466075d7fc3186094d", "version": "3.3.3"}
+{"build": "11_hb0561ab_openblas", "decision": "ALLOW_EXACT", "license": "BSD-3-Clause", "name": "libcblas", "sha256": "3cebd672d8bd7c776a381422ea3fc48131343aeda2879974734715ac6a05c292", "version": "3.11.0"}
+{"build": "h99b4a89_7100102", "decision": "ALLOW_EXACT", "license": "BSD-3-Clause", "name": "libccolamd", "sha256": "c2adccb535216828b036311da2e5ff67210cbd796c5c008c8c0aff8225b33adf", "version": "3.3.4"}
+{"build": "hbba04d7_7100102", "decision": "REVIEW_OR_DENY", "license": "LGPL-2.1-or-later AND GPL-2.0-or-later AND Apache-2.0", "name": "libcholmod", "sha256": "d031714d1c5c29461113b732a9788579f6c8b466cf44580fdd350e585c246b40", "version": "5.3.1"}
+{"build": "h99b4a89_7100102", "decision": "ALLOW_EXACT", "license": "BSD-3-Clause", "name": "libcolamd", "sha256": "3c4467faf60994dd095a66ba5a4508b9d610487ed89458084d87ad3e4b0fe53f", "version": "3.3.4"}
+{"build": "h6651222_0", "decision": "REVIEW_OR_DENY", "license": "curl", "name": "libcurl", "sha256": "d9f60525b665e50da15c84fcb4e74e6b1f0a56ea4c89a02d4258f23c3fe1f02c", "version": "8.23.0"}
+{"build": "h55c6f16_2", "decision": "REVIEW_OR_DENY", "license": "Apache-2.0 WITH LLVM-exception", "name": "libcxx", "sha256": "9c390b4f403db32346754ccef6b84b7e5d9b70cb6d76258fd23b05f2db2ab216", "version": "23.1.4"}
+{"build": "pl5321h26f1114_0", "decision": "ALLOW_EXACT", "license": "BSD-2-Clause", "name": "libedit", "sha256": "5692a969e49b200c7874d1e869d281753361980b2ecfe9191b571d7e550f8b92", "version": "3.1.20260512"}
+{"build": "h1a92334_3", "decision": "REVIEW_OR_DENY", "license": "BSD-2-Clause OR GPL-2.0-or-later", "name": "libev", "sha256": "c0100064506ae8abb432c5a506d474f10af2cf48c33d62bc221fb28b6d6ff6ac", "version": "4.33"}
+{"build": "h4b5715a_2", "decision": "ALLOW_EXACT", "license": "BSD-3-Clause", "name": "libevent", "sha256": "6dee15644c34e437920f1147974532cdcc039359b241b7eaa5fbdee275ec4621", "version": "2.1.12"}
+{"build": "hce30654_0", "decision": "REVIEW_OR_DENY", "license": "BSD-2-Clause OR GPL-2.0-only", "name": "libfabric", "sha256": "9a72bcdb6ab2ea9a747d805dfd66de368d42a03fb09e5f983a228350e991b6c4", "version": "2.7.0"}
+{"build": "hb001647_0", "decision": "REVIEW_OR_DENY", "license": "BSD-2-Clause OR GPL-2.0-only", "name": "libfabric1", "sha256": "dc8d3ac35b03ea4fefa6eb1ad4a20c8301e20528540eecb21ece293fe75dd571", "version": "2.7.0"}
+{"build": "h3cf6597_7", "decision": "REVIEW_OR_DENY", "license": "GPL-3.0-only WITH GCC-exception-3.1", "name": "libgcc", "sha256": "deacf62bd6cbbe05eb085dd69a2ca120053597c37066d53c8f7cf6815f26e9eb", "version": "16.2.0"}
+{"build": "h07b0088_7", "decision": "REVIEW_OR_DENY", "license": "GPL-3.0-only WITH GCC-exception-3.1", "name": "libgfortran", "sha256": "a5b4b63d0ef4c7c59c37225b9f0307b5cd2a3a8499b2a40b6ddd2b9f072712a8", "version": "16.2.0"}
+{"build": "hdb7a957_7", "decision": "REVIEW_OR_DENY", "license": "GPL-3.0-only WITH GCC-exception-3.1", "name": "libgfortran5", "sha256": "19297e5cf39de976cdd1a46499a4e15fdf54d249d3231f3b2a9d43af3be0bc66", "version": "16.2.0"}
+{"build": "default_ha97f43a_1000", "decision": "ALLOW_EXACT", "license": "BSD-3-Clause", "name": "libhwloc", "sha256": "d47c3c030671d196ff1cdd343e93eb2ae0d7b665cb79f8164cc91488796db437", "version": "2.13.0"}
+{"build": "he4c29f2_3", "decision": "REVIEW_OR_DENY", "license": "LGPL-2.1-only", "name": "libiconv", "sha256": "689a14968267f2f97c07112fca5636e7d756036b9aee969911267c20bd3eea1f", "version": "1.18"}
+{"build": "h4370aa4_7100102", "decision": "ALLOW_EXACT", "license": "LGPL-2.1-or-later", "name": "libklu", "sha256": "b0a2232fe917abcf0f8c7fbb37c8c3783a0580a38f98610c5c20a3a6cb8c12f3", "version": "2.3.5"}
+{"build": "11_hd9741b5_openblas", "decision": "ALLOW_EXACT", "license": "BSD-3-Clause", "name": "liblapack", "sha256": "e7697df761eeb243272801a8c883dc1de6018a7f738746b443ef1396f0a78075", "version": "3.11.0"}
+{"build": "h8088a28_1", "decision": "REVIEW_OR_DENY", "license": "0BSD", "name": "liblzma", "sha256": "23d0630046a3e8b164d8f80f2b74ed2605af2e7050ab9913018056402fae4311", "version": "5.8.3"}
+{"build": "h29223de_0", "decision": "ALLOW_EXACT", "license": "MIT", "name": "libnghttp2", "sha256": "d533256cdb91c676b106728e8437a5d96e9c02dc6a99b948f1b04b04a92620c2", "version": "1.71.0"}
+{"build": "openmp_h5e6e99c_1", "decision": "ALLOW_EXACT", "license": "BSD-3-Clause", "name": "libopenblas", "sha256": "18f167fdaa26f67a123c59766f4730b41866d2c0920b5c29d74a93d3a2e92a96", "version": "0.3.34"}
+{"build": "hddb0edd_4", "decision": "ALLOW_EXACT", "license": "BSD-3-Clause", "name": "libpmix", "sha256": "038b7e32614e0e7e64507546e87211aec06ecde87b700749b2765d9a9c2f35c8", "version": "5.0.8"}
+{"build": "hdb0c161_1", "decision": "ALLOW_EXACT", "license": "MIT", "name": "libpsl", "sha256": "c8c3153df39abedf3413483f672151ad70f1adb0c06c192bdf7ec432c3616b07", "version": "0.23.1"}
+{"build": "int32_h31d9c22_3", "decision": "REVIEW_OR_DENY", "license": "", "name": "libptscotch", "sha256": "de7b05c0a98a7e6d8cca8e8890cbe771c508d223acc58073b15607b5ff9a2ae1", "version": "7.0.11"}
+{"build": "int32_h20a7331_3", "decision": "REVIEW_OR_DENY", "license": "CECILL-C", "name": "libscotch", "sha256": "6a6ee559c9dff35ffd2f57616763be04f54b7c646262a3437417612fd05d1941", "version": "7.0.11"}
+{"build": "h775d698_7100102", "decision": "ALLOW_EXACT", "license": "GPL-2.0-or-later", "name": "libspqr", "sha256": "35decda7f3de10dfeb6159ddaf27017fcf53c52119297a1f943b6396d18328a7", "version": "4.3.4"}
+{"build": "hbf2880b_1", "decision": "ALLOW_EXACT", "license": "BSD-3-Clause", "name": "libssh2", "sha256": "a056e518c3d2d09fbb1778cea80c0c95338fb24adf1a817bbf90fb484850a304", "version": "1.11.1"}
+{"build": "h4a8fc20_7100102", "decision": "ALLOW_EXACT", "license": "BSD-3-Clause", "name": "libsuitesparseconfig", "sha256": "847b393bfb5c8db10923544e44dcb5ba78e5978cbd841b04b7dc626a2b3c3306", "version": "7.10.1"}
+{"build": "h7c2c975_7100102", "decision": "ALLOW_EXACT", "license": "GPL-2.0-or-later", "name": "libumfpack", "sha256": "a7d2d337e953a3ff641efb5bb1842c6d3f66a0a21718a1d354f4841432bf3204", "version": "6.3.5"}
+{"build": "heb56d2d_1", "decision": "ALLOW_EXACT", "license": "MIT", "name": "libxml2-16", "sha256": "1acd4dd49c6f54440dc172ab469d0e2c7c3c02de5b1f21158a233eb585ec3c38", "version": "2.15.4"}
+{"build": "h550178d_1", "decision": "ALLOW_EXACT", "license": "MIT", "name": "libxml2", "sha256": "f333b4c6c823ea317aeb0b817520ae3ba2fb16277923d848f5f2aee2049198e5", "version": "2.15.4"}
+{"build": "h8088a28_3", "decision": "ALLOW_EXACT", "license": "Zlib", "name": "libzlib", "sha256": "a18fa5d5bac452401459f966cf0d872224e8080c4ff93c77e168d43ab42ef9d7", "version": "1.3.2"}
+{"build": "hdb3d66b_0", "decision": "REVIEW_OR_DENY", "license": "Apache-2.0 WITH LLVM-exception", "name": "llvm-openmp", "sha256": "cc6d67df56d4ea967e17d938d3108cdf7d971531350df9e7fc5e18cb89066a70", "version": "23.1.4"}
+{"build": "h4fd61ea_1008", "decision": "ALLOW_EXACT", "license": "Apache-2.0", "name": "metis", "sha256": "4fbbe58ce5c062edae5f28cb9534925da87168a592577e8b39de51d8dfa32a8f", "version": "5.1.0"}
+{"build": "mpi_openmpi_h2d1e0d0_0", "decision": "ALLOW_EXACT", "license": "BSD-3-Clause", "name": "mfem", "sha256": "97ec7c761695632b69e35c053d884d406653ce94d552634f7fa4f462675052eb", "version": "4.7"}
+{"build": "openmpi", "decision": "ALLOW_EXACT", "license": "BSD-3-Clause", "name": "mpi", "sha256": "e1698675ec83a2139c0b02165f47eaf0701bcab043443d9008fc0f8867b07798", "version": "1.0.1"}
+{"build": "h9aa2737_3", "decision": "REVIEW_OR_DENY", "license": "CECILL-C", "name": "mumps-include", "sha256": "d30b01ad5537f226716c7182b98497c67c020ba6275e39e9f848fe4b4f153e89", "version": "5.8.2"}
+{"build": "gfortran_h9ea742b_3", "decision": "REVIEW_OR_DENY", "license": "CECILL-C", "name": "mumps-mpi", "sha256": "e8cdc242e8e79963a6e86efb06907e4363325234ad64bded4167b8cd0ee5f5af", "version": "5.8.2"}
+{"build": "he64c551_1", "decision": "REVIEW_OR_DENY", "license": "X11 AND BSD-3-Clause", "name": "ncurses", "sha256": "7024a48c8c0d0114ed4ab53c76bf9275d50e91ba7cea367a9aead638d3c29c68", "version": "6.6"}
+{"build": "hf0fab5e_0", "decision": "ALLOW_EXACT", "license": "BSD-3-Clause", "name": "openmpi", "sha256": "8eb51580e0cc072345f87e0848b1aee3ca9f6f2ff1f5956cb6f9c7fe7cbfc080", "version": "5.0.11"}
+{"build": "h55eecbc_0", "decision": "ALLOW_EXACT", "license": "Apache-2.0", "name": "openssl", "sha256": "44fbc526456571a9fb8fa18157f6f269d4d4bd40eef20183a93b9c9296f94497", "version": "3.6.5"}
+{"build": "h95da22c_1009", "decision": "REVIEW_OR_DENY", "license": "LicenseRef-ParMETIS", "name": "parmetis", "sha256": "9f0253c2c433c81e502bbb9368ce1742e213db36c216c2ebc4e2d66af9039fc8", "version": "4.0.3"}
+{"build": "complex_hee3579b_0", "decision": "ALLOW_EXACT", "license": "BSD-2-Clause", "name": "petsc", "sha256": "79b47bcfd12a15a63f8854884f2af845d8a9f00b9604cf46022ae71863fac6e6", "version": "3.26.1"}
+{"build": "h430f396_0", "decision": "ALLOW_EXACT", "license": "Apache-2.0", "name": "s2n", "sha256": "643f677b74da742fb477a2ccb14745a0d992c9d40f1f04b45decb7a4e8f07a50", "version": "1.7.7"}
+{"build": "ha4fe3f2_6", "decision": "ALLOW_EXACT", "license": "BSD-2-Clause", "name": "scalapack", "sha256": "c3e6d5c507cd53e5d5c9c3658020570dee4dddab0bb4f4722ec60bf22597b298", "version": "2.2.0"}
+{"build": "complex_h827a1e1_0", "decision": "ALLOW_EXACT", "license": "BSD-2-Clause", "name": "slepc", "sha256": "4c10294a4ad127f69cc8dce4bb60f23cea6e20cd83db5c4e5719e5a5ede6b56c", "version": "3.26.0"}
+{"build": "h742a510_1", "decision": "ALLOW_EXACT", "license": "BSD-3-Clause", "name": "superlu", "sha256": "fdec15bc4cd02de10474b13f1b7fadc1b953cb0ab6e2c093c599d2b730ed4653", "version": "7.0.0"}
+{"build": "h4130448_2", "decision": "ALLOW_EXACT", "license": "BSD-3-Clause", "name": "superlu_dist", "sha256": "84c5521dccecf43d3108c1e9e84477f2f1dd0e04e14913da605798dfe3df4f8b", "version": "9.2.1"}
+{"build": "h74c22ad_3", "decision": "ALLOW_EXACT", "license": "MIT", "name": "yaml", "sha256": "3e78c43207502418fc5fb2317bbbefe5df8b6fc1051d90bdcd1c881c76bb4193", "version": "0.2.5"}
+{"build": "hf451053_7", "decision": "ALLOW_EXACT", "license": "BSD-3-Clause", "name": "zstd", "sha256": "da867f5092eb0cb746d353694f0098031fd9817a4ce7d5743121209ae0f406ca", "version": "1.5.7"}
+FAIL: unapproved expressions; no redistribution admission

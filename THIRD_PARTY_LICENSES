@@ -10,3 +10,52 @@ Release is blocked until the complete resolved transitive graph is audited and i
 Optional local-only geometry experiments: Gmsh 4.15.2 GPL-2.0-or-later with named-library exception; gdstk 1.0.0 BSL-1.0; KLayout 0.30.9 GPLv3 family. No binaries bundled.
 ngspice 47 research build has mixed licenses (see docs/research/spice-engine-comparison.md and upstream COPYING). It is not admitted as a distributable dependency; no binary or model data is included.
 IHP HBT model/corner/stat files inspected locally carry Apache-2.0; other IHP files include ECL-2.0 and are not approved by association.
+
+
+M0 direct-license review update (2026-11-02)
+-----------------------------------------
+The additional entries in dependencies.toml record reviewed direct source grants
+for local research candidates. They do not certify any conda environment, release
+binary, optional module, bundled model, compiler runtime, or transitive graph.
+No license text or third-party source has been relicensed by this inventory.
+
+MFEM 4.10: BSD-3-Clause (source LICENSE).
+PETSc 3.26.1 and SLEPc 3.26.0: BSD-2-Clause (source LICENSE/LICENSE.md).
+PETSc explicitly excludes downloaded packages from its own license grant.
+hypre 3.2.0: select Apache-2.0 from Apache-2.0 OR MIT (upstream COPYRIGHT).
+SuperLU_DIST 9.2.1: BSD-3-Clause (pinned License.txt).
+The original conda FEM environment is REJECTED because it resolves ParMETIS;
+ParMETIS is not approved through PETSc or SuperLU_DIST. See ADR-005. A source
+build without that dependency still requires its own resolved-closure audit.
+
+Qt Base 6.12.0: select LGPL-3.0-only from the alternative grant in QWidget.
+The local Qt GUI uses dynamic libraries; no Qt binary is bundled. This entry is
+not approval of all packages/modules in qt6-main. Distribution must retain LGPL
+notices, corresponding source and required relinking/replacement rights.
+VTK 9.7.1: BSD-3-Clause for VTK's own code; installed share/licenses/VTK includes
+additional module notices. Codec, font and other bundled dependencies require
+individual review. Clipper2 1.5.4: BSL-1.0 (extracted source LICENSE).
+
+gRPC C++ 1.51.1: Apache-2.0; protobuf C++ 3.21.12: BSD-3-Clause.
+The separately installed Python protobuf package reports 4.21.12; that is not
+the C++ runtime version. ZeroMQ 4.3.5: MPL-2.0; cppzmq 4.11.0: MIT;
+FlatBuffers 25.12.19: Apache-2.0. Primary source links are in dependencies.toml.
+
+Xyce 7.10.0: GPL-3.0-or-later, explicitly granted in N_CIR_Xyce.C.
+Trilinos, FFTW, SuiteSparse and the complete compiled device set are not approved
+by that top-level grant and still need a resolved source/binary closure review.
+ngspice 47 remains a mixed-license research candidate outside the approved
+single-license direct list. The source COPYING is the authoritative inventory;
+BSD alone is not an adequate license expression for the enabled shared build.
+
+OpenVAF-Reloaded release asset v24.0.2mob (macos-aarch64): the executable reports
+an unknown version; version identity comes from the pinned official release
+asset, SHA256 022d5659257239af98f5e8ee59e2fe4403e1b2e694a06461152d5251c0ad0196.
+The source manifest and README specify GPL-3.0; the conservative selected grant
+is GPL-3.0-only, without inferring an or-later grant. The README identifies MIT
+rustc/rust-analyzer-derived code and states separately licensed integration-test
+models do not enter its binary. The asset's LLVM/runtime/transitive closure has
+not been approved for redistribution. No upstream model tests are bundled.
+
+Unresolved common runtime and tool dependencies, including license exceptions,
+are not implicitly approved. The direct scanner is not a transitive SBOM audit.
