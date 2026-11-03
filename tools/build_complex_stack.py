@@ -67,7 +67,7 @@ run('petsc-configure',[sys.executable,'configure','PETSC_ARCH=arch-heavisolve-co
 penv = {'PETSC_DIR':str(work/'petsc-3.26.1'),'PETSC_ARCH':'arch-heavisolve-complex'}
 run('petsc-build',['make','-j'+str(a.jobs),'all'],work/'petsc-3.26.1',penv)
 run('petsc-install',['make','install'],work/'petsc-3.26.1',penv)
-senv = {'PETSC_DIR':str(petsc),'PETSC_ARCH':''}
+senv = {'PETSC_DIR':str(petsc),'PETSC_ARCH':'','SLEPC_DIR':str(work/'slepc-3.26.0')}
 run('slepc-configure',[sys.executable,'configure','--prefix='+str(slepc)],work/'slepc-3.26.0',senv)
 run('slepc-build',['make','-j'+str(a.jobs)],work/'slepc-3.26.0',senv)
 run('slepc-install',['make','install'],work/'slepc-3.26.0',senv)

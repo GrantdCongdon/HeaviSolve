@@ -7,6 +7,8 @@ on:
     paths:
       - '.github/workflows/complex-fem.yml'
       - 'tools/build_complex_stack.py'
+      - 'tools/conda-license-reviews.toml'
+      - 'tools/audit_conda.py'
       - 'verification/fem-stack/**'
 permissions:
   contents: read
