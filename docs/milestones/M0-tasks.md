@@ -12,20 +12,20 @@
 - [x] ADR003 measured dual-engine scoring; retain both as co-primary targets.
 - [x] S1–S7 reports including S3a–c, actual failures and alternatives.
 - [x] Linux/macOS baseline and complex FEM CI with stored outputs.
-- [x] Docker foundation image built and tested in CI41858845826; no image published.
+- [x] Docker foundation image built and tested in CI41922593302 (3/3 checks); no image published.
 - [x] Dependency strategy, Spack starter, docs skeleton and coding standards.
 - [x] Name-availability check; retain HeaviSolve.
 - [x] ADR007 separates acceptance, reported feasibility outcomes and final exit.
 - [x] ADR008 records explicit Phase R component dispositions without admitting unreviewed dependencies.
-- [ ] Finish current Linux SPICE attempt41858845394 and record its outcome; no platform pass inferred from a recipe.
+- [x] Linux SPICE run41858845394 passes native builds, RC callbacks/stepping and HB subset; checksum-verified outputs retained. Hosted subset excludes IHP/OSDI.
 
 ## Acceptance and exit
 
 - [x] Local revised `ctest -L m0`:3/3 pass (Poisson, cavity, evidence gate).
 - [x] Local foundation checks:3/3 pass, including gate policy tests.
-- [ ] Push/review the revised aggregate M0 label in hosted Linux/macOS CI and retain results.
+- [x] Aggregate M0 CI41922593403 at239cb7f: all6 jobs pass, with3/3 M0 checks on each platform; verified numerical/language artifacts and full foundation logs retained.
 - [x] Walking-skeleton design self-review, conditional on M0 exit.
-- [ ] Final ADRs accepted and merged; remote main currently unchanged.
+- [ ] Integrate the accepted ADRs into remote main; final review package is ready, but current authorization covers only the review branch. This is the sole remaining all-stage gate.
 - [ ] Deliver final M0 report, decision summary and next-checkpoint plan. **M1 must not start before exit and reporting.**
 
 ## Retained limitations and later gates

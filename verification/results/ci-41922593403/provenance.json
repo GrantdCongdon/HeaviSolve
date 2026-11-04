@@ -1,0 +1,54 @@
+{
+  "run_id": 41922593403,
+  "commit": "239cb7f3c9ecb34914d945532ad4055155bfc39b",
+  "artifacts": [
+    {
+      "name": "language-ubuntu-24.04",
+      "artifact_id": 13367508041,
+      "sha256": "79ce56c19a5e0418b66f22136d2ca03c957f09d8504082655be291682a2b5a01",
+      "zip_digest_verified": true
+    },
+    {
+      "name": "language-macos-14",
+      "artifact_id": 13366159867,
+      "sha256": "10425728da7dacf0cda1c0011e29a5fc36010575d51bf4e2d2af707f82111462",
+      "zip_digest_verified": true
+    },
+    {
+      "name": "numerical-macos-14",
+      "artifact_id": 13367303072,
+      "sha256": "94973439c71509285f7744b85d8f6e885c549c1136880010a06ebf04a0aff539",
+      "zip_digest_verified": true
+    },
+    {
+      "name": "numerical-ubuntu-24.04",
+      "artifact_id": 13367229789,
+      "sha256": "fffa73cd7b29889da8f247b67250becd0c787362ced59e8b2ed2fbd75fd3809f",
+      "zip_digest_verified": true
+    }
+  ],
+  "foundation_job_ids": {
+    "macos-14": 126898620523,
+    "ubuntu-24.04": 126898620760
+  },
+  "foundation_logs": "Downloaded full job logs through GitHub API; unedited content saved separately",
+  "result": "PASS: all six jobs; M0 acceptance3/3 on Linux and macOS; foundation and language/bindings on both",
+  "retained_file_sha256": {
+    "foundation-macos-14.log": "66001fc8929d81689f52495a9e81f309b29a4acfe58cf392af77e70832785899",
+    "foundation-ubuntu-24.04.log": "2d3af9e595ebb4019c4f58ed1e3abb1732decb150a88876fbd1bf6bed332adbb",
+    "language-macos-14/CMakeCache.txt": "aab4ea0ac4297930503cdd7e372a9841822a9e7da524799059cd5055fc728797",
+    "language-macos-14/binding-results.json": "90554a571593c6e5ea7498e7bd67579092130afb7026a0db2ed9031cfc0df84a",
+    "language-macos-14/language-results.csv": "8019777e849802f216e8bd9d915b21db50e4ed73ab988b4bbd4df5d8035183c2",
+    "language-ubuntu-24.04/CMakeCache.txt": "a93d8b21911343c419113fc1543ef05a2ba368bff05af775e9dbab0cb33c81b9",
+    "language-ubuntu-24.04/binding-results.json": "39742bf4083bc2c89c5a3533067a236dca8f87efefb377c0cd694e65e13629db",
+    "language-ubuntu-24.04/language-results.csv": "7a020f4c26c468c2c3e6fa34c75e41b92f44f2eae6956682492e7020eb8ea999",
+    "numerical-macos-14/CMakeCache.txt": "1b59c3766e310794de92dfde9d1c70aa1d034c23222a2f0ff5cb571d0692a534",
+    "numerical-macos-14/CTestCostData.txt": "1d52407569611098a587575a7034b8049add91bbc14d86f71ec0ceb6ba540eeb",
+    "numerical-macos-14/LastTest.log": "63eece3264414889aadba6651caf200ae59b1a16a7ace80e38c280de7b95186b",
+    "numerical-macos-14/numerical-results.log": "95995c819e1e074099c3a9c28affdd56e0356720feaff11d5d385cc57b9de6f4",
+    "numerical-ubuntu-24.04/CMakeCache.txt": "174b0950f8de3831585f4d6ef80e382298a17cf45f4ac5504f3ab8b5b59a349a",
+    "numerical-ubuntu-24.04/CTestCostData.txt": "aa7c88d93d4bf5e4d8f1025be717a24e2b8c54a4819aebb7263c30af38607d03",
+    "numerical-ubuntu-24.04/LastTest.log": "a9f6d6961477d997dc7fa5d1e65a8acf5c80c1fc1fcf2ca757cc44185979eaa4",
+    "numerical-ubuntu-24.04/numerical-results.log": "761be14f26581189e4039d9948cbabb9b9da4ecc8626fc0b0032228f176576a1"
+  }
+}

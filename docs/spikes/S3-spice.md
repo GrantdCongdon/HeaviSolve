@@ -3,7 +3,7 @@
 
 # S3a–c: SPICE feasibility
 
-## S3a ngspice — LOCAL PASS, hosted CI pending
+## S3a ngspice — LOCAL PASS; callback subset also passes Linux CI
 
 Built ngspice47 shared library on macOS arm64. Source archive SHA256 `894e649651f1838a14095e5a5439e7d3aa63e87ede14d283173fda4fcdef675f`. Configure: `--prefix=/tmp/heavisolve-spice/install --with-ngshared --without-x --disable-openmp --disable-klu --with-readline=no`, then `make -j6`, `make install`.
 
@@ -13,11 +13,11 @@ C++ harness linked libngspice with rpath to isolated prefix. RC external-source 
 
 IHP npn13G2 VBIC smoke test: VCE1V,VBE0.8V, collector current0.00013991752401704821A. This is a finite-positive-current smoke check, not validation against measurement. Uses Apache-2.0 headers in the public HBT model/corner/stat files, loaded from ignored `.local`; no model data bundled. Missing corner/model include failures were resolved without changing device parameters. [Output](../../verification/results/ngspice-ihp.log). R3 records upstream research pin; model file digests are in provenance.
 
-OpenVAF-Reloaded v24.0.2mob macOS arm64 compiled the project's cubic Verilog-A conductance to OSDI. Archive SHA256 `022d5659257239af98f5e8ee59e2fe4403e1b2e694a06461152d5251c0ad0196`. Native `ngspice_osdi.cpp` loads it with the shared-library `osdi` command (not `pre_osdi`), then computes 0.0011000000000000001 A at 1 V, identical to the analytic result within 1e-12 A. [Output](../../verification/results/s3-osdi.log). A space-free temporary path avoids ngspice command quoting limitations. The compiler version string itself reports unknown; the release asset hash is the pin. Linux, rollback and hosted CI remain untested.
+OpenVAF-Reloaded v24.0.2mob macOS arm64 compiled the project's cubic Verilog-A conductance to OSDI. Archive SHA256 `022d5659257239af98f5e8ee59e2fe4403e1b2e694a06461152d5251c0ad0196`. Native `ngspice_osdi.cpp` loads it with the shared-library `osdi` command (not `pre_osdi`), then computes 0.0011000000000000001 A at 1 V, identical to the analytic result within 1e-12 A. [Output](../../verification/results/s3-osdi.log). A space-free temporary path avoids ngspice command quoting limitations. The compiler version string itself reports unknown; the release asset hash is the pin. OSDI remains local-only; rollback is untested. The later Linux CI callback result is recorded below.
 
-## S3b Xyce — numerical subtests LOCAL PASS; platform gate NOT PASS
+## S3b Xyce — scoped PASS: macOS local and Linux CI builds; RC/IHP/HB evidence below
 
-Built release 7.10.0 on macOS arm64 with Trilinos16.1.0, FFTW, AMD and SuiteSparseConfig. Xyce archive SHA256 `b5a883196f0a2b3972fd13c541fecf04735bfabc7d124d7c7e17de707204f4e2`; Trilinos SHA256 `e9651c88f581049457036cfc01b527a9d3903c257338eeeab942befd7452f23a`. Failed exploratory master configure remains stored. This successful build required Fortran enabled in Trilinos, `-fsecond-underscore` to match AztecOO symbol declarations, explicit `M4` for bison, and replacing two `std::abs<double>(val)` calls with `std::abs(val)` in `N_LAS_BlockSystemHelpers.C`. These compatibility patches must be reproduced in CI; Linux has not run.
+Built release 7.10.0 on macOS arm64 with Trilinos16.1.0, FFTW, AMD and SuiteSparseConfig. Xyce archive SHA256 `b5a883196f0a2b3972fd13c541fecf04735bfabc7d124d7c7e17de707204f4e2`; Trilinos SHA256 `e9651c88f581049457036cfc01b527a9d3903c257338eeeab942befd7452f23a`. Failed exploratory master configure remains stored. This successful build required Fortran enabled in Trilinos, `-fsecond-underscore` to match AztecOO symbol declarations, explicit `M4` for bison, and replacing two `std::abs<double>(val)` calls with `std::abs(val)` in `N_LAS_BlockSystemHelpers.C`. The later Linux CI run reproduced the patches and passed the RC/API/HB subset; IHP model execution remains local.
 
 The research runner launches Xyce as a subprocess. The native stepwise library experiment below now exercises `simulateUntil` and circuit-value reads on macOS; rollback and general external-device coupling remain untested. ADMS was unavailable; the pinned IHP Xyce HBT uses built-in VBIC level12 and runs without an ADMS plugin. ngspice uses its corresponding level9 file. Neither route establishes MOS coverage.
 
@@ -38,7 +38,7 @@ Xyce HB series RLC: R=1000 ohm, L=1mH, C=1nF, 1MHz sinusoid. Fundamental current
 
 A separate [solver-tolerance sensitivity test](../../verification/results/s3-dc-tolerance-sensitivity.json) tightened numerical reltol1e-8→1e-10 and abstol1e-14→1e-16 without changing models or acceptance bounds. Diode DC then passes at9.7835463e-5; IHP DC remains above threshold at1.0325884e-4. The original failures remain recorded. No full-suite pass is claimed.
 
-The pinned foundry files differ beyond syntax: ngspice has `ikp=1.00E-04*(Nx*0.25)` while the Xyce counterpart has `.00E-04*(Nx*0.25)`; delay/NQS defaults differ, and the engines use different VBIC implementations. These differences are observed potential causes, not a proven attribution of the AC discrepancy. Model files were not edited. The 8–10% AC disagreement blocks equal-accuracy support and requires a focused model/linearization investigation before M0 closes. No restricted or public foundry model files are included in the stored result archive.
+The pinned foundry files differ beyond syntax: ngspice has `ikp=1.00E-04*(Nx*0.25)` while the Xyce counterpart has `.00E-04*(Nx*0.25)`; delay/NQS defaults differ, and the engines use different VBIC implementations. These differences are observed potential causes, not a proven attribution of the AC discrepancy. Model files were not edited. The 8–10% AC disagreement blocks equal-accuracy support and requires a focused model/linearization investigation before M7 compatibility can be claimed (ADR007 clarifies the milestone boundary). No restricted or public foundry model files are included in the stored result archive.
 
 Harness failures were also retained: initial Xyce DC column assumptions and ngspice complex-frequency metadata handling. The corrected runner copies ngspice vector metadata and reads complex frequency correctly. Stored output was not hand-edited.
 
@@ -67,7 +67,7 @@ cp verification/spice/xyce_step.cir /tmp/heavisolve-spice/xyce-step.cir
 /tmp/heavisolve-spice/xyce-step /tmp/heavisolve-spice/xyce-step.cir verification/results/s3-xyce-step.csv
 ```
 
-This narrows the API uncertainty to unsupported experiments: rollback, exchanged external-device values, and Linux execution. It does not establish full co-simulation conformance or change ADR003 scores without a comparable re-evaluation.
+This narrows the API uncertainty to unsupported experiments: rollback and exchanged external-device values. Linux forward stepping subsequently passed as recorded below. It does not establish full co-simulation conformance or change ADR003 scores without a comparable re-evaluation.
 
 ## Follow-up: residual DC localized to avalanche (2026-11-03)
 
@@ -75,14 +75,27 @@ The [bounded copied-model diagnostic](../../verification/spice/diagnose_ihp_aval
 
 The native ngspice and Xyce VBIC1.3 implementations use different avalanche smoothing expressions. The upstream VBIC1.3 source explicitly describes an avalanche-function modification for forward/low reverse bias; generated Xyce code includes the additional smoothing shift. Disabling the contribution localizes the discrepancy to avalanche behavior; no source-patch experiment has proven the smoothing shift alone explains every residual. This is evidence of model-implementation differences, not a generic engine accuracy ranking or a reason to remove avalanche from production models.
 
-A possible next experiment is an identically versioned compact-model source through ngspice OSDI and Xyce ADMS. Its source grant, compiler compatibility, thermal behavior and parameter mapping must be checked first. That route remains untested and is not an accepted replacement. Full original-model conformance and the M0 gate remain open.
+A possible next experiment is an identically versioned compact-model source through ngspice OSDI and Xyce ADMS. Its source grant, compiler compatibility, thermal behavior and parameter mapping must be checked first. That route remains untested and is not an accepted replacement. Full original-model conformance remains open for M7; M0 acceptance is assessed separately under ADR007.
 
 ## Linux source-recipe checkpoint
 
-`tools/build_spice_stack.py` and `.github/workflows/spice-research.yml` reproduce the observed source-build settings for pinned ngspice47, Trilinos16.1 and Xyce7.10. They run native callback RC, stepwise RC and HB RLC/cubic checks, with closed-form oracles and retained output. The Xyce abs compatibility fix is context-checked; the ngspice declaration fix is applied to its generator input. No foundry models or OSDI compiler are downloaded by this subset. Linux execution remains pending until the workflow completes.
+`tools/build_spice_stack.py` and `.github/workflows/spice-research.yml` reproduce the observed source-build settings for pinned ngspice47, Trilinos16.1 and Xyce7.10. They run native callback RC, stepwise RC and HB RLC/cubic checks, with closed-form oracles and retained output. The Xyce abs compatibility fix is context-checked; the ngspice declaration fix is applied to its generator input. No foundry models or OSDI compiler are downloaded by this subset. Linux run41858845394 completed successfully, with retained evidence below.
 
 This uses the existing research candidates and is not a production dependency admission or binary-release recipe. The explicit `--research-candidates` guard prevents presenting it as an approved installer; ADR002 still requires the selected-source/runtime license review before merge/adoption. It records distro package versions, but does not claim a fully locked apt environment. Passing this subset will not close original IHP conformance.
 
-First Linux run41768558047 failed before compilation because cfunc.mod contains non-UTF8 bytes. [Failure excerpt](../../verification/results/spice-linux-first-failure.log) is retained. The declaration patch now operates on bytes, preserving the upstream payload; retry is pending.
+First Linux run41768558047 failed before compilation because cfunc.mod contains non-UTF8 bytes. [Failure excerpt](../../verification/results/spice-linux-first-failure.log) is retained. The declaration patch now operates on bytes, preserving the upstream payload; subsequent retries are recorded below.
 
-Second Linux run41768804564 reached Trilinos configure but auto-enabled optional packages requiring NetCDF. [Retained configure log](../../verification/results/ci-41768804564/trilinos-configure.log). The corrected recipe explicitly disables all optional packages, matching the successful macOS configuration. No NetCDF dependency is added; no Linux numerical pass is claimed.
+Second Linux run41768804564 reached Trilinos configure but auto-enabled optional packages requiring NetCDF. [Retained configure log](../../verification/results/ci-41768804564/trilinos-configure.log). The corrected recipe explicitly disables all optional packages, matching the successful macOS configuration. No NetCDF dependency was added. This failed attempt is retained separately from the later passing run.
+
+## Linux source-build completion — 2026-11-04
+
+[Run41858845394](https://github.com/GrantdCongdon/HeaviSolve/actions/runs/41858845394), job126674756431, commitceeb4d754e56bb381fa04196e1a1151ea1a2bf34: **PASS**. The [SHA256-verified artifact provenance](../../verification/results/ci-41858845394/provenance.json) accompanies configure/build/install logs, distro package versions, source-patch hashes and numerical outputs. A third attempt had built Trilinos but failed Xyce configure for missing Flex headers; adding libfl-dev resolved that concrete dependency.
+
+| Linux check | Measured result | Criterion |
+|---|---|---|
+| ngspice47 external-source RC |5018 samples,10041 callbacks, maximum absolute voltage error3.0577877230264505e-8V|<1e-4V; PASS|
+| Xyce7.10 stepwise RC |50 requested stops, maximum absolute voltage error7.1045086442317329e-7V|<1e-4V, monotonic requested times within1ps; PASS|
+| Xyce RLC HB |relative phasor error2.531604147800072e-16|<1e-3; PASS|
+| Xyce cubic HB |relative harmonic error2.846030702774449e-15|<1e-3; PASS|
+
+These establish a Linux source build and the specified narrow native checks, alongside the earlier macOS build, local IHP smoke and local OSDI experiment. No IHP fixtures or OSDI compiler were downloaded in this hosted subset. The original-model S3c failure is unchanged. Xyce's step test reports many internal steps; no performance or efficient co-simulation claim follows from correctness. Research success does not admit the selected source/runtime license graph for production or distribution.

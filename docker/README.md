@@ -3,7 +3,7 @@
 
 # Foundation container
 
-Build from the repository root with `docker build -f docker/Dockerfile -t heavisolve-foundation .`, then run `docker run --rm heavisolve-foundation`.
+Build from the repository root with `docker build -f docker/Dockerfile -t heavisolve-foundation .`, then run `docker run --rm heavisolve-foundation ctest --test-dir build -L foundation --output-on-failure`.
 
 The image builds the repository skeleton and runs its foundation tests. Workflow run41858845826 on ceeb4d7 passed2/2 checks; [stored evidence](../verification/results/ci-41858845826/provenance.json) identifies the image and verified log artifact. Later revisions must pass their own run.
 

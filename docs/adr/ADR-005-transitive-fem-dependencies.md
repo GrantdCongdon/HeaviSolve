@@ -3,7 +3,7 @@
 
 # ADR-005: reject the convenient FEM binary environment
 
-Status: accepted rejection; replacement source build under evaluation. Date: 2026-11-02.
+Status: accepted rejection; replacement research build passes Linux/macOS CI. Updated: 2026-11-04.
 
 The complex conda PETSc/SLEPc environment resolved and executed a cavity experiment, but its transitive package inventory includes ParMETIS (`LicenseRef-ParMETIS`). The [upstream license](https://github.com/KarypisLab/ParMETIS/blob/main/LICENSE) restricts permitted use and redistribution. This violates ADR-002, irrespective of PETSc's own BSD license. That environment is rejected for integration and redistribution. Its numerical output is retained only as an experiment and never establishes license admission or solver verification. No ParMETIS binary or source is committed or distributed.
 
@@ -13,4 +13,4 @@ Replacement: build PETSc 3.26.1 (complex) and SLEPc 3.26.0 from upstream source,
 
 The [smaller environment audit](../../verification/results/fem-clean-conda-license-audit.log) is also fail-closed: removing ParMETIS does not automatically approve compiler runtime exceptions or missing/alternative license expressions. The local build is a candidate, not a redistributable artifact. Source-built numerical dependencies avoid the rejected graph; release admission remains blocked until every transitive license is resolved.
 
-MFEM 4.7 from the first conda attempt was incompatible with hypre 3.2 private-header changes. The MPI-stack experiment therefore moves to MFEM 4.10, while the already-recorded serial baseline remains 4.8. This version deviation is explicit; it does not rewrite the prior measurements. Linux/macOS hosted build evidence is still required by S1.
+MFEM 4.7 from the first conda attempt was incompatible with hypre 3.2 private-header changes. The MPI-stack experiment therefore moves to MFEM 4.10, while the already-recorded serial baseline remains 4.8. This version deviation is explicit; it does not rewrite the prior measurements. Linux/macOS hosted build evidence now passes in run41715967429; [retained provenance](../../verification/results/ci-41715967429/provenance.json). ADR006 records exact platform-support package reviews. This closes the scoped S1 build/cavity criterion, not binary redistribution approval.

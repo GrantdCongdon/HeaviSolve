@@ -35,6 +35,8 @@ The [solver survey](../research/solver-survey.md), its maintenance evidence, and
 | Other physics families | Native custom layers, with optional survey-listed cross-check references | No untested reference is adopted as a backend. Each implementation milestone applies its own closed-form/convergence and dependency gates |
 | PDK importers | User-defined process schema; public pinned IHP/SiEPIC/generic targets | External fixtures retain file-specific grants. ECL-2.0 model subtree excluded under current policy; gated/NDA data user-supplied only |
 
+The docs skeleton uses plain MkDocs1.6.1 with its BSD-2-Clause grant, rather than immediately adding the Material theme or Sphinx/Doxygen stack suggested in section11. This narrow tooling deviation keeps the initial site dependency set small; it does not waive versioned API/theory/user documentation as implementation grows. Conda-based development and a Spack HPC starter implement the dependency strategy; no unresolved Pixi/Spack lockfile is invented.
+
 ## Consequences and checkpoint review
 
 Phase R now has a recorded disposition for each investigated component. M0 can report failed experiments without hiding them or requiring completion of M7. This resolves the decision-deliverable review, but not the remote integration exit criterion. The revised acceptance workflow must pass on the review branch, outputs must be retained, and ADR integration must actually occur before M0 is declared complete. No M1 code is added.

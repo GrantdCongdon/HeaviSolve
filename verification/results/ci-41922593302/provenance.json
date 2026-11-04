@@ -1,0 +1,9 @@
+{
+  "run_id": 41922593302,
+  "job_id": 126898619833,
+  "commit": "239cb7f3c9ecb34914d945532ad4055155bfc39b",
+  "artifact_id": 13366839115,
+  "sha256": "91141f47d08aa9bdff1a235c09189c613c1619cb8f9da54add8dd296b4793cac",
+  "zip_digest_verified": true,
+  "result": "PASS: foundation container build and all three foundation checks"
+}

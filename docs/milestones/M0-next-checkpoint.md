@@ -4,9 +4,9 @@
 # Next checkpoint: complete M0 and report before M1
 
 1. Preserve the explicit accept/reject/defer dispositions in [ADR008](../adr/ADR-008-phase-r-component-dispositions.md). This decision review is complete; ngspice remains unapproved for production until its selected dependency graph passes ADR002. Research measurements do not authorize adoption.
-2. Finish Linux SPICE run41858845394, retaining output and any failure. Its previous attempt built Trilinos but lacked Flex headers for Xyce; the workflow now includes them. Avoid repeating the already passing Linux/macOS complex-cavity build without changed inputs.
-3. Validate the revised `ctest -L m0` command on the authorized review branch and retain results. Locally it passes3/3; foundation checks pass3/3. Docker CI41858845826 also passes its two foundation tests at that recorded revision.
-4. Review and integrate final ADRs, then confirm the separate deliverable/exit checks. Remote main remains unchanged under the current review-branch authorization. Present the final report, one-page decisions and proposed next checkpoint before starting M1.
+2. Preserve the completed Linux SPICE run41858845394 and its checksum-verified artifacts: builds, ngspice RC, Xyce forward stepping and HB pass. IHP/OSDI were excluded from that hosted subset. Avoid repeating this or the passing Linux/macOS complex-cavity build without changed inputs.
+3. Preserve completed acceptance evidence: run41922593403 at239cb7f passes all6 jobs, including `ctest -L m0`3/3 on Linux and macOS. Verified numerical/language artifacts and full foundation logs are retained. Container41922593302 at the same revision passes3/3 foundation checks.
+4. Prepare the final review pull request and obtain authorization to merge into remote main: current approval covers review-branch uploads only. Acceptance and deliverables are complete; `exit.adrs_accepted_and_merged` is the sole remaining all-stage gate. After authorized integration, confirm the exit check and present the final report, one-page decisions and proposed next checkpoint before starting M1.
 
 [ADR007](../adr/ADR-007-m0-acceptance-scope.md) corrects the previous requirement that every feasibility experiment pass before M0 acceptance. Original-model S3c still fails. Full supported-engine conformance remains mandatory at M7, and release audits remain mandatory before binary distribution. No model or tolerance changes are proposed to hide failures.
 

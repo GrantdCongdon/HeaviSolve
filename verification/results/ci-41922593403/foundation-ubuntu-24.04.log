@@ -1,0 +1,370 @@
+﻿2026-11-04T22:08:40.7013839Z Current runner version: '2.338.2'
+2026-11-04T22:08:40.7035319Z ##[group]Runner Image Provisioner
+2026-11-04T22:08:40.7036127Z Hosted Compute Agent
+2026-11-04T22:08:40.7036712Z Version: 20261021.618
+2026-11-04T22:08:40.7037448Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-11-04T22:08:40.7038140Z Build Date: 2026-10-21T00:45:21Z
+2026-11-04T22:08:40.7038761Z Worker ID: {7d7f5b3a-d7d1-4b18-9991-daf8d6fca7e2}
+2026-11-04T22:08:40.7039397Z Region: westus3
+2026-11-04T22:08:40.7039956Z Cloud: Azure
+2026-11-04T22:08:40.7040456Z ##[endgroup]
+2026-11-04T22:08:40.7041865Z ##[group]Operating System
+2026-11-04T22:08:40.7042440Z Ubuntu
+2026-11-04T22:08:40.7042894Z 24.04.5
+2026-11-04T22:08:40.7043800Z LTS
+2026-11-04T22:08:40.7044289Z ##[endgroup]
+2026-11-04T22:08:40.7044801Z ##[group]Runner Image
+2026-11-04T22:08:40.7045350Z Image: ubuntu-24.04
+2026-11-04T22:08:40.7045884Z Version: 20261025.353.1
+2026-11-04T22:08:40.7047291Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261025.353/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-04T22:08:40.7048730Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261025.353
+2026-11-04T22:08:40.7049616Z ##[endgroup]
+2026-11-04T22:08:40.7050668Z ##[group]GITHUB_TOKEN Permissions
+2026-11-04T22:08:40.7052477Z Contents: read
+2026-11-04T22:08:40.7053019Z Metadata: read
+2026-11-04T22:08:40.7053618Z ##[endgroup]
+2026-11-04T22:08:40.7055921Z Secret source: Actions
+2026-11-04T22:08:40.7056807Z Cache mode: write
+2026-11-04T22:08:40.7057958Z Prepare workflow directory
+2026-11-04T22:08:40.7440388Z Prepare all required actions
+2026-11-04T22:08:40.7510507Z Getting action download info
+2026-11-04T22:08:41.0614866Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-04T22:08:41.1775244Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-11-04T22:08:41.2484851Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-11-04T22:08:41.4264644Z Complete job name: foundation (ubuntu-24.04)
+2026-11-04T22:08:41.5221860Z ##[group]Run actions/checkout@v4
+2026-11-04T22:08:41.5222626Z with:
+2026-11-04T22:08:41.5223003Z   fetch-depth: 0
+2026-11-04T22:08:41.5223428Z   repository: GrantdCongdon/HeaviSolve
+2026-11-04T22:08:41.5227392Z   token: ***
+2026-11-04T22:08:41.5227765Z   ssh-strict: true
+2026-11-04T22:08:41.5228152Z   ssh-user: git
+2026-11-04T22:08:41.5228542Z   persist-credentials: true
+2026-11-04T22:08:41.5228976Z   clean: true
+2026-11-04T22:08:41.5229365Z   sparse-checkout-cone-mode: true
+2026-11-04T22:08:41.5229825Z   fetch-tags: false
+2026-11-04T22:08:41.5230219Z   show-progress: true
+2026-11-04T22:08:41.5230621Z   lfs: false
+2026-11-04T22:08:41.5230990Z   submodules: false
+2026-11-04T22:08:41.5231386Z   set-safe-directory: true
+2026-11-04T22:08:41.5231837Z   allow-unsafe-pr-checkout: false
+2026-11-04T22:08:41.5232527Z ##[endgroup]
+2026-11-04T22:08:41.7633561Z Syncing repository: GrantdCongdon/HeaviSolve
+2026-11-04T22:08:41.7636283Z ##[group]Getting Git version info
+2026-11-04T22:08:41.7637761Z Working directory is '/home/runner/work/HeaviSolve/HeaviSolve'
+2026-11-04T22:08:41.7639476Z [command]/usr/bin/git version
+2026-11-04T22:08:41.7716556Z git version 2.56.0
+2026-11-04T22:08:41.7735351Z ##[endgroup]
+2026-11-04T22:08:41.7751170Z Temporarily overriding HOME='/home/runner/work/_temp/a659b46f-507f-4e1a-abff-20ff030f8c43' before making global git config changes
+2026-11-04T22:08:41.7753511Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-04T22:08:41.7756547Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/HeaviSolve/HeaviSolve
+2026-11-04T22:08:41.7804810Z Deleting the contents of '/home/runner/work/HeaviSolve/HeaviSolve'
+2026-11-04T22:08:41.7810390Z ##[group]Initializing the repository
+2026-11-04T22:08:41.7815816Z [command]/usr/bin/git init /home/runner/work/HeaviSolve/HeaviSolve
+2026-11-04T22:08:41.7917427Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-04T22:08:41.7919957Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-04T22:08:41.7923504Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-04T22:08:41.7924998Z hint: call:
+2026-11-04T22:08:41.7925824Z hint:
+2026-11-04T22:08:41.7926808Z hint: 	git config --global init.defaultBranch <name>
+2026-11-04T22:08:41.7928289Z hint:
+2026-11-04T22:08:41.7929337Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-04T22:08:41.7931014Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-04T22:08:41.7932521Z hint:
+2026-11-04T22:08:41.7933337Z hint: 	git branch -m <name>
+2026-11-04T22:08:41.7934279Z hint:
+2026-11-04T22:08:41.7935461Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-04T22:08:41.7937641Z Initialized empty Git repository in /home/runner/work/HeaviSolve/HeaviSolve/.git/
+2026-11-04T22:08:41.7951053Z [command]/usr/bin/git remote add origin https://github.com/GrantdCongdon/HeaviSolve
+2026-11-04T22:08:41.7999412Z ##[endgroup]
+2026-11-04T22:08:41.8001028Z ##[group]Disabling automatic garbage collection
+2026-11-04T22:08:41.8005333Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-04T22:08:41.8053611Z ##[endgroup]
+2026-11-04T22:08:41.8055127Z ##[group]Setting up auth
+2026-11-04T22:08:41.8061609Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-04T22:08:41.8098849Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-04T22:08:41.8507639Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-04T22:08:41.8543884Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-04T22:08:41.8740972Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-04T22:08:41.8769237Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-04T22:08:41.8950964Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-04T22:08:41.8984178Z ##[endgroup]
+2026-11-04T22:08:41.8985466Z ##[group]Fetching the repository
+2026-11-04T22:08:41.8995653Z [command]/usr/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+2026-11-04T22:08:43.5419000Z From https://github.com/GrantdCongdon/HeaviSolve
+2026-11-04T22:08:43.5421459Z  * [new branch]      m0-evidence -> origin/m0-evidence
+2026-11-04T22:08:43.5423166Z  * [new branch]      main        -> origin/main
+2026-11-04T22:08:43.5429558Z [command]/usr/bin/git branch --list --remote origin/m0-evidence
+2026-11-04T22:08:43.5454432Z   origin/m0-evidence
+2026-11-04T22:08:43.5462231Z [command]/usr/bin/git rev-parse refs/remotes/origin/m0-evidence
+2026-11-04T22:08:43.5485076Z 239cb7f3c9ecb34914d945532ad4055155bfc39b
+2026-11-04T22:08:43.5489726Z ##[endgroup]
+2026-11-04T22:08:43.5491508Z ##[group]Determining the checkout info
+2026-11-04T22:08:43.5494145Z ##[endgroup]
+2026-11-04T22:08:43.5495184Z [command]/usr/bin/git sparse-checkout disable
+2026-11-04T22:08:43.5534627Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-04T22:08:43.5560216Z ##[group]Checking out the ref
+2026-11-04T22:08:43.5562220Z [command]/usr/bin/git checkout --progress --force -B m0-evidence refs/remotes/origin/m0-evidence
+2026-11-04T22:08:43.6598167Z Switched to a new branch 'm0-evidence'
+2026-11-04T22:08:43.6601947Z branch 'm0-evidence' set up to track 'origin/m0-evidence'.
+2026-11-04T22:08:43.6623151Z ##[endgroup]
+2026-11-04T22:08:43.6664314Z [command]/usr/bin/git log -1 --format=%H
+2026-11-04T22:08:43.6687196Z 239cb7f3c9ecb34914d945532ad4055155bfc39b
+2026-11-04T22:08:43.7030818Z ##[group]Run actions/setup-python@v5
+2026-11-04T22:08:43.7032015Z with:
+2026-11-04T22:08:43.7032884Z   python-version: 3.12
+2026-11-04T22:08:43.7033881Z   check-latest: false
+2026-11-04T22:08:43.7043901Z   token: ***
+2026-11-04T22:08:43.7044826Z   update-environment: true
+2026-11-04T22:08:43.7045894Z   allow-prereleases: false
+2026-11-04T22:08:43.7046944Z   freethreaded: false
+2026-11-04T22:08:43.7047972Z ##[endgroup]
+2026-11-04T22:08:43.8360241Z ##[group]Installed versions
+2026-11-04T22:08:43.8488997Z (node:2236) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-04T22:08:43.8492294Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-04T22:08:43.8495143Z Successfully set up CPython (3.12.15)
+2026-11-04T22:08:43.8498566Z ##[endgroup]
+2026-11-04T22:08:43.8707880Z ##[group]Run python -m pip install reuse==5.0.2 mkdocs==1.6.1
+2026-11-04T22:08:43.8710886Z [36;1mpython -m pip install reuse==5.0.2 mkdocs==1.6.1[0m
+2026-11-04T22:08:43.8741183Z shell: /usr/bin/bash -e {0}
+2026-11-04T22:08:43.8742263Z env:
+2026-11-04T22:08:43.8743344Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-11-04T22:08:43.8745098Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-11-04T22:08:43.8746863Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-11-04T22:08:43.8749706Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-11-04T22:08:43.8752437Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-11-04T22:08:43.8754970Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-11-04T22:08:43.8757282Z ##[endgroup]
+2026-11-04T22:08:44.7300492Z Collecting reuse==5.0.2
+2026-11-04T22:08:44.8001164Z   Downloading reuse-5.0.2.tar.gz (358 kB)
+2026-11-04T22:08:44.8889889Z   Installing build dependencies: started
+2026-11-04T22:08:45.4498257Z   Installing build dependencies: finished with status 'done'
+2026-11-04T22:08:45.4505052Z   Getting requirements to build wheel: started
+2026-11-04T22:08:45.6328885Z   Getting requirements to build wheel: finished with status 'done'
+2026-11-04T22:08:45.6335671Z   Preparing metadata (pyproject.toml): started
+2026-11-04T22:08:45.8234839Z   Preparing metadata (pyproject.toml): finished with status 'done'
+2026-11-04T22:08:45.8493986Z Collecting mkdocs==1.6.1
+2026-11-04T22:08:45.8601601Z   Downloading mkdocs-1.6.1-py3-none-any.whl.metadata (6.0 kB)
+2026-11-04T22:08:45.8843136Z Collecting Jinja2>=3.0.0 (from reuse==5.0.2)
+2026-11-04T22:08:45.8944734Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+2026-11-04T22:08:45.9150825Z Collecting attrs>=21.3 (from reuse==5.0.2)
+2026-11-04T22:08:45.9254703Z   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+2026-11-04T22:08:45.9434566Z Collecting binaryornot>=0.4.4 (from reuse==5.0.2)
+2026-11-04T22:08:45.9537936Z   Downloading binaryornot-0.6.0-py3-none-any.whl.metadata (2.9 kB)
+2026-11-04T22:08:45.9716048Z Collecting boolean.py>=3.8 (from reuse==5.0.2)
+2026-11-04T22:08:45.9819238Z   Downloading boolean_py-5.0-py3-none-any.whl.metadata (2.3 kB)
+2026-11-04T22:08:46.0050422Z Collecting click>=8.0 (from reuse==5.0.2)
+2026-11-04T22:08:46.0153730Z   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+2026-11-04T22:08:46.0348796Z Collecting license-expression>=1.0 (from reuse==5.0.2)
+2026-11-04T22:08:46.0450161Z   Downloading license_expression-30.4.4-py3-none-any.whl.metadata (11 kB)
+2026-11-04T22:08:46.0669008Z Collecting python-debian!=0.1.45,!=0.1.46,!=0.1.47,>=0.1.34 (from reuse==5.0.2)
+2026-11-04T22:08:46.0769433Z   Downloading python_debian-1.1.1-py3-none-any.whl.metadata (2.6 kB)
+2026-11-04T22:08:46.0993580Z Collecting tomlkit>=0.8 (from reuse==5.0.2)
+2026-11-04T22:08:46.1094380Z   Downloading tomlkit-0.15.2-py3-none-any.whl.metadata (3.4 kB)
+2026-11-04T22:08:46.1278361Z Collecting ghp-import>=1.0 (from mkdocs==1.6.1)
+2026-11-04T22:08:46.1378722Z   Downloading ghp_import-2.1.0-py3-none-any.whl.metadata (7.2 kB)
+2026-11-04T22:08:46.1610338Z Collecting markdown>=3.3.6 (from mkdocs==1.6.1)
+2026-11-04T22:08:46.1712067Z   Downloading markdown-3.11.2-py3-none-any.whl.metadata (5.1 kB)
+2026-11-04T22:08:46.2457856Z Collecting markupsafe>=2.0.1 (from mkdocs==1.6.1)
+2026-11-04T22:08:46.2560770Z   Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+2026-11-04T22:08:46.2722697Z Collecting mergedeep>=1.3.4 (from mkdocs==1.6.1)
+2026-11-04T22:08:46.2823940Z   Downloading mergedeep-1.3.4-py3-none-any.whl.metadata (4.3 kB)
+2026-11-04T22:08:46.2979894Z Collecting mkdocs-get-deps>=0.2.0 (from mkdocs==1.6.1)
+2026-11-04T22:08:46.3080373Z   Downloading mkdocs_get_deps-0.2.2-py3-none-any.whl.metadata (4.0 kB)
+2026-11-04T22:08:46.3277764Z Collecting packaging>=20.5 (from mkdocs==1.6.1)
+2026-11-04T22:08:46.3376275Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+2026-11-04T22:08:46.3547706Z Collecting pathspec>=0.11.1 (from mkdocs==1.6.1)
+2026-11-04T22:08:46.3647759Z   Downloading pathspec-1.1.1-py3-none-any.whl.metadata (14 kB)
+2026-11-04T22:08:46.3813299Z Collecting pyyaml-env-tag>=0.1 (from mkdocs==1.6.1)
+2026-11-04T22:08:46.3913673Z   Downloading pyyaml_env_tag-1.1-py3-none-any.whl.metadata (5.5 kB)
+2026-11-04T22:08:46.4281922Z Collecting pyyaml>=5.1 (from mkdocs==1.6.1)
+2026-11-04T22:08:46.4383848Z   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+2026-11-04T22:08:46.4804540Z Collecting watchdog>=2.0 (from mkdocs==1.6.1)
+2026-11-04T22:08:46.4905453Z   Downloading watchdog-7.0.0-py3-none-manylinux_2_17_x86_64.whl.metadata (60 kB)
+2026-11-04T22:08:46.5164692Z Collecting python-dateutil>=2.8.1 (from ghp-import>=1.0->mkdocs==1.6.1)
+2026-11-04T22:08:46.5264929Z   Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+2026-11-04T22:08:46.5541700Z Collecting platformdirs>=2.2.0 (from mkdocs-get-deps>=0.2.0->mkdocs==1.6.1)
+2026-11-04T22:08:46.5642140Z   Downloading platformdirs-4.14.5-py3-none-any.whl.metadata (5.7 kB)
+2026-11-04T22:08:46.5840631Z Collecting tzdata (from python-dateutil>=2.8.1->ghp-import>=1.0->mkdocs==1.6.1)
+2026-11-04T22:08:46.5941044Z   Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+2026-11-04T22:08:46.6093034Z Downloading mkdocs-1.6.1-py3-none-any.whl (3.9 MB)
+2026-11-04T22:08:46.9368719Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.9/3.9 MB 11.9 MB/s  0:00:00
+2026-11-04T22:08:46.9472657Z Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+2026-11-04T22:08:46.9623116Z Downloading binaryornot-0.6.0-py3-none-any.whl (14 kB)
+2026-11-04T22:08:46.9740796Z Downloading boolean_py-5.0-py3-none-any.whl (26 kB)
+2026-11-04T22:08:46.9859834Z Downloading click-8.5.0-py3-none-any.whl (125 kB)
+2026-11-04T22:08:47.0063424Z Downloading ghp_import-2.1.0-py3-none-any.whl (11 kB)
+2026-11-04T22:08:47.0181203Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+2026-11-04T22:08:47.0395235Z Downloading license_expression-30.4.4-py3-none-any.whl (120 kB)
+2026-11-04T22:08:47.0590971Z Downloading markdown-3.11.2-py3-none-any.whl (114 kB)
+2026-11-04T22:08:47.0770498Z Downloading markupsafe-3.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+2026-11-04T22:08:47.0886245Z Downloading mergedeep-1.3.4-py3-none-any.whl (6.4 kB)
+2026-11-04T22:08:47.1000228Z Downloading mkdocs_get_deps-0.2.2-py3-none-any.whl (9.6 kB)
+2026-11-04T22:08:47.1115361Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+2026-11-04T22:08:47.1319763Z Downloading pathspec-1.1.1-py3-none-any.whl (57 kB)
+2026-11-04T22:08:47.1457767Z Downloading platformdirs-4.14.5-py3-none-any.whl (35 kB)
+2026-11-04T22:08:47.1602368Z Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+2026-11-04T22:08:47.1754242Z Downloading python_debian-1.1.1-py3-none-any.whl (138 kB)
+2026-11-04T22:08:47.1970965Z Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+2026-11-04T22:08:47.2574204Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 14.0 MB/s  0:00:00
+2026-11-04T22:08:47.2675701Z Downloading pyyaml_env_tag-1.1-py3-none-any.whl (4.7 kB)
+2026-11-04T22:08:47.2794607Z Downloading tomlkit-0.15.2-py3-none-any.whl (52 kB)
+2026-11-04T22:08:47.2927724Z Downloading watchdog-7.0.0-py3-none-manylinux_2_17_x86_64.whl (102 kB)
+2026-11-04T22:08:47.3092343Z Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+2026-11-04T22:08:47.3842123Z Building wheels for collected packages: reuse
+2026-11-04T22:08:47.3849179Z   Building wheel for reuse (pyproject.toml): started
+2026-11-04T22:08:47.6241960Z   Building wheel for reuse (pyproject.toml): finished with status 'done'
+2026-11-04T22:08:47.6249517Z   Created wheel for reuse: filename=reuse-5.0.2-cp312-cp312-linux_x86_64.whl size=144909 sha256=f0ad9385de282418be2ff85b2c9cf94cb6f381af40d721920dc12ed095de0fb9
+2026-11-04T22:08:47.6251641Z   Stored in directory: /home/runner/.cache/pip/wheels/2d/7b/b8/d011a60ef798286c0872dbe38d288b5425b10c29ef5fa0c2a7
+2026-11-04T22:08:47.6279578Z Successfully built reuse
+2026-11-04T22:08:47.6688602Z Installing collected packages: boolean.py, watchdog, tzdata, tomlkit, pyyaml, python-debian, platformdirs, pathspec, packaging, mergedeep, markupsafe, markdown, license-expression, click, binaryornot, attrs, pyyaml-env-tag, python-dateutil, mkdocs-get-deps, Jinja2, reuse, ghp-import, mkdocs
+2026-11-04T22:08:48.5403489Z 
+2026-11-04T22:08:48.5425106Z Successfully installed Jinja2-3.1.6 attrs-26.1.0 binaryornot-0.6.0 boolean.py-5.0 click-8.5.0 ghp-import-2.1.0 license-expression-30.4.4 markdown-3.11.2 markupsafe-3.0.4 mergedeep-1.3.4 mkdocs-1.6.1 mkdocs-get-deps-0.2.2 packaging-26.3 pathspec-1.1.1 platformdirs-4.14.5 python-dateutil-4.0.0 python-debian-1.1.1 pyyaml-6.0.3 pyyaml-env-tag-1.1 reuse-5.0.2 tomlkit-0.15.2 tzdata-2026.6 watchdog-7.0.0
+2026-11-04T22:08:48.5432517Z 
+2026-11-04T22:08:48.5432880Z [notice] A new release of pip is available: 26.2.2 -> 26.3
+2026-11-04T22:08:48.5433578Z [notice] To update, run: pip install --upgrade pip
+2026-11-04T22:08:48.6066236Z ##[group]Run reuse lint
+2026-11-04T22:08:48.6066574Z [36;1mreuse lint[0m
+2026-11-04T22:08:48.6066874Z [36;1mpython tools/license_scan.py[0m
+2026-11-04T22:08:48.6083647Z shell: /usr/bin/bash -e {0}
+2026-11-04T22:08:48.6083965Z env:
+2026-11-04T22:08:48.6084292Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-11-04T22:08:48.6084796Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-11-04T22:08:48.6085293Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-11-04T22:08:48.6085744Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-11-04T22:08:48.6086180Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-11-04T22:08:48.6086577Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-11-04T22:08:48.6086896Z ##[endgroup]
+2026-11-04T22:08:49.2618366Z # SUMMARY
+2026-11-04T22:08:49.2618778Z 
+2026-11-04T22:08:49.2619171Z * Bad licenses: 0
+2026-11-04T22:08:49.2619598Z * Deprecated licenses: 0
+2026-11-04T22:08:49.2620097Z * Licenses without file extension: 0
+2026-11-04T22:08:49.2620671Z * Missing licenses: 0
+2026-11-04T22:08:49.2621076Z * Unused licenses: 0
+2026-11-04T22:08:49.2621587Z * Used licenses: AGPL-3.0-or-later, CC-BY-SA-4.0
+2026-11-04T22:08:49.2622183Z * Read errors: 0
+2026-11-04T22:08:49.2622594Z * Files with copyright information: 285 / 285
+2026-11-04T22:08:49.2623207Z * Files with license information: 285 / 285
+2026-11-04T22:08:49.2623607Z 
+2026-11-04T22:08:49.2624284Z Congratulations! Your project is compliant with version 3.3 of the REUSE Specification :-)
+2026-11-04T22:08:49.3204211Z PASS: declared direct dependency inventory; not a transitive distribution certification
+2026-11-04T22:08:49.3289356Z ##[group]Run cmake -S . -B build && cmake --build build && ctest --test-dir build -L foundation --output-on-failure
+2026-11-04T22:08:49.3290061Z [36;1mcmake -S . -B build && cmake --build build && ctest --test-dir build -L foundation --output-on-failure[0m
+2026-11-04T22:08:49.3303246Z shell: /usr/bin/bash -e {0}
+2026-11-04T22:08:49.3303509Z env:
+2026-11-04T22:08:49.3303782Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-11-04T22:08:49.3304219Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-11-04T22:08:49.3304638Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-11-04T22:08:49.3305003Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-11-04T22:08:49.3305365Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-11-04T22:08:49.3305731Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-11-04T22:08:49.3306044Z ##[endgroup]
+2026-11-04T22:08:50.5640882Z -- The CXX compiler identification is GNU 13.3.0
+2026-11-04T22:08:50.6581386Z -- Detecting CXX compiler ABI info
+2026-11-04T22:08:50.8545879Z -- Detecting CXX compiler ABI info - done
+2026-11-04T22:08:50.8691757Z -- Check for working CXX compiler: /usr/bin/c++ - skipped
+2026-11-04T22:08:50.8732107Z -- Detecting CXX compile features
+2026-11-04T22:08:50.8740107Z -- Detecting CXX compile features - done
+2026-11-04T22:08:51.2199793Z -- Found Python3: /opt/hostedtoolcache/Python/3.12.15/x64/bin/python3.12 (found version "3.12.15") found components: Interpreter
+2026-11-04T22:08:51.2211456Z -- Configuring done (1.6s)
+2026-11-04T22:08:51.2308802Z -- Generating done (0.0s)
+2026-11-04T22:08:51.2311064Z -- Build files have been written to: /home/runner/work/HeaviSolve/HeaviSolve/build
+2026-11-04T22:08:51.5006030Z Internal ctest changing into directory: /home/runner/work/HeaviSolve/HeaviSolve/build
+2026-11-04T22:08:51.5495592Z Test project /home/runner/work/HeaviSolve/HeaviSolve/build
+2026-11-04T22:08:51.5848952Z     Start 1: license_inventory
+2026-11-04T22:08:51.6218263Z 1/3 Test #1: license_inventory ................   Passed    0.03 sec
+2026-11-04T22:08:51.6271459Z     Start 4: transitive_license_policy
+2026-11-04T22:08:52.1274322Z 2/3 Test #4: transitive_license_policy ........   Passed    0.50 sec
+2026-11-04T22:08:52.1275265Z     Start 5: m0_gate_policy
+2026-11-04T22:08:52.2124444Z 3/3 Test #5: m0_gate_policy ...................   Passed    0.08 sec
+2026-11-04T22:08:52.2126608Z 
+2026-11-04T22:08:52.2126796Z 100% tests passed, 0 tests failed out of 3
+2026-11-04T22:08:52.2127240Z 
+2026-11-04T22:08:52.2127401Z Label Time Summary:
+2026-11-04T22:08:52.2127805Z foundation    =   0.62 sec*proc (3 tests)
+2026-11-04T22:08:52.2128048Z 
+2026-11-04T22:08:52.2128162Z Total Test time (real) =   0.66 sec
+2026-11-04T22:08:52.2447669Z ##[group]Run python tools/build_docs.py
+2026-11-04T22:08:52.2448067Z [36;1mpython tools/build_docs.py[0m
+2026-11-04T22:08:52.2463107Z shell: /usr/bin/bash -e {0}
+2026-11-04T22:08:52.2463410Z env:
+2026-11-04T22:08:52.2463724Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-11-04T22:08:52.2464224Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-11-04T22:08:52.2464715Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-11-04T22:08:52.2465177Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-11-04T22:08:52.2465613Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-11-04T22:08:52.2466050Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-11-04T22:08:52.2466423Z ##[endgroup]
+2026-11-04T22:08:52.4685325Z INFO    -  Cleaning site directory
+2026-11-04T22:08:52.4686604Z INFO    -  Building documentation to directory: /home/runner/work/HeaviSolve/HeaviSolve/build/docs
+2026-11-04T22:08:52.7515247Z INFO    -  Documentation built in 0.28 seconds
+2026-11-04T22:08:52.7829820Z ##[group]Run reuse spdx -o build/source.spdx
+2026-11-04T22:08:52.7830161Z [36;1mreuse spdx -o build/source.spdx[0m
+2026-11-04T22:08:52.7842894Z shell: /usr/bin/bash -e {0}
+2026-11-04T22:08:52.7843150Z env:
+2026-11-04T22:08:52.7843419Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-11-04T22:08:52.7843834Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-11-04T22:08:52.7844246Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-11-04T22:08:52.7922027Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-11-04T22:08:52.7922584Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-11-04T22:08:52.7923011Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-11-04T22:08:52.7923352Z ##[endgroup]
+2026-11-04T22:08:53.2162714Z ##[group]Run actions/upload-artifact@v4
+2026-11-04T22:08:53.2162995Z with:
+2026-11-04T22:08:53.2163207Z   name: foundation-ubuntu-24.04
+2026-11-04T22:08:53.2163494Z   path: build/Testing/
+build/source.spdx
+build/docs/
+
+2026-11-04T22:08:53.2163803Z   if-no-files-found: warn
+2026-11-04T22:08:53.2164030Z   compression-level: 6
+2026-11-04T22:08:53.2164243Z   overwrite: false
+2026-11-04T22:08:53.2164460Z   include-hidden-files: false
+2026-11-04T22:08:53.2164689Z env:
+2026-11-04T22:08:53.2164933Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-11-04T22:08:53.2165401Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib/pkgconfig
+2026-11-04T22:08:53.2165829Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-11-04T22:08:53.2166200Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-11-04T22:08:53.2166569Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.15/x64
+2026-11-04T22:08:53.2167184Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.15/x64/lib
+2026-11-04T22:08:53.2167566Z ##[endgroup]
+2026-11-04T22:08:53.3728838Z (node:2394) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-04T22:08:53.3729503Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-04T22:08:53.4384566Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-11-04T22:08:53.4387427Z The least common ancestor is /home/runner/work/HeaviSolve/HeaviSolve/build. This will be the root directory of the artifact
+2026-11-04T22:08:53.4388749Z With the provided path, there will be 263 files uploaded
+2026-11-04T22:08:53.4392330Z Artifact name is valid!
+2026-11-04T22:08:53.4393163Z Root directory input is valid!
+2026-11-04T22:08:53.7955952Z Beginning upload of artifact content to blob storage
+2026-11-04T22:08:54.3101159Z (node:2394) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-04T22:08:55.1674274Z Uploaded bytes 8388608
+2026-11-04T22:08:55.3985942Z Uploaded bytes 16777216
+2026-11-04T22:08:55.6002430Z Uploaded bytes 25165824
+2026-11-04T22:08:55.8881773Z Uploaded bytes 32212824
+2026-11-04T22:08:55.9549243Z Finished uploading artifact content to blob storage!
+2026-11-04T22:08:55.9550674Z SHA256 digest of uploaded artifact zip is 71cfea51b49bac4bf013db6b7e8f360d30a1667e7a2292b9009d3e0a7b0adc72
+2026-11-04T22:08:55.9554709Z Finalizing artifact upload
+2026-11-04T22:08:56.4072409Z Artifact foundation-ubuntu-24.04.zip successfully finalized. Artifact ID 13366879634
+2026-11-04T22:08:56.4073874Z Artifact foundation-ubuntu-24.04 has been successfully uploaded! Final size is 32212824 bytes. Artifact ID is 13366879634
+2026-11-04T22:08:56.4080696Z Artifact download URL: https://github.com/GrantdCongdon/HeaviSolve/actions/runs/41922593403/artifacts/13366879634
+2026-11-04T22:08:56.4293475Z Post job cleanup.
+2026-11-04T22:08:56.5444275Z (node:2412) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-04T22:08:56.5445474Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-04T22:08:56.5566065Z Post job cleanup.
+2026-11-04T22:08:56.6472444Z [command]/usr/bin/git version
+2026-11-04T22:08:56.6518529Z git version 2.56.0
+2026-11-04T22:08:56.6562014Z Temporarily overriding HOME='/home/runner/work/_temp/fbd1958f-b18f-496d-97e5-e0076d965644' before making global git config changes
+2026-11-04T22:08:56.6562991Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-04T22:08:56.6568639Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/HeaviSolve/HeaviSolve
+2026-11-04T22:08:56.6606085Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-04T22:08:56.6640385Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-04T22:08:56.6843364Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-04T22:08:56.6876120Z http.https://github.com/.extraheader
+2026-11-04T22:08:56.6889251Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-04T22:08:56.6919509Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-04T22:08:56.7120545Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-04T22:08:56.7152035Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-04T22:08:56.7541564Z Cleaning up orphan processes
+2026-11-04T22:08:56.7888258Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+

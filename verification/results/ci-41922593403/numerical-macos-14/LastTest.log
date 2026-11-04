@@ -1,0 +1,70 @@
+Start testing: Nov 04 22:12 UTC
+----------------------------------------------------------
+2/7 Testing: mfem_poisson
+2/7 Test: mfem_poisson
+Command: "/Users/runner/work/HeaviSolve/HeaviSolve/build-numerical/mfem_poisson"
+Directory: /Users/runner/work/HeaviSolve/HeaviSolve/build-numerical
+"mfem_poisson" start time: Nov 04 22:12 UTC
+Output:
+----------------------------------------------------------
+n,dofs,l2_error,observed_order
+8,81,0.021106986529987552,0
+16,289,0.0053757660445034093,1.973178360142166
+32,1089,0.0013503310807543231,1.9931571751678783
+64,4225,0.00033798575806785768,1.9982788165534278
+<end of output>
+Test time =   0.05 sec
+----------------------------------------------------------
+Test Passed.
+"mfem_poisson" end time: Nov 04 22:12 UTC
+"mfem_poisson" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/7 Testing: mfem_cavity
+3/7 Test: mfem_cavity
+Command: "/Users/runner/work/HeaviSolve/HeaviSolve/build-numerical/mfem_cavity"
+Directory: /Users/runner/work/HeaviSolve/HeaviSolve/build-numerical
+"mfem_cavity" start time: Nov 04 22:12 UTC
+Output:
+----------------------------------------------------------
+free_dofs=4356 null_modes=1331 expected_gradient_nullity=1331
+mode,lambda,analytic_lambda,frequency_relative_error
+0,25.290918908992335,25.290861277791478,1.139367445723849e-06
+1,37.285257144945405,37.285172181893131,1.1393671921489101e-06
+2,42.83692227130652,42.836824657505893,1.1393671892623303e-06
+3,52.706549162629372,52.706429058595248,1.1393673204906918e-06
+4,52.706549162646944,52.706429058595248,1.1393674872461901e-06
+5,54.905102618077102,54.899674481059556,4.9435656043650411e-05
+<end of output>
+Test time =  20.13 sec
+----------------------------------------------------------
+Test Passed.
+"mfem_cavity" end time: Nov 04 22:12 UTC
+"mfem_cavity" time elapsed: 00:00:20
+----------------------------------------------------------
+
+4/7 Testing: m0_acceptance_gate
+4/7 Test: m0_acceptance_gate
+Command: "/opt/homebrew/Frameworks/Python.framework/Versions/3.14/bin/python3.14" "/Users/runner/work/HeaviSolve/HeaviSolve/tools/m0_gate.py"
+Directory: /Users/runner/work/HeaviSolve/HeaviSolve/build-numerical
+"m0_acceptance_gate" start time: Nov 04 22:12 UTC
+Output:
+----------------------------------------------------------
+PASS: M0 acceptance records and evidence present. Numerical tests run separately.
+This is not milestone completion; all deliverable and exit checks must also pass.
+<end of output>
+Test time =   0.14 sec
+----------------------------------------------------------
+Test Passed.
+"m0_acceptance_gate" end time: Nov 04 22:12 UTC
+"m0_acceptance_gate" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Nov 04 22:12 UTC
+
+acceptance =   0.14 sec*proc
+
+m0 =  20.32 sec*proc
+
+numerical =  20.18 sec*proc
+
