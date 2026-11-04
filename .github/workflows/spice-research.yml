@@ -24,7 +24,7 @@ jobs:
       - name: Prepare research build tools and numerical support
         run: |
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends cmake ninja-build g++ gfortran make flex bison m4 libblas-dev liblapack-dev libsuitesparse-dev libfftw3-dev
+          sudo apt-get install -y --no-install-recommends cmake ninja-build g++ gfortran make flex libfl-dev bison m4 libblas-dev liblapack-dev libsuitesparse-dev libfftw3-dev
           mkdir -p "$RUNNER_TEMP/hs-spice/evidence"
           dpkg-query -W -f='${Package}\t${Version}\n' > "$RUNNER_TEMP/hs-spice/evidence/os-package-versions.txt"
       - name: Pinned native builds and closed-form subset
