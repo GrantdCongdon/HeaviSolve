@@ -3,7 +3,7 @@
 
 # M0 implementation and acceptance report
 
-Updated 2026-11-03. **M0 remains incomplete; M1 has not started. No solver is claimed verified.** Substantial local feasibility work is complete, but IHP conformance and the complete complex-stack/platform evidence still block the exit; the first baseline Linux/macOS CI run now passes. Future sessions should start with the [running handoff](M0-handoff.md), then [tasks](M0-tasks.md), [decisions](M0-decisions.md) and [next checkpoint](M0-next-checkpoint.md).
+Updated 2026-11-03. **M0 remains incomplete; M1 has not started. No solver is claimed verified.** Substantial local feasibility work is complete, but IHP conformance and Linux SPICE build evidence still block the exit. Baseline and complex-cavity checks now pass on Linux/macOS CI. Future sessions should start with the [running handoff](M0-handoff.md), then [tasks](M0-tasks.md), [decisions](M0-decisions.md) and [next checkpoint](M0-next-checkpoint.md).
 
 ## Measured results
 
@@ -12,11 +12,11 @@ Updated 2026-11-03. **M0 remains incomplete; M1 has not started. No solver is cl
 | MFEM Poisson | LOCAL PASS; observed orders1.97318,1.99316,1.99828 vs2±0.15 | [S1](../spikes/S1-mfem.md) |
 | Serial cavity | LOCAL PASS; first-six maximum frequency relative error4.9435656e-5 vs1e-3; coarse failure retained | [S1](../spikes/S1-mfem.md) |
 | Complex source-built cavity | LOCAL PASS; MFEM4.10/PETSc/SLEPc/SuperLU_DIST,4356 DOFs, one rank, maximum error4.9435655966822978e-5 | [Output](../../verification/results/fem-clean-cavity.log) |
-| Full S1 admission/platform gate | NOT PASS; restricted original environment rejected, exact local environment declared-license review passes; complete complex-stack CI pending | [ADR-005](../adr/ADR-005-transitive-fem-dependencies.md) |
+| S1 platform/cavity spike | PASS; source-selected complex stack and declared runtime-license audit pass on Linux/macOS; no full binary-release certification | [ADR-005](../adr/ADR-005-transitive-fem-dependencies.md) |
 | C++/Rust slab | LOCAL PASS; four refinements, near-second-order convergence, maximum language difference9.37e-14; ctypes/C-ABI bindings also pass locally and in CI; framework comparison/historical time-accounting limited | [ADR-001](../adr/ADR-001-language.md) |
 | S2 Palace | Documentary PASS; reference/study, no stable-link integration claim | [S2](../spikes/S2-palace.md) |
 | S3a ngspice | LOCAL PASS; callback RC max error3.0578e-8V; IHP HBT smoke; compiled OSDI current agrees within1e-12A | [S3](../spikes/S3-spice.md) |
-| S3b Xyce | macOS build, native forward stepping and HB subtests PASS; RLC relative error3.7609e-16, cubic3.5237e-15; Linux/rollback/external-device coupling pending | [S3](../spikes/S3-spice.md) |
+| S3b Xyce | macOS build, native forward stepping and HB subtests PASS; RLC relative error3.7609e-16, cubic3.5237e-15; Linux build pending | [S3](../spikes/S3-spice.md) |
 | S3c conformance | FAIL; IHP AC voltage/current disagreement8.35%/9.81%, tighter DC current1.0326e-4 exceeds1e-4; linear cases pass | [S3](../spikes/S3-spice.md) |
 | S4 mesh | LOCAL PASS; optimized4324 tets; custom256 prisms, positive Jacobians, volume and MFEM import checks | [S4](../spikes/S4-meshing.md) |
 | S5 GUI | Visible VTK cut plane;10k-item75.7988 repaint/s, earlier56.1598 failure retained; compositor fps unmeasured | [S5](../spikes/S5-gui.md) |
@@ -38,7 +38,9 @@ Repository foundations include the requested layout, license/DCO/REUSE, CI defin
 
 The user configured the public GrantdCongdon/HeaviSolve repository and explicitly approved review-branch uploads. Remote main remains unchanged. [Run41668976621](https://github.com/GrantdCongdon/HeaviSolve/actions/runs/41668976621), commit47b8352, passed all six jobs: Linux/macOS foundations, Poisson/cavity diagnostics, and paired-language/binding tests. [Artifact provenance and checksums](../../verification/results/ci-41668976621/provenance.json) accompany locally retained numerical outputs. These are scoped benchmark passes, not full M0 certification.
 
-The separate source-built complex-stack run first failed on missing macOS conda and Linux OpenBLAS filename handling. Both setup issues were fixed; run41670183802 passed on macOS (maximum cavity error4.9435655969265468e-5), with [retained configuration, numerical and license evidence](../../verification/results/ci-41670183802/provenance.json). Linux failed due to missing SLEPC_DIR during make; cb9d540 fixes this and adds exact reviews for14 Linux runtime packages. Run41715967429 tests that correction; no exception silently admits unknown packages. The IHP default self-heated AC and residual DC failures remain independent blockers.
+The separate source-built complex-stack run first failed on missing macOS conda and Linux OpenBLAS filename handling. Both setup issues were fixed; run41670183802 passed on macOS (maximum cavity error4.9435655969265468e-5), with [retained configuration, numerical and license evidence](../../verification/results/ci-41670183802/provenance.json). Linux failed due to missing SLEPC_DIR during make; cb9d540 fixes this and adds exact reviews for14 Linux runtime packages. Linux job126195902515 in run41715967429 passes that correction, with maximum cavity error4.943565595971755e-5 and passing runtime-license audit; no exception silently admits unknown packages. The IHP default self-heated AC and residual DC failures remain independent blockers.
+
+Linux output records a UCX initialization error before the one-rank solve succeeds; multi-rank/UCX transport support is not established.
 
 Complete remaining M0 checks and component admission before accepting final ADRs or starting M1.
 

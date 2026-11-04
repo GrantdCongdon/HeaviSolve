@@ -11,10 +11,11 @@
 - [x] Paired C++/Rust mixed-element slab experiment, independent TE/TM oracle, convergence and weighted ADR-001 scores.
 - [x] Equivalent native C ABI/Python binding experiment and Linux/macOS CI; full framework comparison and historical effort measurement remain explicitly limited.
 - [x] Serial MFEM Poisson/cavity measurements; failures retained.
-- [ ] S1 complete license-reviewed complex stack and Linux/macOS hosted results.
+- [x] S1 source-built complex stack, declared runtime-license admission and Linux/macOS hosted cavity results.
 - [x] S2 Palace documentary reuse decision.
 - [x] S3a native ngspice callbacks, IHP device and OpenVAF-compiled OSDI model.
-- [x] Xyce macOS build and native harmonic-balance experiments.
+- [x] Xyce macOS build, native forward stepping and harmonic-balance experiments.
+- [ ] Reproduce Xyce build on Linux; planned research CI recipe must be tested.
 - [ ] S3c IHP cross-engine conformance within required tolerances; retain measured failures.
 - [x] S4 Gmsh/Netgen ring and custom prism extrusion/MFEM import experiments.
 - [x] S5 visible Qt/VTK cut plane and 10k-item repaint-throughput experiment.
@@ -22,6 +23,7 @@
 - [x] S7 independent-process gRPC/protobuf and ZeroMQ/FlatBuffers 100 MB mapping checks.
 - [x] Linux/macOS workflow definitions, docs site, coding standards and dependency strategy.
 - [x] Baseline Linux/macOS hosted CI green with stored numerical/binding/license artifacts.
-- [ ] Complex-stack CI, fully reviewed dependency locks, tested Docker/Spack recipes.
+- [x] Complex-stack CI and exact resolved environment/package-hash evidence.
+- [ ] Full binary redistribution audit and tested Docker/Spack recipes (not implied by source-stack CI).
 - [x] Name-availability check; retain HeaviSolve.
 - [ ] All M0 acceptance/exit gates. **M1 must not start.**

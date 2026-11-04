@@ -4,7 +4,7 @@
 phase_r_sources_complete = false
 language_slab_comparison = true
 spice_measured_scoring = true
-full_fem_stack_linux_macos = false
+full_fem_stack_linux_macos = true
 all_feasibility_spikes = false
 ci_stored_numerical_outputs = true
 ci_license_scan_green = true

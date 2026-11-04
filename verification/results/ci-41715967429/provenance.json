@@ -1,0 +1,16 @@
+{
+  "repository": "GrantdCongdon/HeaviSolve",
+  "run_id": 41715967429,
+  "commit_prefix": "cb9d540",
+  "jobs": [
+    {
+      "platform": "ubuntu-24.04",
+      "job_id": 126195902515,
+      "conclusion": "success",
+      "artifact_id": 13270113949,
+      "sha256": "a13e4b29801d12457dd1a7b93a9af5946c4bdb864d765ed4ccf303f22fca946d",
+      "zip_digest_verified": true
+    }
+  ],
+  "scope": "complex source-stack one-rank cavity, resolved environment, declared runtime-license audit; not full M0"
+}

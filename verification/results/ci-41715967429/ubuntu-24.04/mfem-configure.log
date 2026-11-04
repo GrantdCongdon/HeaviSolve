@@ -1,0 +1,56 @@
+-- CMake version: 4.4.5
+-- Loading USER_CONFIG = /home/runner/work/_temp/hs-complex/mfem-4.10/config/user.cmake (NOTFOUND)
+-- USE_XSDK_DEFAULTS = 'OFF'
+-- The CXX compiler identification is GNU 13.3.0
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Floating-point precision: MFEM_PRECISION = double
+-- Found MPI_CXX: /home/runner/work/_temp/hs-fem-env/lib/libmpi.so (found version "3.1")
+-- Found MPI: TRUE (found version "3.1")
+-- Looking for HYPRE ...
+--    in HYPRE_DIR = /home/runner/work/_temp/hs-fem-env
+-- Performing Test HYPRE_USING_CUDA
+-- Performing Test HYPRE_USING_CUDA - Failed
+-- Performing Test HYPRE_USING_HIP
+-- Performing Test HYPRE_USING_HIP - Failed
+-- Found HYPRE: /home/runner/work/_temp/hs-fem-env/lib/libHYPRE.so
+-- HYPRE_INCLUDE_DIRS=/home/runner/work/_temp/hs-fem-env/include
+-- Found HYPRE version 30200
+-- Found HYPRE: /home/runner/work/_temp/hs-fem-env/lib/libHYPRE.so
+-- Looking for METIS ...
+--    in METIS_DIR = /home/runner/work/_temp/hs-fem-env
+-- Performing Test METIS_VERSION_5
+-- Performing Test METIS_VERSION_5 - Success
+-- Found METIS: /home/runner/work/_temp/hs-fem-env/lib/libmetis.so
+-- METIS_INCLUDE_DIRS=/home/runner/work/_temp/hs-fem-env/include
+-- Found BLAS: /home/runner/work/_temp/hs-fem-env/lib/libopenblas.so.0
+-- Found LAPACK: /home/runner/work/_temp/hs-fem-env/lib/libopenblas.so.0
+-- Looking for POSIXClocks ...
+--    checking library: <standard c/c++>
+-- Found POSIXClocks: TRUE
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- MFEM: using package HYPRE
+-- MFEM: using package LAPACK
+-- MFEM: using package BLAS
+-- MFEM: using package METIS
+-- MFEM: using package POSIXCLOCKS
+-- MFEM: using package MPI_CXX
+-- MFEM shared library: BUILD_SHARED_LIBS = OFF
+-- MFEM build type: CMAKE_BUILD_TYPE = Release
+-- MFEM version: v4.10.0
+-- MFEM git string: (unknown)
+-- TPL_INCLUDE_DIRS = /home/runner/work/_temp/hs-fem-env/include
+-- Writing substitute header --> "mfem.hpp"
+-- Writing substitute header --> "mfem-performance.hpp"
+-- performance_ex1: add flags "-march=native -Wall -pedantic --param max-completely-peel-times=3"
+-- performance_ex1p: add flags "-march=native -Wall -pedantic --param max-completely-peel-times=3"
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+-- CMAKE_INSTALL_PREFIX = /usr/local
+-- Configuring done (0.7s)
+-- Generating done (0.3s)
+-- Build files have been written to: /home/runner/work/_temp/hs-complex/mfem-build
