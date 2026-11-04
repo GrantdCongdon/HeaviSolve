@@ -42,3 +42,9 @@ User scope is M0 only. Native solvers, shared GUI/Python API, user-defined proce
 - Language toolchain `.work/language/cargo/bin/rustc`, isolated RUSTUP_HOME/CARGO_HOME under `.work/language`. GUI `.work/gui-env` and `.work/gui-build`; IPC `/tmp/heavisolve-ipc` and `.work/ipc-build`. More exact historical commands are in session history.
 - GitHub connector GET supports run/job/artifact metadata; download workflow artifacts, verify archive SHA256 and retain selected outputs plus provenance. Never store signed download URLs.
 - Do not commit `.work`, `.local`, environments, downloaded PDK fixtures or hardware identifiers. Preserve failed numerical output; do not hand-edit measurements.
+
+## Final review checkpoint
+
+Draft [pull request1](https://github.com/GrantdCongdon/HeaviSolve/pull/1) is open from m0-evidence to main. Evidence/report checkpoint846c778 contains the stored passing runs; executable sources/workflows match tested239cb7f. Acceptance and deliverables pass; only `exit.adrs_accepted_and_merged` remains false. Before merging, verify current PR checks and obtain the separate integration approval: prior approval only covered review-branch publication. After approval, preserve DCO history and record the actual merge before marking exit complete. Do not start M1.
+
+The connector can read PRs and Actions but its PR-create operation returned403. The installed `gh` client works with network permission and created the draft; its restricted-network auth check misleadingly reported an invalid token, while the permitted check succeeded. Do not reauthenticate or replace credentials. Source/report uploads remain authorized to m0-evidence. This is a capability limitation, not an automatic approval rejection.
