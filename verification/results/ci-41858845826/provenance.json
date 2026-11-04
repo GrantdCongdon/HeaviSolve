@@ -1,0 +1,7 @@
+{
+  "run_id": 41858845826,
+  "artifact_id": 13338143632,
+  "sha256": "b91422c23d8dce95d82af135c2f503c7c27de1005549b748f85d9f0f66117a5e",
+  "zip_digest_verified": true,
+  "result": "PASS: foundation container build and tests"
+}

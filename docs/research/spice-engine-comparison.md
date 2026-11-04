@@ -17,8 +17,8 @@ Research date: 2026-11-02. Status: **incomplete experimental gate**. Documentati
 | SG13G2 Verilog-A route | IHP: OpenVAF compiles OSDI binaries. | IHP: ADMS compiles Xyce shared-library plugins [7]. This is distinct from OpenVAF/OSDI. |
 | Build/platform | Shared-library release build attempted on macOS arm64. Linux not run in this session. | Release7.10.0 built on macOS with Trilinos16.1 and compatibility fixes. No Linux execution evidence. Current source guide requires C++17, Trilinos >=14.4 (versions beyond16.1 untested), SuiteSparse AMD/config and flex/bison; FFTW for HB [8]. |
 | Interchange | Must emit engine-specific analysis/output syntax and model bindings. `.control` is not a portable IR construct. | SPICE3F5-like syntax with extensions is documented [9]; do not assume arbitrary ngspice netlists translate losslessly. |
-| Strength | Small C embedding interface and explicit external-source callback. | HB and large-circuit parallelism; documented library stepping. |
-| Limitation | Engine global state motivates separate workers; platform/compiler and model ABI must be tested. | Build weight; device/plugin compilation differs; API behavior unmeasured here. |
+| Strength | Small C embedding interface and explicit external-source callback. | HB and large-circuit parallelism; native library forward stepping demonstrated locally. |
+| Limitation | Engine global state motivates separate workers; platform/compiler and model ABI must be tested. | Build weight; device/plugin compilation differs; external-device exchange and rollback untested. |
 
 ## Weighted evaluation
 
@@ -26,7 +26,7 @@ Scores below are **engineering judgments about demonstrated readiness**, not mea
 
 | Criterion | Weight | ngspice | Xyce | Evidence and limitation |
 |---|---:|---:|---:|---|
-| Embeddability / co-simulation |5|4|3|ngspice C++ callbacks produced10041 calls; Xyce subprocess works and stepping API exists, but library stepping untested |
+| Embeddability / co-simulation |5|4|3|ngspice C++ callbacks produced10041 calls; Xyce native library advances50 requested stops within1ps and passes RC oracle; external-device exchange/rollback remain untested |
 | Analysis coverage |5|4|5|Both DC/AC/transient; Xyce native HB RLC/cubic passed; ngspice transient FFT passed; noise not tested |
 | Open-PDK devices |5|2|2|IHP built-in HBT runs; no MOS/SKY130/GF180 coverage demonstrated |
 | Accuracy / conformance |4|3|3|RC/RLC pass; HB/FFT pass; IHP AC disagreement and DC failures remain |
@@ -36,7 +36,7 @@ Scores below are **engineering judgments about demonstrated readiness**, not mea
 | License / maintenance |3|3|3|Release sources identified and compatible candidate licenses; transitive redistribution audit incomplete |
 | Weighted sum /160 |32|98|94|Normalized61.25% versus58.75%; difference2.5percentage points |
 
-The score lead is below15points. Xyce's demonstrated native HB is also a uniquely required weight-5 capability. **Outcome B: retain both engines as first-class implementation targets.** This decision does not assert full compatibility: S3c currently fails, and the experimental acceptance gate remains open. The score is readiness under current evidence, not a comprehensive product-quality ranking. Revisit it when model conformance and platform evidence improve.
+The Xyce API score remains3: forward stepping is now demonstrated, but the broader external-device exchange part of this criterion remains untested. The score lead is below15points. Xyce's demonstrated native HB is also a uniquely required weight-5 capability. **Outcome B: retain both engines as first-class implementation targets.** This decision does not assert full compatibility: S3c currently fails, and the experimental acceptance gate remains open. The score is readiness under current evidence, not a comprehensive product-quality ranking. Revisit it when model conformance and platform evidence improve.
 
 ## Candidate integration rubric
 
