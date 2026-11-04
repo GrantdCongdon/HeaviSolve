@@ -1,0 +1,100 @@
+{
+  "recorded_utc": "2026-11-04T22:09:32.908201+00:00",
+  "host": "darwin",
+  "test": "equivalent C ABI through ctypes; not nanobind/PyO3",
+  "source_sha256": {
+    "verification/language/binding.cpp": "3e54ab842869a943803511da9c450be5425fbdbe9a41a7c2a121fb1600d343d4",
+    "verification/language/binding.rs": "dbaf0c04a1d65f96662fac2a6123160340b7507572cd7f0c2c2f36cf1019f588",
+    "verification/language/check_bindings.py": "3af63acc1892ce6a9d9695c3b9d6c84784b3bc153773afd1687310820018e7df",
+    "verification/language/slab.cpp": "aa4a56a8c124be04f15d523f212dc530b634b7baa6a6e6636174ae127bb0053e",
+    "verification/language/slab.rs": "fb27e0e9f887af1e07cfe8913ba884e1eb9d53d81e4ed800e85ab12ab4f1035f"
+  },
+  "results": [
+    {
+      "language": "cpp",
+      "build_command": [
+        "clang++",
+        "-std=c++20",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Werror",
+        "-dynamiclib",
+        "-fPIC",
+        "/Users/runner/work/HeaviSolve/HeaviSolve/verification/language/binding.cpp",
+        "-o",
+        "/Users/runner/work/HeaviSolve/HeaviSolve/build-bindings/slab-cpp.dylib",
+        "-framework",
+        "Accelerate"
+      ],
+      "build_seconds": 1.0546994590000054,
+      "refinement": 4,
+      "call_seconds": 1.3184142499999894,
+      "indices": [
+        1.449090438124796,
+        1.4339815071586997,
+        1.292189670119135,
+        1.2372067193934102,
+        1.0390785022421578,
+        1.0140174773818178
+      ],
+      "fundamental_absolute_errors": [
+        2.6276713724016076e-05,
+        6.608653146056298e-06
+      ],
+      "invalid_argument_statuses": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "insufficient_capacity_status": 2,
+      "caller_owned_alias": true,
+      "native_result_copy": true,
+      "lifetime_independence": true,
+      "status": "PASS"
+    },
+    {
+      "language": "rust",
+      "build_command": [
+        "rustc",
+        "--edition=2024",
+        "--crate-type=cdylib",
+        "-C",
+        "opt-level=2",
+        "-D",
+        "warnings",
+        "/Users/runner/work/HeaviSolve/HeaviSolve/verification/language/binding.rs",
+        "-o",
+        "/Users/runner/work/HeaviSolve/HeaviSolve/build-bindings/slab-rust.dylib"
+      ],
+      "build_seconds": 0.556014542000014,
+      "refinement": 4,
+      "call_seconds": 1.468468874999985,
+      "indices": [
+        1.4490904381248368,
+        1.4339815071586992,
+        1.2921896701191355,
+        1.2372067193934144,
+        1.0390785022421554,
+        1.0140174773818242
+      ],
+      "fundamental_absolute_errors": [
+        2.627671368315987e-05,
+        6.608653145612209e-06
+      ],
+      "invalid_argument_statuses": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "insufficient_capacity_status": 2,
+      "caller_owned_alias": true,
+      "native_result_copy": true,
+      "lifetime_independence": true,
+      "status": "PASS"
+    }
+  ]
+}

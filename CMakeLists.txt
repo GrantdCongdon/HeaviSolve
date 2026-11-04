@@ -26,3 +26,10 @@ endif()
 
 add_test(NAME m0_acceptance_gate COMMAND ${Python3_EXECUTABLE} ${PROJECT_SOURCE_DIR}/tools/m0_gate.py)
 set_tests_properties(m0_acceptance_gate PROPERTIES LABELS "m0;acceptance")
+add_test(NAME transitive_license_policy COMMAND ${Python3_EXECUTABLE} ${PROJECT_SOURCE_DIR}/verification/license_audit_test.py)
+set_tests_properties(transitive_license_policy PROPERTIES LABELS foundation)
+
+add_test(NAME m0_gate_policy COMMAND ${Python3_EXECUTABLE} ${PROJECT_SOURCE_DIR}/verification/m0_gate_test.py)
+set_tests_properties(m0_gate_policy PROPERTIES LABELS foundation)
+add_test(NAME m0_exit_review COMMAND ${Python3_EXECUTABLE} ${PROJECT_SOURCE_DIR}/tools/m0_gate.py --stage all)
+set_tests_properties(m0_exit_review PROPERTIES LABELS review)

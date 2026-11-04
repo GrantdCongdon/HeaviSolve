@@ -1,0 +1,99 @@
+{
+  "recorded_utc": "2026-11-03T15:57:55.765754+00:00",
+  "host": "linux",
+  "test": "equivalent C ABI through ctypes; not nanobind/PyO3",
+  "source_sha256": {
+    "verification/language/binding.cpp": "3e54ab842869a943803511da9c450be5425fbdbe9a41a7c2a121fb1600d343d4",
+    "verification/language/binding.rs": "dbaf0c04a1d65f96662fac2a6123160340b7507572cd7f0c2c2f36cf1019f588",
+    "verification/language/check_bindings.py": "3af63acc1892ce6a9d9695c3b9d6c84784b3bc153773afd1687310820018e7df",
+    "verification/language/slab.cpp": "aa4a56a8c124be04f15d523f212dc530b634b7baa6a6e6636174ae127bb0053e",
+    "verification/language/slab.rs": "fb27e0e9f887af1e07cfe8913ba884e1eb9d53d81e4ed800e85ab12ab4f1035f"
+  },
+  "results": [
+    {
+      "language": "cpp",
+      "build_command": [
+        "clang++",
+        "-std=c++20",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Werror",
+        "-shared",
+        "-fPIC",
+        "/home/runner/work/HeaviSolve/HeaviSolve/verification/language/binding.cpp",
+        "-o",
+        "/home/runner/work/HeaviSolve/HeaviSolve/build-bindings/slab-cpp.so",
+        "-llapack"
+      ],
+      "build_seconds": 6.960816792000003,
+      "refinement": 4,
+      "call_seconds": 2.685142744000018,
+      "indices": [
+        1.4490904381248033,
+        1.4339815071587005,
+        1.2921896701190647,
+        1.2372067193934102,
+        1.0390785022421427,
+        1.0140174773818225
+      ],
+      "fundamental_absolute_errors": [
+        2.6276713716688604e-05,
+        6.6086531469444765e-06
+      ],
+      "invalid_argument_statuses": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "insufficient_capacity_status": 2,
+      "caller_owned_alias": true,
+      "native_result_copy": true,
+      "lifetime_independence": true,
+      "status": "PASS"
+    },
+    {
+      "language": "rust",
+      "build_command": [
+        "rustc",
+        "--edition=2024",
+        "--crate-type=cdylib",
+        "-C",
+        "opt-level=2",
+        "-D",
+        "warnings",
+        "/home/runner/work/HeaviSolve/HeaviSolve/verification/language/binding.rs",
+        "-o",
+        "/home/runner/work/HeaviSolve/HeaviSolve/build-bindings/slab-rust.so"
+      ],
+      "build_seconds": 0.4602334940000219,
+      "refinement": 4,
+      "call_seconds": 2.7211751410000034,
+      "indices": [
+        1.4490904381248033,
+        1.4339815071587005,
+        1.2921896701190647,
+        1.2372067193934102,
+        1.0390785022421427,
+        1.0140174773818225
+      ],
+      "fundamental_absolute_errors": [
+        2.6276713716688604e-05,
+        6.6086531469444765e-06
+      ],
+      "invalid_argument_statuses": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "insufficient_capacity_status": 2,
+      "caller_owned_alias": true,
+      "native_result_copy": true,
+      "lifetime_independence": true,
+      "status": "PASS"
+    }
+  ]
+}

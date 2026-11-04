@@ -1,0 +1,106 @@
+COMMAND ["/home/runner/work/_temp/hs-spice/xyce/bin/Xyce", "/home/runner/work/_temp/hs-spice/cubic.cir"]
+
+*****
+***** Welcome to the Xyce(TM) Parallel Electronic Simulator
+*****
+***** This is version Xyce Release 7.10.0-opensource
+***** Date: Wed Nov 04 15:59:26 UTC 2026
+
+
+***** Executing netlist /home/runner/work/_temp/hs-spice/cubic.cir
+
+***** Reading and parsing netlist...
+Netlist warning in file /home/runner/work/_temp/hs-spice/cubic.cir at or near
+ line 10
+ Unrecognized .OPTIONS package or parameter HB will be ignored
+***** Setting up topology...
+
+***** Device Count Summary ...
+       B level 1 (Expression Based Voltage or Current Source) 1
+       V level 1 (Independent Voltage Source)                 1
+       --------------------------------------------------------
+       Total Devices                                          2
+***** Setting up matrix structure...
+***** Number of Unknowns = 2
+***** Initializing...
+
+ ***** Running HB initial conditions....
+
+ ***** Computing tolerance parameters for HB IC calculation....
+
+***** Beginning DC Operating Point Calculation...
+
+***** Beginning Transient Calculation...
+
+***** Problem read in and set up time: 0.00296307 seconds
+ ***** Interpolating transient solution for IC calculation....
+
+ ***** Beginning full HB simulation....
+
+ ***** Harmonic Balance Computation Summary *****
+	Number Successful Steps Taken:		1
+	Number Failed Steps Attempted:		0
+	Number Jacobians Evaluated:		4
+	Number Linear Solves:			1
+	Number Failed Linear Solves:		0
+	Number Linear Solver Iterations:	2
+	Number Residual Evaluations:		3
+	Number Nonlinear Convergence Failures:	0
+	Total Residual Load Time:		0.000631094 seconds
+	Total Jacobian Load Time:		0.000146151 seconds
+	Total Linear Solution Time:		0.000427008 seconds
+
+
+***** Solution Summary *****
+	Number Successful Steps Taken:		70316
+	Number Failed Steps Attempted:		3
+	Number Jacobians Evaluated:		70322
+	Number Linear Solves:			70319
+	Number Failed Linear Solves:		0
+	Number Linear Solver Iterations:	2
+	Number Residual Evaluations:		140640
+	Number Nonlinear Convergence Failures:	0
+	Total Residual Load Time:		0.205128 seconds
+	Total Jacobian Load Time:		0.0336967 seconds
+	Total Linear Solution Time:		0.135979 seconds
+
+
+***** Total Simulation Solvers Run Time: 2.22904 seconds
+***** Total Elapsed Run Time:            2.23198 seconds
+*****
+***** End of Xyce(TM) Simulation
+*****
+
+Timing summary of 1 processor
+                 Stats                   Count        CPU Time              Wall Time
+---------------------------------------- ------ --------------------- ---------------------
+Xyce                                          1        1.414 (100.0%)        2.233 (100.0%)
+  Analysis                                    1        1.411 (99.83%)        2.229 (99.82%)
+    HB                                        1        1.411 (99.83%)        2.229 (99.82%)
+      Initialization                          1        1.410 (99.71%)        2.227 (99.74%)
+        Initial Guess                         1        1.261 (89.17%)        2.078 (93.06%)
+          Transient                           1        1.159 (81.97%)        1.976 (88.48%)
+            Nonlinear Solve               70318        0.736 (52.09%)        1.254 (56.14%)
+              Residual                   140637        0.204 (14.39%)        0.349 (15.63%)
+              Jacobian                    70318        0.059 ( 4.20%)        0.101 ( 4.53%)
+              Linear Solve                70318        0.118 ( 8.37%)        0.206 ( 9.21%)
+            Successful DCOP Steps             1        0.000 (<0.01%)        0.000 (<0.01%)
+            Successful Step               70314        0.256 (18.13%)        0.444 (19.87%)
+            Failed Steps                      3        0.000 (<0.01%)        0.000 (<0.01%)
+        Setup Maps/Graphs                     1        0.023 ( 1.66%)        0.023 ( 1.05%)
+        Setup Solvers                         1        0.001 ( 0.06%)        0.001 ( 0.04%)
+      DC Sweep                                1        0.002 ( 0.11%)        0.002 ( 0.07%)
+        Solve                                 1        0.001 ( 0.09%)        0.001 ( 0.06%)
+          Residual                            3        0.001 ( 0.05%)        0.001 ( 0.03%)
+          Linear Solve                        1        0.000 ( 0.03%)        0.000 ( 0.02%)
+            Apply Jacobian                    4        0.000 ( 0.01%)        0.000 (<0.01%)
+        Successful Step                       1        0.000 ( 0.02%)        0.000 ( 0.01%)
+  Netlist Import                              1        0.000 ( 0.02%)        0.001 ( 0.06%)
+    Parse Context                             1        0.000 ( 0.01%)        0.000 ( 0.01%)
+    Distribute Devices                        1        0.000 ( 0.00%)        0.000 ( 0.01%)
+    Verify Devices                            1        0.000 ( 0.00%)        0.000 (<0.01%)
+    Instantiate                               1        0.000 ( 0.00%)        0.000 (<0.01%)
+  Late Initialization                         1        0.000 ( 0.01%)        0.001 ( 0.03%)
+    Global Indices                            1        0.000 (<0.01%)        0.000 (<0.01%)
+  Setup Matrix Structure                      1        0.000 (<0.01%)        0.000 (<0.01%)
+

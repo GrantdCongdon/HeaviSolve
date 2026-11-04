@@ -1,27 +1,21 @@
 <!-- SPDX-FileCopyrightText: 2026 HeaviSolve contributors -->
 <!-- SPDX-License-Identifier: CC-BY-SA-4.0 -->
 
-# Next checkpoint: close M0 before M1
+# Next checkpoint: complete M0 and report before M1
 
-1. Finish the paired first-order Nédélec/Lagrange slab spike with independent TE/TM roots and equal meshes/tolerances. Log actual effort, memory, runtime, line counts and binding work. Broaden Rust library evidence before final scoring.
-2. Resolve and lock complex PETSc/SLEPc, MFEM/hypre and a complex direct solver for both target platforms. Run the cavity/convergence suite on hosted runners and retain outputs. The serial dense diagnostic is useful but not a substitute.
-3. Build a pinned Xyce/Trilinos stack; run RC, IHP and VER-SP-05. Compile/load a license-cleared OSDI model in ngspice. Implement the shared circuit corpus and record per-engine differences before filling ADR-003 scores.
-4. Finish custom layer extrusion/MFEM mapping, actual PDK layout fixtures, Qt6/VTK visible rendering and both IPC control-channel prototypes. Do not promote partial subtests to completed spikes.
-5. Close survey maintenance/license unknowns; audit transitive dependencies, generate platform locks and release SBOM pipeline. Test Spack/Docker recipes and pin CI actions to audited commits.
-6. Run `ctest -L m0`, license/doc/DCO checks and the self-review. Accept/merge final ADRs only with linked evidence.
+1. Preserve the explicit accept/reject/defer dispositions in [ADR008](../adr/ADR-008-phase-r-component-dispositions.md). This decision review is complete; ngspice remains unapproved for production until its selected dependency graph passes ADR002. Research measurements do not authorize adoption.
+2. Preserve the completed Linux SPICE run41858845394 and its checksum-verified artifacts: builds, ngspice RC, Xyce forward stepping and HB pass. IHP/OSDI were excluded from that hosted subset. Avoid repeating this or the passing Linux/macOS complex-cavity build without changed inputs.
+3. Preserve completed acceptance evidence: run41922593403 at239cb7f passes all6 jobs, including `ctest -L m0`3/3 on Linux and macOS. Verified numerical/language artifacts and full foundation logs are retained. Container41922593302 at the same revision passes3/3 foundation checks.
+4. Prepare the final review pull request and obtain authorization to merge into remote main: current approval covers review-branch uploads only. Acceptance and deliverables are complete; `exit.adrs_accepted_and_merged` is the sole remaining all-stage gate. After authorized integration, confirm the exit check and present the final report, one-page decisions and proposed next checkpoint before starting M1.
 
-Roadmap recommendation: keep an explicit M0 closure checkpoint. Do not fold missing experimental work into M1 while claiming foundations complete. No hard requirement is relaxed.
+[ADR007](../adr/ADR-007-m0-acceptance-scope.md) corrects the previous requirement that every feasibility experiment pass before M0 acceptance. Original-model S3c still fails. Full supported-engine conformance remains mandatory at M7, and release audits remain mandatory before binary distribution. No model or tolerance changes are proposed to hide failures.
 
-## Proposed M1 walking skeleton (blocked on M0)
+## Proposed M1 checkpoint — design only
 
-User-defined process → simple capacitor geometry/mesh → C++ statics job in worker → shared versioned API → minimal Qt shell and Python binding → result plot. Both frontends call the same service. Require VER-ES-01, process roundtrip, deterministic provenance, server-crash isolation and screenshot/API parity tests.
+The [walking-skeleton plan and self-review](../developer/walking-skeleton-plan.md) define a user-process → capacitor geometry/mesh → C++ statics worker → shared API → Qt/Python → result-plot path. Require VER-ES-01, process roundtrip, geometry/mesh checks, provenance, worker-crash isolation, API parity and screenshots. M1 exits with an externally supplied IHP stack visible in3D. The design is self-reviewed; implementation remains blocked on M0 exit and reporting.
 
-## Self-review
+## Roadmap recommendations
 
-- [x] Scope respects no Python solvers, PDK independence, shared API and worker isolation.
-- [x] Benchmark and licensing claims distinguish passed, failed and missing evidence.
-- [ ] Architecture decisions supported by complete Phase R experiments.
-- [ ] Linux/macOS CI artifacts reviewed.
-- [ ] M0 acceptance green and final ADRs merged.
+Keep both SPICE engines as co-primary targets and carry the failed self-heated AC/avalanche DC comparisons into the M7 risk register. Investigate identically versioned compact-model sources via engine-specific compiler routes only after grant/compiler/thermal mapping review. Preserve original models and tolerances.
 
-Result: walking-skeleton design outline reviewed, but approval to start dependent M1 work is withheld by the plan's gate.
+Prefer tested KLayout geometry round trips over the failing gdstk SiEPIC OAS route, and source-selected FEM packages over the rejected ParMETIS-bearing environment. Keep Spack/HPC and binary-release certification explicit future validation work. These choices preserve the hard requirements and do not authorize unreviewed dependencies.

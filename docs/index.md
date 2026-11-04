@@ -9,3 +9,7 @@ M0 development snapshot. Start with [the repository README](../README.md).
 - [Licensing](adr/ADR-002-licensing.md)
 - [Plan corrections](adr/ADR-004-plan-corrections.md)
 - [M0 status](milestones/M0-report.md)
+
+- [M0 acceptance scope](adr/ADR-007-m0-acceptance-scope.md)
+- [Phase R component decisions](adr/ADR-008-phase-r-component-dispositions.md)
+- [Running handoff](milestones/M0-handoff.md)

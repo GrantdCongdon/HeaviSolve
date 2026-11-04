@@ -1,0 +1,14 @@
+stdout ******
+stdout ** ngspice-47 shared library
+stdout ******
+stderr pre_osdi: no such command available in ngspice
+stdout Note: No compatibility mode selected!
+stdout Circuit: heavisolve openvaf cubic model
+stderr Warning: Model issue on line 2 :
+stderr .model cubic hs_cubic(g1=0.001 g3=0.0001) ...
+stderr Unknown model type hs_cubic - ignored
+stderr Error on line 4 or its substitute:
+stderr n1 in 0 cubic
+stderr Unable to find definition of model cubic
+stderr Error: circuit not parsed.
+stderr Warning: vector v1#branch not or not yet available!

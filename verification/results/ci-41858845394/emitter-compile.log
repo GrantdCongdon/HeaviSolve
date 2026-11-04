@@ -1,0 +1,1 @@
+COMMAND ["c++", "-std=c++20", "-O2", "/home/runner/work/HeaviSolve/HeaviSolve/verification/spice/conformance.cpp", "-o", "/home/runner/work/_temp/hs-spice/emit"]

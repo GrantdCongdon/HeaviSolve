@@ -1,0 +1,21 @@
+Test project /Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/build
+    Start 2: m0_requires_mfem
+1/2 Test #2: m0_requires_mfem .................***Failed    0.05 sec
+
+    Start 3: m0_acceptance_gate
+2/2 Test #3: m0_acceptance_gate ...............***Failed    0.04 sec
+M0 NOT COMPLETE: phase_r_sources_complete, full_fem_stack_linux_macos, all_feasibility_spikes, adrs_accepted_and_merged, walking_skeleton_self_review
+
+
+0% tests passed, 2 tests failed out of 2
+
+Label Time Summary:
+acceptance    =   0.04 sec*proc (1 test)
+m0            =   0.08 sec*proc (2 tests)
+
+Total Test time (real) =   0.09 sec
+
+The following tests FAILED:
+	  2 - m0_requires_mfem (Failed)                         m0
+	  3 - m0_acceptance_gate (Failed)                       acceptance m0
+Errors while running CTest

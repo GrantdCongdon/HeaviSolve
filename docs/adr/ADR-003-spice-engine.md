@@ -3,17 +3,17 @@
 
 # ADR-003: retain two SPICE candidates; use engine-specific Verilog-A routes
 
-Status: **proposed; experimental acceptance blocked**. Date: 2026-11-02.
+Status: **M0 engine direction recorded; production integration withheld**. Updated: 2026-11-04. Scope clarified by ADR007.
 
 ## Context and evidence
 
-R6 requires measured scoring from S3a–c. The [comparison](../research/spice-engine-comparison.md) includes every criterion and weight, but unmeasured scores are explicitly pending. [S3](../spikes/S3-spice.md) records executable attempts. Neither a15-point lead nor full dual-engine compatibility has been demonstrated.
+R6 requires measured scoring from S3a–c. The [comparison](../research/spice-engine-comparison.md) records scoped readiness scores and their evidence:98/160 ngspice versus94/160 Xyce, a2.5percentage-point difference. Untested scalability is scored as insufficient evidence, not a performance ranking. [S3](../spikes/S3-spice.md) records executable attempts. There is no15-point lead; full dual-engine compatibility has not been demonstrated.
 
-ngspice exposes shared-library external-source callbacks. Xyce documents `simulateUntil` and general device coupling; it is not limited to subprocess operation. Xyce offers HB, while ngspice's documented OSDI path is useful for SG13G2. These complementary documented capabilities favor provisional Outcome B.
+ngspice exposes shared-library external-source callbacks. Xyce documents `simulateUntil` and general device coupling; it is not limited to subprocess operation. Xyce offers HB, while ngspice's documented OSDI path is useful for SG13G2. Native Xyce HB and ngspice transient/FFT now pass the RLC/cubic local checks. These complementary capabilities establish Outcome B as the implementation target.
 
 ## Decision
 
-Retain ngspice and Xyce as **co-primary integration targets**, behind one future `SpiceEngine` contract with explicit capability flags, model bindings and per-engine emitters. Do not claim working support until tests pass. No primary winner is selected. Do not lock the adapter architecture or advance the M0 experimental gate based on documentation alone.
+Retain ngspice and Xyce as **co-primary integration targets under Outcome B**, behind one future `SpiceEngine` contract with explicit capability flags, model bindings and per-engine emitters. Do not claim working support until tests pass. No primary winner is selected. The shared native IR exposes IHP AC disagreements of8–10% and residual DC disagreement. These are failed feasibility findings and M7 integration blockers, not a replacement for section12 M0 acceptance. Maintain the tolerances and investigate model/linearization differences; do not silently alter foundry models.
 
 Use separate worker processes for isolation. Embedding can occur inside a worker; a library API does not require sharing the GUI process. Preserve a shared API for Python and GUI.
 
@@ -29,7 +29,7 @@ The current Xyce source guide supersedes the older website build recipe: it desc
 |---|---|---|
 | License-compatible selected build | Candidate; mixed-license audit required | GPL-3.0-or-later source; transitive audit required |
 | Embeddable API | Documented C API | Documented C++ API |
-| Maintained within ~12months | Release47 date supports this | Exact current revision/date still to pin |
+| Maintained within ~12months | Release47 date supports this | Release7.10.0 archive pinned; see S3 |
 | Required benchmarks pass | No | No |
 | Lossless data-model mapping | Not demonstrated | Not demonstrated |
 
@@ -37,4 +37,10 @@ Integration is therefore **not approved as complete**. The explicit requirement 
 
 ## Consequences and closure
 
-Implement and run S3a–c on Linux/macOS, including IHP devices and VER-SP-05. Fill scores with measured evidence; compute the normalized difference. If neither clears the rule, deliver both adapters, diagnostics, conformance suite and capability matrix as equal requirements. Until then, M0 acceptance is unmet and this ADR remains proposed.
+Complete Linux/macOS CI and resolve the measured IHP conformance failures. Both adapters, diagnostics, conformance suite and capability matrix remain equal requirements. ADR007 separates the completed M0 measured-scoring deliverable from M7 compatibility requirements. The selected engine direction is recorded; production integration approval is withheld.
+
+## Diagnostic refinement — 2026-11-03
+
+[S3 follow-up](../spikes/S3-spice.md) now demonstrates Xyce forward stepping through its separate C-interface library. Default self-heated ngspice AC still disagrees with independent DC slopes. The residual isothermal DC failure is localized to the avalanche contribution: disabling it in both marked diagnostic copies reduces relative base-current disagreement from1.0304e-4 to4.3177e-9. The engines implement different avalanche smoothing formulas. No threshold or original model changed.
+
+Consequently, a shared dialect alone is insufficient to promise cross-engine model equivalence. Any eventual `SpiceEngine` model binding must record the compact-model implementation/version and tested capabilities. The next candidate experiment uses an identically versioned model through the separate supported compiler routes, subject to source-grant review and thermal tests. This is an investigation direction, not approval of a replacement or a passed conformance gate. The co-primary decision remains unchanged. M0 exit still requires its decision review and integration; see ADR007.

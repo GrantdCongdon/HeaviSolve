@@ -1,0 +1,10 @@
+// SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+// SPDX-License-Identifier: AGPL-3.0-or-later
+`include "disciplines.vams"
+module hs_cubic(p,n);
+  inout p,n;
+  electrical p,n;
+  parameter real g1=0.001;
+  parameter real g3=0.0001;
+  analog I(p,n) <+ g1*V(p,n)+g3*V(p,n)*V(p,n)*V(p,n);
+endmodule

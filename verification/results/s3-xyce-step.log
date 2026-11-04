@@ -1,0 +1,91 @@
+
+*****
+***** Welcome to the Xyce(TM) Parallel Electronic Simulator
+*****
+***** This is version Xyce Release 7.10.0-opensource
+***** Date: Tue Nov 03 15:53:46 EST 2026
+
+
+***** Executing netlist /tmp/heavisolve-spice/xyce-step.cir
+
+***** Reading and parsing netlist...
+***** Setting up topology...
+
+***** Device Count Summary ...
+       C level 1 (Capacitor)                  1
+       R level 1 (Resistor)                   1
+       V level 1 (Independent Voltage Source) 1
+       ----------------------------------------
+       Total Devices                          3
+***** Setting up matrix structure...
+***** Number of Unknowns = 3
+***** Initializing...
+
+***** Problem read in and set up time: 7.65449 seconds
+ ***** DCOP time: 0.15187 seconds.  Breakdown follows:
+	Number Successful Steps Taken:		620541
+	Number Failed Steps Attempted:		170
+	Number Jacobians Evaluated:		620733
+	Number Linear Solves:			620733
+	Number Failed Linear Solves:		0
+	Number Residual Evaluations:		1241445
+	Number Nonlinear Convergence Failures:	0
+	Total Residual Load Time:		0.949412 seconds
+	Total Jacobian Load Time:		0.148168 seconds
+	Total Linear Solution Time:		0.709787 seconds
+
+ ***** Transient Stepping time: 0.15187 seconds.  Breakdown follows:
+	Number Successful Steps Taken:		620541
+	Number Failed Steps Attempted:		170
+	Number Jacobians Evaluated:		620733
+	Number Linear Solves:			620733
+	Number Failed Linear Solves:		0
+	Number Residual Evaluations:		1241445
+	Number Nonlinear Convergence Failures:	0
+	Total Residual Load Time:		0.949412 seconds
+	Total Jacobian Load Time:		0.148168 seconds
+	Total Linear Solution Time:		0.709787 seconds
+
+
+***** Solution Summary *****
+	Number Successful Steps Taken:		620541
+	Number Failed Steps Attempted:		170
+	Number Jacobians Evaluated:		620733
+	Number Linear Solves:			620733
+	Number Failed Linear Solves:		0
+	Number Residual Evaluations:		1241445
+	Number Nonlinear Convergence Failures:	0
+	Total Residual Load Time:		0.949412 seconds
+	Total Jacobian Load Time:		0.148168 seconds
+	Total Linear Solution Time:		0.709787 seconds
+
+
+***** Total Simulation Solvers Run Time: 7.80304 seconds
+***** Total Elapsed Run Time:            7.80716 seconds
+*****
+***** End of Xyce(TM) Simulation
+*****
+
+Timing summary of 1 processor
+                 Stats                    Count        CPU Time              Wall Time
+---------------------------------------- ------- --------------------- ---------------------
+Xyce                                           1        5.455 (100.0%)        7.812 (100.0%)
+  Analysis                                    50        5.453 (99.96%)        7.802 (99.88%)
+    Transient                                 50        5.453 (99.96%)        7.802 (99.88%)
+      Nonlinear Solve                     620711        3.491 (63.99%)        4.362 (55.84%)
+        Residual                         1241445        1.098 (20.13%)        1.302 (16.66%)
+        Jacobian                          620733        0.223 ( 4.09%)        0.324 ( 4.15%)
+        Linear Solve                      620733        0.781 (14.32%)        0.871 (11.15%)
+      Successful DCOP Steps                    1        0.000 (<0.01%)        0.000 (<0.01%)
+      Successful Step                     620540        1.237 (22.67%)        2.520 (32.27%)
+      Failed Steps                           170        0.000 (<0.01%)        0.000 (<0.01%)
+  Netlist Import                               1        0.000 (<0.01%)        0.002 ( 0.02%)
+    Parse Context                              1        0.000 (<0.01%)        0.000 (<0.01%)
+    Distribute Devices                         1        0.000 (<0.01%)        0.000 (<0.01%)
+    Verify Devices                             1        0.000 (<0.01%)        0.000 (<0.01%)
+    Instantiate                                1        0.000 (<0.01%)        0.000 (<0.01%)
+  Late Initialization                          1        0.000 (<0.01%)        0.002 ( 0.02%)
+    Global Indices                             1        0.000 (<0.01%)        0.000 (<0.01%)
+  Setup Matrix Structure                       1        0.000 (<0.01%)        0.001 (<0.01%)
+
+steps=50 max_absolute_error_v=7.1045086396173684e-07 tolerance_v=0.0001 status=PASS

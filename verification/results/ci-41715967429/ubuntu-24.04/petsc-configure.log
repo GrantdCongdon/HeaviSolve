@@ -1,0 +1,79 @@
+=============================================================================================
+                         Configuring PETSc to compile on your system
+=============================================================================================
+=============================================================================================
+                                     ***** WARNING *****
+  Using default C optimization flags "-g -O". You might consider manually setting optimal
+  optimization flags for your system with COPTFLAGS="optimization flags" see
+  config/examples/arch-*-opt.py for examples
+=============================================================================================
+=============================================================================================
+                                     ***** WARNING *****
+  Using default Cxx optimization flags "-g -O". You might consider manually setting optimal
+  optimization flags for your system with CXXOPTFLAGS="optimization flags" see
+  config/examples/arch-*-opt.py for examples
+=============================================================================================
+=============================================================================================
+  Trying to download /home/runner/work/_temp/hs-complex/superlu-dist921.tar.gz for
+  SUPERLU_DIST
+=============================================================================================
+=============================================================================================
+              Configuring SUPERLU_DIST with CMake; this may take several minutes
+=============================================================================================
+=============================================================================================
+             Compiling and installing SUPERLU_DIST; this may take several minutes
+=============================================================================================
+Compilers:
+  C Compiler:  /home/runner/work/_temp/hs-fem-env/bin/mpicc  -fPIC -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -g -O 
+    Version: cc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+  C++ Compiler:  /home/runner/work/_temp/hs-fem-env/bin/mpicxx  -Wall -Wwrite-strings -Wno-strict-aliasing -Wno-unknown-pragmas -Wno-psabi -Wno-lto-type-mismatch -fstack-protector -fvisibility=hidden -g -O  -std=gnu++20 -fPIC 
+    Version: c++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0
+Linkers:
+  Shared linker:   /home/runner/work/_temp/hs-fem-env/bin/mpicc  -shared  -fPIC -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -g -O
+  Dynamic linker:   /home/runner/work/_temp/hs-fem-env/bin/mpicc  -shared  -fPIC -Wall -Wwrite-strings -Wno-unknown-pragmas -Wno-lto-type-mismatch -Wno-stringop-overflow -fstack-protector -fvisibility=hidden -g -O
+  Libraries linked against:   -lquadmath 
+Intel instruction sets found on CPU:
+  AVX2
+  AVX512: avx512f avx512dq avx512ifma avx512cd avx512bw avx512vl avx512_bf16 avx512vbmi avx512_vbmi2 avx512_vnni avx512_bitalg avx512_vpopcntdq avx512_vp2intersect
+Virtualization:
+Python:
+  Executable: /opt/hostedtoolcache/Python/3.12.16/x64/bin/python
+BlasLapack:
+  Libraries:  -Wl,-rpath,/home/runner/work/_temp/hs-fem-env/lib /home/runner/work/_temp/hs-fem-env/lib/libopenblas.so.0
+  Unknown if this uses OpenMP (try export OMP_NUM_THREADS=<1-4> yourprogram -log_view) 
+  uses 4 byte integers
+MPI:
+  Version:    3
+  Includes:   -I/home/runner/work/_temp/hs-fem-env/include
+  mpiexec: /home/runner/work/_temp/hs-fem-env/bin/mpiexec
+  Implementation: openmpi
+  OMPI_VERSION: 5.0.11
+pthread:
+CMake:
+  Version:    4.4.5
+  Executable: /home/runner/work/_temp/hs-fem-env/bin/cmake
+Bison:
+  Version:    3.8
+  Executable: /usr/bin/bison
+SuperLU_DIST:
+  Version:    9.2.1
+  Includes:   -I/home/runner/work/_temp/hs-complex/petsc-install/include
+  Libraries:  -Wl,-rpath,/home/runner/work/_temp/hs-complex/petsc-install/lib -L/home/runner/work/_temp/hs-complex/petsc-install/lib -lsuperlu_dist
+PETSc:
+  Language used to compile PETSc: C
+  Language used to compile PetscDevice: C
+  PETSC_ARCH: arch-heavisolve-complex
+  PETSC_DIR: /home/runner/work/_temp/hs-complex/petsc-3.26.1
+  Prefix: /home/runner/work/_temp/hs-complex/petsc-install
+  Scalar type: complex
+  Precision: double
+  Support for __float128
+  Integer size: 4 bytes
+  Single library: yes
+  Shared libraries: yes
+  Memory alignment from malloc(): 16 bytes
+  Using GNU make: /usr/bin/make
+xxx=======================================================================================xxx
+ Configure stage complete. Now build PETSc libraries with:
+   make PETSC_DIR=/home/runner/work/_temp/hs-complex/petsc-3.26.1 PETSC_ARCH=arch-heavisolve-complex all
+xxx=======================================================================================xxx

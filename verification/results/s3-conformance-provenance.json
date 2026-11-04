@@ -1,0 +1,17 @@
+{
+  "host": "macOS arm64",
+  "xyce": "7.10.0",
+  "ngspice": "47",
+  "ihp_pin": "5e6d592e4002946a4616f798c357f0f3c06cf3b6",
+  "sha256": {
+    ".work/spice-xyce710.tar.gz": "b5a883196f0a2b3972fd13c541fecf04735bfabc7d124d7c7e17de707204f4e2",
+    ".work/spice-trilinos.tar.gz": "e9651c88f581049457036cfc01b527a9d3903c257338eeeab942befd7452f23a",
+    "/tmp/heavisolve-spice/conformance/ihp-xyce/cornerHBT.lib": "2928c9eb28ce5c2a7435eeac326fd9bf4629f82cb983cfe45e3c7f8886a8e19e",
+    "/tmp/heavisolve-spice/conformance/ihp-xyce/sg13g2_hbt_mod.lib": "f3b0574c0825309ce290b236540174a645c8d4e6fe70660f4b9ff47dca26018a",
+    "/tmp/heavisolve-spice/conformance/ihp-xyce/sg13g2_hbt_stat.lib": "2607600f39022470a4e9bc8cb9765b482f9c6cd0454009c8fee3b967d6976319",
+    ".local/ihp-hbt.lib": "32d0f298cd094ffd93a32871567faec4a875d9efa3c08b9e259540362efd468c",
+    ".local/sg13g2_hbt_mod.lib": "32d0f298cd094ffd93a32871567faec4a875d9efa3c08b9e259540362efd468c",
+    ".local/sg13g2_hbt_stat.lib": "80d1893eb06a3417d05400335d8e58c8309b9c80061ca96ceff8f8fd68c9a7db",
+    ".local/cornerHBT.lib": "a9bf47c0700774c8efc280bc67851af8f000390f2224e619ed6150767d63e9c2"
+  }
+}

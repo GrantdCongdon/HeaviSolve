@@ -1,0 +1,14 @@
+[
+  {
+    "circuit": "rlc",
+    "relative_error": 2.531604147800072e-16,
+    "tolerance": 0.001,
+    "passed": true
+  },
+  {
+    "circuit": "cubic",
+    "relative_error": 2.846030702774449e-15,
+    "tolerance": 0.001,
+    "passed": true
+  }
+]

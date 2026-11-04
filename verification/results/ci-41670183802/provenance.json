@@ -1,0 +1,13 @@
+{
+  "repository": "GrantdCongdon/HeaviSolve",
+  "run_id": 41670183802,
+  "job_id": 126036155092,
+  "platform": "macos-14",
+  "job_conclusion": "success",
+  "workflow_conclusion": "failure",
+  "scope": "macOS complex cavity and exact runtime license admission; Linux job failed",
+  "artifact_id": 13249002660,
+  "sha256": "050093f585998e278dd4ce31f95696abba711b76356e2737724a8d80a514d15b",
+  "zip_digest_verified": true,
+  "retained": "numerical/configuration/license/environment evidence; full build logs available in GitHub artifact"
+}

@@ -1,0 +1,52 @@
+-- CMake version: 4.4.5
+-- Loading USER_CONFIG = /Users/runner/work/_temp/hs-complex/mfem-4.10/config/user.cmake (NOTFOUND)
+-- USE_XSDK_DEFAULTS = 'OFF'
+-- The CXX compiler identification is AppleClang 15.0.0.15000309
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Floating-point precision: MFEM_PRECISION = double
+-- Found MPI_CXX: /Users/runner/work/_temp/hs-fem-env/lib/libmpi.dylib (found version "3.1")
+-- Found MPI: TRUE (found version "3.1")
+-- Looking for HYPRE ...
+--    in HYPRE_DIR = /Users/runner/work/_temp/hs-fem-env
+-- Performing Test HYPRE_USING_CUDA
+-- Performing Test HYPRE_USING_CUDA - Failed
+-- Performing Test HYPRE_USING_HIP
+-- Performing Test HYPRE_USING_HIP - Failed
+-- Found HYPRE: /Users/runner/work/_temp/hs-fem-env/lib/libHYPRE.dylib
+-- HYPRE_INCLUDE_DIRS=/Users/runner/work/_temp/hs-fem-env/include
+-- Found HYPRE version 30200
+-- Found HYPRE: /Users/runner/work/_temp/hs-fem-env/lib/libHYPRE.dylib
+-- Looking for METIS ...
+--    in METIS_DIR = /Users/runner/work/_temp/hs-fem-env
+-- Performing Test METIS_VERSION_5
+-- Performing Test METIS_VERSION_5 - Success
+-- Found METIS: /Users/runner/work/_temp/hs-fem-env/lib/libmetis.dylib
+-- METIS_INCLUDE_DIRS=/Users/runner/work/_temp/hs-fem-env/include
+-- Found BLAS: /Users/runner/work/_temp/hs-fem-env/lib/libopenblas.0.dylib
+-- Found LAPACK: /Users/runner/work/_temp/hs-fem-env/lib/libopenblas.0.dylib
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE
+-- MFEM: using package HYPRE
+-- MFEM: using package LAPACK
+-- MFEM: using package BLAS
+-- MFEM: using package METIS
+-- MFEM: using package MPI_CXX
+-- MFEM shared library: BUILD_SHARED_LIBS = OFF
+-- MFEM build type: CMAKE_BUILD_TYPE = Release
+-- MFEM version: v4.10.0
+-- MFEM git string: (unknown)
+-- TPL_INCLUDE_DIRS = /Users/runner/work/_temp/hs-fem-env/include
+-- Writing substitute header --> "mfem.hpp"
+-- Writing substitute header --> "mfem-performance.hpp"
+-- performance_ex1: add flags "-mcpu=apple-m1 -fcolor-diagnostics -fvectorize -fslp-vectorize -ffp-contract=fast"
+-- performance_ex1p: add flags "-mcpu=apple-m1 -fcolor-diagnostics -fvectorize -fslp-vectorize -ffp-contract=fast"
+-- Could NOT find Doxygen (missing: DOXYGEN_EXECUTABLE) 
+-- CMAKE_INSTALL_PREFIX = /usr/local
+-- Configuring done (2.2s)
+-- Generating done (2.2s)
+-- Build files have been written to: /Users/runner/work/_temp/hs-complex/mfem-build

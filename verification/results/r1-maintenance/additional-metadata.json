@@ -1,0 +1,81 @@
+[
+  {
+    "url": "https://api.github.com/repos/mfem/mfem/releases/latest",
+    "retrieved_at_utc": "2026-11-03T02:58:42.411893+00:00",
+    "data": {
+      "html_url": "https://github.com/mfem/mfem/releases/tag/v4.10",
+      "tag_name": "v4.10",
+      "published_at": "2026-09-01T22:58:45Z"
+    }
+  },
+  {
+    "url": "https://api.github.com/repos/awslabs/palace/releases/latest",
+    "retrieved_at_utc": "2026-11-03T02:58:42.381751+00:00",
+    "data": {
+      "html_url": "https://github.com/awslabs/palace/releases/tag/v0.18.1",
+      "tag_name": "v0.18.1",
+      "published_at": "2026-09-21T15:38:44Z"
+    }
+  },
+  {
+    "url": "https://api.github.com/repos/qutip/qutip/releases/latest",
+    "retrieved_at_utc": "2026-11-03T02:58:42.457804+00:00",
+    "data": {
+      "html_url": "https://github.com/qutip/qutip/releases/tag/v5.3.1",
+      "tag_name": "v5.3.1",
+      "published_at": "2026-08-04T07:39:53Z"
+    }
+  },
+  {
+    "url": "https://api.github.com/repos/OpenVAF/OpenVAF-Reloaded/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:42.448106+00:00",
+    "data": {
+      "sha": "2b5909bccd17b1cdc01a3ebced8ca7b3833c8a5c",
+      "commit": {
+        "author_date": "2026-11-02T10:52:20Z",
+        "committer_date": "2026-11-02T10:52:20Z",
+        "subject": "Reconcile fork features with upstream OSDI 0.5"
+      },
+      "html_url": "https://github.com/OpenVAF/OpenVAF-Reloaded/commit/2b5909bccd17b1cdc01a3ebced8ca7b3833c8a5c"
+    }
+  },
+  {
+    "url": "https://api.github.com/repos/OpenVAF/OpenVAF-Reloaded/releases/latest",
+    "retrieved_at_utc": "2026-11-03T02:58:42.589370+00:00",
+    "data": {
+      "html_url": "https://github.com/OpenVAF/OpenVAF-Reloaded/releases/tag/v24.0.2mob",
+      "tag_name": "v24.0.2mob",
+      "published_at": "2026-08-25T15:45:36Z"
+    }
+  },
+  {
+    "url": "https://api.github.com/repos/AngusJohnson/Clipper2",
+    "retrieved_at_utc": "2026-11-03T02:58:42.671319+00:00",
+    "data": {
+      "html_url": "https://github.com/AngusJohnson/Clipper2",
+      "archived": true,
+      "disabled": false,
+      "default_branch": "main"
+    }
+  },
+  {
+    "url": "https://api.github.com/repos/XanaduAI/strawberryfields",
+    "retrieved_at_utc": "2026-11-03T02:58:42.742148+00:00",
+    "data": {
+      "html_url": "https://github.com/XanaduAI/strawberryfields",
+      "archived": true,
+      "disabled": false,
+      "default_branch": "master"
+    }
+  },
+  {
+    "url": "https://api.github.com/repos/pascalkuthe/OpenVAF",
+    "retrieved_at_utc": "2026-11-03T02:58:42.726498+00:00",
+    "data": {
+      "html_url": "https://github.com/pascalkuthe/OpenVAF",
+      "archived": false,
+      "disabled": false,
+      "default_branch": "master"
+    }
+  }
+]

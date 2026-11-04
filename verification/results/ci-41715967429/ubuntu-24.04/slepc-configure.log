@@ -1,0 +1,22 @@
+Checking environment... done
+Checking PETSc installation... done
+Checking LAPACK library... done
+Writing various configuration files... done
+ 
+================================================================================
+SLEPc Configuration
+================================================================================
+
+SLEPc directory:
+  /home/runner/work/_temp/hs-complex/slepc-3.26.0
+SLEPc prefix directory:
+  /home/runner/work/_temp/hs-complex/slepc-install
+PETSc directory:
+  /home/runner/work/_temp/hs-complex/petsc-install
+Prefix install with double precision complex numbers
+
+xxx==========================================================================xxx
+ Configure stage complete. Now build the SLEPc library with:
+   make SLEPC_DIR=/home/runner/work/_temp/hs-complex/slepc-3.26.0 PETSC_DIR=/home/runner/work/_temp/hs-complex/petsc-install
+xxx==========================================================================xxx
+

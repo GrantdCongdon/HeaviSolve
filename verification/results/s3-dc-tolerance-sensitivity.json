@@ -1,0 +1,14 @@
+[
+  {
+    "circuit": "diode",
+    "current_relative_rms": 9.783546305653885e-05,
+    "tolerance": 0.0001,
+    "status": "PASS"
+  },
+  {
+    "circuit": "ihp",
+    "current_relative_rms": 0.00010325883957208788,
+    "tolerance": 0.0001,
+    "status": "FAIL"
+  }
+]

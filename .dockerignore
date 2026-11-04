@@ -1,0 +1,9 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+.git
+.work
+.local
+build*
+**/__pycache__
+**/*.pyc
+.DS_Store

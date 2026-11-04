@@ -1,0 +1,20 @@
+{
+  "platform": "macOS arm64",
+  "engine": "Xyce 7.10.0 with previously documented compatibility patches",
+  "interface": "upstream xycecinterface target",
+  "samples": 50,
+  "maximum_absolute_error_v": 7.104508639617368e-07,
+  "tolerance_v": 0.0001,
+  "result": "LOCAL PASS",
+  "limitations": [
+    "no hosted CI",
+    "no rollback",
+    "no external-device exchange"
+  ],
+  "files": {
+    "verification/spice/xyce_step.cpp": "08fc44cfb15d884520b66b79a047802bf33189b9071918ad71760493f3f0ec53",
+    "verification/spice/xyce_step.cir": "f94fa66405406199198d329ef83648187b4c04a973295c612dceb8f0af959373",
+    "verification/results/s3-xyce-step.csv": "9057c7717d26b7ba5800629fcb2f12df52ad643aedcd7470b894d3f7cbf1ebfa",
+    "verification/results/s3-xyce-step.log": "1b66c581bcf6a6426858077431544835f0e6b7fe377695625f31c0be0ca7d8fe"
+  }
+}

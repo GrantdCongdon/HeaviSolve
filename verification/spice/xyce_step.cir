@@ -1,0 +1,10 @@
+HeaviSolve stepwise RC sine response
+* SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+* SPDX-License-Identifier: AGPL-3.0-or-later
+Vdrive in 0 SIN(0 1 1MEG)
+R1 in out 1000
+C1 out 0 1n
+.OPTIONS TIMEINT RELTOL=1e-9 ABSTOL=1e-13
+.TRAN 1n 5u 0 1n
+.PRINT TRAN V(out)
+.END

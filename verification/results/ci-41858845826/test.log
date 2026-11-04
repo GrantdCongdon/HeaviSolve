@@ -1,0 +1,13 @@
+Internal ctest changing into directory: /src/build
+Test project /src/build
+    Start 1: license_inventory
+1/2 Test #1: license_inventory ................   Passed    0.03 sec
+    Start 4: transitive_license_policy
+2/2 Test #4: transitive_license_policy ........   Passed    0.42 sec
+
+100% tests passed, 0 tests failed out of 2
+
+Label Time Summary:
+foundation    =   0.45 sec*proc (2 tests)
+
+Total Test time (real) =   0.45 sec

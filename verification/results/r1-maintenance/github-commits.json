@@ -1,0 +1,412 @@
+[
+  {
+    "repository": "BYUCamachoLab/simphony",
+    "query_url": "https://api.github.com/repos/BYUCamachoLab/simphony/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:12.462748+00:00",
+    "sha": "5a5e826fb58b2b5ce0355189b3e3b33e2bd8828c",
+    "commit_date": "2025-10-28T01:27:17Z",
+    "author_date": "2025-10-28T01:27:17Z",
+    "html_url": "https://github.com/BYUCamachoLab/simphony/commit/5a5e826fb58b2b5ce0355189b3e3b33e2bd8828c",
+    "subject": "update to v0.7.3"
+  },
+  {
+    "repository": "Budapest-Quantum-Computing-Group/piquasso",
+    "query_url": "https://api.github.com/repos/Budapest-Quantum-Computing-Group/piquasso/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:12.523134+00:00",
+    "sha": "c766c549ed9730f97666b64a8bbc94c34d9e8db6",
+    "commit_date": "2026-10-21T10:40:23Z",
+    "author_date": "2026-10-21T10:40:23Z",
+    "html_url": "https://github.com/Budapest-Quantum-Computing-Group/piquasso/commit/c766c549ed9730f97666b64a8bbc94c34d9e8db6",
+    "subject": "chore(.github): Minimal smoke test for wheels (#654)"
+  },
+  {
+    "repository": "ElmerCSC/elmerfem",
+    "query_url": "https://api.github.com/repos/ElmerCSC/elmerfem/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:12.438368+00:00",
+    "sha": "56b16bd49564d5b16fdc57862ccda024043b0f39",
+    "commit_date": "2026-11-02T10:52:17Z",
+    "author_date": "2026-11-02T10:52:17Z",
+    "html_url": "https://github.com/ElmerCSC/elmerfem/commit/56b16bd49564d5b16fdc57862ccda024043b0f39",
+    "subject": "Fix interplay between \"Maxwell\" material model and thermal expansion model or pre-given stress load."
+  },
+  {
+    "repository": "FEniCS/dolfinx",
+    "query_url": "https://api.github.com/repos/FEniCS/dolfinx/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:12.438950+00:00",
+    "sha": "f291b12af277ba81a39297d6376e74afcde87b21",
+    "commit_date": "2026-11-02T08:25:28Z",
+    "author_date": "2026-11-02T08:25:28Z",
+    "html_url": "https://github.com/FEniCS/dolfinx/commit/f291b12af277ba81a39297d6376e74afcde87b21",
+    "subject": "Update PETSC_VERSION to 3.26.1 (#4696)"
+  },
+  {
+    "repository": "HelgeGehring/femwell",
+    "query_url": "https://api.github.com/repos/HelgeGehring/femwell/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:12.735658+00:00",
+    "sha": "be2c54763f6215757fd2dac543c9385a82ca5b26",
+    "commit_date": "2026-03-06T08:38:46Z",
+    "author_date": "2025-10-08T04:07:38Z",
+    "html_url": "https://github.com/HelgeGehring/femwell/commit/be2c54763f6215757fd2dac543c9385a82ca5b26",
+    "subject": "build(deps): bump astral-sh/setup-uv from 6 to 7"
+  },
+  {
+    "repository": "HomerReid/scuff-em",
+    "query_url": "https://api.github.com/repos/HomerReid/scuff-em/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:12.729776+00:00",
+    "sha": "9c6d0cb7695463af803dee8d04cdae939740cdcc",
+    "commit_date": "2018-12-18T16:35:15Z",
+    "author_date": "2018-12-18T16:35:15Z",
+    "html_url": "https://github.com/HomerReid/scuff-em/commit/9c6d0cb7695463af803dee8d04cdae939740cdcc",
+    "subject": "Merge pull request #183 from WenjieYao/appendenvfix"
+  },
+  {
+    "repository": "ITensor/ITensor",
+    "query_url": "https://api.github.com/repos/ITensor/ITensor/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:12.791276+00:00",
+    "sha": "ea88f512d258ef23b5554950639c5acedf4df1f0",
+    "commit_date": "2023-08-28T19:30:29Z",
+    "author_date": "2023-08-28T19:30:29Z",
+    "html_url": "https://github.com/ITensor/ITensor/commit/ea88f512d258ef23b5554950639c5acedf4df1f0",
+    "subject": "Fix test of arnoldi for multiple eigenvectors"
+  },
+  {
+    "repository": "KLayout/klayout",
+    "query_url": "https://api.github.com/repos/KLayout/klayout/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:12.768153+00:00",
+    "sha": "2d74073d3f20ddfe6d96f57d61cb1e20fe6a1fec",
+    "commit_date": "2026-11-02T23:36:41Z",
+    "author_date": "2026-11-02T23:36:41Z",
+    "html_url": "https://github.com/KLayout/klayout/commit/2d74073d3f20ddfe6d96f57d61cb1e20fe6a1fec",
+    "subject": "Fixing some ambiguities and cleanup of Qt6 binding"
+  },
+  {
+    "repository": "NGSolve/netgen",
+    "query_url": "https://api.github.com/repos/NGSolve/netgen/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:13.130556+00:00",
+    "sha": "f66c0693240ac90820a3119e3caaca7835ff8036",
+    "commit_date": "2026-11-02T12:19:47Z",
+    "author_date": "2026-11-02T12:19:47Z",
+    "html_url": "https://github.com/NGSolve/netgen/commit/f66c0693240ac90820a3119e3caaca7835ff8036",
+    "subject": "FMA and AutoDiff"
+  },
+  {
+    "repository": "NGSolve/ngsolve",
+    "query_url": "https://api.github.com/repos/NGSolve/ngsolve/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:12.991794+00:00",
+    "sha": "41f7c0f13ec68964d0643c27c45a5a16a6864244",
+    "commit_date": "2026-11-02T20:58:24Z",
+    "author_date": "2026-11-02T20:58:24Z",
+    "html_url": "https://github.com/NGSolve/ngsolve/commit/41f7c0f13ec68964d0643c27c45a5a16a6864244",
+    "subject": "Merge branch 'bem-simd' into 'master'"
+  },
+  {
+    "repository": "NanoComp/meep",
+    "query_url": "https://api.github.com/repos/NanoComp/meep/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:13.025844+00:00",
+    "sha": "65f3dc59dc00f48eba3589520eeaafa64f06043e",
+    "commit_date": "2026-11-02T18:26:16Z",
+    "author_date": "2026-11-02T18:26:16Z",
+    "html_url": "https://github.com/NanoComp/meep/commit/65f3dc59dc00f48eba3589520eeaafa64f06043e",
+    "subject": "fix bug involving subnormals and multithreading (#3361)"
+  },
+  {
+    "repository": "NanoComp/mpb",
+    "query_url": "https://api.github.com/repos/NanoComp/mpb/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:13.108664+00:00",
+    "sha": "0341b257fac9b806e46f9dcbc1dce5120dd8e560",
+    "commit_date": "2026-05-27T01:30:40Z",
+    "author_date": "2026-05-27T01:30:40Z",
+    "html_url": "https://github.com/NanoComp/mpb/commit/0341b257fac9b806e46f9dcbc1dce5120dd8e560",
+    "subject": "Add `all_freqs` to output variables documentation - Python (#176)"
+  },
+  {
+    "repository": "Quandela/Perceval",
+    "query_url": "https://api.github.com/repos/Quandela/Perceval/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:13.281030+00:00",
+    "sha": "64ed82f9c5e65f43d5092c92a8e218b255cde41d",
+    "commit_date": "2026-10-01T11:43:21Z",
+    "author_date": "2026-10-01T11:43:21Z",
+    "html_url": "https://github.com/Quandela/Perceval/commit/64ed82f9c5e65f43d5092c92a8e218b255cde41d",
+    "subject": "Merge pull request #796 from Quandela/develop"
+  },
+  {
+    "repository": "XanaduAI/strawberryfields",
+    "query_url": "https://api.github.com/repos/XanaduAI/strawberryfields/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:13.324436+00:00",
+    "sha": "162125d8ad5fd5488322a30c520253189596adf5",
+    "commit_date": "2026-01-16T16:14:00Z",
+    "author_date": "2026-01-16T16:14:00Z",
+    "html_url": "https://github.com/XanaduAI/strawberryfields/commit/162125d8ad5fd5488322a30c520253189596adf5",
+    "subject": "Decommissioning the quantum cloud (#763)"
+  },
+  {
+    "repository": "XanaduAI/thewalrus",
+    "query_url": "https://api.github.com/repos/XanaduAI/thewalrus/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:13.424007+00:00",
+    "sha": "54b1062e2b6759ddc733ca6bf636df580ff94968",
+    "commit_date": "2025-11-14T14:50:12Z",
+    "author_date": "2025-11-14T14:50:12Z",
+    "html_url": "https://github.com/XanaduAI/thewalrus/commit/54b1062e2b6759ddc733ca6bf636df580ff94968",
+    "subject": "Fix computation of Takagi unitary (#403)"
+  },
+  {
+    "repository": "Xyce/Xyce",
+    "query_url": "https://api.github.com/repos/Xyce/Xyce/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:13.416710+00:00",
+    "sha": "e5b7b9bb5b221630c66654c059fc2d33524f5b21",
+    "commit_date": "2026-10-19T16:38:22Z",
+    "author_date": "2026-10-19T16:38:22Z",
+    "html_url": "https://github.com/Xyce/Xyce/commit/e5b7b9bb5b221630c66654c059fc2d33524f5b21",
+    "subject": "Merge remote-tracking branch 'origin/develop'"
+  },
+  {
+    "repository": "anstmichaels/emopt",
+    "query_url": "https://api.github.com/repos/anstmichaels/emopt/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:13.597719+00:00",
+    "sha": "d9716e743c01d62fceb9b526b86a0edcf3d6e4c8",
+    "commit_date": "2024-03-08T03:41:32Z",
+    "author_date": "2024-03-08T03:41:32Z",
+    "html_url": "https://github.com/anstmichaels/emopt/commit/d9716e743c01d62fceb9b526b86a0edcf3d6e4c8",
+    "subject": "Update requirements.txt to include mock module"
+  },
+  {
+    "repository": "awslabs/palace",
+    "query_url": "https://api.github.com/repos/awslabs/palace/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:13.589086+00:00",
+    "sha": "0dd8d015034c0fc1f0cf4c9ff952b533f9cb91d5",
+    "commit_date": "2026-11-02T17:49:13Z",
+    "author_date": "2026-11-02T17:49:13Z",
+    "html_url": "https://github.com/awslabs/palace/commit/0dd8d015034c0fc1f0cf4c9ff952b533f9cb91d5",
+    "subject": "Merge pull request #1122 from awslabs/simlapointe/mfem-gmsh-mixed-order"
+  },
+  {
+    "repository": "dealii/dealii",
+    "query_url": "https://api.github.com/repos/dealii/dealii/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:13.680048+00:00",
+    "sha": "d0ff8b3d64f2f569c94dc497131ac1e52ef73514",
+    "commit_date": "2026-11-02T13:29:41Z",
+    "author_date": "2026-11-02T13:29:41Z",
+    "html_url": "https://github.com/dealii/dealii/commit/d0ff8b3d64f2f569c94dc497131ac1e52ef73514",
+    "subject": "Merge pull request #20345 from dealii/backlog-swarm/batch5-4282"
+  },
+  {
+    "repository": "dynamiqs/dynamiqs",
+    "query_url": "https://api.github.com/repos/dynamiqs/dynamiqs/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:13.725910+00:00",
+    "sha": "0c499d2ab51c132c73819f59c5a5bb977b7ebeb8",
+    "commit_date": "2026-10-29T17:05:42Z",
+    "author_date": "2026-10-29T17:05:42Z",
+    "html_url": "https://github.com/dynamiqs/dynamiqs/commit/0c499d2ab51c132c73819f59c5a5bb977b7ebeb8",
+    "subject": "Implement `dq.mesteadystate()` with the `DiffraxSteadyState` method (2/2) (#1238)"
+  },
+  {
+    "repository": "fancompute/ceviche",
+    "query_url": "https://api.github.com/repos/fancompute/ceviche/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:13.924898+00:00",
+    "sha": "dcb8587c46e8e64b281004c3dee02a8ecd139721",
+    "commit_date": "2023-02-11T18:38:41Z",
+    "author_date": "2023-02-11T18:38:41Z",
+    "html_url": "https://github.com/fancompute/ceviche/commit/dcb8587c46e8e64b281004c3dee02a8ecd139721",
+    "subject": "Merge pull request #31 from rclupoiu/patch-1"
+  },
+  {
+    "repository": "firedrakeproject/firedrake",
+    "query_url": "https://api.github.com/repos/firedrakeproject/firedrake/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:13.870397+00:00",
+    "sha": "a591c14269e6e89f84357c1c8ea312cca4d36e0c",
+    "commit_date": "2026-10-29T12:08:48Z",
+    "author_date": "2026-10-29T12:08:48Z",
+    "html_url": "https://github.com/firedrakeproject/firedrake/commit/a591c14269e6e89f84357c1c8ea312cca4d36e0c",
+    "subject": "Merge pull request #5554 from firedrakeproject/connorjward/merge-release"
+  },
+  {
+    "repository": "gdsfactory/gdsfactory",
+    "query_url": "https://api.github.com/repos/gdsfactory/gdsfactory/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:13.989538+00:00",
+    "sha": "91b114056a01a2f52be0ff9ff1247402f897d3ee",
+    "commit_date": "2026-11-01T14:34:17Z",
+    "author_date": "2026-11-01T14:34:17Z",
+    "html_url": "https://github.com/gdsfactory/gdsfactory/commit/91b114056a01a2f52be0ff9ff1247402f897d3ee",
+    "subject": "build(deps): bump omegaconf from 2.3.1 to 2.4.0 (#4924)"
+  },
+  {
+    "repository": "gdsfactory/sax",
+    "query_url": "https://api.github.com/repos/gdsfactory/sax/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:14.021976+00:00",
+    "sha": "e4d61a05b8fe22202bceb2c93a742793a125afc9",
+    "commit_date": "2026-10-29T19:18:45Z",
+    "author_date": "2026-10-29T19:18:45Z",
+    "html_url": "https://github.com/gdsfactory/sax/commit/e4d61a05b8fe22202bceb2c93a742793a125afc9",
+    "subject": "Use the minimum supported Python version in test CI (#137)"
+  },
+  {
+    "repository": "iqm-finland/KQCircuits",
+    "query_url": "https://api.github.com/repos/iqm-finland/KQCircuits/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:14.142019+00:00",
+    "sha": "b3ed0cebfe5d5922f3484aabd32aed452b8433ea",
+    "commit_date": "2026-07-17T07:53:31Z",
+    "author_date": "2026-07-17T07:53:31Z",
+    "html_url": "https://github.com/iqm-finland/KQCircuits/commit/b3ed0cebfe5d5922f3484aabd32aed452b8433ea",
+    "subject": "Introduce inherit_id_on_circuit_flatten argument to _export_netlist"
+  },
+  {
+    "repository": "mfem/mfem",
+    "query_url": "https://api.github.com/repos/mfem/mfem/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:14.181840+00:00",
+    "sha": "6d875ddb3ddf7338f142cdd23b09c76212f90ac0",
+    "commit_date": "2026-11-02T17:27:02Z",
+    "author_date": "2026-11-02T17:27:02Z",
+    "html_url": "https://github.com/mfem/mfem/commit/6d875ddb3ddf7338f142cdd23b09c76212f90ac0",
+    "subject": "Merge pull request #5706 from jeremylt/jeremy/libceed-1.0.1"
+  },
+  {
+    "repository": "pascalkuthe/OpenVAF",
+    "query_url": "https://api.github.com/repos/pascalkuthe/OpenVAF/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:14.267538+00:00",
+    "sha": "a9697ae7780518f021f9f64e819b3a57033bd39f",
+    "commit_date": "2023-10-30T16:43:39Z",
+    "author_date": "2023-10-30T16:43:39Z",
+    "html_url": "https://github.com/pascalkuthe/OpenVAF/commit/a9697ae7780518f021f9f64e819b3a57033bd39f",
+    "subject": "make small signal network analysis more robust"
+  },
+  {
+    "repository": "qiskit-community/qiskit-metal",
+    "query_url": "https://api.github.com/repos/qiskit-community/qiskit-metal/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:14.305800+00:00",
+    "sha": "911b3e835a8fd4a4348a098f4b58f6b982363895",
+    "commit_date": "2026-10-25T16:10:03Z",
+    "author_date": "2026-10-25T16:10:03Z",
+    "html_url": "https://github.com/qiskit-community/qiskit-metal/commit/911b3e835a8fd4a4348a098f4b58f6b982363895",
+    "subject": "Merge pull request #1246 from qiskit-community/overnight/consolidation"
+  },
+  {
+    "repository": "qojulia/QuantumOptics.jl",
+    "query_url": "https://api.github.com/repos/qojulia/QuantumOptics.jl/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:14.483562+00:00",
+    "sha": "774a18cadde06368e80776cdbe76baff47a64d01",
+    "commit_date": "2026-10-13T12:17:21Z",
+    "author_date": "2026-10-13T12:17:21Z",
+    "html_url": "https://github.com/qojulia/QuantumOptics.jl/commit/774a18cadde06368e80776cdbe76baff47a64d01",
+    "subject": "docs: make office hours available on demand (#561)"
+  },
+  {
+    "repository": "qutip/QuantumToolbox.jl",
+    "query_url": "https://api.github.com/repos/qutip/QuantumToolbox.jl/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:14.519436+00:00",
+    "sha": "6cf548f2f0931ca6de04a0bf29a81d7d58af5425",
+    "commit_date": "2026-10-16T09:20:03Z",
+    "author_date": "2026-10-16T09:20:03Z",
+    "html_url": "https://github.com/qutip/QuantumToolbox.jl/commit/6cf548f2f0931ca6de04a0bf29a81d7d58af5425",
+    "subject": "Bump KernelAbstractions in /lib/QuantumToolboxCore (#798)"
+  },
+  {
+    "repository": "qutip/qutip",
+    "query_url": "https://api.github.com/repos/qutip/qutip/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:14.524320+00:00",
+    "sha": "4178ae04ea9516ad62d172c6277217cb1e717251",
+    "commit_date": "2026-11-02T14:04:38Z",
+    "author_date": "2026-11-02T14:04:38Z",
+    "html_url": "https://github.com/qutip/qutip/commit/4178ae04ea9516ad62d172c6277217cb1e717251",
+    "subject": "Merge pull request #3079 from qutip/dependabot/pip/doc/filelock-4.2.1"
+  },
+  {
+    "repository": "ra3xdh/qucs_s",
+    "query_url": "https://api.github.com/repos/ra3xdh/qucs_s/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:14.579407+00:00",
+    "sha": "603940d4ee8f027a3ab4514011eb75892ce86dc2",
+    "commit_date": "2026-10-31T16:58:13Z",
+    "author_date": "2026-10-31T16:58:13Z",
+    "html_url": "https://github.com/ra3xdh/qucs_s/commit/603940d4ee8f027a3ab4514011eb75892ce86dc2",
+    "subject": "Merge pull request #1744 from ra3xdh/simconsole_fix"
+  },
+  {
+    "repository": "ra3xdh/qucsator_rf",
+    "query_url": "https://api.github.com/repos/ra3xdh/qucsator_rf/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:14.768014+00:00",
+    "sha": "f3d1ffd291e4300d52808f542d9d631b945901aa",
+    "commit_date": "2026-10-20T16:41:52Z",
+    "author_date": "2026-10-20T16:41:52Z",
+    "html_url": "https://github.com/ra3xdh/qucsator_rf/commit/f3d1ffd291e4300d52808f542d9d631b945901aa",
+    "subject": "Try to fix MacOS Intel CI"
+  },
+  {
+    "repository": "scikit-rf/scikit-rf",
+    "query_url": "https://api.github.com/repos/scikit-rf/scikit-rf/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:14.837139+00:00",
+    "sha": "96e1745d499852a9e267f07bad18e5f613f59089",
+    "commit_date": "2026-11-02T19:07:27Z",
+    "author_date": "2026-11-02T19:07:27Z",
+    "html_url": "https://github.com/scikit-rf/scikit-rf/commit/96e1745d499852a9e267f07bad18e5f613f59089",
+    "subject": "Merge pull request #1464 from arsenovicAtNominal/add-agents-md"
+  },
+  {
+    "repository": "scqubits/scqubits",
+    "query_url": "https://api.github.com/repos/scqubits/scqubits/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:14.825752+00:00",
+    "sha": "6b32be69ce8f697f2319fa2ba955a63f4f29b908",
+    "commit_date": "2026-10-14T03:11:35Z",
+    "author_date": "2026-10-14T03:11:35Z",
+    "html_url": "https://github.com/scqubits/scqubits/commit/6b32be69ce8f697f2319fa2ba955a63f4f29b908",
+    "subject": "update to github test scripts"
+  },
+  {
+    "repository": "softwareQinc/qpp",
+    "query_url": "https://api.github.com/repos/softwareQinc/qpp/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:14.854054+00:00",
+    "sha": "b26147bc6c0a76ea196d6b0a24a1ee4aed32bcbf",
+    "commit_date": "2026-11-02T19:15:18Z",
+    "author_date": "2026-11-02T19:15:18Z",
+    "html_url": "https://github.com/softwareQinc/qpp/commit/b26147bc6c0a76ea196d6b0a24a1ee4aed32bcbf",
+    "subject": "Removed /// BEGIN ... from unit test signatures"
+  },
+  {
+    "repository": "stanfordLINQS/SQcircuit",
+    "query_url": "https://api.github.com/repos/stanfordLINQS/SQcircuit/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:15.093420+00:00",
+    "sha": "4b25fe47c43bbecac1048eb397690624bbce0363",
+    "commit_date": "2024-08-27T21:14:55Z",
+    "author_date": "2024-08-27T21:14:55Z",
+    "html_url": "https://github.com/stanfordLINQS/SQcircuit/commit/4b25fe47c43bbecac1048eb397690624bbce0363",
+    "subject": "Update README.md with new paper description"
+  },
+  {
+    "repository": "tenpy/tenpy",
+    "query_url": "https://api.github.com/repos/tenpy/tenpy/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:15.077411+00:00",
+    "sha": "8444a0320e0775b3ded0be974d509842fe3ba541",
+    "commit_date": "2026-10-06T15:44:47Z",
+    "author_date": "2026-10-05T11:40:59Z",
+    "html_url": "https://github.com/tenpy/tenpy/commit/8444a0320e0775b3ded0be974d509842fe3ba541",
+    "subject": "Add test for MPO.make_U"
+  },
+  {
+    "repository": "thliebig/openEMS",
+    "query_url": "https://api.github.com/repos/thliebig/openEMS/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:15.077137+00:00",
+    "sha": "5fecbb58d8996a3e6545e7b40584f90b9362e012",
+    "commit_date": "2026-11-02T21:29:17Z",
+    "author_date": "2026-11-02T21:29:17Z",
+    "html_url": "https://github.com/thliebig/openEMS/commit/5fecbb58d8996a3e6545e7b40584f90b9362e012",
+    "subject": "FDTD: Operator::New() takes the threads, drop IsGPUSave()"
+  },
+  {
+    "repository": "victorliu/S4",
+    "query_url": "https://api.github.com/repos/victorliu/S4/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:15.093296+00:00",
+    "sha": "7fd00a231610bff51f5c7de5f723e3956eab7453",
+    "commit_date": "2018-06-10T05:01:13Z",
+    "author_date": "2018-06-10T05:01:13Z",
+    "html_url": "https://github.com/victorliu/S4/commit/7fd00a231610bff51f5c7de5f723e3956eab7453",
+    "subject": "Fixed bug related to 1D patterning."
+  },
+  {
+    "repository": "zlatko-minev/pyEPR",
+    "query_url": "https://api.github.com/repos/zlatko-minev/pyEPR/commits?per_page=1",
+    "retrieved_at_utc": "2026-11-03T02:58:15.363343+00:00",
+    "sha": "97be9f15212e6ddd427e7ee310dacfa778240fe0",
+    "commit_date": "2026-09-28T01:25:42Z",
+    "author_date": "2026-09-28T00:33:22Z",
+    "html_url": "https://github.com/zlatko-minev/pyEPR/commit/97be9f15212e6ddd427e7ee310dacfa778240fe0",
+    "subject": "Release 1.0.2: NumPy 2 and pandas 3 fixes"
+  }
+]

@@ -1,0 +1,64 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+name: Complex FEM research stack
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/complex-fem.yml'
+      - 'tools/build_complex_stack.py'
+      - 'tools/conda-license-reviews.toml'
+      - 'tools/audit_conda.py'
+      - 'verification/fem-stack/**'
+permissions:
+  contents: read
+jobs:
+  complex-cavity:
+    timeout-minutes: 90
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-24.04, macos-14]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Bootstrap pinned Miniforge on macOS
+        if: runner.os == 'macOS'
+        shell: bash
+        run: |
+          curl -fL https://github.com/conda-forge/miniforge/releases/download/26.9.4-1/Miniforge3-26.9.4-1-MacOSX-arm64.sh -o "$RUNNER_TEMP/miniforge.sh"
+          python -c 'import hashlib,os,pathlib; p=pathlib.Path(os.environ["RUNNER_TEMP"])/"miniforge.sh"; assert hashlib.sha256(p.read_bytes()).hexdigest()=="63f8f5367cd3e52d1dba3e22d8ad91d10ea0e93675ba5b0822312a4342d962e0"'
+          bash "$RUNNER_TEMP/miniforge.sh" -b -p "$RUNNER_TEMP/hs-conda"
+          echo "CONDA=$RUNNER_TEMP/hs-conda" >> "$GITHUB_ENV"
+      - name: Resolve isolated open numerical support packages
+        shell: bash
+        run: |
+          "$CONDA/bin/conda" create -y -p "$RUNNER_TEMP/hs-fem-env" --override-channels -c conda-forge openmpi=5.0.11 hypre=3.2.0 libopenblas=0.3.34 metis=5.2.1 cmake ninja
+          mkdir -p build-complex-evidence
+          "$CONDA/bin/conda" list -p "$RUNNER_TEMP/hs-fem-env" --explicit > build-complex-evidence/environment-explicit.txt
+      - name: Build pinned sources and test complex cavity
+        shell: bash
+        run: |
+          set -o pipefail
+          python tools/build_complex_stack.py --prefix "$RUNNER_TEMP/hs-fem-env" --work "$RUNNER_TEMP/hs-complex" --jobs 2 | tee build-complex-evidence/build-and-test.log
+      - name: Dependency admission remains fail-closed
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p build-complex-evidence
+          python tools/audit_conda.py "$RUNNER_TEMP/hs-fem-env" > build-complex-evidence/license-audit.log
+      - name: Collect build evidence
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p build-complex-evidence
+          cp "$RUNNER_TEMP"/hs-complex/*.log build-complex-evidence/ 2>/dev/null || true
+          cp "$RUNNER_TEMP"/hs-complex/environment.json build-complex-evidence/ 2>/dev/null || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: complex-fem-${{ matrix.os }}
+          path: build-complex-evidence/

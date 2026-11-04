@@ -1,0 +1,11 @@
+Run41768558047 job126372609264: verbatim failure excerpt; full job log retained by GitHub.
+2026-11-04T03:41:29.0519194Z Traceback (most recent call last):
+2026-11-04T03:41:29.0526427Z   File "/home/runner/work/HeaviSolve/HeaviSolve/tools/build_spice_stack.py", line 68, in <module>
+2026-11-04T03:41:29.0526995Z     text = mod.read_text()
+2026-11-04T03:41:29.0527234Z            ^^^^^^^^^^^^^^^
+2026-11-04T03:41:29.0527724Z   File "/opt/hostedtoolcache/Python/3.12.16/x64/lib/python3.12/pathlib.py", line 1028, in read_text
+2026-11-04T03:41:29.0843069Z     return f.read()
+2026-11-04T03:41:29.0843568Z            ^^^^^^^^
+2026-11-04T03:41:29.0844167Z   File "<frozen codecs>", line 322, in decode
+2026-11-04T03:41:29.0845554Z UnicodeDecodeError: 'utf-8' codec can't decode byte 0xe9 in position 2682: invalid continuation byte
+2026-11-04T03:41:29.0986276Z ##[error]Process completed with exit code 1.

@@ -1,0 +1,17 @@
+Test project /Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/build-numerical
+    Start 4: m0_acceptance_gate
+1/1 Test #4: m0_acceptance_gate ...............***Failed    0.06 sec
+M0 NOT COMPLETE: phase_r_sources_complete, all_feasibility_spikes, adrs_accepted_and_merged, walking_skeleton_self_review
+
+
+0% tests passed, 1 tests failed out of 1
+
+Label Time Summary:
+acceptance    =   0.06 sec*proc (1 test)
+m0            =   0.06 sec*proc (1 test)
+
+Total Test time (real) =   0.06 sec
+
+The following tests FAILED:
+	  4 - m0_acceptance_gate (Failed)                       acceptance m0
+Errors while running CTest

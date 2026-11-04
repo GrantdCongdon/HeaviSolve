@@ -1,0 +1,363 @@
+﻿2026-11-04T22:08:40.9510520Z Current runner version: '2.338.2'
+2026-11-04T22:08:40.9530830Z ##[group]Runner Image Provisioner
+2026-11-04T22:08:40.9531470Z Hosted Compute Agent
+2026-11-04T22:08:40.9531880Z Version: 20260828.587
+2026-11-04T22:08:40.9532290Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-11-04T22:08:40.9532760Z Build Date: 2026-08-28T16:44:25Z
+2026-11-04T22:08:40.9533220Z Worker ID: {4353b58a-87cd-43dd-95de-50fa55c26842}
+2026-11-04T22:08:40.9533770Z Azure Region: westus
+2026-11-04T22:08:40.9534130Z ##[endgroup]
+2026-11-04T22:08:40.9535090Z ##[group]Operating System
+2026-11-04T22:08:40.9535470Z macOS
+2026-11-04T22:08:40.9535830Z 14.8.9
+2026-11-04T22:08:40.9536160Z 23J631
+2026-11-04T22:08:40.9536500Z ##[endgroup]
+2026-11-04T22:08:40.9536850Z ##[group]Runner Image
+2026-11-04T22:08:40.9537300Z Image: macos-14-arm64
+2026-11-04T22:08:40.9537730Z Version: 20260831.0302.1
+2026-11-04T22:08:40.9539840Z Included Software: https://github.com/actions/runner-images/blob/macos-14-arm64/20260831.0302/images/macos/macos-14-arm64-Readme.md
+2026-11-04T22:08:40.9543110Z Image Release: https://github.com/actions/runner-images/releases/tag/macos-14-arm64%2F20260831.0302
+2026-11-04T22:08:40.9544990Z ##[endgroup]
+2026-11-04T22:08:40.9546980Z ##[group]GITHUB_TOKEN Permissions
+2026-11-04T22:08:40.9550950Z Contents: read
+2026-11-04T22:08:40.9551940Z Metadata: read
+2026-11-04T22:08:40.9552900Z ##[endgroup]
+2026-11-04T22:08:40.9556300Z Secret source: Actions
+2026-11-04T22:08:40.9556950Z Cache mode: write
+2026-11-04T22:08:40.9557580Z Prepare workflow directory
+2026-11-04T22:08:40.9786750Z Prepare all required actions
+2026-11-04T22:08:40.9941580Z Getting action download info
+2026-11-04T22:08:41.4105740Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-04T22:08:41.7218790Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-11-04T22:08:41.8309030Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-11-04T22:08:42.0349650Z Complete job name: foundation (macos-14)
+2026-11-04T22:08:42.0964470Z ##[group]Run actions/checkout@v4
+2026-11-04T22:08:42.0965040Z with:
+2026-11-04T22:08:42.0965350Z   fetch-depth: 0
+2026-11-04T22:08:42.0965700Z   repository: GrantdCongdon/HeaviSolve
+2026-11-04T22:08:42.0968400Z   token: ***
+2026-11-04T22:08:42.0968720Z   ssh-strict: true
+2026-11-04T22:08:42.0969040Z   ssh-user: git
+2026-11-04T22:08:42.0969370Z   persist-credentials: true
+2026-11-04T22:08:42.0969730Z   clean: true
+2026-11-04T22:08:42.0970050Z   sparse-checkout-cone-mode: true
+2026-11-04T22:08:42.0970440Z   fetch-tags: false
+2026-11-04T22:08:42.0970770Z   show-progress: true
+2026-11-04T22:08:42.0971090Z   lfs: false
+2026-11-04T22:08:42.0971400Z   submodules: false
+2026-11-04T22:08:42.0971740Z   set-safe-directory: true
+2026-11-04T22:08:42.0972100Z   allow-unsafe-pr-checkout: false
+2026-11-04T22:08:42.0972640Z ##[endgroup]
+2026-11-04T22:08:42.4694840Z Syncing repository: GrantdCongdon/HeaviSolve
+2026-11-04T22:08:42.4696510Z ##[group]Getting Git version info
+2026-11-04T22:08:42.4697080Z Working directory is '/Users/runner/work/HeaviSolve/HeaviSolve'
+2026-11-04T22:08:42.4697940Z [command]/opt/homebrew/bin/git version
+2026-11-04T22:08:42.4927220Z git version 2.55.0
+2026-11-04T22:08:42.4995150Z ##[endgroup]
+2026-11-04T22:08:42.5000230Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/47671c37-9111-4565-9139-3dbf56779eae/.gitconfig'
+2026-11-04T22:08:42.5001320Z Temporarily overriding HOME='/Users/runner/work/_temp/47671c37-9111-4565-9139-3dbf56779eae' before making global git config changes
+2026-11-04T22:08:42.5002320Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-04T22:08:42.5006770Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/HeaviSolve/HeaviSolve
+2026-11-04T22:08:42.5114500Z Deleting the contents of '/Users/runner/work/HeaviSolve/HeaviSolve'
+2026-11-04T22:08:42.5120450Z ##[group]Initializing the repository
+2026-11-04T22:08:42.5123690Z [command]/opt/homebrew/bin/git init /Users/runner/work/HeaviSolve/HeaviSolve
+2026-11-04T22:08:42.5311780Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-04T22:08:42.5316250Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-04T22:08:42.5317060Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-04T22:08:42.5318490Z hint: call:
+2026-11-04T22:08:42.5320050Z hint:
+2026-11-04T22:08:42.5320590Z hint: 	git config --global init.defaultBranch <name>
+2026-11-04T22:08:42.5321420Z hint:
+2026-11-04T22:08:42.5322120Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-04T22:08:42.5323880Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-04T22:08:42.5324620Z hint:
+2026-11-04T22:08:42.5325090Z hint: 	git branch -m <name>
+2026-11-04T22:08:42.5325590Z hint:
+2026-11-04T22:08:42.5326130Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-04T22:08:42.5326930Z Initialized empty Git repository in /Users/runner/work/HeaviSolve/HeaviSolve/.git/
+2026-11-04T22:08:42.5328440Z [command]/opt/homebrew/bin/git remote add origin https://github.com/GrantdCongdon/HeaviSolve
+2026-11-04T22:08:42.5373570Z ##[endgroup]
+2026-11-04T22:08:42.5374250Z ##[group]Disabling automatic garbage collection
+2026-11-04T22:08:42.5376120Z [command]/opt/homebrew/bin/git config --local gc.auto 0
+2026-11-04T22:08:42.5426080Z ##[endgroup]
+2026-11-04T22:08:42.5426680Z ##[group]Setting up auth
+2026-11-04T22:08:42.5427620Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-04T22:08:42.5468020Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-04T22:08:42.6160900Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-04T22:08:42.6202740Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-04T22:08:42.6727040Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-04T22:08:42.6779260Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-04T22:08:42.7676140Z [command]/opt/homebrew/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-04T22:08:42.7764340Z ##[endgroup]
+2026-11-04T22:08:42.7766170Z ##[group]Fetching the repository
+2026-11-04T22:08:42.7767920Z [command]/opt/homebrew/bin/git -c protocol.version=2 fetch --prune --no-recurse-submodules origin +refs/heads/*:refs/remotes/origin/* +refs/tags/*:refs/tags/*
+2026-11-04T22:08:45.0765570Z From https://github.com/GrantdCongdon/HeaviSolve
+2026-11-04T22:08:45.0869760Z  * [new branch]      m0-evidence -> origin/m0-evidence
+2026-11-04T22:08:45.0974790Z  * [new branch]      main        -> origin/main
+2026-11-04T22:08:45.1228970Z [command]/opt/homebrew/bin/git branch --list --remote origin/m0-evidence
+2026-11-04T22:08:45.1243790Z   origin/m0-evidence
+2026-11-04T22:08:45.1249110Z [command]/opt/homebrew/bin/git rev-parse refs/remotes/origin/m0-evidence
+2026-11-04T22:08:45.1251010Z 239cb7f3c9ecb34914d945532ad4055155bfc39b
+2026-11-04T22:08:45.1254440Z ##[endgroup]
+2026-11-04T22:08:45.1256180Z ##[group]Determining the checkout info
+2026-11-04T22:08:45.1258190Z ##[endgroup]
+2026-11-04T22:08:45.1259460Z [command]/opt/homebrew/bin/git sparse-checkout disable
+2026-11-04T22:08:45.1264410Z [command]/opt/homebrew/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-04T22:08:45.1269680Z ##[group]Checking out the ref
+2026-11-04T22:08:45.1271260Z [command]/opt/homebrew/bin/git checkout --progress --force -B m0-evidence refs/remotes/origin/m0-evidence
+2026-11-04T22:08:45.2710380Z Switched to a new branch 'm0-evidence'
+2026-11-04T22:08:45.2712390Z branch 'm0-evidence' set up to track 'origin/m0-evidence'.
+2026-11-04T22:08:45.2725460Z ##[endgroup]
+2026-11-04T22:08:45.2807660Z [command]/opt/homebrew/bin/git log -1 --format=%H
+2026-11-04T22:08:45.2861360Z 239cb7f3c9ecb34914d945532ad4055155bfc39b
+2026-11-04T22:08:45.3131260Z ##[group]Run actions/setup-python@v5
+2026-11-04T22:08:45.3131830Z with:
+2026-11-04T22:08:45.3132170Z   python-version: 3.12
+2026-11-04T22:08:45.3132600Z   check-latest: false
+2026-11-04T22:08:45.3138470Z   token: ***
+2026-11-04T22:08:45.3138850Z   update-environment: true
+2026-11-04T22:08:45.3139390Z   allow-prereleases: false
+2026-11-04T22:08:45.3139860Z   freethreaded: false
+2026-11-04T22:08:45.3140260Z ##[endgroup]
+2026-11-04T22:08:45.4445520Z ##[group]Installed versions
+2026-11-04T22:08:45.4531720Z (node:2401) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-04T22:08:45.4533280Z Successfully set up CPython (3.12.10)
+2026-11-04T22:08:45.4534240Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-04T22:08:45.4536060Z ##[endgroup]
+2026-11-04T22:08:45.4667860Z ##[group]Run python -m pip install reuse==5.0.2 mkdocs==1.6.1
+2026-11-04T22:08:45.4669460Z [36;1mpython -m pip install reuse==5.0.2 mkdocs==1.6.1[0m
+2026-11-04T22:08:45.4776900Z shell: /bin/bash -e {0}
+2026-11-04T22:08:45.4778200Z env:
+2026-11-04T22:08:45.4779700Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-04T22:08:45.4782500Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+2026-11-04T22:08:45.4785240Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-04T22:08:45.4787560Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-04T22:08:45.4789040Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-04T22:08:45.4789990Z ##[endgroup]
+2026-11-04T22:08:46.8106190Z Collecting reuse==5.0.2
+2026-11-04T22:08:46.8858960Z   Downloading reuse-5.0.2.tar.gz (358 kB)
+2026-11-04T22:08:46.9360620Z   Installing build dependencies: started
+2026-11-04T22:08:47.3973350Z   Installing build dependencies: finished with status 'done'
+2026-11-04T22:08:47.3980280Z   Getting requirements to build wheel: started
+2026-11-04T22:08:47.5916190Z   Getting requirements to build wheel: finished with status 'done'
+2026-11-04T22:08:47.5930140Z   Preparing metadata (pyproject.toml): started
+2026-11-04T22:08:47.7638530Z   Preparing metadata (pyproject.toml): finished with status 'done'
+2026-11-04T22:08:47.7823100Z Collecting mkdocs==1.6.1
+2026-11-04T22:08:47.7856600Z   Downloading mkdocs-1.6.1-py3-none-any.whl.metadata (6.0 kB)
+2026-11-04T22:08:47.8003590Z Collecting Jinja2>=3.0.0 (from reuse==5.0.2)
+2026-11-04T22:08:47.8034220Z   Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+2026-11-04T22:08:47.8188590Z Collecting attrs>=21.3 (from reuse==5.0.2)
+2026-11-04T22:08:47.8226880Z   Downloading attrs-26.1.0-py3-none-any.whl.metadata (8.8 kB)
+2026-11-04T22:08:47.8374600Z Collecting binaryornot>=0.4.4 (from reuse==5.0.2)
+2026-11-04T22:08:47.8414310Z   Downloading binaryornot-0.6.0-py3-none-any.whl.metadata (2.9 kB)
+2026-11-04T22:08:47.8597670Z Collecting boolean.py>=3.8 (from reuse==5.0.2)
+2026-11-04T22:08:47.8629320Z   Downloading boolean_py-5.0-py3-none-any.whl.metadata (2.3 kB)
+2026-11-04T22:08:47.8771540Z Collecting click>=8.0 (from reuse==5.0.2)
+2026-11-04T22:08:47.8829350Z   Downloading click-8.5.0-py3-none-any.whl.metadata (2.6 kB)
+2026-11-04T22:08:47.8999270Z Collecting license-expression>=1.0 (from reuse==5.0.2)
+2026-11-04T22:08:47.9038210Z   Downloading license_expression-30.4.4-py3-none-any.whl.metadata (11 kB)
+2026-11-04T22:08:47.9197160Z Collecting python-debian!=0.1.45,!=0.1.46,!=0.1.47,>=0.1.34 (from reuse==5.0.2)
+2026-11-04T22:08:47.9240880Z   Downloading python_debian-1.1.1-py3-none-any.whl.metadata (2.6 kB)
+2026-11-04T22:08:47.9390560Z Collecting tomlkit>=0.8 (from reuse==5.0.2)
+2026-11-04T22:08:47.9426390Z   Downloading tomlkit-0.15.2-py3-none-any.whl.metadata (3.4 kB)
+2026-11-04T22:08:47.9546550Z Collecting ghp-import>=1.0 (from mkdocs==1.6.1)
+2026-11-04T22:08:47.9578120Z   Downloading ghp_import-2.1.0-py3-none-any.whl.metadata (7.2 kB)
+2026-11-04T22:08:47.9734620Z Collecting markdown>=3.3.6 (from mkdocs==1.6.1)
+2026-11-04T22:08:47.9766480Z   Downloading markdown-3.11.2-py3-none-any.whl.metadata (5.1 kB)
+2026-11-04T22:08:48.0320240Z Collecting markupsafe>=2.0.1 (from mkdocs==1.6.1)
+2026-11-04T22:08:48.0360770Z   Downloading markupsafe-3.0.4-cp312-cp312-macosx_11_0_arm64.whl.metadata (2.7 kB)
+2026-11-04T22:08:48.0493280Z Collecting mergedeep>=1.3.4 (from mkdocs==1.6.1)
+2026-11-04T22:08:48.0541150Z   Downloading mergedeep-1.3.4-py3-none-any.whl.metadata (4.3 kB)
+2026-11-04T22:08:48.0714480Z Collecting mkdocs-get-deps>=0.2.0 (from mkdocs==1.6.1)
+2026-11-04T22:08:48.0763610Z   Downloading mkdocs_get_deps-0.2.2-py3-none-any.whl.metadata (4.0 kB)
+2026-11-04T22:08:48.0972880Z Collecting packaging>=20.5 (from mkdocs==1.6.1)
+2026-11-04T22:08:48.1034660Z   Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+2026-11-04T22:08:48.1201130Z Collecting pathspec>=0.11.1 (from mkdocs==1.6.1)
+2026-11-04T22:08:48.1246200Z   Downloading pathspec-1.1.1-py3-none-any.whl.metadata (14 kB)
+2026-11-04T22:08:48.1359740Z Collecting pyyaml-env-tag>=0.1 (from mkdocs==1.6.1)
+2026-11-04T22:08:48.1396980Z   Downloading pyyaml_env_tag-1.1-py3-none-any.whl.metadata (5.5 kB)
+2026-11-04T22:08:48.1619700Z Collecting pyyaml>=5.1 (from mkdocs==1.6.1)
+2026-11-04T22:08:48.1648310Z   Downloading pyyaml-6.0.3-cp312-cp312-macosx_11_0_arm64.whl.metadata (2.4 kB)
+2026-11-04T22:08:48.1939490Z Collecting watchdog>=2.0 (from mkdocs==1.6.1)
+2026-11-04T22:08:48.2033640Z   Downloading watchdog-7.0.0-cp312-cp312-macosx_11_0_arm64.whl.metadata (60 kB)
+2026-11-04T22:08:48.2246650Z Collecting python-dateutil>=2.8.1 (from ghp-import>=1.0->mkdocs==1.6.1)
+2026-11-04T22:08:48.2274070Z   Downloading python_dateutil-4.0.0-py3-none-any.whl.metadata (7.3 kB)
+2026-11-04T22:08:48.2461700Z Collecting platformdirs>=2.2.0 (from mkdocs-get-deps>=0.2.0->mkdocs==1.6.1)
+2026-11-04T22:08:48.2497100Z   Downloading platformdirs-4.14.5-py3-none-any.whl.metadata (5.7 kB)
+2026-11-04T22:08:48.2650120Z Collecting tzdata (from python-dateutil>=2.8.1->ghp-import>=1.0->mkdocs==1.6.1)
+2026-11-04T22:08:48.2681390Z   Downloading tzdata-2026.6-py2.py3-none-any.whl.metadata (1.4 kB)
+2026-11-04T22:08:48.2762870Z Downloading mkdocs-1.6.1-py3-none-any.whl (3.9 MB)
+2026-11-04T22:08:48.3055490Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.9/3.9 MB 136.4 MB/s  0:00:00
+2026-11-04T22:08:48.3096410Z Downloading attrs-26.1.0-py3-none-any.whl (67 kB)
+2026-11-04T22:08:48.3174970Z Downloading binaryornot-0.6.0-py3-none-any.whl (14 kB)
+2026-11-04T22:08:48.3247730Z Downloading boolean_py-5.0-py3-none-any.whl (26 kB)
+2026-11-04T22:08:48.3344980Z Downloading click-8.5.0-py3-none-any.whl (125 kB)
+2026-11-04T22:08:48.3432260Z Downloading ghp_import-2.1.0-py3-none-any.whl (11 kB)
+2026-11-04T22:08:48.3530270Z Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+2026-11-04T22:08:48.3628890Z Downloading license_expression-30.4.4-py3-none-any.whl (120 kB)
+2026-11-04T22:08:48.3727410Z Downloading markdown-3.11.2-py3-none-any.whl (114 kB)
+2026-11-04T22:08:48.3795750Z Downloading markupsafe-3.0.4-cp312-cp312-macosx_11_0_arm64.whl (12 kB)
+2026-11-04T22:08:48.3855820Z Downloading mergedeep-1.3.4-py3-none-any.whl (6.4 kB)
+2026-11-04T22:08:48.3946840Z Downloading mkdocs_get_deps-0.2.2-py3-none-any.whl (9.6 kB)
+2026-11-04T22:08:48.4001720Z Downloading packaging-26.3-py3-none-any.whl (129 kB)
+2026-11-04T22:08:48.4063330Z Downloading pathspec-1.1.1-py3-none-any.whl (57 kB)
+2026-11-04T22:08:48.4120490Z Downloading platformdirs-4.14.5-py3-none-any.whl (35 kB)
+2026-11-04T22:08:48.4188460Z Downloading python_dateutil-4.0.0-py3-none-any.whl (92 kB)
+2026-11-04T22:08:48.4254580Z Downloading python_debian-1.1.1-py3-none-any.whl (138 kB)
+2026-11-04T22:08:48.4319770Z Downloading pyyaml-6.0.3-cp312-cp312-macosx_11_0_arm64.whl (173 kB)
+2026-11-04T22:08:48.4386320Z Downloading pyyaml_env_tag-1.1-py3-none-any.whl (4.7 kB)
+2026-11-04T22:08:48.4444690Z Downloading tomlkit-0.15.2-py3-none-any.whl (52 kB)
+2026-11-04T22:08:48.4517550Z Downloading watchdog-7.0.0-cp312-cp312-macosx_11_0_arm64.whl (112 kB)
+2026-11-04T22:08:48.4614020Z Downloading tzdata-2026.6-py2.py3-none-any.whl (348 kB)
+2026-11-04T22:08:48.5060480Z Building wheels for collected packages: reuse
+2026-11-04T22:08:48.5068070Z   Building wheel for reuse (pyproject.toml): started
+2026-11-04T22:08:48.9607650Z   Building wheel for reuse (pyproject.toml): finished with status 'done'
+2026-11-04T22:08:48.9617370Z   Created wheel for reuse: filename=reuse-5.0.2-cp312-cp312-macosx_14_0_arm64.whl size=184135 sha256=35c5147d1c3b10694d8f6b55730f687ede806e0403b969a475b8246f965e0011
+2026-11-04T22:08:48.9618600Z   Stored in directory: /Users/runner/Library/Caches/pip/wheels/2d/7b/b8/d011a60ef798286c0872dbe38d288b5425b10c29ef5fa0c2a7
+2026-11-04T22:08:48.9643470Z Successfully built reuse
+2026-11-04T22:08:48.9872340Z Installing collected packages: boolean.py, watchdog, tzdata, tomlkit, pyyaml, python-debian, platformdirs, pathspec, packaging, mergedeep, markupsafe, markdown, license-expression, click, binaryornot, attrs, pyyaml-env-tag, python-dateutil, mkdocs-get-deps, Jinja2, reuse, ghp-import, mkdocs
+2026-11-04T22:08:49.8040410Z 
+2026-11-04T22:08:49.8069440Z Successfully installed Jinja2-3.1.6 attrs-26.1.0 binaryornot-0.6.0 boolean.py-5.0 click-8.5.0 ghp-import-2.1.0 license-expression-30.4.4 markdown-3.11.2 markupsafe-3.0.4 mergedeep-1.3.4 mkdocs-1.6.1 mkdocs-get-deps-0.2.2 packaging-26.3 pathspec-1.1.1 platformdirs-4.14.5 python-dateutil-4.0.0 python-debian-1.1.1 pyyaml-6.0.3 pyyaml-env-tag-1.1 reuse-5.0.2 tomlkit-0.15.2 tzdata-2026.6 watchdog-7.0.0
+2026-11-04T22:08:49.8072720Z 
+2026-11-04T22:08:49.8073040Z [notice] A new release of pip is available: 26.2.1 -> 26.3
+2026-11-04T22:08:49.8073920Z [notice] To update, run: python -m pip install --upgrade pip
+2026-11-04T22:08:49.9004480Z ##[group]Run reuse lint
+2026-11-04T22:08:49.9004790Z [36;1mreuse lint[0m
+2026-11-04T22:08:49.9004960Z [36;1mpython tools/license_scan.py[0m
+2026-11-04T22:08:49.9071830Z shell: /bin/bash -e {0}
+2026-11-04T22:08:49.9072060Z env:
+2026-11-04T22:08:49.9072310Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-04T22:08:49.9072750Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+2026-11-04T22:08:49.9073160Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-04T22:08:49.9073520Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-04T22:08:49.9073900Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-04T22:08:49.9074210Z ##[endgroup]
+2026-11-04T22:08:50.5825700Z # SUMMARY
+2026-11-04T22:08:50.5825900Z 
+2026-11-04T22:08:50.5825970Z * Bad licenses: 0
+2026-11-04T22:08:50.5826170Z * Deprecated licenses: 0
+2026-11-04T22:08:50.5826540Z * Licenses without file extension: 0
+2026-11-04T22:08:50.5826860Z * Missing licenses: 0
+2026-11-04T22:08:50.5827140Z * Unused licenses: 0
+2026-11-04T22:08:50.5827470Z * Used licenses: AGPL-3.0-or-later, CC-BY-SA-4.0
+2026-11-04T22:08:50.5827710Z * Read errors: 0
+2026-11-04T22:08:50.5827920Z * Files with copyright information: 285 / 285
+2026-11-04T22:08:50.5828180Z * Files with license information: 285 / 285
+2026-11-04T22:08:50.5828360Z 
+2026-11-04T22:08:50.5828600Z Congratulations! Your project is compliant with version 3.3 of the REUSE Specification :-)
+2026-11-04T22:08:50.6412190Z PASS: declared direct dependency inventory; not a transitive distribution certification
+2026-11-04T22:08:50.6501340Z ##[group]Run cmake -S . -B build && cmake --build build && ctest --test-dir build -L foundation --output-on-failure
+2026-11-04T22:08:50.6502050Z [36;1mcmake -S . -B build && cmake --build build && ctest --test-dir build -L foundation --output-on-failure[0m
+2026-11-04T22:08:50.6558060Z shell: /bin/bash -e {0}
+2026-11-04T22:08:50.6558310Z env:
+2026-11-04T22:08:50.6558620Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-04T22:08:50.6559110Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+2026-11-04T22:08:50.6559520Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-04T22:08:50.6559920Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-04T22:08:50.6560330Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-04T22:08:50.6560730Z ##[endgroup]
+2026-11-04T22:08:52.6938610Z -- The CXX compiler identification is AppleClang 15.0.0.15000309
+2026-11-04T22:08:53.1830170Z -- Detecting CXX compiler ABI info
+2026-11-04T22:08:53.7417270Z -- Detecting CXX compiler ABI info - done
+2026-11-04T22:08:53.7552690Z -- Check for working CXX compiler: /usr/bin/c++ - skipped
+2026-11-04T22:08:53.7559230Z -- Detecting CXX compile features
+2026-11-04T22:08:53.7572400Z -- Detecting CXX compile features - done
+2026-11-04T22:08:53.9885730Z -- Found Python3: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/bin/python3.12 (found version "3.12.10") found components: Interpreter
+2026-11-04T22:08:53.9889690Z -- Configuring done (3.2s)
+2026-11-04T22:08:54.0216320Z -- Generating done (0.0s)
+2026-11-04T22:08:54.0264530Z -- Build files have been written to: /Users/runner/work/HeaviSolve/HeaviSolve/build
+2026-11-04T22:08:54.0972650Z Test project /Users/runner/work/HeaviSolve/HeaviSolve/build
+2026-11-04T22:08:54.0986420Z     Start 1: license_inventory
+2026-11-04T22:08:54.1277190Z 1/3 Test #1: license_inventory ................   Passed    0.03 sec
+2026-11-04T22:08:54.1279170Z     Start 4: transitive_license_policy
+2026-11-04T22:08:54.6361150Z 2/3 Test #4: transitive_license_policy ........   Passed    0.51 sec
+2026-11-04T22:08:54.6362250Z     Start 5: m0_gate_policy
+2026-11-04T22:08:54.6954050Z 3/3 Test #5: m0_gate_policy ...................   Passed    0.06 sec
+2026-11-04T22:08:54.6960600Z 
+2026-11-04T22:08:54.6961010Z 100% tests passed out of 3
+2026-11-04T22:08:54.6961280Z 
+2026-11-04T22:08:54.6961350Z Label Time Summary:
+2026-11-04T22:08:54.6961790Z foundation    =   0.59 sec*proc (3 tests)
+2026-11-04T22:08:54.6962000Z 
+2026-11-04T22:08:54.6962080Z Total Test time (real) =   0.60 sec
+2026-11-04T22:08:54.7017760Z ##[group]Run python tools/build_docs.py
+2026-11-04T22:08:54.7018080Z [36;1mpython tools/build_docs.py[0m
+2026-11-04T22:08:54.7088480Z shell: /bin/bash -e {0}
+2026-11-04T22:08:54.7088740Z env:
+2026-11-04T22:08:54.7089050Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-04T22:08:54.7089460Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+2026-11-04T22:08:54.7089950Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-04T22:08:54.7090320Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-04T22:08:54.7090820Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-04T22:08:54.7091190Z ##[endgroup]
+2026-11-04T22:08:55.0738920Z INFO    -  Cleaning site directory
+2026-11-04T22:08:55.0740510Z INFO    -  Building documentation to directory: /Users/runner/work/HeaviSolve/HeaviSolve/build/docs
+2026-11-04T22:08:55.4137150Z INFO    -  Documentation built in 0.34 seconds
+2026-11-04T22:08:55.4423260Z ##[group]Run reuse spdx -o build/source.spdx
+2026-11-04T22:08:55.4423600Z [36;1mreuse spdx -o build/source.spdx[0m
+2026-11-04T22:08:55.4484400Z shell: /bin/bash -e {0}
+2026-11-04T22:08:55.4484650Z env:
+2026-11-04T22:08:55.4485010Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-04T22:08:55.4485520Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+2026-11-04T22:08:55.4486280Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-04T22:08:55.4486910Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-04T22:08:55.4487430Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-04T22:08:55.4488820Z ##[endgroup]
+2026-11-04T22:08:55.9777450Z ##[group]Run actions/upload-artifact@v4
+2026-11-04T22:08:55.9777830Z with:
+2026-11-04T22:08:55.9777990Z   name: foundation-macos-14
+2026-11-04T22:08:55.9778230Z   path: build/Testing/
+build/source.spdx
+build/docs/
+
+2026-11-04T22:08:55.9778480Z   if-no-files-found: warn
+2026-11-04T22:08:55.9778660Z   compression-level: 6
+2026-11-04T22:08:55.9778820Z   overwrite: false
+2026-11-04T22:08:55.9779090Z   include-hidden-files: false
+2026-11-04T22:08:55.9779270Z env:
+2026-11-04T22:08:55.9779510Z   pythonLocation: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-04T22:08:55.9779920Z   PKG_CONFIG_PATH: /Users/runner/hostedtoolcache/Python/3.12.10/arm64/lib/pkgconfig
+2026-11-04T22:08:55.9780360Z   Python_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-04T22:08:55.9780740Z   Python2_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-04T22:08:55.9781120Z   Python3_ROOT_DIR: /Users/runner/hostedtoolcache/Python/3.12.10/arm64
+2026-11-04T22:08:55.9781480Z ##[endgroup]
+2026-11-04T22:08:56.1673820Z (node:2831) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-04T22:08:56.1675380Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-04T22:08:56.2422640Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-11-04T22:08:56.2423560Z The least common ancestor is /Users/runner/work/HeaviSolve/HeaviSolve/build. This will be the root directory of the artifact
+2026-11-04T22:08:56.2424070Z With the provided path, there will be 263 files uploaded
+2026-11-04T22:08:56.2424440Z Artifact name is valid!
+2026-11-04T22:08:56.2424630Z Root directory input is valid!
+2026-11-04T22:08:56.6154770Z Beginning upload of artifact content to blob storage
+2026-11-04T22:08:57.1405860Z (node:2831) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-04T22:08:58.2557460Z Uploaded bytes 8388608
+2026-11-04T22:08:58.4138290Z Uploaded bytes 16777216
+2026-11-04T22:08:58.6336930Z Uploaded bytes 25165824
+2026-11-04T22:08:58.8986770Z Uploaded bytes 32212825
+2026-11-04T22:08:58.9827290Z Finished uploading artifact content to blob storage!
+2026-11-04T22:08:58.9831440Z SHA256 digest of uploaded artifact zip is 8975f9942e81d08aebf71b0f437b546a7a9a574fd4cb9c7e289e8fa95f23c6da
+2026-11-04T22:08:58.9832830Z Finalizing artifact upload
+2026-11-04T22:08:59.4850150Z Artifact foundation-macos-14.zip successfully finalized. Artifact ID 13366389483
+2026-11-04T22:08:59.4851670Z Artifact foundation-macos-14 has been successfully uploaded! Final size is 32212825 bytes. Artifact ID is 13366389483
+2026-11-04T22:08:59.4859240Z Artifact download URL: https://github.com/GrantdCongdon/HeaviSolve/actions/runs/41922593403/artifacts/13366389483
+2026-11-04T22:08:59.4987550Z Post job cleanup.
+2026-11-04T22:08:59.6232490Z (node:2835) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-04T22:08:59.6233160Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-04T22:08:59.6329980Z Post job cleanup.
+2026-11-04T22:08:59.7401060Z [command]/opt/homebrew/bin/git version
+2026-11-04T22:08:59.7502280Z git version 2.55.0
+2026-11-04T22:08:59.8006890Z Copying '/Users/runner/.gitconfig' to '/Users/runner/work/_temp/07f0fa02-ce99-4f87-9c97-3cdc21d7ba62/.gitconfig'
+2026-11-04T22:08:59.8108710Z Temporarily overriding HOME='/Users/runner/work/_temp/07f0fa02-ce99-4f87-9c97-3cdc21d7ba62' before making global git config changes
+2026-11-04T22:08:59.8185140Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-04T22:08:59.8208690Z [command]/opt/homebrew/bin/git config --global --add safe.directory /Users/runner/work/HeaviSolve/HeaviSolve
+2026-11-04T22:08:59.8566060Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-04T22:08:59.8900170Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-04T22:08:59.9290470Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-04T22:08:59.9393950Z http.https://github.com/.extraheader
+2026-11-04T22:08:59.9697520Z [command]/opt/homebrew/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-11-04T22:09:00.0004490Z [command]/opt/homebrew/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-04T22:09:00.1051920Z [command]/opt/homebrew/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-04T22:09:00.1215680Z [command]/opt/homebrew/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-04T22:09:00.2236530Z Cleaning up orphan processes
+2026-11-04T22:09:00.5470680Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+

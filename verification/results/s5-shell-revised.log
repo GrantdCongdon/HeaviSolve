@@ -1,0 +1,3 @@
+qt=6.12.0 vtk=9.7.1 platform=cocoa polygons=10000 viewport_width=798 viewport_height=717 dpr=2
+frames=240 seconds=4.2735217089999997 viewport_repaint_fps=56.159770873413862 paint_p95_ms=5.0407919999999997 cutplane_cells=2344
+screenshot_saved=1 compositor_present_rate=NOT_MEASURED

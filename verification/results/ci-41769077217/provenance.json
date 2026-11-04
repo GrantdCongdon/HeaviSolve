@@ -1,0 +1,7 @@
+{
+  "run_id": 41769077217,
+  "artifact_id": 13294457372,
+  "sha256": "41027ef63860a7102a71c38f58838c19dd5c475437d290b162f0c8136a86431b",
+  "zip_digest_verified": true,
+  "result": "FAIL: Xyce configure missing Flex headers after Trilinos build success"
+}

@@ -1,0 +1,22 @@
+Checking environment... done
+Checking PETSc installation... done
+Checking LAPACK library... done
+Writing various configuration files... done
+ 
+================================================================================
+SLEPc Configuration
+================================================================================
+
+SLEPc directory:
+  /private/tmp/heavisolve-fem-clean/slepc-3.26.0
+SLEPc prefix directory:
+  /private/tmp/heavisolve-fem-clean/slepc
+PETSc directory:
+  /tmp/heavisolve-fem-clean/petsc
+Prefix install with double precision complex numbers
+
+xxx==========================================================================xxx
+ Configure stage complete. Now build the SLEPc library with:
+   make SLEPC_DIR=/private/tmp/heavisolve-fem-clean/slepc-3.26.0 PETSC_DIR=/tmp/heavisolve-fem-clean/petsc
+xxx==========================================================================xxx
+

@@ -1,0 +1,117 @@
+{
+  "original_model_sha256": {
+    "/Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/.local/cornerHBT.lib": "a9bf47c0700774c8efc280bc67851af8f000390f2224e619ed6150767d63e9c2",
+    "/Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/.local/sg13g2_hbt_mod.lib": "32d0f298cd094ffd93a32871567faec4a875d9efa3c08b9e259540362efd468c",
+    "/Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/.local/sg13g2_hbt_stat.lib": "80d1893eb06a3417d05400335d8e58c8309b9c80061ca96ceff8f8fd68c9a7db",
+    "/tmp/heavisolve-spice/conformance/ihp-xyce/cornerHBT.lib": "2928c9eb28ce5c2a7435eeac326fd9bf4629f82cb983cfe45e3c7f8886a8e19e",
+    "/tmp/heavisolve-spice/conformance/ihp-xyce/sg13g2_hbt_mod.lib": "f3b0574c0825309ce290b236540174a645c8d4e6fe70660f4b9ff47dca26018a",
+    "/tmp/heavisolve-spice/conformance/ihp-xyce/sg13g2_hbt_stat.lib": "2607600f39022470a4e9bc8cb9765b482f9c6cd0454009c8fee3b967d6976319"
+  },
+  "results": [
+    {
+      "variant": "baseline",
+      "voltage_relative_rms": 0.083479867953361,
+      "voltage_1khz_ng": [
+        -0.004201345877265937,
+        -1.2397663967838578e-08
+      ],
+      "voltage_1khz_xy": [
+        -0.004584078647156908,
+        6.513253092544076e-09
+      ],
+      "current_relative_rms": 0.0980981744903245,
+      "current_1khz_ng": [
+        -5.297332558896464e-09,
+        -1.0287327049952623e-13
+      ],
+      "current_1khz_xy": [
+        -5.901707632776252e-09,
+        -7.808579035279835e-14
+      ]
+    },
+    {
+      "variant": "selfheat_off",
+      "voltage_relative_rms": 3.5646570753753556e-05,
+      "voltage_1khz_ng": [
+        -0.004223104435671443,
+        1.1220573726384997e-10
+      ],
+      "voltage_1khz_xy": [
+        -0.004223104222758795,
+        1.18736634744581e-10
+      ],
+      "current_relative_rms": 5.468092346234899e-05,
+      "current_1khz_ng": [
+        -5.3008158555598885e-09,
+        -8.34042322995788e-14
+      ],
+      "current_1khz_xy": [
+        -5.30105740489769e-09,
+        -8.340529730899732e-14
+      ]
+    },
+    {
+      "variant": "ng_nqs_on",
+      "voltage_relative_rms": 0.08347459088073048,
+      "voltage_1khz_ng": [
+        -0.004201345877265959,
+        -1.2391119225350913e-08
+      ],
+      "voltage_1khz_xy": [
+        -0.004584078647156908,
+        6.513253092544076e-09
+      ],
+      "current_relative_rms": 0.09809560757472285,
+      "current_1khz_ng": [
+        -5.297332558903241e-09,
+        -1.0287424558558327e-13
+      ],
+      "current_1khz_xy": [
+        -5.901707632776252e-09,
+        -7.808579035279835e-14
+      ]
+    },
+    {
+      "variant": "xy_delay_off",
+      "voltage_relative_rms": 0.08347456021889975,
+      "voltage_1khz_ng": [
+        -0.004201345877265937,
+        -1.2397663967838578e-08
+      ],
+      "voltage_1khz_xy": [
+        -0.00458407864715693,
+        6.5058779350744345e-09
+      ],
+      "current_relative_rms": 0.09809631372726078,
+      "current_1khz_ng": [
+        -5.297332558896464e-09,
+        -1.0287327049952623e-13
+      ],
+      "current_1khz_xy": [
+        -5.9017076327762236e-09,
+        -7.80850638036831e-14
+      ]
+    },
+    {
+      "variant": "xy_ikp_match",
+      "voltage_relative_rms": 0.08347986795335181,
+      "voltage_1khz_ng": [
+        -0.004201345877265937,
+        -1.2397663967838578e-08
+      ],
+      "voltage_1khz_xy": [
+        -0.0045840786471568595,
+        6.51325309254402e-09
+      ],
+      "current_relative_rms": 0.09809817449032464,
+      "current_1khz_ng": [
+        -5.297332558896464e-09,
+        -1.0287327049952623e-13
+      ],
+      "current_1khz_xy": [
+        -5.901707632776252e-09,
+        -7.808579035279774e-14
+      ]
+    }
+  ]
+}

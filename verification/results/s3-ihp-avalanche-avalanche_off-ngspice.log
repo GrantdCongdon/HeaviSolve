@@ -1,0 +1,7 @@
+stdout ******
+stdout ** ngspice-47 shared library
+stdout ******
+stdout Note: No compatibility mode selected!
+stdout Circuit: heavisolve ihp dc conformance
+stdout Doing analysis at TEMP = 27.000000 and TNOM = 27.000000
+stdout No. of Data Rows : 11

@@ -1,0 +1,32 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+name: M0 foundation container
+on:
+  workflow_dispatch:
+  push:
+    branches: [m0-evidence]
+    paths:
+      - '.github/workflows/container.yml'
+      - 'docker/**'
+      - '.dockerignore'
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build and test foundation image
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p container-evidence
+          docker build --progress=plain -f docker/Dockerfile -t heavisolve-m0 . 2>&1 | tee container-evidence/build.log
+          docker image inspect heavisolve-m0 --format '{{.Id}}' > container-evidence/image-id.txt
+          docker run --rm heavisolve-m0 ctest --test-dir build -L foundation --output-on-failure | tee container-evidence/test.log
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: foundation-container-evidence
+          path: container-evidence/

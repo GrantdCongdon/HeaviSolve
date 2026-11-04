@@ -1,0 +1,5 @@
+# SPDX-FileCopyrightText: 2026 HeaviSolve contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+qt=6.12.0 vtk=9.7.1 platform=cocoa polygons=1000000 viewport_width=798 viewport_height=717 dpr=2
+frames=240 seconds=3.515754625 viewport_repaint_fps=68.264149691618485 paint_p95_ms=7.5314579999999998 cutplane_cells=2344
+screenshot_saved=1 compositor_present_rate=NOT_MEASURED

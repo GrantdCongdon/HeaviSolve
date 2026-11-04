@@ -1,0 +1,79 @@
+
+*****
+***** Welcome to the Xyce(TM) Parallel Electronic Simulator
+*****
+***** This is version Xyce Release 7.10.0-opensource
+***** Date: Tue Nov 03 15:57:10 EST 2026
+
+
+***** Executing netlist /tmp/heavisolve-spice/ihp-avalanche-diagnostic/avalanche_off/xyce/dc.cir
+
+***** Reading and parsing netlist...
+Netlist warning in file
+ /tmp/heavisolve-spice/ihp-avalanche-diagnostic/avalanche_off/xyce/sg13g2_hbt_mod.lib
+ at or near line 49
+ No model parameter VBE_MAX found for model NPN13G2_NX_VBIC of type NPN,
+ parameter ignored.
+Netlist warning in file
+ /tmp/heavisolve-spice/ihp-avalanche-diagnostic/avalanche_off/xyce/sg13g2_hbt_mod.lib
+ at or near line 49
+ No model parameter VBC_MAX found for model NPN13G2_NX_VBIC of type NPN,
+ parameter ignored.
+Netlist warning in file
+ /tmp/heavisolve-spice/ihp-avalanche-diagnostic/avalanche_off/xyce/sg13g2_hbt_mod.lib
+ at or near line 49
+ No model parameter VCE_MAX found for model NPN13G2_NX_VBIC of type NPN,
+ parameter ignored.
+***** Setting up topology...
+
+***** Device Count Summary ...
+       C level 1 (Capacitor)                  1
+       Q level 12 (VBIC 1.3 4T)               1
+       R level 1 (Resistor)                   3
+       V level 1 (Independent Voltage Source) 2
+       ----------------------------------------
+       Total Devices                          7
+***** Setting up matrix structure...
+***** Number of Unknowns = 16
+***** Initializing...
+
+
+***** Solution Summary *****
+	Number Successful Steps Taken:		11
+	Number Failed Steps Attempted:		0
+	Number Jacobians Evaluated:		46
+	Number Linear Solves:			46
+	Number Failed Linear Solves:		0
+	Number Residual Evaluations:		57
+	Number Nonlinear Convergence Failures:	0
+	Total Residual Load Time:		0.000116348 seconds
+	Total Jacobian Load Time:		3.55244e-05 seconds
+	Total Linear Solution Time:		0.000170469 seconds
+
+
+***** Total Simulation Solvers Run Time: 0.00101185 seconds
+***** Total Elapsed Run Time:            0.00407887 seconds
+*****
+***** End of Xyce(TM) Simulation
+*****
+
+Timing summary of 1 processor
+                 Stats                   Count       CPU Time              Wall Time
+---------------------------------------- ----- --------------------- ---------------------
+Xyce                                         1        0.003 (100.0%)        0.006 (100.0%)
+  Analysis                                   1        0.001 (17.52%)        0.001 (17.47%)
+    DC Sweep                                 1        0.001 (17.49%)        0.001 (17.44%)
+      Solve                                 11        0.001 (15.34%)        0.001 (12.65%)
+        Residual                            57        0.000 ( 3.83%)        0.000 ( 2.69%)
+        Jacobian                            46        0.000 ( 1.12%)        0.000 ( 0.92%)
+        Linear Solve                        46        0.000 ( 4.36%)        0.000 ( 3.35%)
+      Successful Step                       11        0.000 ( 1.18%)        0.000 ( 3.63%)
+  Netlist Import                             1        0.002 (48.82%)        0.002 (36.16%)
+    Parse Context                            1        0.001 (27.15%)        0.001 (19.78%)
+    Distribute Devices                       1        0.000 (14.69%)        0.001 (10.49%)
+    Verify Devices                           1        0.000 ( 0.06%)        0.000 ( 0.05%)
+    Instantiate                              1        0.000 ( 1.88%)        0.000 ( 1.27%)
+  Late Initialization                        1        0.000 ( 7.80%)        0.001 (11.26%)
+    Global Indices                           1        0.000 ( 0.59%)        0.000 ( 0.38%)
+  Setup Matrix Structure                     1        0.000 ( 1.56%)        0.000 ( 1.72%)
+
