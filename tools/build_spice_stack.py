@@ -65,9 +65,9 @@ if 'std::abs<double>(val)' in text:
     patch.write_text(text.replace('std::abs<double>(val)', 'std::abs(val)'))
 # Apply missing standard declarations to the source generator input, not generated C.
 mod = ng/'src/xspice/icm/xtradev/seegenerator/cfunc.mod'
-text = mod.read_text()
-if '#include <stdlib.h>' not in text:
-    mod.write_text('#include <stdlib.h>\n'+text)
+data = mod.read_bytes()
+if b'#include <stdlib.h>' not in data:
+    mod.write_bytes(b'#include <stdlib.h>\n'+data)
 (evidence/'source-patches.json').write_text(json.dumps({str(f.relative_to(work)):hashlib.sha256(f.read_bytes()).hexdigest() for f in (patch,mod)},indent=2)+'\n')
 triprefix = work/'trilinos'; xyprefix = work/'xyce'; ngprefix = work/'ngspice'
 flags = ['-DCMAKE_BUILD_TYPE=Release', '-DCMAKE_POSITION_INDEPENDENT_CODE=ON', '-DCMAKE_INSTALL_LIBDIR=lib', '-DBUILD_SHARED_LIBS=OFF', '-DCMAKE_Fortran_FLAGS=-fsecond-underscore', '-DTrilinos_ENABLE_Fortran=ON', '-DTrilinos_ENABLE_ALL_PACKAGES=OFF', '-DTrilinos_ENABLE_TESTS=OFF', '-DTrilinos_ENABLE_EXAMPLES=OFF', '-DTPL_ENABLE_MPI=OFF', '-DTPL_ENABLE_ParMETIS=OFF', '-DTPL_ENABLE_AMD=ON', '-DAMD_INCLUDE_DIRS=/usr/include/suitesparse', '-DEpetraExt_BUILD_BTF=ON', '-DEpetraExt_BUILD_EXPERIMENTAL=ON', '-DEpetraExt_BUILD_GRAPH_REORDERINGS=ON', '-DTrilinos_ENABLE_COMPLEX_DOUBLE=ON']
