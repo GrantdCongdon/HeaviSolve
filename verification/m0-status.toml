@@ -1,12 +1,30 @@
 # SPDX-FileCopyrightText: 2026 HeaviSolve contributors
 # SPDX-License-Identifier: AGPL-3.0-or-later
-[gate]
-phase_r_sources_complete = false
+# ADR-007 distinguishes section12 acceptance, deliverables, and exit.
+[acceptance]
 language_slab_comparison = true
 spice_measured_scoring = true
-full_fem_stack_linux_macos = true
-all_feasibility_spikes = false
 ci_stored_numerical_outputs = true
 ci_license_scan_green = true
+
+[deliverables]
+phase_r_decisions_dispositioned = true
+spike_reports_complete = true
+repository_docs_and_standards = true
+dependency_strategy_and_container = true
+
+[exit]
 adrs_accepted_and_merged = false
-walking_skeleton_self_review = false
+walking_skeleton_self_review = true
+
+# These are actual scoped experiment outcomes, not acceptance booleans.
+[spikes]
+S1 = "PASS: one-rank complex cavity and declared-license audit on Linux/macOS"
+S2 = "PASS: documentary reuse decision"
+S3a = "LOCAL PASS: callbacks, IHP HBT smoke, OSDI"
+S3b = "PARTIAL: macOS and native stepping/HB pass; Linux build investigation ongoing"
+S3c = "FAIL: original IHP self-heated AC and strict DC disagreement"
+S4 = "LOCAL PASS: mesh quality and prism import"
+S5 = "SCOPED LOCAL PASS: repaint throughput and cut plane; compositor rate unmeasured"
+S6 = "MIXED: KLayout geometry pass; gdstk SiEPIC OAS fail; viewport measured"
+S7 = "LOCAL PASS: native mapped-array path; not universal zero-copy"

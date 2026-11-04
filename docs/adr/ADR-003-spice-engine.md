@@ -3,7 +3,7 @@
 
 # ADR-003: retain two SPICE candidates; use engine-specific Verilog-A routes
 
-Status: **decision recorded; experimental acceptance blocked**. Date: 2026-11-02.
+Status: **M0 engine direction recorded; production integration withheld**. Updated: 2026-11-04. Scope clarified by ADR007.
 
 ## Context and evidence
 
@@ -13,7 +13,7 @@ ngspice exposes shared-library external-source callbacks. Xyce documents `simula
 
 ## Decision
 
-Retain ngspice and Xyce as **co-primary integration targets under Outcome B**, behind one future `SpiceEngine` contract with explicit capability flags, model bindings and per-engine emitters. Do not claim working support until tests pass. No primary winner is selected. Do not advance M0: the shared native IR exposes IHP AC disagreements of8–10% and residual DC disagreement. Maintain the tolerances and investigate model/linearization differences; do not silently alter foundry models.
+Retain ngspice and Xyce as **co-primary integration targets under Outcome B**, behind one future `SpiceEngine` contract with explicit capability flags, model bindings and per-engine emitters. Do not claim working support until tests pass. No primary winner is selected. The shared native IR exposes IHP AC disagreements of8–10% and residual DC disagreement. These are failed feasibility findings and M7 integration blockers, not a replacement for section12 M0 acceptance. Maintain the tolerances and investigate model/linearization differences; do not silently alter foundry models.
 
 Use separate worker processes for isolation. Embedding can occur inside a worker; a library API does not require sharing the GUI process. Preserve a shared API for Python and GUI.
 
@@ -37,10 +37,10 @@ Integration is therefore **not approved as complete**. The explicit requirement 
 
 ## Consequences and closure
 
-Complete Linux/macOS CI and resolve the measured IHP conformance failures. Both adapters, diagnostics, conformance suite and capability matrix remain equal requirements. M0 acceptance remains unmet. The selected engine direction is recorded; release-ready integration approval is withheld.
+Complete Linux/macOS CI and resolve the measured IHP conformance failures. Both adapters, diagnostics, conformance suite and capability matrix remain equal requirements. ADR007 separates the completed M0 measured-scoring deliverable from M7 compatibility requirements. The selected engine direction is recorded; production integration approval is withheld.
 
 ## Diagnostic refinement — 2026-11-03
 
 [S3 follow-up](../spikes/S3-spice.md) now demonstrates Xyce forward stepping through its separate C-interface library. Default self-heated ngspice AC still disagrees with independent DC slopes. The residual isothermal DC failure is localized to the avalanche contribution: disabling it in both marked diagnostic copies reduces relative base-current disagreement from1.0304e-4 to4.3177e-9. The engines implement different avalanche smoothing formulas. No threshold or original model changed.
 
-Consequently, a shared dialect alone is insufficient to promise cross-engine model equivalence. Any eventual `SpiceEngine` model binding must record the compact-model implementation/version and tested capabilities. The next candidate experiment uses an identically versioned model through the separate supported compiler routes, subject to source-grant review and thermal tests. This is an investigation direction, not approval of a replacement or a passed conformance gate. The co-primary decision and M0 hold remain unchanged.
+Consequently, a shared dialect alone is insufficient to promise cross-engine model equivalence. Any eventual `SpiceEngine` model binding must record the compact-model implementation/version and tested capabilities. The next candidate experiment uses an identically versioned model through the separate supported compiler routes, subject to source-grant review and thermal tests. This is an investigation direction, not approval of a replacement or a passed conformance gate. The co-primary decision remains unchanged. M0 exit still requires its decision review and integration; see ADR007.

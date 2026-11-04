@@ -10,7 +10,7 @@ Status: accepted corrections; architecture remains gated. Date: 2026-11-02.
 3. Femwell is GPL-3.0 rather than the plan's MIT label; use only after exact license audit. See R1.
 4. CORNERSTONE public cspdk is distinct from gated foundry data. Import/redistribution is assessed per artifact. See R3.
 5. Xyce's documented IHP route uses ADMS-generated plugins, while ngspice uses OpenVAF/OSDI. Do not promise OSDI on both without an executable test. See ADR-003.
-6. Missing measurements keep M0 open; preliminary research scores must never be presented as completed language or SPICE benchmarks. No architecture lock or M1 implementation is authorized by an incomplete spike.
+6. Preliminary research scores must never be presented as completed language or SPICE benchmarks. ADR007 supersedes the earlier blanket rule that any failed or partial spike blocks M0: section12 requires measured reports, while production component admission still requires its applicable tests. No M1 implementation begins before the M0 exit review.
 
 7. IHP's top-level Apache-2.0 does not cover every model: R3 found ECL-2.0 under r3_cmc. This is outside the current allow-list and remains excluded pending a separate policy decision. The inspected ngspice HBT library is VBIC, not an assumed HICUM binding. Google GF180MCU is archived; select and audit its maintained successor before importer adoption.
 8. Gmsh's linking exception is limited to named libraries, not a blanket arbitrary-code exception. gdstk is BSL-1.0. Both facts were checked against upstream license files.

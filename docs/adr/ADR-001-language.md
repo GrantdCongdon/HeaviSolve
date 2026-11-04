@@ -3,7 +3,7 @@
 
 # ADR-001: Recommend C++20 after paired native slab experiments
 
-Status: proposed for M0 integration; numerical and C ABI binding comparisons passed locally and on Linux/macOS CI; production binding-framework comparison remains open. Updated: 2026-11-03.
+Status: accepted research decision by ADR008; remote-main integration pending; numerical and C ABI binding comparisons passed locally and on Linux/macOS CI; production binding-framework comparison remains open. Updated: 2026-11-03.
 
 ## Decision
 
@@ -33,7 +33,7 @@ The independent [closed-form oracle](../../verification/oracles/slab.py) bisects
 | Eigensolve seconds | 20.019778209 | 20.841110917 |
 | Physical source lines, including headers | 80 | 66 |
 
-Every measured refinement transition has error order between 1.9859 and 1.9994, inside the harness's 1.8–2.2 interval. The maximum cross-language index difference is 9.370282327836321e-14, below 1e-10. Both final index errors are below the spike's 1e-4 threshold. **Local paired numerical check: PASS.** This threshold does not meet or replace M2's eventual 1e-6 acceptance target. No solver is claimed verified: hosted CI has not run these benchmarks with stored artifacts.
+Every measured refinement transition has error order between 1.9859 and 1.9994, inside the harness's 1.8–2.2 interval. The maximum cross-language index difference is 9.370282327836321e-14, below 1e-10. Both final index errors are below the spike's 1e-4 threshold. **Local paired numerical check: PASS.** This threshold does not meet or replace M2's eventual 1e-6 acceptance target. The later hosted runs cited below passed and retained this scoped slab/binding evidence; this does not verify a production mode solver.
 
 Line counts are literal physical lines, not normalized complexity: both files use compressed formatting. Peak memory was not measured. A timestamp records the start of the language work, but interruptions and concurrent work prevent a reliable engineering-time comparison; development hours are **not measured**, and the 1–2 week budget is not an observed duration. A later equivalent C ABI/ctypes binding experiment is recorded below; nanobind/PyO3 and zero-copy NumPy behavior remain **not measured**. Rust required an isolated toolchain installation and an explicit unsafe C ABI declaration; no external Rust FEM crate was used. The numerical comparison is complete locally, while those requested comparison dimensions remain limitations of R2.
 
@@ -66,7 +66,7 @@ rustc --edition=2024 -C opt-level=2 -D warnings verification/language/slab.rs -o
 python3 verification/language/compare.py > .work/language/comparison.csv
 ```
 
-For the isolated toolchain used here, set `RUSTUP_HOME` to `.work/language/rustup` and `CARGO_HOME` to `.work/language/cargo` using absolute paths, then use that cargo directory's `bin/rustc`. Linux requires an appropriate LAPACK link configuration; the recorded source currently targets the Accelerate framework. Add the portable configuration and CI run before claiming cross-platform completion. The later repeatable C ABI binding smoke test supplies narrow binding evidence; full framework comparison and historical effort accounting remain limitations of the requested R2 comparison.
+For the isolated toolchain used here, set `RUSTUP_HOME` to `.work/language/rustup` and `CARGO_HOME` to `.work/language/cargo` using absolute paths, then use that cargo directory's `bin/rustc`. The initial source targeted Accelerate; the later portable CMake configuration and Linux LAPACK path passed the hosted runs cited below. The later repeatable C ABI binding smoke test supplies narrow binding evidence; full framework comparison and historical effort accounting remain limitations of the requested R2 comparison.
 
 Primary sources underlying the ecosystem assessment: [MFEM examples](https://mfem.org/examples/), [Fenris README](https://github.com/InteractiveComputerGraphics/fenris/blob/master/README.md), [Fenris element definitions](https://github.com/InteractiveComputerGraphics/fenris/blob/master/src/element.rs), [nanobind](https://nanobind.readthedocs.io/en/latest/), [PyO3](https://pyo3.rs/), [Qt](https://doc.qt.io/qt-6/), [Gmsh API](https://gmsh.info/doc/texinfo/). Fenris' dated status paragraph is not a current maintenance timestamp. This update records local experiment evidence; it does not claim a new upstream maintenance audit.
 

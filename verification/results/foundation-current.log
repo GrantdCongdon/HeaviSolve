@@ -1,12 +1,14 @@
 Test project /Users/grantdcongdon/Documents-local/Projects/Quantum Optics Statistical Solver/heavisolve/build
     Start 1: license_inventory
-1/2 Test #1: license_inventory ................   Passed    0.03 sec
+1/3 Test #1: license_inventory ................   Passed    0.05 sec
     Start 4: transitive_license_policy
-2/2 Test #4: transitive_license_policy ........   Passed    0.51 sec
+2/3 Test #4: transitive_license_policy ........   Passed    0.54 sec
+    Start 5: m0_gate_policy
+3/3 Test #5: m0_gate_policy ...................   Passed    0.08 sec
 
-100% tests passed out of 2
+100% tests passed out of 3
 
 Label Time Summary:
-foundation    =   0.54 sec*proc (2 tests)
+foundation    =   0.66 sec*proc (3 tests)
 
-Total Test time (real) =   0.54 sec
+Total Test time (real) =   0.67 sec
