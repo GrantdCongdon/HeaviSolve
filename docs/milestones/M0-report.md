@@ -53,3 +53,5 @@ Equivalent C++/Rust C ABI wrappers called through Python pass argument, capacity
 Native Xyce C-interface forward stepping now passes locally:50 stops, maximum RC voltage error7.1045086396173684e-7V against1e-4V. The separate xycecinterface build target is required. Rollback, external-device exchange and Linux remain untested.
 
 The strict original-model DC failure was reproduced. Disabling avalanche only in marked diagnostic copies reduces base-current disagreement to4.317717800750406e-9, localizing the residual to model implementation differences. The original test still fails; an identically versioned OSDI/ADMS compact-model route is an untested next experiment, not an approved replacement.
+
+Run41715967429 now passes on both Linux/macOS at cb9d540; [same-revision artifacts and digests](../../verification/results/ci-41715967429/provenance.json) are retained. First Linux SPICE run41768558047 stopped before compilation on non-UTF8 source text; the build script now preserves original bytes during its declaration patch. This is not a solver failure or a passed Linux build; retry pending.

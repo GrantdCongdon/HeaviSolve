@@ -10,7 +10,17 @@
       "artifact_id": 13270113949,
       "sha256": "a13e4b29801d12457dd1a7b93a9af5946c4bdb864d765ed4ccf303f22fca946d",
       "zip_digest_verified": true
+    },
+    {
+      "platform": "macos-14",
+      "job_id": 126195902261,
+      "conclusion": "success",
+      "artifact_id": 13270538208,
+      "sha256": "5a70e84447dd5add61f23d25dec36d74e6141666097e9405c24576ebbeefef55",
+      "zip_digest_verified": true
     }
   ],
-  "scope": "complex source-stack one-rank cavity, resolved environment, declared runtime-license audit; not full M0"
+  "scope": "complex source-stack one-rank cavity, resolved environment, declared runtime-license audit; not full M0",
+  "commit": "cb9d540aca05b934ad06b7a505db8a658cbf8476",
+  "workflow_conclusion": "success"
 }
