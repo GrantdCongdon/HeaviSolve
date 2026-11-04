@@ -14,7 +14,7 @@ repository_docs_and_standards = true
 dependency_strategy_and_container = true
 
 [exit]
-adrs_accepted_and_merged = false
+adrs_accepted_and_merged = true
 walking_skeleton_self_review = true
 
 # These are actual scoped experiment outcomes, not acceptance booleans.

@@ -3,7 +3,7 @@
 
 # ADR-007: align M0 acceptance with the director's milestone boundaries
 
-Status: recorded correction; final M0 exit review pending. Date: 2026-11-04.
+Status: accepted correction; M0 exit complete through approved PR1 (4025a1d). Date: 2026-11-04.
 
 ## Evidence and problem
 

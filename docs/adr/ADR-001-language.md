@@ -3,7 +3,7 @@
 
 # ADR-001: Recommend C++20 after paired native slab experiments
 
-Status: accepted research decision by ADR008; remote-main integration pending; numerical and C ABI binding comparisons passed locally and on Linux/macOS CI; production binding-framework comparison remains open. Updated: 2026-11-03.
+Status: accepted research decision by ADR008; merged into main through approved PR1 (4025a1d); numerical and C ABI binding comparisons passed locally and on Linux/macOS CI; production binding-framework comparison remains open. Updated: 2026-11-03.
 
 ## Decision
 

@@ -3,7 +3,7 @@
 
 # M0 decision summary — 2026-11-04
 
-**M0 remains open; these decisions do not authorize M1.**
+**M0 complete: user-approved PR1 merged at4025a1d. M1 has not started.**
 
 - **Licensing:** retain AGPL-3.0-or-later code, CC-BY-SA-4.0 prose and DCO without CLA. Direct grants and REUSE pass locally. Reject the convenient FEM environment because ParMETIS restricts use/redistribution; the new transitive audit fails closed. ADR006 now records13 exact macOS and14 exact Linux runtime-package reviews; redistribution auditing remains separate. [ADR-002](../adr/ADR-002-licensing.md), [ADR-005](../adr/ADR-005-transitive-fem-dependencies.md).
 - **Language:** accept C++20 under ADR008. Independently assembled C++/Rust slab implementations both converge at roughly second order and agree within9.37e-14. Weighted roadmap suitability is134/145 versus86/145; no controlled speed advantage is claimed. Equivalent ctypes/C-ABI bindings pass on both hosted platforms; full framework comparison and historical development hours remain unmeasured. [ADR-001](../adr/ADR-001-language.md).
@@ -14,6 +14,8 @@
 - **Mesh/GUI/IPC:** native prism extrusion imports into MFEM with volume/Jacobian checks. Qt/VTK renders the field cut plane;10k and1M scenes reach75.8/68.3 repaint/s, with lower earlier results retained. Both IPC candidates exchange progress plus100MB mapped-array descriptors/checksums. Prefer structured RPC as the future interface direction, but neither timing run establishes an overall transport winner. [S4](../spikes/S4-meshing.md), [S5](../spikes/S5-gui.md), [S7](../spikes/S7-ipc.md).
 - **Name/conventions:** keep HeaviSolve; quick availability checks found no conflict. For exp(+jωt), passive permittivity has nonpositive imaginary part. [ADR-004](../adr/ADR-004-plan-corrections.md).
 
-- **Milestone scope:** ADR007 aligns acceptance with section12: measured spike reports may contain failures. M0 acceptance passes3/3 on both platforms in six-job CI41922593403 at239cb7f; verified artifacts are retained. Acceptance and deliverables are complete; remote ADR integration is the sole remaining exit gate. ADR008 completes component dispositions while withholding unproved production admission. Docker CI41922593302 passes3/3; walking-skeleton design self-review is complete but conditional on M0 exit. S3c remains a failed feasibility result and M7 conformance blocker. [ADR-007](../adr/ADR-007-m0-acceptance-scope.md), [ADR-008](../adr/ADR-008-phase-r-component-dispositions.md).
+- **Milestone scope:** ADR007 aligns acceptance with section12: measured spike reports may contain failures. M0 acceptance passes3/3 on both platforms in six-job CI41922593403 at239cb7f; verified artifacts are retained. Acceptance, deliverables and exit are complete after the approved PR1 merge. ADR008 completes component dispositions while withholding unproved production admission. Docker CI41922593302 passes3/3; walking-skeleton design self-review is complete. S3c remains a failed feasibility result and M7 conformance blocker. [ADR-007](../adr/ADR-007-m0-acceptance-scope.md), [ADR-008](../adr/ADR-008-phase-r-component-dispositions.md).
 
-The final review package is ready. Next checkpoint is M0 closure: prepare the pull request, obtain separate remote-main merge authorization (existing approval covers the review branch), integrate accepted ADRs and report before M1. Full binary-release audits remain required before distribution. No production solver is called verified.
+Full binary-release audits remain required before distribution. No production solver is called verified.
+
+Final exit: all final-head checks passed and PR1 merged on2026-11-04. The next proposed checkpoint is the M1 capacitor walking skeleton; stop here before implementation.

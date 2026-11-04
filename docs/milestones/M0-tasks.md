@@ -25,8 +25,8 @@
 - [x] Local foundation checks:3/3 pass, including gate policy tests.
 - [x] Aggregate M0 CI41922593403 at239cb7f: all6 jobs pass, with3/3 M0 checks on each platform; verified numerical/language artifacts and full foundation logs retained.
 - [x] Walking-skeleton design self-review, conditional on M0 exit.
-- [ ] Integrate the accepted ADRs into remote main; final review package is ready, but current authorization covers only the review branch. This is the sole remaining all-stage gate.
-- [ ] Deliver final M0 report, decision summary and next-checkpoint plan. **M1 must not start before exit and reporting.**
+- [x] Integrate accepted ADRs into main: user-approved PR1 merged at4025a1d after all final-head checks passed.
+- [x] Complete the final M0 report, decision summary and next-checkpoint plan for delivery. **M0 complete; M1 not started.**
 
 ## Retained limitations and later gates
 

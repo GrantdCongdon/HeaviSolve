@@ -3,7 +3,7 @@
 
 # M0 implementation and acceptance report
 
-Updated 2026-11-04. **M0 remains incomplete; M1 has not started.** M0 acceptance and deliverables are complete: the specified acceptance label passes3/3 on Linux and macOS in CI41922593403 at239cb7f, with verified artifacts retained. The final review package is ready. ADR008 completes Phase R decision dispositions; remaining exit work is remote integration of the accepted ADRs. The walking-skeleton design has completed self-review, conditional on M0 exit.
+Updated 2026-11-04. **M0 complete; M1 has not started.** Acceptance and deliverables passed, the walking-skeleton design is self-reviewed, and the user-approved [PR1](https://github.com/GrantdCongdon/HeaviSolve/pull/1) merged the accepted ADRs into main at `4025a1dd1e1c0c62e17070e158c207d87cd6cf0c`. All final-head checks passed before merge. [Merge/check evidence](../../verification/results/m0-merge-evidence.json) and [full exit review](../../verification/results/m0-exit-current.log) record closure.
 
 [ADR-007](../adr/ADR-007-m0-acceptance-scope.md) corrects the earlier report's scope: M0 requires measured feasibility reports, including failures; full supported-engine SPICE conformance belongs to M7. S3c remains **FAIL**, not a pass obtained by moving a gate. Dependency admission still precedes adoption, and binary distribution still requires its release audit. Start future sessions with the [running handoff](M0-handoff.md), then [tasks](M0-tasks.md), [decisions](M0-decisions.md) and [next checkpoint](M0-next-checkpoint.md).
 
@@ -38,13 +38,13 @@ Repository foundations include the requested layout, license/DCO/REUSE, CI defin
 
 ## Hosted CI and next checkpoint
 
-The user configured the public GrantdCongdon/HeaviSolve repository and explicitly approved review-branch uploads. Remote main remains unchanged. [Run41668976621](https://github.com/GrantdCongdon/HeaviSolve/actions/runs/41668976621), commit47b8352, passed all six jobs: Linux/macOS foundations, Poisson/cavity diagnostics, and paired-language/binding tests. [Artifact provenance and checksums](../../verification/results/ci-41668976621/provenance.json) accompany locally retained numerical outputs. These are scoped benchmark passes, not full M0 certification.
+The user configured the public GrantdCongdon/HeaviSolve repository and explicitly approved review-branch uploads. The subsequent user-approved merge is recorded above. [Run41668976621](https://github.com/GrantdCongdon/HeaviSolve/actions/runs/41668976621), commit47b8352, passed all six jobs: Linux/macOS foundations, Poisson/cavity diagnostics, and paired-language/binding tests. [Artifact provenance and checksums](../../verification/results/ci-41668976621/provenance.json) accompany locally retained numerical outputs. These are scoped benchmark passes, not full M0 certification.
 
 The separate source-built complex-stack run first failed on missing macOS conda and Linux OpenBLAS filename handling. Both setup issues were fixed; run41670183802 passed on macOS (maximum cavity error4.9435655969265468e-5), with [retained configuration, numerical and license evidence](../../verification/results/ci-41670183802/provenance.json). Linux failed due to missing SLEPC_DIR during make; cb9d540 fixes this and adds exact reviews for14 Linux runtime packages. Linux job126195902515 in run41715967429 passes that correction, with maximum cavity error4.943565595971755e-5 and passing runtime-license audit; no exception silently admits unknown packages. The IHP default self-heated AC and residual DC failures remain blockers for the promised M7 conformance, not blanket M0 acceptance conditions.
 
 Linux output records a UCX initialization error before the one-rank solve succeeds; multi-rank/UCX transport support is not established.
 
-Complete remote ADR integration and final M0 reporting before starting M1. Component-specific production admission remains mandatory before adding each dependency.
+M0 integration and reporting are complete; stop at this checkpoint before starting M1. Component-specific production admission remains mandatory before adding each dependency.
 
 The quick name check found no conflict; HeaviSolve is unchanged. [Availability evidence](../research/name-availability.md) is a limited registry/search check, not trademark clearance or a reservation.
 
@@ -64,8 +64,8 @@ The [ngspice selected-build license audit](../research/ngspice47-license-scope.m
 
 - **Acceptance — complete:** `ctest -L m0` passes3/3 on both platforms in [run41922593403](https://github.com/GrantdCongdon/HeaviSolve/actions/runs/41922593403) at239cb7f. All six foundation, numerical and language/binding jobs pass; [verified outputs and full foundation logs](../../verification/results/ci-41922593403/provenance.json) are retained. Run41858845340 had incomplete/cancelled macOS jobs and is not counted as a full pass.
 - **Deliverables — complete:** surveys, scored ADRs, all spike reports, skeleton, Linux/macOS CI, docs and coding standards exist. The [container build/test evidence](../../verification/results/ci-41922593302/provenance.json) is stored. [ADR008](../adr/ADR-008-phase-r-component-dispositions.md) completes Phase R component dispositions; experimental dependencies remain outside production admission where their checks are unfinished.
-- **Exit:** the [walking-skeleton design](../developer/walking-skeleton-plan.md) is self-reviewed. Research decisions are accepted in ADR008, but remote integration remains open and remote main has not changed. The [all-stage review](../../verification/results/m0-exit-current.log) fails only `exit.adrs_accepted_and_merged`. The final review package is ready for a pull request; merging needs separate authorization because the existing approval covers review-branch uploads only.
+- **Exit — complete:** the [walking-skeleton design](../developer/walking-skeleton-plan.md) is self-reviewed and accepted ADRs are merged through PR1. The user explicitly approved integration after the review package was presented. The [all-stage review](../../verification/results/m0-exit-current.log) passes; [merge evidence](../../verification/results/m0-merge-evidence.json) identifies the reviewed revision and successful checks.
 
-No production solver or full milestone completion is claimed. Report the completed M0 checkpoint before beginning M1.
+M0 completion is a research/foundations checkpoint, not verification of unimplemented production solvers or full SPICE compatibility. M1 remains unstarted.
 
 Container follow-up: run41922593302 at239cb7f passes all3 foundation checks, including the new gate-policy test. [Verified artifact provenance](../../verification/results/ci-41922593302/provenance.json). No image was published.

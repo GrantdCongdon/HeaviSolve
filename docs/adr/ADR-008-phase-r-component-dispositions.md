@@ -3,7 +3,7 @@
 
 # ADR-008: Phase R component decisions and admission boundaries
 
-Status: accepted research decisions; remote-main integration pending. Date: 2026-11-04.
+Status: accepted research decisions; merged into main through approved PR1 (4025a1d). Date: 2026-11-04.
 
 ## Decision and explicit deviation
 
@@ -39,6 +39,6 @@ The docs skeleton uses plain MkDocs1.6.1 with its BSD-2-Clause grant, rather tha
 
 ## Consequences and checkpoint review
 
-Phase R now has a recorded disposition for each investigated component. M0 can report failed experiments without hiding them or requiring completion of M7. This resolves the decision-deliverable review, but not the remote integration exit criterion. The revised acceptance workflow must pass on the review branch, outputs must be retained, and ADR integration must actually occur before M0 is declared complete. No M1 code is added.
+Phase R now has a recorded disposition for each investigated component. M0 can report failed experiments without hiding them or requiring completion of M7. The decision-deliverable review, revised hosted acceptance and remote integration exit criterion are now complete. PR1 merged the accepted decisions at4025a1d after all final-head checks passed; stored numerical outputs and merge evidence are linked from the M0 report. No M1 code is added.
 
 The next checkpoint begins with the narrowly selected M1 dependency configuration and its admission checks, then the capacitor vertical slice described in the [walking-skeleton plan](../developer/walking-skeleton-plan.md). Unresolved SPICE conformance stays tracked for M7; it does not become a hidden prerequisite for electrostatic geometry/API work. The release SBOM and binary redistribution audit remain M10 deliverables, separate from the earlier mandatory dependency admission.

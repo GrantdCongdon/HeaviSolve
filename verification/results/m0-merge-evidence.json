@@ -1,0 +1,94 @@
+{
+  "pr": "https://github.com/GrantdCongdon/HeaviSolve/pull/1",
+  "merged": true,
+  "merged_at": "2026-11-04T22:56:17Z",
+  "merge_commit": "4025a1dd1e1c0c62e17070e158c207d87cd6cf0c",
+  "reviewed_head": "a68880c56f9b4b73606db86e55809b5eb3b10801",
+  "checks": [
+    {
+      "id": 126904322111,
+      "name": "numerical-diagnostics (macos-14)",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/GrantdCongdon/HeaviSolve/actions/runs/41924239029/job/126904322111"
+    },
+    {
+      "id": 126904322071,
+      "name": "paired-language (ubuntu-24.04)",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/GrantdCongdon/HeaviSolve/actions/runs/41924239029/job/126904322071"
+    },
+    {
+      "id": 126904321942,
+      "name": "foundation (macos-14)",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/GrantdCongdon/HeaviSolve/actions/runs/41924239029/job/126904321942"
+    },
+    {
+      "id": 126904321881,
+      "name": "paired-language (macos-14)",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/GrantdCongdon/HeaviSolve/actions/runs/41924239029/job/126904321881"
+    },
+    {
+      "id": 126904321822,
+      "name": "numerical-diagnostics (ubuntu-24.04)",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/GrantdCongdon/HeaviSolve/actions/runs/41924239029/job/126904321822"
+    },
+    {
+      "id": 126904321516,
+      "name": "foundation (ubuntu-24.04)",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/GrantdCongdon/HeaviSolve/actions/runs/41924239029/job/126904321516"
+    },
+    {
+      "id": 126904286610,
+      "name": "paired-language (ubuntu-24.04)",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/GrantdCongdon/HeaviSolve/actions/runs/41924228031/job/126904286610"
+    },
+    {
+      "id": 126904286598,
+      "name": "numerical-diagnostics (ubuntu-24.04)",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/GrantdCongdon/HeaviSolve/actions/runs/41924228031/job/126904286598"
+    },
+    {
+      "id": 126904286543,
+      "name": "numerical-diagnostics (macos-14)",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/GrantdCongdon/HeaviSolve/actions/runs/41924228031/job/126904286543"
+    },
+    {
+      "id": 126904286488,
+      "name": "foundation (macos-14)",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/GrantdCongdon/HeaviSolve/actions/runs/41924228031/job/126904286488"
+    },
+    {
+      "id": 126904286474,
+      "name": "paired-language (macos-14)",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/GrantdCongdon/HeaviSolve/actions/runs/41924228031/job/126904286474"
+    },
+    {
+      "id": 126904286107,
+      "name": "foundation (ubuntu-24.04)",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/GrantdCongdon/HeaviSolve/actions/runs/41924228031/job/126904286107"
+    }
+  ],
+  "benchmark_outputs": "verification/results/ci-41922593403; executable sources unchanged through reviewed head"
+}
