@@ -9,11 +9,11 @@ Updated 2026-11-03. **M0 remains incomplete; M1 has not started. No solver is cl
 
 | Check | Result and limits | Evidence |
 |---|---|---|
-| MFEM Poisson | LOCAL PASS; observed orders1.97318,1.99316,1.99828 vs2±0.15 | [S1](../spikes/S1-mfem.md) |
-| Serial cavity | LOCAL PASS; first-six maximum frequency relative error4.9435656e-5 vs1e-3; coarse failure retained | [S1](../spikes/S1-mfem.md) |
-| Complex source-built cavity | LOCAL PASS; MFEM4.10/PETSc/SLEPc/SuperLU_DIST,4356 DOFs, one rank, maximum error4.9435655966822978e-5 | [Output](../../verification/results/fem-clean-cavity.log) |
+| MFEM Poisson | Linux/macOS CI PASS; observed orders1.97318,1.99316,1.99828 vs2±0.15 | [S1](../spikes/S1-mfem.md) |
+| Serial cavity | Linux/macOS CI PASS; first-six maximum frequency relative error4.9435656e-5 vs1e-3; coarse failure retained | [S1](../spikes/S1-mfem.md) |
+| Complex source-built cavity | Linux/macOS CI PASS; MFEM4.10/PETSc/SLEPc/SuperLU_DIST,4356 DOFs, one rank, maximum error4.9435655966822978e-5 | [Output](../../verification/results/fem-clean-cavity.log) |
 | S1 platform/cavity spike | PASS; source-selected complex stack and declared runtime-license audit pass on Linux/macOS; no full binary-release certification | [ADR-005](../adr/ADR-005-transitive-fem-dependencies.md) |
-| C++/Rust slab | LOCAL PASS; four refinements, near-second-order convergence, maximum language difference9.37e-14; ctypes/C-ABI bindings also pass locally and in CI; framework comparison/historical time-accounting limited | [ADR-001](../adr/ADR-001-language.md) |
+| C++/Rust slab | Linux/macOS CI PASS; four refinements, near-second-order convergence, maximum language difference9.37e-14; ctypes/C-ABI bindings also pass locally and in CI; framework comparison/historical time-accounting limited | [ADR-001](../adr/ADR-001-language.md) |
 | S2 Palace | Documentary PASS; reference/study, no stable-link integration claim | [S2](../spikes/S2-palace.md) |
 | S3a ngspice | LOCAL PASS; callback RC max error3.0578e-8V; IHP HBT smoke; compiled OSDI current agrees within1e-12A | [S3](../spikes/S3-spice.md) |
 | S3b Xyce | macOS build, native forward stepping and HB subtests PASS; RLC relative error3.7609e-16, cubic3.5237e-15; Linux build pending | [S3](../spikes/S3-spice.md) |
@@ -55,3 +55,7 @@ Native Xyce C-interface forward stepping now passes locally:50 stops, maximum RC
 The strict original-model DC failure was reproduced. Disabling avalanche only in marked diagnostic copies reduces base-current disagreement to4.317717800750406e-9, localizing the residual to model implementation differences. The original test still fails; an identically versioned OSDI/ADMS compact-model route is an untested next experiment, not an approved replacement.
 
 Run41715967429 now passes on both Linux/macOS at cb9d540; [same-revision artifacts and digests](../../verification/results/ci-41715967429/provenance.json) are retained. First Linux SPICE run41768558047 stopped before compilation on non-UTF8 source text; the build script now preserves original bytes during its declaration patch. This is not a solver failure or a passed Linux build; retry pending.
+
+Current [acceptance-gate output](../../verification/results/m0-gate-current.log) reflects the completed S1 gate. Remaining gates: Phase R closure, all feasibility spikes, accepted/merged ADRs, and final walking-skeleton design self-review. This report remains a progress checkpoint, not permission to begin M1.
+
+The [ngspice selected-build license audit](../research/ngspice47-license-scope.md) resolves component grants with16 source hashes and local configuration evidence. Public-domain/Sparse/m4 policy mapping and Linux install/link evidence remain open; the global scanner is unchanged. A second Linux SPICE configure failure (optional NetCDF dependency) was corrected by matching the minimal successful local Trilinos configuration. Retry41769077217 is in progress.

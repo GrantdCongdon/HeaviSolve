@@ -4,8 +4,8 @@
 # Next checkpoint: M0 closure, before M1
 
 1. Resolve IHP cross-engine DC/AC differences from the pinned engine-specific compact models. Keep original data intact; The residual DC mismatch is now localized to avalanche, with distinct implementation formulas; self-heated AC has a separate linearization inconsistency. Evaluate an identically versioned compact-model source through OSDI/ADMS after grant/compiler review, and validate any mapping separately. Do not loosen tolerances simply to pass. Retain dual-engine support and capability diagnostics.
-2. Finish source-built complex FEM evidence without ParMETIS. Review every remaining transitive license expression and linked library, then lock the approved Linux/macOS environments. Test the HPC/container recipes rather than treating templates as proven builds.
-3. Run the configured hosted Linux/macOS jobs and retain numerical/license artifacts against the exact reviewed commit. The user-approved m0-evidence branch now has passing baseline Linux/macOS CI (run41668976621). Finish the separate complex-stack recipe and retain its numerical outputs/license decisions; remote main remains unchanged.
+2. Preserve the completed source-built complex FEM evidence without ParMETIS: run41715967429 passes on both platforms at cb9d540, with resolved package hashes and declared-license audits retained. Full binary redistribution review and tested HPC/container recipes remain separate work; do not repeat the passing cavity build without a changed input.
+3. Run the configured hosted Linux/macOS jobs and retain numerical/license artifacts against the exact reviewed commit. The user-approved m0-evidence branch now has passing baseline Linux/macOS CI (run41668976621). Complex-stack outputs/license decisions are also retained. Linux SPICE research run41768804564 tests the corrected recipe after an initial pre-compilation encoding failure; remote main remains unchanged.
 4. Close the language spike's missing binding-effort measurements and outstanding survey evidence. Recorded engineering hours cannot be reconstructed honestly; retain that limitation in ADR-001.
 5. Run the complete M0 acceptance label, review the dependency/component gates, accept final ADRs and complete the self-review below. Report that checkpoint to the director before any M1 implementation.
 
@@ -21,7 +21,7 @@ User-defined process → simple capacitor geometry/mesh → C++ statics worker �
 - [x] Measured passes, failures, unmeasured quantities and license rejections remain explicit.
 - [x] No restricted PDK data bundled; pinned public fixtures downloaded externally.
 - [ ] Full Phase R component admission and complete acceptance evidence.
-- [ ] Linux/macOS CI artifacts reviewed; license job green remotely.
+- [x] Baseline and complex FEM Linux/macOS CI artifacts reviewed; declared-license jobs green remotely.
 - [ ] M0 acceptance green and final ADRs accepted/merged.
 
 The design outline is reviewed; approval to begin M1 is withheld by the unmet M0 gate.
