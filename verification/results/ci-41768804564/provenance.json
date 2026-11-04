@@ -1,0 +1,8 @@
+{
+  "run_id": 41768804564,
+  "artifact_id": 13294196540,
+  "sha256": "b41ddd208e7a7785ea8defcb5a0c222a2ac4d9f5aa0babf73ff1239e05673940",
+  "result": "FAIL at Trilinos configure",
+  "scope": "research recipe; not numerical result",
+  "zip_digest_verified": true
+}

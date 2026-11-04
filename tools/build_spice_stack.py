@@ -38,7 +38,12 @@ pins = json.loads((ROOT/'verification/results/native-archive-hashes.json').read_
 def run(name, command, cwd=work):
     with (evidence/(name+'.log')).open('w') as log:
         log.write('COMMAND '+json.dumps([str(x) for x in command])+'\n'); log.flush()
-        subprocess.run([str(x) for x in command], cwd=cwd, env=env, stdout=log, stderr=subprocess.STDOUT, check=True)
+        try:
+            subprocess.run([str(x) for x in command], cwd=cwd, env=env, stdout=log, stderr=subprocess.STDOUT, check=True)
+        except subprocess.CalledProcessError:
+            log.flush()
+            print((evidence/(name+'.log')).read_text(errors='replace')[-6000:], flush=True)
+            raise
 
 def archive(name, url, digest):
     target = work/name
@@ -70,7 +75,7 @@ if b'#include <stdlib.h>' not in data:
     mod.write_bytes(b'#include <stdlib.h>\n'+data)
 (evidence/'source-patches.json').write_text(json.dumps({str(f.relative_to(work)):hashlib.sha256(f.read_bytes()).hexdigest() for f in (patch,mod)},indent=2)+'\n')
 triprefix = work/'trilinos'; xyprefix = work/'xyce'; ngprefix = work/'ngspice'
-flags = ['-DCMAKE_BUILD_TYPE=Release', '-DCMAKE_POSITION_INDEPENDENT_CODE=ON', '-DCMAKE_INSTALL_LIBDIR=lib', '-DBUILD_SHARED_LIBS=OFF', '-DCMAKE_Fortran_FLAGS=-fsecond-underscore', '-DTrilinos_ENABLE_Fortran=ON', '-DTrilinos_ENABLE_ALL_PACKAGES=OFF', '-DTrilinos_ENABLE_TESTS=OFF', '-DTrilinos_ENABLE_EXAMPLES=OFF', '-DTPL_ENABLE_MPI=OFF', '-DTPL_ENABLE_ParMETIS=OFF', '-DTPL_ENABLE_AMD=ON', '-DAMD_INCLUDE_DIRS=/usr/include/suitesparse', '-DEpetraExt_BUILD_BTF=ON', '-DEpetraExt_BUILD_EXPERIMENTAL=ON', '-DEpetraExt_BUILD_GRAPH_REORDERINGS=ON', '-DTrilinos_ENABLE_COMPLEX_DOUBLE=ON']
+flags = ['-DCMAKE_BUILD_TYPE=Release', '-DCMAKE_POSITION_INDEPENDENT_CODE=ON', '-DCMAKE_INSTALL_LIBDIR=lib', '-DBUILD_SHARED_LIBS=OFF', '-DCMAKE_Fortran_FLAGS=-fsecond-underscore', '-DTrilinos_ENABLE_Fortran=ON', '-DTrilinos_ENABLE_ALL_PACKAGES=OFF', '-DTrilinos_ENABLE_ALL_OPTIONAL_PACKAGES=OFF', '-DTrilinos_ENABLE_TESTS=OFF', '-DTrilinos_ENABLE_EXAMPLES=OFF', '-DTPL_ENABLE_MPI=OFF', '-DTPL_ENABLE_ParMETIS=OFF', '-DTPL_ENABLE_AMD=ON', '-DAMD_INCLUDE_DIRS=/usr/include/suitesparse', '-DEpetraExt_BUILD_BTF=ON', '-DEpetraExt_BUILD_EXPERIMENTAL=ON', '-DEpetraExt_BUILD_GRAPH_REORDERINGS=ON', '-DTrilinos_ENABLE_COMPLEX_DOUBLE=ON']
 flags += ['-DTrilinos_ENABLE_'+name+'=ON' for name in ['Amesos','AztecOO','Belos','EpetraExt','Ifpack','NOX','Sacado','Teuchos','TrilinosCouplings']]
 run('trilinos-configure', ['cmake','-S',tri,'-B',work/'trilinos-build','-G','Ninja','-DCMAKE_INSTALL_PREFIX='+str(triprefix),*flags])
 run('trilinos-build', ['cmake','--build',work/'trilinos-build','--parallel',a.jobs])
